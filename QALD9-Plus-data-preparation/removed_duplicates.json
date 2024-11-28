@@ -1,0 +1,217 @@
+[
+    {
+        "question_id": "9",
+        "dbpedia_id": "http://dbpedia.org/resource/William_Shatner",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q16297"
+        ]
+    },
+    {
+        "question_id": "9",
+        "dbpedia_id": "http://dbpedia.org/ontology/starring",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/P161"
+        ]
+    },
+    {
+        "question_id": "25",
+        "dbpedia_id": "http://dbpedia.org/property/timezone",
+        "wikidata_ids": []
+    },
+    {
+        "question_id": "25",
+        "dbpedia_id": "http://dbpedia.org/resource/Utah",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q829"
+        ]
+    },
+    {
+        "question_id": "41",
+        "dbpedia_id": "http://dbpedia.org/ontology/nationality",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/P27"
+        ]
+    },
+    {
+        "question_id": "42",
+        "dbpedia_id": "http://dbpedia.org/ontology/location",
+        "wikidata_ids": []
+    },
+    {
+        "question_id": "42",
+        "dbpedia_id": "http://dbpedia.org/resource/Switzerland",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q39"
+        ]
+    },
+    {
+        "question_id": "54",
+        "dbpedia_id": "http://dbpedia.org/resource/Munich",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q439948",
+            "http://www.wikidata.org/entity/Q1726"
+        ]
+    },
+    {
+        "question_id": "54",
+        "dbpedia_id": "http://dbpedia.org/resource/Munich",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q439948",
+            "http://www.wikidata.org/entity/Q1726"
+        ]
+    },
+    {
+        "question_id": "70",
+        "dbpedia_id": "http://dbpedia.org/ontology/starring",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/P161"
+        ]
+    },
+    {
+        "question_id": "71",
+        "dbpedia_id": "http://dbpedia.org/resource/Australia",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q25907685",
+            "http://www.wikidata.org/entity/Q408",
+            "http://www.wikidata.org/entity/Q3960"
+        ]
+    },
+    {
+        "question_id": "82",
+        "dbpedia_id": "http://dbpedia.org/ontology/birthPlace",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/P19"
+        ]
+    },
+    {
+        "question_id": "82",
+        "dbpedia_id": "http://dbpedia.org/resource/Germany",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q43287",
+            "http://www.wikidata.org/entity/Q183",
+            "http://www.wikidata.org/entity/Q41304"
+        ]
+    },
+    {
+        "question_id": "97",
+        "dbpedia_id": "http://dbpedia.org/ontology/industry",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/P452"
+        ]
+    },
+    {
+        "question_id": "100",
+        "dbpedia_id": "http://dbpedia.org/resource/Istanbul",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q406",
+            "http://www.wikidata.org/entity/Q19838826",
+            "http://www.wikidata.org/entity/Q16869",
+            "http://www.wikidata.org/entity/Q23725",
+            "http://www.wikidata.org/entity/Q534799"
+        ]
+    },
+    {
+        "question_id": "101",
+        "dbpedia_id": "http://dbpedia.org/ontology/hometown",
+        "wikidata_ids": []
+    },
+    {
+        "question_id": "101",
+        "dbpedia_id": "http://dbpedia.org/resource/Australia",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q25907685",
+            "http://www.wikidata.org/entity/Q408",
+            "http://www.wikidata.org/entity/Q3960"
+        ]
+    },
+    {
+        "question_id": "108",
+        "dbpedia_id": "http://dbpedia.org/property/timezone",
+        "wikidata_ids": []
+    },
+    {
+        "question_id": "108",
+        "dbpedia_id": "http://dbpedia.org/resource/Utah",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q829"
+        ]
+    },
+    {
+        "question_id": "114",
+        "dbpedia_id": "http://dbpedia.org/resource/Perl",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q42478"
+        ]
+    },
+    {
+        "question_id": "116",
+        "dbpedia_id": "http://dbpedia.org/resource/SkyTeam",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q212282"
+        ]
+    },
+    {
+        "question_id": "124",
+        "dbpedia_id": "http://dbpedia.org/resource/Clint_Eastwood",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q43203"
+        ]
+    },
+    {
+        "question_id": "154",
+        "dbpedia_id": "http://dbpedia.org/resource/Category:",
+        "wikidata_ids": []
+    },
+    {
+        "question_id": "154",
+        "dbpedia_id": "http://purl.org/dc/terms/",
+        "wikidata_ids": []
+    },
+    {
+        "question_id": "174",
+        "dbpedia_id": "http://dbpedia.org/ontology/elevation",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/P2044"
+        ]
+    },
+    {
+        "question_id": "181",
+        "dbpedia_id": "http://dbpedia.org/ontology/location",
+        "wikidata_ids": []
+    },
+    {
+        "question_id": "181",
+        "dbpedia_id": "http://dbpedia.org/resource/Australia",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q25907685",
+            "http://www.wikidata.org/entity/Q408",
+            "http://www.wikidata.org/entity/Q3960"
+        ]
+    },
+    {
+        "question_id": "186",
+        "dbpedia_id": "http://dbpedia.org/resource/Chicago_Bulls",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q128109"
+        ]
+    },
+    {
+        "question_id": "186",
+        "dbpedia_id": "http://dbpedia.org/resource/Chicago_Bulls",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/Q128109"
+        ]
+    },
+    {
+        "question_id": "315",
+        "dbpedia_id": "http://dbpedia.org/ontology/parent",
+        "wikidata_ids": []
+    },
+    {
+        "question_id": "390",
+        "dbpedia_id": "http://dbpedia.org/ontology/starring",
+        "wikidata_ids": [
+            "http://www.wikidata.org/entity/P161"
+        ]
+    }
+]

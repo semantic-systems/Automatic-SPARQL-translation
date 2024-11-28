@@ -1,0 +1,1362 @@
+[
+    {
+        "question_id": "1",
+        "question": "List all boardgames by GMT.",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/publisher",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "8",
+        "question": "Which airports does Air China serve?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Air_China dbo:targetAirport ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/targetAirport",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "9",
+        "question": "Give me all actors starring in movies directed by and starring William Shatner.",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring res:William_Shatner { ?x dbo:starring ?uri } UNION { ?x dbp:starring ?uri } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/starring",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "10",
+        "question": "What are the official languages of the Philippines?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/officialLanguage",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "18",
+        "question": "Which organizations were founded in 1950?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Organisation { ?uri dbo:formationYear ?date } UNION { ?uri dbo:foundingYear ?date } UNION { ?uri dbp:foundation ?date } UNION { ?uri dbp:formation ?date } FILTER regex(?date, \"^1950\") }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/formationYear",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/foundingYear",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/property/foundation",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/property/formation",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "20",
+        "question": "Give me the Apollo 14 astronauts.",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/mission",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "22",
+        "question": "Which state of the United States of America has the highest density?",
+        "dbpedia_query": "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri dbp:densityrank ?density } ORDER BY ASC(?density) LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/densityrank",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "23",
+        "question": "Which spaceflights were launched from Baikonur?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/launchPad> res:Baikonur_Cosmodrome }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/launchPad",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "25",
+        "question": "Which U.S. states are in the same timezone as Utah?",
+        "dbpedia_query": "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:timezone ?x FILTER ( ?uri != res:Utah ) }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/timezone",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/class/yago/WikicatStatesOfTheUnitedStates",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "29",
+        "question": "Show me all museums in London.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/London> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "35",
+        "question": "When was the Statue of Liberty built?",
+        "dbpedia_query": "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Statue_of_Liberty> <http://dbpedia.org/property/beginningDate> ?date }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/beginningDate",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "36",
+        "question": "Which states border Illinois?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Illinois> <http://dbpedia.org/property/borderingstates> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/borderingstates",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "42",
+        "question": "Give me all Swiss non-profit organizations.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Switzerland> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Switzerland> } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "45",
+        "question": "Where do the Red Sox play?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Boston_Red_Sox> <http://dbpedia.org/property/ballpark> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/ballpark",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "50",
+        "question": "How many films did Hal Roach produce?",
+        "dbpedia_query": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/producer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "53",
+        "question": "Who are the four youngest MVP basketball players?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, \"MVP\") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/highlights",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "54",
+        "question": "Give me all companies in Munich.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/Munich> } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/locationCity",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "61",
+        "question": "Give me all Apollo 14 astronauts.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/mission",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "62",
+        "question": "Which companies have more than 1 million employees?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/numberOfEmployees> ?n } UNION { ?uri <http://dbpedia.org/property/numEmployees> ?n } FILTER ( ?n > 1000000 ) }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/numEmployees",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "65",
+        "question": "What is the highest place of the Urals?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ural_Mountains> <http://dbpedia.org/property/highest> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/highest",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "66",
+        "question": "Who is the governor of Wyoming?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Wyoming> <http://dbpedia.org/property/governor> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/governor",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "67",
+        "question": "Where did the architect of the Eiffel Tower study?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Eiffel_Tower> <http://dbpedia.org/ontology/architect> ?x . ?x <http://dbpedia.org/property/almaMater> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/almaMater",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "71",
+        "question": "Give me all Australian nonprofit organizations.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/locationCountry> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/locationCountry",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "72",
+        "question": "Which pope succeeded John Paul II?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pope_John_Paul_II> <http://dbpedia.org/property/successor> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/successor",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "74",
+        "question": "Who was president of Pakistan in 1978?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/President_of_Pakistan> ; <http://dbpedia.org/property/years> 1978 }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/title",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/property/years",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "76",
+        "question": "How many museums does Paris have?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "78",
+        "question": "Give me all federal chancellors of Germany.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/office> \"Chancellor of Germany\" } UNION { ?uri <http://dbpedia.org/property/office> <http://dbpedia.org/resource/Chancellor_of_Germany> } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/office",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/property/office",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "84",
+        "question": "Who produced the most films?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?film <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/producer> ?uri . } ORDER BY DESC(COUNT(?film)) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/producer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "89",
+        "question": "When was Alberta admitted as province?",
+        "dbpedia_query": "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Alberta> <http://dbpedia.org/property/admittancedate> ?date }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/admittancedate",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "90",
+        "question": "How many missions does the Soyuz programme have?",
+        "dbpedia_query": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/property/programme> <http://dbpedia.org/resource/Soyuz_programme> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/programme",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "92",
+        "question": "When were the Hells Angels founded?",
+        "dbpedia_query": "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Hells_Angels> <http://dbpedia.org/property/founded> ?date }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/founded",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "100",
+        "question": "Which writers studied in Istanbul?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> { ?uri <http://dbpedia.org/ontology/almaMater> ?x } UNION { ?uri <http://dbpedia.org/ontology/education> ?x } { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Istanbul> } UNION { ?x <http://dbpedia.org/property/city> <http://dbpedia.org/resource/Istanbul> } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/city",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "101",
+        "question": "Give me all Australian metalcore bands.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Band> ; <http://dbpedia.org/ontology/genre> <http://dbpedia.org/resource/Metalcore> { ?uri <http://dbpedia.org/ontology/hometown> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/hometown> ?h . ?h <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/hometown",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "102",
+        "question": "Which countries adopted the Euro?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> { ?uri <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Euro> } UNION { ?uri <http://dbpedia.org/property/currencyCode> \"EUR\"@en } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/currencyCode",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "103",
+        "question": "Give me all types of eating disorders.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/class/yago/WikicatEatingDisorders> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/class/yago/WikicatEatingDisorders",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "105",
+        "question": "What was Brazil's lowest rank in the FIFA World Ranking?",
+        "dbpedia_query": "SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Brazil_national_football_team> <http://dbpedia.org/property/fifaMin> ?n }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/fifaMin",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "108",
+        "question": "Which U.S. states are in the same time zone as Utah?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Utah> <http://dbpedia.org/property/timezone> ?x . ?uri a <http://dbpedia.org/class/yago/WikicatStatesOfTheUnitedStates> ; <http://dbpedia.org/property/timezone> ?x FILTER ( ?uri != <http://dbpedia.org/resource/Utah> ) }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/timezone",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/class/yago/WikicatStatesOfTheUnitedStates",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "110",
+        "question": "Which country has the most official languages?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . ?uri <http://dbpedia.org/property/officialLanguages> ?language . } ORDER BY DESC(COUNT(?language)) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/officialLanguages",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "112",
+        "question": "Which actor played Chewbacca?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Chewbacca> <http://dbpedia.org/ontology/portrayer> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/portrayer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "113",
+        "question": "Give me all libraries established earlier than 1400.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Library> ; <http://dbpedia.org/property/established> ?year FILTER ( ?year < 1400 ) }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/established",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "114",
+        "question": "Which programming languages were influenced by Perl?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/ProgrammingLanguage> { ?uri <http://dbpedia.org/ontology/influencedBy> <http://dbpedia.org/resource/Perl> } UNION { <http://dbpedia.org/resource/Perl> <http://dbpedia.org/ontology/influenced> ?uri } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/influencedBy",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/influenced",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "116",
+        "question": "What airlines are part of the SkyTeam alliance?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Airline> { ?uri <http://dbpedia.org/ontology/alliance> <http://dbpedia.org/resource/SkyTeam> } UNION { ?uri <http://dbpedia.org/ontology/Alliance> <http://dbpedia.org/resource/SkyTeam> } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/alliance",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/Alliance",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "122",
+        "question": "Which programming languages influenced Javascript?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/ProgrammingLanguage> ; <http://dbpedia.org/ontology/influenced> <http://dbpedia.org/resource/JavaScript> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/influenced",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "127",
+        "question": "How many airlines are members of the Star Alliance?",
+        "dbpedia_query": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Airline> ; <http://dbpedia.org/ontology/alliance> <http://dbpedia.org/resource/Star_Alliance> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/alliance",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "129",
+        "question": "Who wrote The Hunger Games?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/The_Hunger_Games> <http://dbpedia.org/property/author> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/author",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "132",
+        "question": "Where is the residence of the prime minister of Spain?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Prime_Minister_of_Spain> <http://dbpedia.org/property/residence> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/residence",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "134",
+        "question": "Which countries have more than two official languages?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> ; <http://dbpedia.org/ontology/officialLanguage> ?language } GROUP BY ?uri HAVING ( COUNT(?language) > 2 )",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/officialLanguage",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "140",
+        "question": "How many politicians graduated from Columbia University?",
+        "dbpedia_query": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/ontology/profession> <http://dbpedia.org/resource/Politician> ; <http://dbpedia.org/ontology/almaMater> <http://dbpedia.org/resource/Columbia_University> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/profession",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "142",
+        "question": "Which telecommunications organizations are located in Belgium?",
+        "dbpedia_query": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Organisation> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Telecommunication> } UNION { ?uri <http://dbpedia.org/property/industry> ?industry FILTER regex(?industry, \"Telecommunications\") } { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Belgium> } UNION { ?uri <http://dbpedia.org/property/locationCountry> \"Belgium\"@en } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/resource/Telecommunication",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/property/industry",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/property/locationCountry",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "143",
+        "question": "Give me a list of all lakes in Denmark.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { { ?uri a <http://dbpedia.org/ontology/Lake> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> } UNION { ?uri a <http://dbpedia.org/class/yago/LakesOfDenmark> } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/class/yago/LakesOfDenmark",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "144",
+        "question": "How many children does Eddie Murphy have?",
+        "dbpedia_query": "SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Eddie_Murphy> <http://dbpedia.org/property/children> ?n }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/children",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "145",
+        "question": "Show me all English Gothic buildings in Kent.",
+        "dbpedia_query": "SELECT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Building> ; <http://dbpedia.org/ontology/architecturalStyle> <http://dbpedia.org/resource/English_Gothic_architecture> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Kent> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "149",
+        "question": "What is the longest river?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> { ?uri <http://dbpedia.org/ontology/length> ?l } UNION { ?uri <http://dbpedia.org/property/length> ?l } } ORDER BY DESC(?l) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/length",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "151",
+        "question": "What is the birth name of Angela Merkel?",
+        "dbpedia_query": "SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/Angela_Merkel> <http://dbpedia.org/property/birthName> ?string }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/birthName",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "153",
+        "question": "Which weapons did Heckler & Koch develop?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Weapon> ; <http://dbpedia.org/property/designer> <http://dbpedia.org/resource/Heckler_&_Koch> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/designer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "154",
+        "question": "What is the smallest city by area in Germany?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX dbc: <http://dbpedia.org/resource/Category:> PREFIX dct: <http://purl.org/dc/terms/> SELECT ?city WHERE { ?m skos:broader dbc:Cities_in_Germany . ?city dct:subject ?m ; dbo:areaTotal ?area } ORDER BY ?area LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/resource/Category:",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://purl.org/dc/terms/",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://www.w3.org/2004/02/skos/core#broader",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/resource/Category:Cities_in_Germany",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://purl.org/dc/terms/subject",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "161",
+        "question": "Give me all films produced by Hal Roach.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/producer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "162",
+        "question": "Who played Agent Smith in Matrix?",
+        "dbpedia_query": "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Agent_Smith <http://dbpedia.org/ontology/portrayer> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/portrayer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "169",
+        "question": "Which Chess players died in the same place they were born in?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/ChessPlayer> ; <http://dbpedia.org/ontology/birthPlace> ?x ; <http://dbpedia.org/ontology/deathPlace> ?y FILTER ( ?x = ?y ) }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/ChessPlayer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "172",
+        "question": "In which U.S. state is Fort Knox located?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Fort_Knox dbo:location ?uri . ?uri dbo:country res:United_States }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "174",
+        "question": "Which mountains are higher than the Nanga Parbat?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Nanga_Parbat> <http://dbpedia.org/ontology/elevation> ?elevation . ?uri a <http://dbpedia.org/ontology/Mountain> { ?uri <http://dbpedia.org/ontology/elevation> ?otherelevation } UNION { ?uri <http://dbpedia.org/property/elevationM> ?otherelevation } FILTER ( ?otherelevation > ?elevation ) }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/elevationM",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "178",
+        "question": "List the seven kings of Rome.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/King_of_Rome> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/title",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "181",
+        "question": "Show me all the breweries in Australia.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Brewery> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/Brewery",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "183",
+        "question": "Give me all soccer clubs in Spain.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> { ?uri <http://dbpedia.org/ontology/ground> <http://dbpedia.org/resource/Spain> } UNION { ?uri <http://dbpedia.org/property/ground> ?ground FILTER regex(?ground, \"Spain\") } }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/ground",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/property/ground",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "184",
+        "question": "Who produced films starring Natalie Portman?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?film a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Natalie_Portman> ; <http://dbpedia.org/ontology/producer> ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/producer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "185",
+        "question": "Give me all breeds of the German Shepherd dog.",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/breed> <http://dbpedia.org/resource/German_Shepherd> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/breed",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "186",
+        "question": "Who is the heaviest player of the Chicago Bulls?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> ; <http://dbpedia.org/ontology/weight> ?num { ?uri <http://dbpedia.org/property/team> <http://dbpedia.org/resource/Chicago_Bulls> } UNION { ?uri <http://dbpedia.org/property/draftTeam> <http://dbpedia.org/resource/Chicago_Bulls> } UNION { ?uri <http://dbpedia.org/ontology/draftTeam> <http://dbpedia.org/resource/Chicago_Bulls> } } ORDER BY DESC(?num) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/team",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/property/draftTeam",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/draftTeam",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "187",
+        "question": "Which languages are spoken in Estonia?",
+        "dbpedia_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spokenIn> <http://dbpedia.org/resource/Estonia> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/spokenIn",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "189",
+        "question": "What is the largest city in america?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?lcity WHERE { dbr:United_States dbo:largestCity ?lcity }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/largestCity",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "199",
+        "question": "Which ingredients do I need for carrot cake?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Carrot_cake dbo:ingredient ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/ingredient",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "201",
+        "question": "What is the highest mountain in Saxony Germany?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?m WHERE { ?m dbo:mountainRange dbr:Ore_Mountains ; dbo:elevation ?height } ORDER BY DESC(?height) LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/mountainRange",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "204",
+        "question": "Who played Gus Fring in Breaking Bad?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Gus_Fring dbo:portrayer ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/portrayer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "207",
+        "question": "What is the biggest stadium in Spain?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Stadium ; dbo:location res:Spain ; dbo:seatingCapacity ?n } ORDER BY DESC(?n) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/Stadium",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/seatingCapacity",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "215",
+        "question": "What is the location of the Houses of Parliament?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { res:Palace_of_Westminster dbo:location ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "219",
+        "question": "Who was the first King of England?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Royalty ; rdf:type yago:WikicatEnglishMonarchs ; dbo:activeYearsStartYear ?date } ORDER BY ASC(?date) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/Royalty",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/class/yago/WikicatEnglishMonarchs",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/activeYearsStartYear",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "222",
+        "question": "Who is the youngest Darts player?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:DartsPlayer ; dbo:birthDate ?date } ORDER BY DESC(?date) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/DartsPlayer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "226",
+        "question": "When was the last episode of the TV series Friends aired?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?date WHERE { dbr:Friends dbo:completionDate ?date }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/completionDate",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "229",
+        "question": "Who is 8th president of US?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE { dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/resource/8th_President_of_the_United_States",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/wikiPageRedirects",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/property/name",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "231",
+        "question": "Give me all launch pads operated by NASA.",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:LaunchPad ; dbo:operator res:NASA }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/operator",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "241",
+        "question": "Who developed Slack?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri dbo:product <http://dbpedia.org/resource/Slack_(software)> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/product",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "247",
+        "question": "In which programming language is GIMP written?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:GIMP dbo:programmingLanguage ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/programmingLanguage",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "251",
+        "question": "What is the longest river in the world?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri rdf:type dbo:BodyOfWater ; dbo:length ?length } ORDER BY DESC(?length) LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/BodyOfWater",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "253",
+        "question": "Which companies produce hovercrafts?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:product res:Hovercraft }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/product",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "258",
+        "question": "How many theories did Albert Einstein come up with?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT (COUNT(?uri) AS ?count) WHERE { dbr:Albert_Einstein dbo:knownFor ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/knownFor",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "259",
+        "question": "Who composed the soundtrack for Cameron's Titanic?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Titanic_(1997_film)> dbo:musicComposer ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/musicComposer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "262",
+        "question": "With how many countries Iran has borders?",
+        "dbpedia_query": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?border WHERE { dbr:Geography_of_Iran dbp:borders ?border } LIMIT 8",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/borders",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "265",
+        "question": "Who is the mayor of Paris?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Paris dbo:mayor ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/mayor",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "269",
+        "question": "Which Indian company has the most employees?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:location res:India ; dbo:numberOfEmployees ?n } ORDER BY DESC(?n) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "284",
+        "question": "How many inhabitants does the largest city in Canada have?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Canada dbo:largestCity ?city . ?city dbo:populationTotal ?num }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/largestCity",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "288",
+        "question": "how much is the population densty rank of germany?",
+        "dbpedia_query": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE { dbr:Germany dbp:populationDensityRank ?rank }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/property/populationDensityRank",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "290",
+        "question": "List all games by GMT.",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/publisher",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "291",
+        "question": "What is the official language of Suriname?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Suriname dbo:officialLanguage ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/officialLanguage",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "296",
+        "question": "Give me all members of Prodigy.",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Prodigy dbo:bandMember ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/bandMember",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "297",
+        "question": "In which time zone is Rome?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Rome dbo:timeZone ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/timeZone",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "301",
+        "question": "What is the largest city in Australia?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Australia dbo:largestCity ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/largestCity",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "303",
+        "question": "What form of government is found in South Africa?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { dbr:South_Africa dbo:governmentType ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/governmentType",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "310",
+        "question": "To which party does the mayor of Paris belong?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Paris dbo:mayor ?x . ?x dbo:party ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/mayor",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "311",
+        "question": "Who is the Formula 1 race driver with the most races?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:FormulaOneRacer ; dbo:races ?x } ORDER BY DESC(?x) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/FormulaOneRacer",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/races",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "315",
+        "question": "Who is the son of Sonny and Cher?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:parent res:Cher ; dbo:parent res:Sonny_Bono }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/parent",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "327",
+        "question": "How many states are in Mexico?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT (COUNT(?uri) AS ?count) WHERE { ?uri dbo:type dbr:States_of_Mexico }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/resource/States_of_Mexico",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "333",
+        "question": "Where is Syngman Rhee buried?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Syngman_Rhee dbo:restingPlace ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/restingPlace",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "345",
+        "question": "Who is starring in Spanish movies produced by Benicio del Toro?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?film rdf:type dbo:Film ; dbo:country res:Spain ; dbo:producer res:Benicio_del_Toro ; dbo:starring ?uri . ?uri rdf:type dbo:Person }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/producer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "347",
+        "question": "Show me all books in Asimov's Foundation series.",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:Foundation_series }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/series",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "349",
+        "question": "Which city has the oldest running metro?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?loc WHERE { ?uri dbo:type dbr:Rapid_transit ; dbo:openingYear ?date ; dbo:location ?loc . ?loc rdf:type dbo:City } ORDER BY ASC(?date) LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/openingYear",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "357",
+        "question": "What is the bridge with the longest span?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Bridge ; dbo:mainspan ?s } ORDER BY DESC(?s) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/mainspan",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "370",
+        "question": "What is the timezone in San Pedro de Atacama?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:San_Pedro_de_Atacama dbo:timeZone ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/timeZone",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "379",
+        "question": "Who wrote the song Hotel California?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Hotel_California dbo:writer ?uri }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/writer",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "388",
+        "question": "When did Boris Becker end his active career?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?d WHERE { res:Boris_Becker dbo:activeYearsEndDate ?d }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/activeYearsEndDate",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "391",
+        "question": "Show me Hemingway's autobiography.",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:author res:Ernest_Hemingway ; dbo:literaryGenre res:Autobiography }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/literaryGenre",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "393",
+        "question": "What are the five boroughs of New York?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri dbo:governmentType <http://dbpedia.org/resource/Borough_(New_York_City)> }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/governmentType",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/resource/Borough_(New_York_City)",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "406",
+        "question": "In which countries do people speak Japanese?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country ; dbo:language res:Japanese_language }",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/language",
+                "wikidata_ids": []
+            }
+        ]
+    },
+    {
+        "question_id": "408",
+        "question": "Which museum in New York has the most visitors?",
+        "dbpedia_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Museum ; dbo:location res:New_York_City ; dbo:numberOfVisitors ?num } ORDER BY DESC(?num) OFFSET 0 LIMIT 1",
+        "unmapped_entities": [
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/location",
+                "wikidata_ids": []
+            },
+            {
+                "dbpedia_id": "http://dbpedia.org/ontology/numberOfVisitors",
+                "wikidata_ids": []
+            }
+        ]
+    }
+]
