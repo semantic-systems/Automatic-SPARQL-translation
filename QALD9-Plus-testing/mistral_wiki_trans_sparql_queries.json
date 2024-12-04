@@ -17,7 +17,7 @@
     },
     {
         "natural_language_question": "Show a list of soccer clubs that play in the Bundesliga.",
-        "sparql_query_kg2": "SELECT DISTINCT ?club WHERE {   ?club wdt:P31 wd:Q476028 ;  # Instance of SoccerClub          wdt:P118 wd:Q82595 .  # League is Bundesliga }"
+        "sparql_query_kg2": "SELECT DISTINCT ?club WHERE {   ?club wdt:P31 wd:Q476028 ;            wdt:P118 wd:Q82595 .   }"
     },
     {
         "natural_language_question": "Give me all actors starring in movies directed by William Shatner.",
@@ -49,7 +49,7 @@
     },
     {
         "natural_language_question": "For which label did Elvis record his first album?",
-        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX pq: <http://www.wikidata.org/prop/qualifier/>  SELECT DISTINCT ?uri WHERE {   ?x wdt:P31 wd:Q482994 ;    # ?x is an instance of Album       wdt:P175 wd:Q303 ;     # artist is Elvis Presley       wdt:P577 ?y ;          # release date       wdt:P264 ?uri .        # record label } ORDER BY ASC(?y) OFFSET 0 LIMIT 1"
+        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX pq: <http://www.wikidata.org/prop/qualifier/>  SELECT DISTINCT ?uri WHERE {   ?x wdt:P31 wd:Q482994 ;           wdt:P175 wd:Q303 ;            wdt:P577 ?y ;                 wdt:P264 ?uri .         } ORDER BY ASC(?y) OFFSET 0 LIMIT 1"
     },
     {
         "natural_language_question": "Give me the runtime of Toy Story.",
@@ -61,7 +61,7 @@
     },
     {
         "natural_language_question": "In which films directed by Garry Marshall was Julia Roberts starring?",
-        "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE {   ?uri wdt:P31 wd:Q11424 ;  # Film         wdt:P161 wd:Q40523 ;  # Starring Julia Roberts         wdt:P57 wd:Q315087 .  # Directed by Garry Marshall }"
+        "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE {   ?uri wdt:P31 wd:Q11424 ;           wdt:P161 wd:Q40523 ;           wdt:P57 wd:Q315087 .   }"
     },
     {
         "natural_language_question": "In which year was Rachel Stevens born?",
@@ -145,7 +145,7 @@
     },
     {
         "natural_language_question": "What country is Mount Everest in?",
-        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wikibase: <http://wikiba.se/ontology#>  SELECT DISTINCT ?country ?countryLabel WHERE {   wd:Q513 wdt:P131 ?country .   ?country wdt:P31 wd:Q6256 .   SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". } }"
+        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wikibase: <http://wikiba.se/ontology  SELECT DISTINCT ?country ?countryLabel WHERE {   wd:Q513 wdt:P131 ?country .   ?country wdt:P31 wd:Q6256 .   SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". } }"
     },
     {
         "natural_language_question": "Where was JFK assassinated?",
@@ -169,7 +169,7 @@
     },
     {
         "natural_language_question": "Which people were born in Heraklion?",
-        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wikibase: <http://wikiba.se/ontology#>  SELECT DISTINCT ?uri WHERE {   ?uri wdt:P31 wd:Q5 ;         wdt:P19 wd:Q160544 . }"
+        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wikibase: <http://wikiba.se/ontology  SELECT DISTINCT ?uri WHERE {   ?uri wdt:P31 wd:Q5 ;         wdt:P19 wd:Q160544 . }"
     },
     {
         "natural_language_question": "How many children did Benjamin Franklin have?",
@@ -205,7 +205,7 @@
     },
     {
         "natural_language_question": "Which television shows were created by Walt Disney?",
-        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>  SELECT DISTINCT ?item WHERE {   ?item wdt:P31 wd:Q15416 ;  # Television Show          wdt:P170 wd:Q8704 . # Creator Walt Disney }"
+        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>  SELECT DISTINCT ?item WHERE {   ?item wdt:P31 wd:Q15416 ;            wdt:P170 wd:Q8704 .  }"
     },
     {
         "natural_language_question": "Give me all Swedish holidays.",
@@ -245,11 +245,11 @@
     },
     {
         "natural_language_question": "Which holidays are celebrated around the world?",
-        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  SELECT DISTINCT ?holiday ?holidayLabel WHERE {   ?holiday wdt:P31 wd:Q1445650.   SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". } }"
+        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema  SELECT DISTINCT ?holiday ?holidayLabel WHERE {   ?holiday wdt:P31 wd:Q1445650.   SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". } }"
     },
     {
         "natural_language_question": "Which Greek parties are pro-European?",
-        "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE {   ?uri wdt:P31 wd:Q7278 ;           # Instance of PoliticalParty         wdt:P17 wd:Q41 ;            # Country is Greece         wdt:P1142 wd:Q3781399 .     # Ideology is Pro-Europeanism }"
+        "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE {   ?uri wdt:P31 wd:Q7278 ;                    wdt:P17 wd:Q41 ;                     wdt:P1142 wd:Q3781399 .      }"
     },
     {
         "natural_language_question": "Give me the birthdays of all actors of the television show Charmed.",
@@ -297,7 +297,7 @@
     },
     {
         "natural_language_question": "Which musician wrote the most books?",
-        "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE {   ?uri wdt:P106 wd:Q639669 .  # ?uri has the occupation of Musician   ?x wdt:P50 ?uri .           # ?x has the author ?uri   ?x wdt:P31 wd:Q571 .        # ?x is of type Book } ORDER BY DESC(COUNT(?x)) OFFSET 0 LIMIT 1"
+        "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE {   ?uri wdt:P106 wd:Q639669 .     ?x wdt:P50 ?uri .              ?x wdt:P31 wd:Q571 .         } ORDER BY DESC(COUNT(?x)) OFFSET 0 LIMIT 1"
     },
     {
         "natural_language_question": "Which television shows were created by John Cleese?",
@@ -321,7 +321,7 @@
     },
     {
         "natural_language_question": "In which films did Julia Roberts as well as Richard Gere play?",
-        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>  SELECT DISTINCT ?uri WHERE {   ?uri wdt:P31 wd:Q11424 ;  # Instance of Film         wdt:P161 wd:Q40523 ;  # Starring Julia Roberts         wdt:P161 wd:Q48410 .  # Starring Richard Gere }"
+        "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>  SELECT DISTINCT ?uri WHERE {   ?uri wdt:P31 wd:Q11424 ;           wdt:P161 wd:Q40523 ;           wdt:P161 wd:Q48410 .   }"
     },
     {
         "natural_language_question": "What is the capital of Canada?",
