@@ -20,9 +20,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided context and mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  VALUES ?penguinBooks { wd:Q1336200 wd:Q3374730 }\n  ?penguinBooks wdt:P112 ?uri.\n}\n```"
+        "sparql_query_kg2": " Sure! Based on the provided context, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  { wd:Q1336200 wdt:P112 ?uri }\n  UNION\n  { wd:Q3374730 wdt:P112 ?uri }\n}\n```\n\nThis query uses the Wikidata IDs for Penguin Books and the founder relation, as provided in the entity and relation mapping."
     },
     {
         "context": {
@@ -44,9 +44,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, here is the SPARQL query for KG2 (Wikidata) based on the given context and mappings:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P57 wd:Q2001 .\n}\n```"
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for KG2 (Wikidata) based on the provided context and mappings:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?film WHERE {\n  ?film wdt:P57 wd:Q2001 .\n}\n```\n\nExplanation:\n- `PREFIX wd: <http://www.wikidata.org/entity/>` sets the prefix for Wikidata entities.\n- `PREFIX wdt: <http://www.wikidata.org/prop/direct/>` sets the prefix for Wikidata properties.\n- `SELECT DISTINCT ?film WHERE { ?film wdt:P57 wd:Q2001 . }` retrieves distinct films directed by Stanley Kubrick (identified by wd:Q2001)."
     },
     {
         "context": {
@@ -74,9 +74,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Wikidata based on the given information, we need to map the DBpedia entities and relations to their corresponding Wikidata entities and properties. Here is the SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q2743 ;\n        wdt:P86 wd:Q2808 .\n}\n```\n\nThis query selects all musicals (`wd:Q2743`) with music by Elton John (`wd:Q2808`) using the property for music composer (`wdt:P86`)."
+        "sparql_query_kg2": " Based on the provided mappings and the initial SPARQL query for DBpedia, here is the equivalent SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?musical WHERE {\n  ?musical wdt:P31 wd:Q2743 ;\n           wdt:P86 wd:Q2808 .\n}\n```\n\nExplanation:\n- `wd:Q2743` corresponds to the musical genre in Wikidata.\n- `wdt:P86` corresponds to the composer property in Wikidata.\n- `wd:Q2808` corresponds to Elton John in Wikidata.\n\nThis query will list all the musicals with music by Elton John in Wikidata."
     },
     {
         "context": {
@@ -98,9 +98,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Wikidata (KG2) based on the given information, we need to map the entities and relations from DBpedia (KG1) to Wikidata. Here is the translated SPARQL query:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q40984 wdt:P178 ?uri.\n}\n```\n\nThis query will retrieve the developers of Skype from Wikidata."
+        "sparql_query_kg2": " Based on the provided information, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q40984 wdt:P178 ?uri.\n}\n```\n\nThis query uses the Wikidata entities and properties mapped from the DBpedia query to find the developers of Skype."
     },
     {
         "context": {
@@ -128,9 +128,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To create a SPARQL query for Wikidata (KG2) based on the provided mappings, we need to translate the DBpedia entities and relations to their corresponding Wikidata entities and properties. Here is the translated SPARQL query:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q476028 ;  # SoccerClub in Wikidata\n        wdt:P118 wd:Q82595 . # League (Bundesliga) in Wikidata\n}\n```\n\nThis query retrieves the URIs of soccer clubs that play in the Bundesliga from Wikidata."
+        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the given information, we need to map the entities and relations from DBpedia to Wikidata using the provided mappings. Here's the final SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q476028 ;\n        wdt:P118 wd:Q82595 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q476028` maps to the entity type \"SoccerClub\".\n- `wdt:P118 wd:Q82595` maps to the league \"Bundesliga\".\n\nThis query will retrieve a list of soccer clubs that play in the Bundesliga from Wikidata."
     },
     {
         "context": {
@@ -158,9 +158,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, here is the SPARQL query for Knowledge Graph 2 (Wikidata) based on the provided information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?x wdt:P57 wd:Q16297 ;\n     wdt:P161 ?uri .\n}\n```"
+        "sparql_query_kg2": " Sure, I can help with that. Based on the provided information and mappings, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?x wdt:P57 wd:Q16297 ;\n     wdt:P161 ?uri .\n}\n```"
     },
     {
         "context": {
@@ -182,9 +182,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, given the information provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q8502;\n        wdt:P2044 ?elevation.\n} ORDER BY DESC(?elevation) LIMIT 1\n```\n\nThis query retrieves the highest mountain from Wikidata, using the equivalent properties and entities mapped from DBpedia."
+        "sparql_query_kg2": " Sure, based on the provided context and mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q8502 ;\n        wdt:P2044 ?elevation .\n} ORDER BY DESC(?elevation) OFFSET 0 LIMIT 1\n```"
     },
     {
         "context": {
@@ -212,9 +212,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Below is the SPARQL query for Wikidata (KG2) to find out how many films Leonardo DiCaprio starred in:\n\n```sparql\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q38111 .\n}\n```\n\nThis query uses the Wikidata properties and entities mapped from the given DBpedia query, ensuring compatibility with the Wikidata knowledge graph."
+        "sparql_query_kg2": " Sure! Based on the information provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q38111 .\n}\n```"
     },
     {
         "context": {
@@ -236,9 +236,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided information, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\n<sparql>\nSELECT DISTINCT ?date WHERE {\n  wd:Q53713 wdt:P570 ?date .\n}\n</sparql>\n```\n\nThis query retrieves the death date of Olof Palme from Wikidata using the corresponding Wikidata IDs for the entity and relation."
+        "sparql_query_kg2": " Given the context and the entity and relation mapping, here's the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?date WHERE {\n  wd:Q53713 wdt:P570 ?date .\n}\n```\n\nThis query will retrieve the death date (P570) of Olof Palme (Q53713) from Wikidata."
     },
     {
         "context": {
@@ -266,9 +266,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Given the information provided, here is the SPARQL query for Wikidata (KG2) to find movies starring both Elizabeth Taylor and Richard Burton:\n\n<sparql>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P161 wd:Q34851 ;\n        wdt:P161 wd:Q151973 .\n}\n</sparql>"
+        "sparql_query_kg2": " Based on the provided context and mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P161 wd:Q34851 ;\n        wdt:P161 wd:Q151973 .\n}\n```"
     },
     {
         "context": {
@@ -290,9 +290,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce the SPARQL query for KG2 (Wikidata) using the given information, you need to map the DBpedia entities and relations to their corresponding Wikidata entities and relations.\n\nHere's the SPARQL query for KG2:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  <http://www.wikidata.org/entity/Q49740> <http://www.wikidata.org/entity/P178> ?uri\n}\n```\n\nThis query retrieves the developers of Minecraft from Wikidata by using the mapped entity and relation IDs provided in the Entity and Relation Mapping (ER2)."
+        "sparql_query_kg2": " ```sparql\nSELECT DISTINCT ?uri WHERE {\n  wd:Q49740 wdt:P178 ?uri .\n}\n```"
     },
     {
         "context": {
@@ -314,9 +314,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the given information, we need to map the entities and relations from DBpedia to Wikidata using the provided mappings. Here's the SPARQL query for KG2:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?n WHERE {\n  wd:Q2608065 wdt:P2769 ?n .\n}\n```\n\nThis query retrieves the budget for \"The Lego Movie\" from Wikidata."
+        "sparql_query_kg2": " Based on the provided context, the equivalent SPARQL query for Wikidata (KG2) would look for the budget of The Lego Movie using the mapped properties. Here's the query:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?n WHERE {\n  wd:Q2608065 wdt:P2769 ?n.\n}\n```\n\n</sparql>\n\nThis query uses the Wikidata ID for The Lego Movie (Q2608065) and the Wikidata property for budget (P2769) to find the budget of the movie."
     },
     {
         "context": {
@@ -356,9 +356,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! To translate the given SPARQL query for DBpedia to a query for Wikidata based on the provided entity and relation mapping, you can use the following query:\n\n<sparql>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX p: <http://www.wikidata.org/prop/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?x wdt:P31 wd:Q482994 ;\n     wdt:P175 wd:Q303 ;\n     wdt:P577 ?y ;\n     wdt:P264 ?uri .\n} ORDER BY ASC(?y)\nLIMIT 1\n</sparql>\n\nThis query retrieves the record label of Elvis Presley's first album from Wikidata, using the equivalent properties and entities mapped from DBpedia."
+        "sparql_query_kg2": " Based on the provided information and mappings, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?x wdt:P31 wd:Q482994 ;\n     wdt:P175 wd:Q303 ;\n     wdt:P577 ?y ;\n     wdt:P264 ?uri .\n} ORDER BY ASC(?y) LIMIT 1\n```\n\nExplanation:\n- The query uses the Wikidata prefixes `wd:` and `wdt:`.\n- It selects the distinct `?uri` which corresponds to the record label.\n- The `?x` variable represents the album entity.\n- The `wdt:P31 wd:Q482994` clause ensures that `?x` is an album.\n- The `wdt:P175 wd:Q303` clause ensures that the album is by Elvis Presley.\n- The `wdt:P577 ?y` clause retrieves the release date.\n- The `wdt:P264 ?uri` clause retrieves the record label.\n- The results are ordered by `?y` (release date) in ascending order and limited to the first result to get the earliest album."
     },
     {
         "context": {
@@ -380,9 +380,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Given the information provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?runtime WHERE {\n  wd:Q171048 wdt:P2047 ?runtime\n}\n```\n\n</sparql>\n\nThis query will retrieve the runtime of the movie \"Toy Story\" from Wikidata."
+        "sparql_query_kg2": " Certainly! Given the context and the entity and relation mapping between DBpedia and Wikidata, here is the SPARQL query for Wikidata to fetch the runtime of Toy Story:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?runtime WHERE {\n  wd:Q171048 wdt:P2047 ?runtime .\n}\n```\n\nThis query uses the Wikidata entity ID for Toy Story (`wd:Q171048`) and the property for runtime (`wdt:P2047`)."
     },
     {
         "context": {
@@ -418,9 +418,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided information, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P106 wd:Q5280538, wd:Q806349 ;\n       wdt:P1303 wd:Q119621, wd:Q8338 .\n}\n```"
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for Wikidata (KG2) based on the provided mappings:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P106 wd:Q5280538 ;\n       wdt:P1303 wd:Q119621 .\n}\n```\n\nExplanation:\n- `wd:Q5280538` is used for the occupation \"Bandleader\".\n- `wdt:P106` is the property for occupation.\n- `wd:Q119621` is used for the instrument \"Trumpet\".\n- `wdt:P1303` is the property for the instrument.\n\nThis query will retrieve all distinct entities (`?uri`) from Wikidata that are both bandleaders and trumpet players."
     },
     {
         "context": {
@@ -460,9 +460,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the given information and the entity and relation mapping, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q40523 ;\n        wdt:P57 wd:Q315087 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q11424` represents the entity being a film.\n- `wdt:P161 wd:Q40523` represents the film starring Julia Roberts.\n- `wdt:P57 wd:Q315087` represents the film being directed by Garry Marshall."
+        "sparql_query_kg2": " Certainly! Here is the SPARQL query for the Wikidata knowledge graph (KG2) based on the provided mappings:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q40523 ;\n        wdt:P57 wd:Q315087 .\n}\n```\n\nThis query retrieves the films directed by Garry Marshall in which Julia Roberts starred, using the mappings provided in the context."
     },
     {
         "context": {
@@ -484,9 +484,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided information, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\n<sparql>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q241665 wdt:P569 ?uri\n}\n</sparql>\n```\n\nThis query will retrieve the birth year of Rachel Stevens from Wikidata."
+        "sparql_query_kg2": " Sure, here is the SPARQL query for KG2 (Wikidata) based on the provided information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q241665 wdt:P569 ?uri\n}\n```\n\nThis query retrieves the birth year of Rachel Stevens from Wikidata."
     },
     {
         "context": {
@@ -502,9 +502,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the given context and mapping, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?x WHERE {\n  ?uri wdt:P509 ?x .\n} ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1\n```\n\n</sparql>\n\nThis query will find the most frequent cause of death in Wikidata by counting the distinct occurrences of the cause of death (`wdt:P509`) and ordering them in descending order, then limiting the result to the top one."
+        "sparql_query_kg2": " Certainly! Based on the given information, you can create a SPARQL query for Wikidata (KG2) to find the most frequent cause of death. Here's the query:\n\n```sparql\nSELECT DISTINCT ?x WHERE {\n  ?uri wdt:P509 ?x .\n}\nORDER BY DESC(COUNT(DISTINCT ?uri))\nOFFSET 0 LIMIT 1\n```\n\nThis query selects the most frequent cause of death by counting the distinct URIs that have the property `wdt:P509` (cause of death) and then orders them in descending order, limiting the result to the top one."
     },
     {
         "context": {
@@ -526,9 +526,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?num WHERE {\n  wd:Q1207989 wdt:P2048 ?num .\n}\n```"
+        "sparql_query_kg2": " Certainly! Given the information provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?num WHERE {\n  wd:Q1207989 wdt:P2048 ?num\n}\n```"
     },
     {
         "context": {
@@ -562,9 +562,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided mappings and the query for DBpedia, here is the corresponding SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q8502 ;\n        wdt:P131 wd:Q38 ;\n        wdt:P2044 ?num .\n}\nORDER BY DESC(?num)\nLIMIT 1\n```\n\nThis query will retrieve the highest mountain in Italy using the Wikidata knowledge graph."
+        "sparql_query_kg2": " Based on the provided information, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?item WHERE {\n  ?item wdt:P31 wd:Q8502 ;\n        wdt:P131 wd:Q38 ;\n        wdt:P2044 ?elevation .\n}\nORDER BY DESC(?elevation)\nLIMIT 1\n```\n\nExplanation:\n- `wdt:P31 wd:Q8502` is equivalent to `rdf:type dbo:Mountain`.\n- `wdt:P131 wd:Q38` is equivalent to `dbo:locatedInArea res:Italy`.\n- `wdt:P2044 ?elevation` is equivalent to `dbo:elevation ?num`.\n- The query orders the results by elevation in descending order and limits the output to the highest mountain."
     },
     {
         "context": {
@@ -586,9 +586,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, here is the SPARQL query for KG2 (Wikidata) based on the provided information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q937 wdt:P184 ?uri\n}\n```\n\nThis query uses the Wikidata prefixes and the mapped entities and relations to find the doctoral supervisor of Albert Einstein."
+        "sparql_query_kg2": " Based on the provided context, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q937 wdt:P184 ?uri\n}\n```\n\nThis query will retrieve the doctoral supervisor of Albert Einstein from Wikidata."
     },
     {
         "context": {
@@ -610,9 +610,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Knowledge Graph 2 (Wikidata) based on the provided context and entity-relation mapping, we need to map the DBpedia entities and relations to their corresponding Wikidata entities and relations.\n\nThe given query for DBpedia:\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT ?owner WHERE { ?owner dbo:owner dbr:Donald_Trump }\n```\n\nThe entity and relation mapping provided:\n```json\n[\n {\n \"dbpedia_id\": \"http://dbpedia.org/ontology/owner\",\n \"wikidata_ids\": [\n \"http://www.wikidata.org/entity/P127\"\n ]\n },\n {\n \"dbpedia_id\": \"http://dbpedia.org/resource/Donald_Trump\",\n \"wikidata_ids\": [\n \"http://www.wikidata.org/entity/Q22686\"\n ]\n }\n]\n```\n\nUsing the mapping, we can construct the corresponding SPARQL query for Wikidata as follows:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?owner WHERE {\n  wd:Q22686 wdt:P127 ?owner .\n}\n```\n\nIn this query:\n- `PREFIX wd: <http://www.wikidata.org/entity/>` and `PREFIX wdt: <http://www.wikidata.org/prop/direct/>` are used to define the prefixes for Wikidata entities and properties.\n- `wd:Q22686` corresponds to Donald Trump in Wikidata.\n- `wdt:P127` corresponds to the \"owner\" property in Wikidata.\n- `?owner` is the variable that will hold the result of the query.\n\nSo, the final, complete SPARQL query for KG2 (Wikidata) is:\n\n<sparql>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?owner WHERE {\n  wd:Q22686 wdt:P127 ?owner .\n}\n</sparql>"
+        "sparql_query_kg2": " To produce a SPARQL query for Knowledge Graph 2 (Wikidata) based on the given information, we need to map the entities and relations from DBpedia to Wikidata. The relevant mappings are provided in the Entity and Relation Mapping (ER2).\n\nHere is the SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?business WHERE {\n  wd:Q22686 wdt:P127 ?business.\n}\n```\n\nThis query retrieves the businesses owned by Donald Trump from Wikidata by using the mapped Wikidata property and entity."
     },
     {
         "context": {
@@ -634,9 +634,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided information, here is the SPARQL query for Wikidata (KG2) to find out who Tom Cruise has been married to:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri <http://www.wikidata.org/entity/P26> <http://www.wikidata.org/entity/Q37079> .\n}\n```"
+        "sparql_query_kg2": " To generate the SPARQL query for KG2 (Wikidata) based on the given mappings and the original query for KG1 (DBpedia), we need to translate the DBpedia URIs to their corresponding Wikidata URIs.\n\nThe original DBpedia query is:\n```sparql\nSELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Tom_Cruise> }\n```\n\nUsing the provided entity and relation mappings, we can translate this to Wikidata as follows:\n\n- `<http://dbpedia.org/ontology/spouse>` maps to `http://www.wikidata.org/entity/P26`\n- `<http://dbpedia.org/resource/Tom_Cruise>` maps to `http://www.wikidata.org/entity/Q37079`\n\nThus, the corresponding SPARQL query for Wikidata is:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri <http://www.wikidata.org/entity/P26> <http://www.wikidata.org/entity/Q37079>\n}\n```\n\nSo, the final, complete SPARQL query for KG2 is:\n\n```sparql\n<sparql>\nSELECT DISTINCT ?uri WHERE {\n  ?uri <http://www.wikidata.org/entity/P26> <http://www.wikidata.org/entity/Q37079>\n}\n</sparql>\n```"
     },
     {
         "context": {
@@ -658,9 +658,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Knowledge Graph 2 (Wikidata) based on the given context, we need to map the entities and relations from DBpedia to Wikidata using the provided mappings.\n\nHere is the SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?population WHERE {\n  wd:Q5401 wdt:P1082 ?population\n}\n```\n\nExplanation:\n- `PREFIX wd: <http://www.wikidata.org/entity/>` and `PREFIX wdt: <http://www.wikidata.org/prop/direct/>` are used to define prefixes for Wikidata entities and properties.\n- `wd:Q5401` corresponds to the Wikidata ID for Eurasia.\n- `wdt:P1082` corresponds to the Wikidata property for population.\n- The query selects the distinct population value for Eurasia."
+        "sparql_query_kg2": " Sure, based on the given context and mappings, the equivalent SPARQL query for Wikidata (KG2) would be:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?population WHERE {\n  wd:Q5401 wdt:P1082 ?population\n}\n```\n\nThis query will retrieve the population of Eurasia from Wikidata."
     },
     {
         "context": {
@@ -682,9 +682,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the information provided, here is the corresponding SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?Author WHERE {\n  wd:Q726382 wdt:P50 ?Author .\n}\n```\n\nThis query will retrieve the author of \"The Interpretation of Dreams\" from Wikidata."
+        "sparql_query_kg2": " To create a SPARQL query for Wikidata (KG2) based on the given information, we need to use the mapped entities and relations. Here's the final SPARQL query:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?Author WHERE {\n  wd:Q726382 wdt:P50 ?Author .\n}\n```\n\nThis query will retrieve the author of \"The Interpretation of Dreams\" from Wikidata."
     },
     {
         "context": {
@@ -706,9 +706,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To generate a SPARQL query for Wikidata (KG2) based on the given information, we need to map the entities and relations from DBpedia to Wikidata using the provided mappings. Here is the final, complete SPARQL query for Wikidata:\n\n```sparql\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nSELECT DISTINCT ?date WHERE {\n  wd:Q11806 p:P569 ?date.\n}\n```\n\nThis query uses the Wikidata entity and property mappings to retrieve the birthdate of John Adams."
+        "sparql_query_kg2": " Sure, based on the given context and mappings, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?date WHERE {\n  wd:Q11806 wdt:P569 ?date\n}\n```"
     },
     {
         "context": {
@@ -730,9 +730,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Based on the provided information, we can translate the SPARQL query from DBpedia to Wikidata. Here is the SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?europop WHERE {\n  wd:Q458 wdt:P1082 ?europop\n}\n```"
+        "sparql_query_kg2": " Sure, here is the SPARQL query for Wikidata (KG2) based on the provided information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?europop WHERE {\n  wd:Q458 wdt:P1082 ?europop .\n}\n```\n\nThis query retrieves the total population of the European Union from Wikidata."
     },
     {
         "context": {
@@ -761,9 +761,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided information, here's the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?currency WHERE {\n  wd:Q148 wdt:P38 ?currency.\n}\n```\n\nExplanation:\n- `wd:Q148` is the Wikidata ID for China, mapped from the DBpedia ID `res:China`.\n- `wdt:P38` is the Wikidata property for currency, mapped from the DBpedia property `dbo:currency`.\n- `?currency` is the variable that will hold the currency of China."
+        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the given information, we need to map the entities and relations from DBpedia to Wikidata. The entity \"China\" in DBpedia corresponds to several Wikidata entities, but we need to identify the correct one. Similarly, the relation \"currency\" in DBpedia corresponds to the property `P38` in Wikidata.\n\nHere is the final SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?currency WHERE {\n  wd:Q148 wdt:P38 ?currency.\n}\n```\n\nIn this query:\n- `wd:Q148` represents China in Wikidata.\n- `wdt:P38` represents the currency property in Wikidata.\n- `?currency` is the variable that will hold the currency of China."
     },
     {
         "context": {
@@ -785,9 +785,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To create a SPARQL query for Wikidata (KG2) based on the given information, we need to use the mapped entities and relations from DBpedia to Wikidata. Here\u2019s the complete SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?x WHERE {\n  wd:Q692 wdt:P570 ?x\n}\nLIMIT 1\n```"
+        "sparql_query_kg2": " Sure, based on the provided information, here is the equivalent SPARQL query for the Wikidata knowledge graph (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?x WHERE {\n  wd:Q692 wdt:P570 ?x\n}\nLIMIT 1\n```"
     },
     {
         "context": {
@@ -815,9 +815,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided information, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q41291 ;\n        wdt:P448 wd:Q177477 .\n}\n```\n\nThis query retrieves distinct rockets (`?uri`) that were launched from the Baikonur Cosmodrome, using the mapped entities and relations from DBpedia to Wikidata."
+        "sparql_query_kg2": " Sure, based on the provided information, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q41291 ;\n        wdt:P448 wd:Q177477 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q41291` is used to identify rockets (instance of rocket).\n- `wdt:P448 wd:Q177477` specifies the rockets launched from Baikonur Cosmodrome."
     },
     {
         "context": {
@@ -845,9 +845,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Based on the given context, we need to translate the DBpedia SPARQL query to a Wikidata SPARQL query. Using the provided entity and relation mappings, we can construct the corresponding query for Wikidata.\n\nHere is the translated SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q23442 ;\n        wdt:P17 wd:Q17 .\n}\n```\n\nExplanation:\n- `wdt:P31` is used to indicate the instance of (in this case, an island).\n- `wd:Q23442` is the Wikidata ID for \"island\".\n- `wdt:P17` is the property for \"country\".\n- `wd:Q17` is the Wikidata ID for Japan.\n\nThis query will retrieve all islands that belong to Japan from the Wikidata knowledge graph."
+        "sparql_query_kg2": " Sure, based on the provided information, here is the SPARQL query for Wikidata (KG2) to retrieve all islands that belong to Japan:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q23442 ;\n        wdt:P17 wd:Q17 .\n}\n```\n\nIn this query:\n- `wdt:P31` is used to indicate that the entity is an instance of a class (in this case, an island).\n- `wd:Q23442` represents the class for islands.\n- `wdt:P17` is used to indicate the country property.\n- `wd:Q17` represents Japan."
     },
     {
         "context": {
@@ -869,9 +869,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided information, the equivalent SPARQL query for Wikidata (KG2) would be as follows:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q131007 wdt:P178 ?uri\n}\n```\n\nThis query retrieves the developers of World of Warcraft from Wikidata, using the equivalents specified in the entity and relation mapping."
+        "sparql_query_kg2": " Based on the provided context, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q131007 wdt:P178 ?uri\n}\n```"
     },
     {
         "context": {
@@ -901,9 +901,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the given context and the mappings provided, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE {\n  ?uri wdt:P31 wd:Q4830453 .\n  {\n    ?uri wdt:P452 wd:Q854995 .\n  } UNION {\n    ?uri wdt:P452 wd:Q37038 .\n  } UNION {\n    ?uri wdt:P452 wd:Q1286627 .\n  } UNION {\n    ?uri wdt:P452 ?industry .\n    FILTER regex(?industry, \"advertising\", \"i\") .\n  }\n}\n```\n\nThis query counts the distinct entities (companies) in the advertising industry based on the mappings provided."
+        "sparql_query_kg2": " To create a SPARQL query for Wikidata (KG2) that retrieves all companies in the advertising industry, we need to map the entities and relations from DBpedia to Wikidata using the provided mappings. Here is the complete SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q4830453.\n  { ?uri wdt:P452 wd:Q854995. }\n  UNION\n  { ?uri wdt:P452 wd:Q37038. }\n  UNION\n  { ?uri wdt:P452 wd:Q1286627. }\n  UNION\n  { ?uri wdt:P452 ?industry.\n    FILTER regex(?industry, \"advertising\", \"i\").\n  }\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q4830453` ensures the entity is a company.\n- `wdt:P452` is the property for the industry.\n- The `UNION` clauses check for specific advertising industry entities (`wd:Q854995`, `wd:Q37038`, `wd:Q1286627`).\n- The `FILTER regex(?industry, \"advertising\", \"i\")` clause checks if the industry contains the term \"advertising\" in a case-insensitive manner."
     },
     {
         "context": {
@@ -925,9 +925,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the provided information, we need to map the entities and relations from DBpedia to Wikidata using the given mappings.\n\nThe natural language question is: \"Which university did Angela Merkel attend?\"\n\nGiven the mappings:\n- Angela Merkel in DBpedia: `http://dbpedia.org/resource/Angela_Merkel`\n- Angela Merkel in Wikidata: `http://www.wikidata.org/entity/Q567`\n- almaMater in DBpedia: `http://dbpedia.org/ontology/almaMater`\n- almaMater in Wikidata: `http://www.wikidata.org/entity/P69`\n\nHere is the SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?university WHERE {\n  wd:Q567 wdt:P69 ?university .\n}\n```\n\n<sparql>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?university WHERE {\n  wd:Q567 wdt:P69 ?university .\n}\n</sparql>"
+        "sparql_query_kg2": " To produce a SPARQL query for Knowledge Graph 2 (Wikidata) based on the given information, we need to map the entities and relationships from DBpedia to Wikidata using the provided Entity and Relation Mapping (ER2).\n\nHere is the final, complete SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?university WHERE {\n  wd:Q567 wdt:P69 ?university.\n}\n```\n\nThis query will retrieve the universities that Angela Merkel attended from Wikidata."
     },
     {
         "context": {
@@ -955,9 +955,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the information provided, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q15416 ;\n        wdt:P161 wd:Q485310 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q15416` is used to indicate that the entity is a television show (based on the mapping of `http://dbpedia.org/ontology/TelevisionShow` to `http://www.wikidata.org/entity/Q15416`).\n- `wdt:P161 wd:Q485310` is used to indicate that the television show stars Neil Patrick Harris (based on the mapping of `http://dbpedia.org/ontology/starring` to `http://www.wikidata.org/entity/P161` and `http://dbpedia.org/resource/Neil_Patrick_Harris` to `http://www.wikidata.org/entity/Q485310`)."
+        "sparql_query_kg2": " To create a SPARQL query for Wikidata (KG2) using the provided mappings, you can translate the given DBpedia query into a Wikidata-compatible query. Here is the final, complete SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q15416 ;\n        wdt:P161 wd:Q485310 .\n}\n```\n\nExplanation:\n- `wd:Q15416` corresponds to the Television Show entity in Wikidata.\n- `wdt:P161` corresponds to the \"cast member\" property in Wikidata.\n- `wd:Q485310` corresponds to Neil Patrick Harris's entity in Wikidata.\n\nThis query will retrieve all the TV shows that have Neil Patrick Harris as a cast member."
     },
     {
         "context": {
@@ -985,40 +985,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Wikidata (KG2) based on the given context, we need to map the entities and relations from DBpedia to Wikidata using the provided entity and relation mapping.\n\nGiven the mapping:\n- DBpedia `Film` maps to Wikidata `Q11424` (Film).\n- DBpedia `starring` maps to Wikidata `P161` (cast member).\n- DBpedia `Tom_Cruise` maps to Wikidata `Q37079` (Tom Cruise).\n\nHere is the SPARQL query for Wikidata:\n\n<sparql>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q37079 .\n}\n</sparql>\n\nExplanation:\n- `wdt:P31 wd:Q11424` ensures that the entity is a film.\n- `wdt:P161 wd:Q37079` ensures that Tom Cruise is a cast member of the film."
-    },
-    {
-        "context": {
-            "natural_language_question": "What country is Mount Everest in?",
-            "sparql_query_kg1": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Mount_Everest dbo:locatedInArea ?uri . ?uri rdf:type dbo:Country }",
-            "kg1_name": "DBpedia",
-            "kg2_name": "Wikidata",
-            "er2": [
-                {
-                    "dbpedia_id": "http://dbpedia.org/resource/Mount_Everest",
-                    "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q513",
-                        "http://www.wikidata.org/entity/Q19977041"
-                    ]
-                },
-                {
-                    "dbpedia_id": "http://dbpedia.org/ontology/locatedInArea",
-                    "wikidata_ids": [
-                        "http://www.wikidata.org/entity/P131"
-                    ]
-                },
-                {
-                    "dbpedia_id": "http://dbpedia.org/ontology/Country",
-                    "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q6256"
-                    ]
-                }
-            ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
-        },
-        "sparql_query_kg2": " To create a SPARQL query for the Wikidata knowledge graph (KG2) based on the given information, we need to map the entities and relations from DBpedia to Wikidata using the provided Entity and Relation Mapping (ER2).\n\nGiven the mappings:\n- Mount Everest in DBpedia (`http://dbpedia.org/resource/Mount_Everest`) maps to Wikidata entities `http://www.wikidata.org/entity/Q513` and `http://www.wikidata.org/entity/Q19977041`.\n- The `locatedInArea` relation in DBpedia (`http://dbpedia.org/ontology/locatedInArea`) maps to Wikidata relation `http://www.wikidata.org/entity/P131`.\n- The `Country` type in DBpedia (`http://dbpedia.org/ontology/Country`) maps to Wikidata entity `http://www.wikidata.org/entity/Q6256`.\n\nUsing these mappings, the equivalent SPARQL query for Wikidata would be:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  {\n    wd:Q513 wdt:P131 ?uri .\n    ?uri wdt:P31 wd:Q6256 .\n  } UNION {\n    wd:Q19977041 wdt:P131 ?uri .\n    ?uri wdt:P31 wd:Q6256 .\n  }\n}\n```\n\nThis query searches for the country in which Mount Everest is located, considering both possible Wikidata entities for Mount Everest (`wd:Q513` and `wd:Q19977041`), and ensures that the resulting area is of type `Country` (`wd:Q6256`)."
+        "sparql_query_kg2": " Based on the information provided, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q37079 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q11424` is used to filter instances of films (Q11424 represents the class for films).\n- `wdt:P161 wd:Q37079` is used to filter films starring Tom Cruise (Q37079 represents Tom Cruise)."
     },
     {
         "context": {
@@ -1040,9 +1009,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided information, here's the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  <http://www.wikidata.org/entity/Q9696> <http://www.wikidata.org/entity/P20> ?uri.\n}\n```"
+        "sparql_query_kg2": " Sure, based on the provided context and mappings, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  wd:Q9696 wdt:P20 ?uri .\n}\n```"
     },
     {
         "context": {
@@ -1064,9 +1033,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the provided information, we need to translate the given DBpedia query using the entity and relation mappings provided.\n\nHere's the translation:\n\n1. **Entity Mapping**:\n   - DBpedia: `res:Brooklyn_Bridge`\n   - Wikidata: `wd:Q125006`\n\n2. **Relation Mapping**:\n   - DBpedia: `dbo:crosses`\n   - Wikidata: `wdt:P177`\n\nUsing these mappings, the SPARQL query for Wikidata would be:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  wd:Q125006 wdt:P177 ?uri .\n}\n```\n\nThis query retrieves the river that the Brooklyn Bridge crosses from Wikidata."
+        "sparql_query_kg2": " Sure, given the context and the mappings provided, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q125006 wdt:P177 ?uri\n}\n```\n\nThis query retrieves the river that the Brooklyn Bridge crosses using the mappings provided between DBpedia and Wikidata."
     },
     {
         "context": {
@@ -1094,9 +1063,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Knowledge Graph 2 (Wikidata) based on the given context, we need to map the entities and relations from DBpedia to Wikidata using the provided mappings.\n\nHere is the final SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q10843402 ;\n        wdt:P19 wd:Q649 .\n}\n```\n\nExplanation:\n1. `wdt:P31` is used to specify the type of the entity (in this case, a swimmer).\n2. `wd:Q10843402` is the Wikidata ID for a swimmer.\n3. `wdt:P19` is used to specify the birth place property.\n4. `wd:Q649` is the Wikidata ID for Moscow.\n\nThis query will retrieve all swimmers who were born in Moscow from Wikidata."
+        "sparql_query_kg2": " Certainly! Based on the provided context and mappings, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\n<sparql>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q10843402 ;\n        wdt:P19 wd:Q649 .\n}\n</sparql>\n```\n\nThis query retrieves all swimmers (`wd:Q10843402`) who were born in Moscow (`wd:Q649`)."
     },
     {
         "context": {
@@ -1130,9 +1099,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, given the context and the entity and relation mappings, here is the corresponding SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q103894 ;\n        wdt:P577 ?date .\n} ORDER BY DESC(?date) LIMIT 1\n```\n\nThis query retrieves the most recent film starring Alec Guinness from Wikidata."
+        "sparql_query_kg2": " Sure, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?film WHERE {\n  ?film wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q103894 ;\n        wdt:P577 ?date .\n}\nORDER BY DESC(?date) LIMIT 1\n```"
     },
     {
         "context": {
@@ -1154,9 +1123,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the provided information, we need to map the entities and relations from DBpedia to Wikidata. Here is the translated SPARQL query:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q8502 ;\n        wdt:P2044 ?elevation .\n} ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1\n```\n\nExplanation:\n- `wdt:P31 wd:Q8502` maps to \"instance of\" (P31) \"mountain\" (Q8502).\n- `wdt:P2044 ?elevation` maps to the elevation property (P2044).\n- `ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1` sorts the results by elevation in descending order and selects the second highest."
+        "sparql_query_kg2": " Certainly! Given the context and the entity and relation mapping, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q8502 ;\n       wdt:P2044 ?elevation .\n} ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1\n```\n\nThis query selects the second highest mountain from Wikidata based on the provided mappings."
     },
     {
         "context": {
@@ -1179,9 +1148,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Given the information provided, the equivalent SPARQL query for Wikidata (KG2) to retrieve the population of Cairo would be as follows:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?pop WHERE {\n  VALUES ?cairo { wd:Q85 wd:Q20230483 }\n  ?cairo wdt:P1082 ?pop .\n}\n```\n\nThis query uses the mapped entity and relation from DBpedia to Wikidata. The `VALUES` clause is used to include both possible Wikidata IDs for Cairo."
+        "sparql_query_kg2": " Sure, based on the information provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?pop WHERE {\n  wd:Q85 wdt:P1082 ?pop.\n}\n```\n\nThis query retrieves the population of Cairo from Wikidata."
     },
     {
         "context": {
@@ -1210,9 +1179,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, here is the SPARQL query for KG2 (Wikidata) based on the provided information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q5 ;\n        wdt:P19 wd:Q160544.\n}\n```\n\nExplanation:\n- `wd:Q5` is used for the class of person.\n- `wdt:P19` is used for the birthplace property.\n- `wd:Q160544` is used for the entity Heraklion."
+        "sparql_query_kg2": " Given the context and the entity and relation mapping, here is the equivalent SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q5 ;\n        wdt:P19 wd:Q160544 .\n}\n```"
     },
     {
         "context": {
@@ -1234,9 +1203,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, here is the SPARQL query for KG2 (Wikidata) based on the given information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT (COUNT(DISTINCT ?child) AS ?c) WHERE {\n  wd:Q34969 wdt:P40 ?child.\n}\n```\n\nThis query will count the number of distinct children of Benjamin Franklin in Wikidata."
+        "sparql_query_kg2": " Sure, based on the information provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE {\n  wd:Q34969 wdt:P40 ?uri .\n}\n```\n\nSo, the final, complete SPARQL query is:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE {\n  wd:Q34969 wdt:P40 ?uri .\n}\n```\n\n```sparql\n</sparql>\n```"
     },
     {
         "context": {
@@ -1258,9 +1227,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the given information, we need to translate the DBpedia query into a Wikidata query. Using the entity and relation mapping provided, we can map the DBpedia resources to their corresponding Wikidata entities.\n\nHere is the final, complete SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?ele WHERE {\n  wd:Q58226 wdt:P2044 ?ele\n}\nLIMIT 1\n```"
+        "sparql_query_kg2": " Sure, based on the provided context and the entity and relation mapping, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?ele WHERE {\n  wd:Q58226 wdt:P2044 ?ele\n}\nLIMIT 1\n```"
     },
     {
         "context": {
@@ -1282,9 +1251,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the information provided, here is the SPARQL query for Wikidata (KG2):\n\n<sparql>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  wd:Q5806 wdt:P17 ?uri.\n}\n</sparql>\n\nThis query will fetch the country where Mecca is located using the Wikidata knowledge graph."
+        "sparql_query_kg2": " Sure, based on the context provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q5806 wdt:P17 ?uri.\n}\n```\n\nThis query retrieves the country (`?uri`) where Mecca (`wd:Q5806`) is located using the property `wdt:P17` which corresponds to the country relationship in Wikidata."
     },
     {
         "context": {
@@ -1306,9 +1275,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure! Based on the provided information, here is the corresponding SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?height WHERE {\n  wd:Q76717 wdt:P2048 ?height .\n}\n```\n\nThis query retrieves the height (P2048) of Claudia Schiffer (Q76717) from Wikidata."
+        "sparql_query_kg2": " To produce a SPARQL query for Knowledge Graph 2 (Wikidata) based on the given information, we need to map the entities and relations from DBpedia to Wikidata using the provided mappings.\n\nGiven the mappings:\n- The DBpedia resource for Claudia Schiffer (`http://dbpedia.org/resource/Claudia_Schiffer`) maps to the Wikidata entity `http://www.wikidata.org/entity/Q76717`.\n- The DBpedia property for height (`http://dbpedia.org/ontology/height`) maps to the Wikidata property `http://www.wikidata.org/entity/P2048`.\n\nHere is the SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?height WHERE {\n  wd:Q76717 wdt:P2048 ?height\n}\n```\n\nThis query retrieves the height of Claudia Schiffer from Wikidata."
     },
     {
         "context": {
@@ -1324,9 +1293,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Given the context and the entity and relation mapping, the SPARQL query for Knowledge Graph 2 (Wikidata) can be constructed as follows:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q1445650 .\n}\n```\n\nThis query retrieves distinct entities (holidays) that are instances of the class represented by `wd:Q1445650` in Wikidata."
+        "sparql_query_kg2": " Based on the provided context and the entity and relation mapping, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q1445650 .\n}\n```\n\nExplanation:\n- `wd:Q1445650` corresponds to the class for holidays in Wikidata.\n- `wdt:P31` is the property for \"instance of\" in Wikidata.\n- The query selects distinct URIs that are instances of holidays."
     },
     {
         "context": {
@@ -1348,9 +1317,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Given the context and the mappings provided, here is the SPARQL query for Wikidata (KG2) to find the genres of music that Lou Reed played:\n\n```sparql\nSELECT DISTINCT ?genre WHERE {\n  wd:Q189080 wdt:P136 ?genre.\n}\n```\n\nThis query will retrieve the distinct genres associated with Lou Reed from Wikidata."
+        "sparql_query_kg2": " Sure, based on the provided context and mappings, here's the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?genre WHERE {\n  wd:Q189080 wdt:P136 ?genre.\n}\n```\n\nThis query will retrieve the distinct genres associated with Lou Reed from Wikidata."
     },
     {
         "context": {
@@ -1372,9 +1341,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, using the information provided, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?place WHERE {\n  wd:Q40912 wdt:P19 ?place .\n}\n```\n\nThis query retrieves the birth place of Frank Sinatra from Wikidata, using the mapped entity and relation from DBpedia."
+        "sparql_query_kg2": " Sure! Given the context and the mappings provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?place WHERE {\n  wd:Q40912 wdt:P19 ?place .\n}\n```\n\nThis query uses the Wikidata prefixes and the mapped entities to find the birth place of Frank Sinatra."
     },
     {
         "context": {
@@ -1396,9 +1365,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided context and entity-relation mapping, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q515 ;\n        wdt:P1082 ?pop .\n} ORDER BY ASC(?pop) LIMIT 1\n```\n\nExplanation:\n- `PREFIX wd: <http://www.wikidata.org/entity/>` and `PREFIX wdt: <http://www.wikidata.org/prop/direct/>` are the prefixes for Wikidata.\n- `?uri wdt:P31 wd:Q515` ensures that the entity is a city.\n- `wdt:P1082 ?pop` retrieves the population of the city.\n- `ORDER BY ASC(?pop) LIMIT 1` orders the results by population in ascending order and limits the result to the city with the least inhabitants."
+        "sparql_query_kg2": " Sure, based on the provided context, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q515 ;\n        wdt:P1082 ?pop .\n}\nORDER BY ASC(?pop)\nLIMIT 1\n```\n\nThis query retrieves the city with the least inhabitants from Wikidata, using the provided mappings for city (Q515) and population (P1082)."
     },
     {
         "context": {
@@ -1426,9 +1395,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Given the context and the entity and relation mappings provided, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q15416 ;\n        wdt:P170 wd:Q8704 .\n}\n```\n\nThis query selects distinct URIs of television shows (`wd:Q15416`) that were created by Walt Disney (`wd:Q8704`)."
+        "sparql_query_kg2": " ```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q15416 ;\n        wdt:P170 wd:Q8704 .\n}\n</sparql>\n```"
     },
     {
         "context": {
@@ -1457,9 +1426,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To translate the given SPARQL query for DBpedia to a query suitable for Wikidata, we need to utilize the provided entity and relation mappings. Here's the translated SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q1445650 ;\n        wdt:P17 wd:Q34 .\n}\n```\n\nExplanation:\n- `wdt:P31` corresponds to the \"instance of\" property, which is mapped to `http://dbpedia.org/ontology/Holiday` from DBpedia.\n- `wd:Q1445650` is the Wikidata ID for \"Holiday.\"\n- `wdt:P17` corresponds to the \"country\" property, which is mapped to `http://dbpedia.org/ontology/country`.\n- `wd:Q34` is the Wikidata ID for \"Sweden.\"\n\nSo, the final, complete SPARQL query for Wikidata is:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q1445650 ;\n        wdt:P17 wd:Q34 .\n}\n```"
+        "sparql_query_kg2": " Certainly! To translate the provided SPARQL query for DBpedia into a query for Wikidata, we need to use the mappings provided in the Entity and Relation Mapping (ER2).\n\nHere's how the query would look for Wikidata:\n\n```sparql\n<sparql>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q1445650 ;\n        wdt:P17 wd:Q34 .\n}\n</sparql>\n```\n\nExplanation:\n- `wdt:P31` is used to indicate that the entity is an instance of a particular class (similar to `a` in DBpedia).\n- `wd:Q1445650` corresponds to the concept of a holiday.\n- `wdt:P17` corresponds to the country property.\n- `wd:Q34` corresponds to Sweden.\n\nThis query will retrieve all entities in Wikidata that are holidays (`wd:Q1445650`) and are associated with Sweden (`wd:Q34`)."
     },
     {
         "context": {
@@ -1481,9 +1450,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided context and the entity and relation mapping, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?ni WHERE {\n  wd:Q312 wdt:P2295 ?ni.\n}\n```\n\nThis query retrieves the net income (P2295) of Apple Inc. (Q312) from Wikidata."
+        "sparql_query_kg2": " Based on the information provided, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?ni WHERE {\n  wd:Q312 wdt:P2295 ?ni\n}\n```\n\nThis query retrieves the net income (P2295) of Apple Inc. (Q312) from Wikidata."
     },
     {
         "context": {
@@ -1505,9 +1474,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided information, here is the corresponding SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q91 wdt:P20 ?uri.\n}\n```\n\nThis query retrieves the place of death for Abraham Lincoln from Wikidata, using the provided entity and relation mappings."
+        "sparql_query_kg2": " Sure, here is the SPARQL query for Wikidata (KG2) to find where Abraham Lincoln died:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q91 wdt:P20 ?uri.\n}\n```\n\nThe query uses the Wikidata IDs mapped from DBpedia to find the death place of Abraham Lincoln."
     },
     {
         "context": {
@@ -1537,9 +1506,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided context and mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?capital WHERE {\n  VALUES ?himalayas {\n    wd:Q105981852\n    wd:Q26235529\n    wd:Q5451\n  }\n  ?himalayas wdt:P17 ?country.\n  ?country wdt:P36 ?capital.\n}\n```\n\nThis query will retrieve the capitals of all countries that the Himalayas run through, using the Wikidata knowledge graph."
+        "sparql_query_kg2": " To produce a SPARQL query for Wikidata (KG2) based on the given context and entity mappings, we need to map the DBpedia properties to their corresponding Wikidata properties. Here's the equivalent SPARQL query for Wikidata:\n\n```sparql\n<sparql>\nSELECT DISTINCT ?capital WHERE {\n  VALUES ?himalayas {\n    wd:Q105981852\n    wd:Q26235529\n    wd:Q5451\n  }\n  ?himalayas wdt:P17 ?country .\n  ?country wdt:P36 ?capital .\n}\n</sparql>\n```\n\nExplanation:\n- `VALUES ?himalayas { wd:Q105981852 wd:Q26235529 wd:Q5451 }`: This specifies the possible Wikidata entities for the Himalayas.\n- `?himalayas wdt:P17 ?country`: This maps the Himalayas to the countries it runs through using the Wikidata property `P17` (country).\n- `?country wdt:P36 ?capital`: This retrieves the capitals of the countries using the Wikidata property `P36` (capital)."
     },
     {
         "context": {
@@ -1561,9 +1530,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Based on the provided context and the entity and relation mappings, you can construct a SPARQL query for Wikidata to find the country in which Limerick Lake is located. Here is the final, complete SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  wd:Q6386177 wdt:P17 ?uri\n}\n```"
+        "sparql_query_kg2": " Based on the provided information, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q6386177 wdt:P17 ?uri.\n}\n```"
     },
     {
         "context": {
@@ -1585,9 +1554,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To create a SPARQL query for Wikidata (KG2) to find out how tall Michael Jordan is, you can use the mapping provided in the Entity and Relation Mapping (ER2). Here is the complete SPARQL query:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?num WHERE {\n  wd:Q41421 wdt:P2048 ?num .\n}\n```\n\nThis query retrieves the height of Michael Jordan from Wikidata using the property `P2048` for height and the entity `Q41421` for Michael Jordan."
+        "sparql_query_kg2": " Sure, based on the provided information, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?num WHERE {\n  wd:Q41421 wdt:P2048 ?num\n}\n```\n\nThis query uses the Wikidata entity ID for Michael Jordan (Q41421) and the property ID for height (P2048) to retrieve the height information."
     },
     {
         "context": {
@@ -1615,9 +1584,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the given mappings and the original SPARQL query for KG1 (DBpedia), you need to replace the DBpedia-specific URIs with their corresponding Wikidata URIs using the provided mappings.\n\nHere's the SPARQL query for KG2:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P57 wd:Q43203 ;\n       wdt:P161 wd:Q43203 .\n}\n```\n\nIn this query:\n- `wdt:P57` is used for the `director` property.\n- `wd:Q43203` is used for the Clint Eastwood entity.\n- `wdt:P161` is used for the `starring` property.\n\nThis query will retrieve films directed by and starring Clint Eastwood from Wikidata."
+        "sparql_query_kg2": " Sure, based on the context provided, here is the corresponding SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P57 wd:Q43203 ;\n        wdt:P161 wd:Q43203 .\n}\n```\n\nIn this query:\n- `wdt:P57` corresponds to the director property.\n- `wd:Q43203` corresponds to the entity Clint Eastwood.\n- `wdt:P161` corresponds to the starring property.\n\nThis query will retrieve the films directed by and starring Clint Eastwood from Wikidata."
     },
     {
         "context": {
@@ -1639,9 +1608,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure! Based on the information provided, we need to map the entities and relations from DBpedia to Wikidata and then construct a SPARQL query for Wikidata.\n\nHere is the SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P38 wd:Q861690 .\n}\n```\n\nThis query retrieves the countries (`?uri`) that use the West African CFA franc (`wd:Q861690`) as their currency (`wdt:P38`)."
+        "sparql_query_kg2": " Sure, based on the provided context and mapping, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?country WHERE {\n  ?country wdt:P38 wd:Q861690.\n}\n```\n\nThis query retrieves the countries where the West African CFA franc is used as currency according to Wikidata."
     },
     {
         "context": {
@@ -1664,9 +1633,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Wikidata (KG2) based on the provided information, you need to map the entities and relations from DBpedia to Wikidata using the given Entity and Relation Mapping (ER2).\n\nHere's the corresponding SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?pIraq WHERE {\n  wd:Q796 wdt:P1082 ?pIraq\n}\n```\n\nExplanation:\n- `PREFIX wd: <http://www.wikidata.org/entity/>` and `PREFIX wdt: <http://www.wikidata.org/prop/direct/>` are standard prefixes used in Wikidata.\n- `wd:Q796` corresponds to the entity \"Iraq\" in Wikidata.\n- `wdt:P1082` corresponds to the property \"populationTotal\" in Wikidata.\n- The query retrieves the population of Iraq (`?pIraq`).\n\nThis SPARQL query will fetch the population of Iraq from Wikidata."
+        "sparql_query_kg2": " Given the context and the mappings provided, here's the SPARQL query for Wikidata (KG2) to find the population of Iraq:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?pIraq WHERE {\n  wd:Q796 wdt:P1082 ?pIraq\n}\n```"
     },
     {
         "context": {
@@ -1682,9 +1651,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, here's the SPARQL query for KG2 (Wikidata) based on the provided information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q1445650 .\n}\n```\n\nIn this query, `wdt:P31` represents the \"instance of\" property in Wikidata, and `wd:Q1445650` corresponds to the concept of a holiday in Wikidata."
+        "sparql_query_kg2": " To produce a SPARQL query for Knowledge Graph 2 (Wikidata) based on the given information, we need to translate the query for holidays from DBpedia to a corresponding query in Wikidata. The entity mapping indicates that the DBpedia ontology for Holiday maps to the Wikidata entity with the ID `Q1445650`.\n\nHere is the SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q1445650.\n}\n```\n\nIn this query:\n- `wd:Q1445650` is the Wikidata entity for Holiday.\n- `wdt:P31` is the property used in Wikidata to indicate the instance of a class.\n\nThis query retrieves all distinct entities (holidays) that are instances of the Holiday class in Wikidata."
     },
     {
         "context": {
@@ -1726,9 +1695,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the given information, we need to map the entities and relations from DBpedia to their corresponding Wikidata properties and entities. Here is the SPARQL query for KG2:\n\n```sparql\nSELECT DISTINCT ?item WHERE {\n  ?item wdt:P31 wd:Q7278 ;\n        wdt:P17 wd:Q41 ;\n        wdt:P1142 wd:Q3781399 .\n}\n```\n\nExplanation:\n- `wdt:P31` corresponds to `<http://dbpedia.org/ontology/PoliticalParty>`.\n- `wd:Q7278` is the Wikidata entity for \"Political Party\".\n- `wdt:P17` corresponds to `<http://dbpedia.org/ontology/country>`.\n- `wd:Q41` is the Wikidata entity for Greece.\n- `wdt:P1142` corresponds to `<http://dbpedia.org/ontology/ideology>`.\n- `wd:Q3781399` is the Wikidata entity for Pro-Europeanism.\n\nThis query will retrieve the distinct URIs of political parties in Greece that have an ideology of Pro-Europeanism from Wikidata."
+        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the given mappings and the original query from DBpedia, we need to translate the DBpedia entities and relations to their corresponding Wikidata entities and properties. Here's the translation and the final SPARQL query:\n\n1. `<http://dbpedia.org/ontology/PoliticalParty>` maps to `<http://www.wikidata.org/entity/Q7278>`.\n2. `<http://dbpedia.org/ontology/country>` maps to `<http://www.wikidata.org/entity/P17>`.\n3. `<http://dbpedia.org/resource/Greece>` maps to `<http://www.wikidata.org/entity/Q41>` and `<http://www.wikidata.org/entity/Q194327>`.\n4. `<http://dbpedia.org/ontology/ideology>` maps to `<http://www.wikidata.org/entity/P1142>`.\n5. `<http://dbpedia.org/resource/Pro-Europeanism>` maps to `<http://www.wikidata.org/entity/Q3781399>` and `<http://www.wikidata.org/entity/Q1377153>`.\n\nGiven these mappings, the final SPARQL query for Wikidata is:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?party WHERE {\n  ?party wdt:P31 wd:Q7278 ;\n         wdt:P17 wd:Q41 ;\n         wdt:P1142 wd:Q3781399 .\n}\n```\n\nThis query selects political parties in Greece that have Pro-Europeanism as their ideology.\n\n```sparql\n<sparql>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?party WHERE {\n  ?party wdt:P31 wd:Q7278 ;\n         wdt:P17 wd:Q41 ;\n         wdt:P1142 wd:Q3781399 .\n}\n</sparql>\n```"
     },
     {
         "context": {
@@ -1756,9 +1725,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To translate the given SPARQL query for DBpedia into a query for Wikidata, we need to use the provided entity and relation mappings. Here is the translated SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?date WHERE {\n  wd:Q162371 wdt:P161 ?actor .\n  ?actor wdt:P569 ?date .\n}\n```\n\nExplanation:\n- `wd:Q162371` is the Wikidata ID for the television show \"Charmed\".\n- `wdt:P161` is the Wikidata property for \"cast member\".\n- `wdt:P569` is the Wikidata property for \"date of birth\".\n\nThis query will retrieve the birthdays of all actors who starred in the television show \"Charmed\" from Wikidata."
+        "sparql_query_kg2": " Certainly! Given the context and the entity and relation mapping, the SPARQL query for Wikidata (KG2) to retrieve the birthdays of all actors of the television show \"Charmed\" can be constructed as follows:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX p: <http://www.wikidata.org/prop/>\n\nSELECT DISTINCT ?date WHERE {\n  wd:Q162371 wdt:P161 ?actor .\n  ?actor wdt:P569 ?date .\n}\n```\n\nThis query uses the Wikidata properties and entities as mapped from DBpedia to fetch the desired information."
     },
     {
         "context": {
@@ -1786,9 +1755,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Below is the SPARQL query for KG2 (Wikidata) based on the given information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q3235867 wdt:P50 ?person .\n  ?person wdt:P135 ?uri .\n}\n```\n\nThis query retrieves the artistic movement associated with the painter of \"The Three Dancers\" from Wikidata."
+        "sparql_query_kg2": " Sure! Here is the SPARQL query for KG2 (Wikidata) based on the given information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q3235867 wdt:P50 ?person .\n  ?person wdt:P135 ?uri .\n}\n```"
     },
     {
         "context": {
@@ -1824,33 +1793,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided context and entity-relation mapping, here's the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P106 wd:Q33999.  # actor\n  { ?uri wdt:P19 wd:Q183. }  # born in Germany\n  UNION\n  { ?uri wdt:P19 ?place.\n    ?place wdt:P17 wd:Q183. }  # born in a place that is in Germany\n}\n```\n\nThis query will retrieve actors who were born in Germany or in a place located in Germany, according to the Wikidata knowledge graph."
-    },
-    {
-        "context": {
-            "natural_language_question": "Who designed the Brooklyn Bridge?",
-            "sparql_query_kg1": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbo:architect ?uri }",
-            "kg1_name": "DBpedia",
-            "kg2_name": "Wikidata",
-            "er2": [
-                {
-                    "dbpedia_id": "http://dbpedia.org/resource/Brooklyn_Bridge",
-                    "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q125006"
-                    ]
-                },
-                {
-                    "dbpedia_id": "http://dbpedia.org/ontology/architect",
-                    "wikidata_ids": [
-                        "http://www.wikidata.org/entity/P84"
-                    ]
-                }
-            ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
-        },
-        "sparql_query_kg2": " Based on the provided information, here is the equivalent SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  wd:Q125006 wdt:P84 ?uri\n}\n```"
+        "sparql_query_kg2": " To create a SPARQL query for Wikidata (KG2) based on the given information, you need to map the DBpedia entities and relationships to their corresponding Wikidata identifiers. Here's the SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q33999.\n  { ?uri wdt:P19 wd:Q183. }\n  UNION\n  { ?uri wdt:P19 ?place. ?place wdt:P17 wd:Q183. }\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q33999` corresponds to `?uri a <http://dbpedia.org/ontology/Actor>`.\n- `wdt:P19 wd:Q183` corresponds to `?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany>`.\n- The `UNION` clause handles the case where the birthplace is a specific location within Germany, using `wdt:P19 ?place` and `?place wdt:P17 wd:Q183`.\n\nHere is the final, complete SPARQL query within the tags:\n\n```sparql\n<sparql>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q33999.\n  { ?uri wdt:P19 wd:Q183. }\n  UNION\n  { ?uri wdt:P19 ?place. ?place wdt:P17 wd:Q183. }\n}\n</sparql>\n```"
     },
     {
         "context": {
@@ -1872,9 +1817,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided context, the corresponding SPARQL query for Wikidata (KG2) would be as follows:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  wd:Q23572 wdt:P86 ?uri .\n}\n```"
+        "sparql_query_kg2": " Sure, here is the SPARQL query for Knowledge Graph 2 (Wikidata) based on the provided context:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  wd:Q23572 wdt:P86 ?uri .\n}\n```"
     },
     {
         "context": {
@@ -1902,9 +1847,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Knowledge Graph 2 (Wikidata) based on the given information, we need to map the entities and relations from DBpedia to Wikidata. Using the provided mappings, here is the equivalent SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P57 wd:Q56094 .\n}\n```\n\nExplanation:\n- `wd:Q11424` is the Wikidata equivalent of `dbo:Film`.\n- `wdt:P57` is the Wikidata equivalent of `dbo:director`.\n- `wd:Q56094` is the Wikidata equivalent of `res:Francis_Ford_Coppola`.\n\nThis query will retrieve all movies (entities of type film) directed by Francis Ford Coppola from Wikidata."
+        "sparql_query_kg2": " Sure, based on the provided context and mappings, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P57 wd:Q56094 .\n}\n```\n\nThis query retrieves all distinct films (`?uri`) directed by Francis Ford Coppola from Wikidata."
     },
     {
         "context": {
@@ -1926,9 +1871,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided context and mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?bn WHERE {\n  wd:Q23215 wdt:P1477 ?bn.\n}\n```\n\n</sparql>\n\nThis query will retrieve the birth name of Adele from Wikidata."
+        "sparql_query_kg2": " Based on the provided information and mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?bn WHERE {\n  wd:Q23215 wdt:P1477 ?bn\n}\n```\n\nThis query uses the mapped Wikidata IDs for Adele and the birthName property to retrieve the birth name of Adele from Wikidata."
     },
     {
         "context": {
@@ -1962,9 +1907,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " ```\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX wikibase: <http://wikiba.se/ontology#>\nPREFIX bd: <http://www.bigdata.com/rdf#>\n\nSELECT DISTINCT ?album WHERE {\n  ?album wdt:P31 wd:Q482994 ;\n         wdt:P175 wd:Q15862 ;\n         wdt:P577 ?date .\n}\nORDER BY ASC(?date)\nLIMIT 1\n```\n\n<sparql>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX wikibase: <http://wikiba.se/ontology#>\nPREFIX bd: <http://www.bigdata.com/rdf#>\n\nSELECT DISTINCT ?album WHERE {\n  ?album wdt:P31 wd:Q482994 ;\n         wdt:P175 wd:Q15862 ;\n         wdt:P577 ?date .\n}\nORDER BY ASC(?date)\nLIMIT 1\n</sparql>"
+        "sparql_query_kg2": " Sure, here is the SPARQL query for KG2 (Wikidata) based on the provided information:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?album WHERE {\n  ?album wdt:P31 wd:Q482994 ;\n         wdt:P175 wd:Q15862 ;\n         wdt:P577 ?releaseDate .\n} ORDER BY ASC(?releaseDate) LIMIT 1\n```"
     },
     {
         "context": {
@@ -1986,9 +1931,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Given the information, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?currency WHERE {\n  wd:Q213 wdt:P38 ?currency.\n}\n```\n\nThis query retrieves the currency of the Czech Republic from Wikidata based on the mapped entities and relations provided."
+        "sparql_query_kg2": " Certainly! Based on the information provided, here is the SPARQL query for the Knowledge Graph 2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?currency WHERE {\n  wd:Q213 wdt:P38 ?currency.\n}\n```\n\nThis query will retrieve the currency of the Czech Republic from Wikidata."
     },
     {
         "context": {
@@ -2025,9 +1970,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To create a SPARQL query for Wikidata that retrieves people born in Vienna and died in Berlin, we need to use the entity and relation mappings provided. The query should select distinct URIs of people who have the birthplace property (P19) pointing to Vienna (Q1741) and the deathplace property (P20) pointing to Berlin (Q64).\n\nHere is the final, complete SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri <http://www.wikidata.org/entity/P19> <http://www.wikidata.org/entity/Q1741> ;\n        <http://www.wikidata.org/entity/P20> <http://www.wikidata.org/entity/Q64> .\n}\n```\n\n</sparql>\n\nThis query will retrieve the distinct URIs of individuals who were born in Vienna and died in Berlin, using the corresponding Wikidata properties and entities."
+        "sparql_query_kg2": " To create a SPARQL query for Wikidata (KG2) based on the given information, we need to map the DBpedia properties and resources to their corresponding Wikidata IDs. Here is the complete SPARQL query:\n\n```sparql\nSELECT DISTINCT ?item WHERE {\n  ?item wdt:P19 wd:Q1741 ;\n        wdt:P20 wd:Q64 .\n}\n```\n\nThis query selects distinct items (`?item`) from Wikidata where the item has Vienna (`wd:Q1741`) as the birthplace (`wdt:P19`) and Berlin (`wd:Q64`) as the deathplace (`wdt:P20`).\n\nHere is the query within the specified tags:\n\n```html\n<sparql>\nSELECT DISTINCT ?item WHERE {\n  ?item wdt:P19 wd:Q1741 ;\n        wdt:P20 wd:Q64 .\n}\n</sparql>\n```"
     },
     {
         "context": {
@@ -2056,9 +2001,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Given the context and the mappings provided, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q12280 ;\n       wdt:P177 wd:Q1471 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q12280` is used to identify entities that are instances of a bridge (`Q12280`).\n- `wdt:P177 wd:Q1471` is used to identify entities that cross the Seine (`Q1471`).\n\nThe query retrieves all bridge entities that cross the Seine from Wikidata."
+        "sparql_query_kg2": " Certainly! Based on the provided context and mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q12280 ;\n        wdt:P177 wd:Q1142326 .\n}\n```\n\nExplanation:\n- `wdt:P31` corresponds to \"instance of\" in Wikidata.\n- `wd:Q12280` is the Wikidata entity for \"bridge\".\n- `wdt:P177` corresponds to \"crosses\" in Wikidata.\n- `wd:Q1142326` is the Wikidata entity for the \"Seine\".\n\nThis query will retrieve the URIs of bridges that cross the Seine in Wikidata."
     },
     {
         "context": {
@@ -2092,9 +2037,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Wikidata (KG2) based on the given context and entity-relation mappings, you need to translate the DBpedia-specific properties and classes into their corresponding Wikidata properties and entities.\n\nHere's the translated SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P106 wd:Q639669 .\n  ?x wdt:P50 ?uri .\n  ?x wdt:P31 wd:Q571 .\n} ORDER BY DESC(COUNT(?x)) OFFSET 0 LIMIT 1\n```\n\nExplanation:\n- `wdt:P106` corresponds to `http://www.wikidata.org/entity/P106` (occupation).\n- `wd:Q639669` corresponds to `http://www.wikidata.org/entity/Q639669` (Musician).\n- `wdt:P50` corresponds to `http://www.wikidata.org/entity/P50` (author).\n- `wd:Q571` corresponds to `http://www.wikidata.org/entity/Q571` (Book).\n- The query selects distinct URIs of musicians, counts the number of books they have authored, and orders the results in descending order, returning the top result."
+        "sparql_query_kg2": " Sure, I can help you translate the given SPARQL query from DBpedia to Wikidata based on the provided mappings. Here is the translated SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P106 wd:Q639669.\n  ?x wdt:P50 ?uri.\n  ?x wdt:P31 wd:Q571.\n} ORDER BY DESC(COUNT(?x)) OFFSET 0 LIMIT 1\n```\n\nThis query will find the musician who has written the most books according to Wikidata."
     },
     {
         "context": {
@@ -2122,9 +2067,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided information, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q15416 ;\n        wdt:P170 wd:Q25014 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q15416` is used to specify that the entity is a television show.\n- `wdt:P170 wd:Q25014` is used to specify that the creator is John Cleese."
+        "sparql_query_kg2": " Sure, based on the provided context and the entity and relation mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q15416 ;\n        wdt:P170 wd:Q25014 .\n}\n```\n\nThis query selects distinct URIs of television shows (`wd:Q15416`) that were created (`wdt:P170`) by John Cleese (`wd:Q25014`)."
     },
     {
         "context": {
@@ -2152,9 +2097,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided context and mappings, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q36180 ;\n        wdt:P166 wd:Q37922 .\n}\n```\n\nExplanation:\n- `wdt:P31` is used to specify that the entity is an instance of (P31) the class for writers (Q36180).\n- `wdt:P166` is used to specify the award received (P166) which is the Nobel Prize in Literature (Q37922)."
+        "sparql_query_kg2": " Based on the provided context and entity-relation mapping, here is the SPARQL query for Wikidata (KG2) to retrieve all writers that won the Nobel Prize in Literature:\n\n```sparql\nSELECT DISTINCT ?writer WHERE {\n  ?writer wdt:P106 wd:Q36180 ;\n          wdt:P166 wd:Q37922 .\n}\n```\n\nExplanation:\n- `wdt:P106 wd:Q36180` corresponds to the occupation (P106) of a writer (Q36180).\n- `wdt:P166 wd:Q37922` corresponds to the award received (P166) being the Nobel Prize in Literature (Q37922)."
     },
     {
         "context": {
@@ -2176,9 +2121,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided information, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q596 wdt:P61 ?uri\n}\n```"
+        "sparql_query_kg2": " Sure, here is the corresponding SPARQL query for KG2 (Wikidata) based on the provided mappings:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q596 wdt:P61 ?uri\n}\n```"
     },
     {
         "context": {
@@ -2214,9 +2159,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To translate the given SPARQL query for DBpedia into a query for Wikidata, we need to use the provided entity and relation mappings. Here is the translated SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P106 wd:Q5280538 ;\n        wdt:P1303 wd:Q119621 .\n}\n```\n\nThis query selects all distinct URIs (`?uri`) that have the occupation of a bandleader (`wdt:P106 wd:Q5280538`) and play the trumpet (`wdt:P1303 wd:Q119621`). The Wikidata properties and entities are used according to the mappings provided."
+        "sparql_query_kg2": " Based on the provided context, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P106 wd:Q5280538, wd:Q806349 ;\n       wdt:P1303 wd:Q119621, wd:Q8338 .\n}\n```\n\nExplanation:\n- `wdt:P106` corresponds to the occupation property in Wikidata.\n- `wd:Q5280538` and `wd:Q806349` are the Wikidata IDs for bandleader.\n- `wdt:P1303` corresponds to the instrument property in Wikidata.\n- `wd:Q119621` and `wd:Q8338` are the Wikidata IDs for trumpet."
     },
     {
         "context": {
@@ -2238,9 +2183,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided context and the entity and relation mapping, the SPARQL query for Knowledge Graph 2 (Wikidata) would be:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q3665646 ;\n        wdt:P2048 ?n .\n  FILTER ( ?n > 2.0 )\n}\n```\n</sparql>\n\nExplanation:\n- `wdt:P31 wd:Q3665646` maps to `a <http://dbpedia.org/ontology/BasketballPlayer>`.\n- `wdt:P2048 ?n` maps to `<http://dbpedia.org/ontology/height> ?n`.\n- The filter `?n > 2.0` ensures that the height is greater than 2 meters."
+        "sparql_query_kg2": " Sure, based on the provided context and mappings, here is the corresponding SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q3665646 ;\n        wdt:P2048 ?n .\n  FILTER ( ?n > 2.0 )\n}\n```\n\nThis query retrieves all basketball players from Wikidata who have a height greater than 2 meters."
     },
     {
         "context": {
@@ -2274,9 +2219,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure! Given the context and the mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?film WHERE {\n  ?film wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q40523 ;\n        wdt:P161 wd:Q48410 .\n}\n```\n\nThis query will retrieve the films in which both Julia Roberts and Richard Gere have starred, using the provided mappings from DBpedia to Wikidata."
+        "sparql_query_kg2": " Sure, here is the SPARQL query for Wikidata (KG2) based on the provided context and entity mappings:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?film WHERE {\n  ?film wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q40523 ;\n        wdt:P161 wd:Q48410 .\n}\n```\n\nThis query searches for films (`?film`) that have Julia Roberts (`wd:Q40523`) and Richard Gere (`wd:Q48410`) as cast members (`wdt:P161`), and ensures that the entities are of type film (`wd:Q11424`)."
     },
     {
         "context": {
@@ -2299,9 +2244,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided context and the mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q16 wdt:P36 ?uri .\n}\n```\n\nThis query uses the Wikidata entities and properties mapped from the provided DBpedia entities and relations."
+        "sparql_query_kg2": " Sure, based on the provided information, the SPARQL query for Wikidata (KG2) to find the capital of Canada can be constructed as follows:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q16 wdt:P36 ?uri\n}\n```\n\nThis query uses the Wikidata property for \"capital\" (P36) and the Wikidata entity for Canada (Q16)."
     },
     {
         "context": {
@@ -2329,9 +2274,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided context and mappings, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q937857 ;\n        wdt:P19 wd:Q233 .\n}\n```\n\nExplanation:\n- `wdt:P31` is used for \"instance of\" and `wd:Q937857` represents \"soccer player\".\n- `wdt:P19` is used for \"place of birth\" and `wd:Q233` represents \"Malta\"."
+        "sparql_query_kg2": " Sure, based on the provided context and mappings, here is the corresponding SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q937857 ;\n        wdt:P19 wd:Q233 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q937857` corresponds to the entity being a soccer player.\n- `wdt:P19 wd:Q233` corresponds to the birthplace being Malta."
     },
     {
         "context": {
@@ -2353,9 +2298,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To generate a SPARQL query for Wikidata (KG2) based on the provided information, we'll use the entity and relation mappings from DBpedia to Wikidata. The entity \"Cameroon\" in DBpedia corresponds to \"http://www.wikidata.org/entity/Q1009\" in Wikidata, and the relation \"capital\" in DBpedia corresponds to \"http://www.wikidata.org/entity/P36\" in Wikidata.\n\nHere is the translated SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  wd:Q1009 wdt:P36 ?uri\n}\n```\n\nThis query asks for the capital of Cameroon (Q1009) using the property for capital (P36) in Wikidata."
+        "sparql_query_kg2": " Certainly! Here is the SPARQL query for Wikidata (KG2) based on the provided information:\n\n```\n<sparql>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q1009 wdt:P36 ?uri\n}\n</sparql>\n```\n\nThis query retrieves the capital of Cameroon from Wikidata."
     },
     {
         "context": {
@@ -2371,9 +2316,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the information provided, the equivalent SPARQL query for Wikidata (KG2) would be constructed using the mapped entity. Here's the query:\n\n```sparql\nSELECT (COUNT(DISTINCT ?item) AS ?c) WHERE {\n  ?item wdt:P31 wd:Q9143 .\n}\n```\n\nExplanation:\n- `wdt:P31` is the Wikidata property for \"instance of.\"\n- `wd:Q9143` is the Wikidata entity for \"programming language.\"\n- The query counts the distinct items that are instances of programming languages."
+        "sparql_query_kg2": " Sure, based on the provided information, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE {\n  ?uri wdt:P31 wd:Q9143 .\n}\n```\n\nThis query will count the distinct programming languages in Wikidata, using the mapping provided in the entity and relation mapping (ER2)."
     },
     {
         "context": {
@@ -2408,9 +2353,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided context and mappings, here's the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11631.  # instance of astronaut\n  { ?uri wdt:P27 wd:Q2184. } UNION { ?uri wdt:P27 wd:Q159. } UNION { ?uri wdt:P27 wd:Q15180. }  # nationality Russia or Soviet Union\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q11631` is equivalent to `<http://dbpedia.org/ontology/Astronaut>`.\n- `wdt:P27` is equivalent to `<http://dbpedia.org/ontology/nationality>`.\n- `wd:Q2184` and `wd:Q159` are equivalents to `<http://dbpedia.org/resource/Russia>`.\n- `wd:Q15180` is equivalent to `<http://dbpedia.org/resource/Soviet_Union>`."
+        "sparql_query_kg2": " Based on the given context and mappings, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11631 .\n  { ?uri wdt:P27 wd:Q2184 } UNION { ?uri wdt:P27 wd:Q159 } UNION { ?uri wdt:P27 wd:Q15180 }\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q11631` is used to find entities that are instances of \"astronaut\" (Q11631).\n- `wdt:P27` is used to find the nationality of the entities.\n- `wd:Q2184`, `wd:Q159`, and `wd:Q15180` represent Russia, the Russian Federation, and the Soviet Union respectively."
     },
     {
         "context": {
@@ -2432,9 +2377,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Given the context, we need to create a SPARQL query for KG2 (Wikidata) to find out who created \"Family Guy.\" Using the entity and relation mapping provided, we can translate the DBpedia query into a Wikidata query.\n\nHere is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  wd:Q5930 wdt:P170 ?uri.\n}\n```\n\nThis query uses the Wikidata prefixes and the mapped entity and relation IDs to find the creator of \"Family Guy.\""
+        "sparql_query_kg2": " Sure, based on the provided information, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  wd:Q5930 wdt:P170 ?uri\n}\n```\n\nThis query will retrieve the creators of Family Guy from Wikidata."
     },
     {
         "context": {
@@ -2456,9 +2401,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure! Based on the provided information, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?Mexico_City WHERE {\n  wd:Q1489 wdt:P1082 ?Mexico_City .\n}\n```\n\nThis query retrieves the population of Mexico City from Wikidata."
+        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the given information, we need to translate the query from DBpedia to Wikidata using the provided entity and relation mapping.\n\nHere's the SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?population WHERE {\n  wd:Q1489 wdt:P1082 ?population.\n}\n```\n\nThis query uses the Wikidata entity `Q1489` for Mexico City and the property `P1082` for the population total, as mapped from the DBpedia entities."
     },
     {
         "context": {
@@ -2480,9 +2425,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, here is the SPARQL query for Wikidata based on the provided mappings:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q2695156 wdt:P170 ?uri\n}\n```"
+        "sparql_query_kg2": " Based on the information provided, here's the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?uri WHERE {\n  wd:Q2695156 wdt:P170 ?uri\n}\n```"
     },
     {
         "context": {
@@ -2512,9 +2457,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Based on the provided context, here's the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?num WHERE {\n  VALUES (?country) {(wd:Q408)}\n  ?country wdt:P36 ?capital.\n  ?capital wdt:P1082 ?num.\n}\n```\n\nThis query uses the mapped entities and relations from DBpedia to Wikidata. It first finds the capital of Australia (`wdt:P36`) and then retrieves the population (`wdt:P1082`) of that capital."
+        "sparql_query_kg2": " Sure! To generate the SPARQL query for Wikidata (KG2), we need to map the entities and relations from DBpedia to Wikidata using the provided mappings.\n\nHere's the SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?num WHERE {\n  wd:Q408 wdt:P36 ?capital .\n  ?capital wdt:P1082 ?num .\n}\n```\n\nExplanation:\n- `wd:Q408` corresponds to Australia.\n- `wdt:P36` corresponds to the capital relation.\n- `wdt:P1082` corresponds to the population total relation.\n\nThis query will retrieve the population of the capital of Australia from Wikidata."
     },
     {
         "context": {
@@ -2536,9 +2481,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Based on the given context, the equivalent SPARQL query for Knowledge Graph 2 (Wikidata) would look like this:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?tarea WHERE {\n  wd:Q1198 wdt:P2046 ?tarea .\n}\n```\n\n</sparql>\n\nThis query uses the Wikidata prefixes and the mapped entity and relation IDs from the provided mappings to find the total area of North Rhine-Westphalia."
+        "sparql_query_kg2": " Sure, based on the provided context and mappings, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?tarea WHERE {\n  wd:Q1198 wdt:P2046 ?tarea\n}\n```\n\nThis query retrieves the total area of North Rhine-Westphalia from Wikidata."
     },
     {
         "context": {
@@ -2561,9 +2506,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the provided context and mappings, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?number WHERE {\n  ?entity wdt:P1128 ?number .\n  VALUES ?entity {\n    wd:Q70096636\n    wd:Q37156\n  }\n}\n```\n\nThis query retrieves the number of employees for IBM using the Wikidata entities mapped from DBpedia."
+        "sparql_query_kg2": " Sure, based on the information provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?number WHERE {\n  VALUES ?ibm { wd:Q70096636 wd:Q37156 }\n  ?ibm wdt:P1128 ?number\n}\n```\n\nThis query uses the `VALUES` clause to specify the possible Wikidata IDs for IBM and retrieves the number of employees using the property `P1128`."
     },
     {
         "context": {
@@ -2585,9 +2530,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Certainly! Given the context and the entity and relation mapping, we can construct a SPARQL query for Wikidata to find the budget of the movie \"Pulp Fiction\".\n\nHere is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?n WHERE {\n  wd:Q104123 wdt:P2769 ?n .\n}\n```\n\nThis query retrieves the budget information for the movie \"Pulp Fiction\" from Wikidata."
+        "sparql_query_kg2": " Sure, based on the provided information, here's the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?n WHERE {\n  wd:Q104123 wdt:P2769 ?n .\n}\n```"
     },
     {
         "context": {
@@ -2615,9 +2560,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To produce a SPARQL query for Knowledge Graph 2 (Wikidata) based on the given context, we need to map the entities and relations from DBpedia to Wikidata using the provided Entity and Relation Mapping (ER2).\n\nHere is the mapped SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q219512 .\n}\n```\n\nExplanation:\n- `wd:Q11424` corresponds to the Wikidata ID for a \"Film\".\n- `wdt:P161` corresponds to the Wikidata ID for the \"starring\" relation.\n- `wd:Q219512` corresponds to the Wikidata ID for \"Jesse Eisenberg\".\n\nThus, the final SPARQL query for Wikidata is:\n\n<sparql>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q219512 .\n}\n</sparql>"
+        "sparql_query_kg2": " Sure, based on the provided context and entity mapping, here is the SPARQL query for Knowledge Graph 2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P161 wd:Q219512 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q11424` ensures that the entity `?uri` is a film (`wdt:P31` is the Wikidata property for \"instance of\" and `wd:Q11424` is the Wikidata entity for \"film\").\n- `wdt:P161 wd:Q219512` ensures that the film stars Jesse Eisenberg (`wdt:P161` is the Wikidata property for \"cast member\" and `wd:Q219512` is the Wikidata entity for Jesse Eisenberg)."
     },
     {
         "context": {
@@ -2646,9 +2591,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " To translate the given SPARQL query from DBpedia to Wikidata using the provided entity and relation mappings, we need to match the corresponding entities and relations. Here is the SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P17 wd:Q35 .\n}\n```\n\nThis query selects all films (`wd:Q11424`) that have the country of origin as Denmark (`wd:Q35`)."
+        "sparql_query_kg2": " Based on the provided information, here is the equivalent SPARQL query for Wikidata (KG2):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q11424 ;\n        wdt:P17 wd:Q35 .\n}\n```\n\nExplanation:\n- `wdt:P31 wd:Q11424` is used to indicate that the entity is a film (instance of film), which corresponds to `http://dbpedia.org/ontology/Film`.\n- `wdt:P17 wd:Q35` is used to indicate that the film's country is Denmark, which corresponds to `http://dbpedia.org/ontology/country` and `http://dbpedia.org/resource/Denmark`.\n- `wd:Q35` is used for Denmark, as it is the more specific identifier for the country in Wikidata."
     },
     {
         "context": {
@@ -2672,9 +2617,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Given the information provided, the goal is to translate the SPARQL query for DBpedia into a query for Wikidata. The entities and relations mapping provided helps in converting the DBpedia resources and properties into Wikidata equivalents.\n\nHere is the SPARQL query for Wikidata:\n\n```sparql\nSELECT DISTINCT ?country WHERE {\n  VALUES ?himalayas {\n    wd:Q105981852\n    wd:Q26235529\n    wd:Q5451\n  }\n  ?himalayas wdt:P17 ?country.\n}\n```\n\nExplanation:\n- The `VALUES` clause is used to include all possible Wikidata IDs for the Himalayas.\n- The `wdt:P17` property is used to represent the country relation in Wikidata.\n- The query selects distinct countries (`?country`) that the Himalayas extend to."
+        "sparql_query_kg2": " Sure, here is the SPARQL query for Wikidata (KG2) based on the given context:\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  ?entity wdt:P17 ?uri .\n  VALUES ?entity { wd:Q105981852 wd:Q26235529 wd:Q5451 }\n}\n```"
     },
     {
         "context": {
@@ -2696,9 +2641,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure! To translate the given SPARQL query from DBpedia to Wikidata using the provided entity and relation mappings, we need to map the entities and relations from DBpedia to their corresponding Wikidata IDs.\n\nGiven mappings:\n- `dbo:Country` maps to `wdt:Q6256`\n- `dbo:areaTotal` maps to `wdt:P2046`\n\nHere is the translated SPARQL query for Wikidata:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q6256 ;\n        wdt:P2046 ?n .\n} ORDER BY DESC(?n) LIMIT 1\n```\n\nExplanation:\n- `PREFIX wd: <http://www.wikidata.org/entity/>` and `PREFIX wdt: <http://www.wikidata.org/prop/direct/>` are the prefixes used in Wikidata.\n- `wdt:P31 wd:Q6256` is used to indicate that the entity is a country (`wdt:P31` is the property for \"instance of\" and `wd:Q6256` is the class for \"country\").\n- `wdt:P2046 ?n` is used to get the total area of the country (`wdt:P2046` is the property for \"area\").\n- `ORDER BY DESC(?n) LIMIT 1` is used to order the results by area in descending order and limit the result to the largest country.\n\nSo the final, complete SPARQL query for Wikidata is:\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT DISTINCT ?uri WHERE {\n  ?uri wdt:P31 wd:Q6256 ;\n        wdt:P2046 ?n .\n} ORDER BY DESC(?n) LIMIT 1\n```"
+        "sparql_query_kg2": " To produce a SPARQL query for Wikidata (KG2) based on the provided context and entity-relation mappings, we need to translate the entities and relations from DBpedia to Wikidata.\n\nGiven:\n- DBpedia entity `dbo:Country` maps to Wikidata entity `Q6256`.\n- DBpedia property `dbo:areaTotal` maps to Wikidata property `P2046`.\n\nHere is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?country WHERE {\n  ?country wdt:P31 wd:Q6256 ;\n           wdt:P2046 ?area .\n} ORDER BY DESC(?area) LIMIT 1\n```\n\nExplanation:\n- `wdt:P31 wd:Q6256` ensures that we are looking at instances of the country.\n- `wdt:P2046 ?area` retrieves the total area of the country.\n- The query is ordered in descending order by area and limited to one result to find the largest country.\n\nFinal SPARQL query:\n```sparql\n<sparql>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT DISTINCT ?country WHERE {\n  ?country wdt:P31 wd:Q6256 ;\n           wdt:P2046 ?area .\n} ORDER BY DESC(?area) LIMIT 1\n</sparql>\n```"
     },
     {
         "context": {
@@ -2720,9 +2665,9 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, based on the information provided, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?Almamater WHERE {\n  wd:Q567 wdt:P69 ?Almamater .\n}\n```\n\nThis query will retrieve the alma mater of Angela Merkel from Wikidata."
+        "sparql_query_kg2": " Based on the provided information, here is the SPARQL query for Wikidata (KG2):\n\n```sparql\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?Almamater WHERE {\n  wd:Q567 wdt:P69 ?Almamater.\n}\n```"
     },
     {
         "context": {
@@ -2744,8 +2689,8 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         },
-        "sparql_query_kg2": " Sure, given the context and the mappings, here is the SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  <http://www.wikidata.org/entity/Q111135> <http://www.wikidata.org/entity/P170> ?uri\n}\n```"
+        "sparql_query_kg2": " To produce a SPARQL query for KG2 (Wikidata) based on the given information, we need to map the entities and relations from DBpedia to Wikidata using the provided mappings.\n\nHere is the complete SPARQL query for KG2 (Wikidata):\n\n```sparql\nSELECT DISTINCT ?uri WHERE {\n  wd:Q111135 wdt:P170 ?uri\n}\n```\n\nExplanation:\n- `wd:Q111135` corresponds to the DBpedia entity `http://dbpedia.org/resource/Goofy`.\n- `wdt:P170` corresponds to the DBpedia relation `http://dbpedia.org/ontology/creator`.\n- The query asks for the distinct `?uri` that is the creator of Goofy in Wikidata."
     }
 ]

@@ -20,7 +20,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -43,7 +43,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -72,7 +72,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -95,7 +95,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -124,7 +124,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -153,7 +153,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -176,7 +176,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -205,7 +205,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -228,7 +228,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -257,7 +257,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -280,7 +280,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -303,7 +303,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -344,7 +344,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -367,7 +367,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -404,7 +404,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -445,7 +445,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -468,7 +468,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -485,7 +485,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -508,7 +508,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -543,7 +543,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -566,7 +566,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -589,7 +589,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -612,7 +612,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -635,7 +635,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -658,7 +658,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -681,7 +681,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -704,7 +704,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -734,7 +734,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -757,7 +757,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -786,7 +786,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -815,7 +815,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -838,7 +838,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -869,7 +869,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -892,7 +892,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -921,7 +921,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -950,7 +950,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -980,7 +980,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1003,7 +1003,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1026,7 +1026,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1055,7 +1055,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1090,7 +1090,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1113,7 +1113,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1137,7 +1137,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1167,7 +1167,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1190,7 +1190,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1213,7 +1213,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1236,7 +1236,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1259,7 +1259,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1276,7 +1276,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1299,7 +1299,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1322,7 +1322,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1345,7 +1345,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1374,7 +1374,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1404,7 +1404,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1427,7 +1427,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1450,7 +1450,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1481,7 +1481,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1504,7 +1504,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1527,7 +1527,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1556,7 +1556,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1579,7 +1579,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1603,7 +1603,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1620,7 +1620,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1663,7 +1663,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1692,7 +1692,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1721,7 +1721,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1758,7 +1758,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1781,7 +1781,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1804,7 +1804,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1833,7 +1833,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1856,7 +1856,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1891,7 +1891,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1914,7 +1914,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1952,7 +1952,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1982,7 +1982,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2017,7 +2017,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2046,7 +2046,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2075,7 +2075,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2098,7 +2098,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2135,7 +2135,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2158,7 +2158,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2193,7 +2193,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2217,7 +2217,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2246,7 +2246,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2269,7 +2269,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2286,7 +2286,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2322,7 +2322,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2345,7 +2345,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2368,7 +2368,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2391,7 +2391,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2422,7 +2422,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2445,7 +2445,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2469,7 +2469,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2492,7 +2492,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2521,7 +2521,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2551,7 +2551,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2576,7 +2576,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2599,7 +2599,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2622,7 +2622,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2645,7 +2645,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags <sparql> and </sparql>."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     }
 ]
