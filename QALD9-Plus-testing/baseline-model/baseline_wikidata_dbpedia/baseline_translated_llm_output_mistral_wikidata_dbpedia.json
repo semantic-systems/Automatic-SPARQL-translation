@@ -1,0 +1,1002 @@
+[
+    {
+        "context": {
+            "natural_language_question": "Who is the founder of Penguin Books?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here's the SPARQL query for DBpedia to find the founder of Penguin Books:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?founder WHERE {\n  dbr:Penguin_Books dbp:founder ?founder.\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "Which films did Stanley Kubrick direct?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to retrieve the films directed by Stanley Kubrick:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?film WHERE {\n  dbr:Stanley_Kubrick dbo:director ?film .\n}\n```\n\nThis query will return the films that Stanley Kubrick directed according to the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "List all the musicals with music by Elton John.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! Here is the SPARQL query for DBpedia to list all the musicals with music by Elton John:\n\n<sparql>\nPREFIX dbpedia-owl: <http://dbpedia.org/ontology/>\nPREFIX dbpprop: <http://dbpedia.org/property/>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?musical ?musicalLabel\nWHERE {\n  ?musical dbo:musicComposer dbr:Elton_John .\n  ?musical rdf:type dbo:Musical .\n  ?musical rdfs:label ?musicalLabel .\n  FILTER (lang(?musicalLabel) = 'en')\n}\n</sparql>\n\nThis query retrieves the musicals from DBpedia where Elton John is listed as the music composer."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who developed Skype?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find out who developed Skype:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?developer\nWHERE {\n  dbr:Skype dbp:developer ?developer.\n}\n```\n\nThis query retrieves the developers of Skype from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Show a list of soccer clubs that play in the Bundesliga.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to retrieve a list of soccer clubs that play in the Bundesliga:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?club ?clubLabel\nWHERE {\n  ?club dbo:league dbr:Bundesliga .\n  ?club rdfs:label ?clubLabel .\n  FILTER (lang(?clubLabel) = 'en')\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all actors starring in movies directed by William Shatner.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To retrieve all actors starring in movies directed by William Shatner from DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\n\nSELECT DISTINCT ?actor WHERE {\n  ?film dbo:director dbr:William_Shatner .\n  ?film dbo:starring ?actor .\n}\n```\n\nThis query selects all distinct actors (`?actor`) who have starred in films (`?film`) that were directed by William Shatner (`dbr:William_Shatner`)."
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the highest mountain?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find the highest mountain:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?mountain ?elevation WHERE {\n  ?mountain a dbo:Mountain ;\n            dbp:elevation ?elevation .\n}\nORDER BY DESC(?elevation)\nLIMIT 1\n```\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "How many films did Leonardo DiCaprio star in?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find out how many films Leonardo DiCaprio starred in:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\n\nSELECT (COUNT(DISTINCT ?film) AS ?filmCount)\nWHERE {\n  ?film dbo:starring res:Leonardo_DiCaprio .\n}\n```\n\nThis query uses the `dbo:starring` property to count the distinct films in which Leonardo DiCaprio starred."
+    },
+    {
+        "context": {
+            "natural_language_question": "When was Olof Palme shot?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! To produce a SPARQL query for DBpedia to find when Olof Palme was shot, you can use the following query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?date\nWHERE {\n  dbr:Olof_Palme dbo:deathDate ?date .\n}\n```\n\nThis query will retrieve the death date of Olof Palme from DBpedia, which corresponds to the date he was shot."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which movies star both Liz Taylor and Richard Burton?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find movies that star both Liz Taylor and Richard Burton:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?movie WHERE {\n  ?movie dbo:starring dbr:Elizabeth_Taylor .\n  ?movie dbo:starring dbr:Richard_Burton .\n}\n```\n\nThis query uses the `dbo:starring` property to find movies that have both Elizabeth Taylor and Richard Burton as stars."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who developed Minecraft?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! Here is the SPARQL query for DBpedia:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT ?developer WHERE {\n  dbr:Minecraft dbo:developer ?developer .\n}\n```\n\nThis query will retrieve the developer of Minecraft from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "How much did the Lego Movie cost?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find out how much \"The Lego Movie\" cost:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?budget WHERE {\n  ?movie dbo:title \"The Lego Movie\"@en ;\n         dbp:budget ?budget .\n}\n```\n\nThis query retrieves the budget information for \"The Lego Movie\" from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "For which label did Elvis record his first album?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the label for which Elvis recorded his first album:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?label WHERE {\n  dbr:Elvis_Presley dbo:artist ?album .\n  ?album dbp:firstAlbum ?firstAlbum .\n  ?firstAlbum rdfs:label ?label .\n  FILTER (lang(?label) = 'en')\n}\n```\n\nHere is the query within the tags:\n\n<sparql>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?label WHERE {\n  dbr:Elvis_Presley dbo:artist ?album .\n  ?album dbp:firstAlbum ?firstAlbum .\n  ?firstAlbum rdfs:label ?label .\n  FILTER (lang(?label) = 'en')\n}\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me the runtime of Toy Story.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To query the runtime of \"Toy Story\" from DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?runtime WHERE {\n  dbr:Toy_Story dbo:runtime ?runtime.\n}\n```\n\nThis query will retrieve the runtime of the movie \"Toy Story\" from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me a list of all trumpet players that were bandleaders.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! To produce a SPARQL query for DBpedia that retrieves a list of all trumpet players who were bandleaders, you can use the following query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?trumpetPlayer ?trumpetPlayerLabel WHERE {\n  ?trumpetPlayer dbo:instrument dbr:Trumpet ;\n                 dbo:position ?position .\n  ?position dbp:name \"Bandleader\"@en .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\nThis query selects trumpet players who hold the position of \"Bandleader\" in DBpedia. The `SERVICE wikibase:label` ensures that the labels for the trumpet players are fetched in the preferred language."
+    },
+    {
+        "context": {
+            "natural_language_question": "In which films directed by Garry Marshall was Julia Roberts starring?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find the films directed by Garry Marshall in which Julia Roberts starred:\n\n```sparql\nSELECT DISTINCT ?film ?filmLabel WHERE {\n  ?film dct:subject dbc:Films_directed_by_Garry_Marshall ;\n        dbo:starring dbr:Julia_Roberts .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\nThis query retrieves the films directed by Garry Marshall and starring Julia Roberts from the DBpedia knowledge graph. The `dct:subject` property is used to identify films directed by Garry Marshall, and the `dbo:starring` property is used to identify films in which Julia Roberts starred. The `SERVICE wikibase:label` part ensures that the labels for the films are retrieved in the preferred language."
+    },
+    {
+        "context": {
+            "natural_language_question": "In which year was Rachel Stevens born?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to retrieve the birth year of Rachel Stevens:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?birthYear\nWHERE {\n  dbr:Rachel_Stevens dbo:birthDate ?birthDate .\n  BIND(YEAR(?birthDate) AS ?birthYear)\n}\n```\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the most frequent cause of death?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find the most frequent cause of death:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?causeOfDeath (COUNT(?person) AS ?count)\nWHERE {\n  ?person dbo:causeOfDeath ?causeOfDeath .\n}\nGROUP BY ?causeOfDeath\nORDER BY DESC(?count)\nLIMIT 1\n```\n\nThis query will retrieve the most frequent cause of death from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "How high is the Yokohama Marine Tower?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the height of the Yokohama Marine Tower:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX res: <http://dbpedia.org/resource/>\n\nSELECT ?height\nWHERE {\n  res:Yokohama_Marine_Tower dbo:height ?height.\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the highest mountain in Italy?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find the highest mountain in Italy:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?mountain ?elevation\nWHERE {\n  ?mountain dbo:country dbr:Italy ;\n            dbp:elevation ?elevation .\n}\nORDER BY DESC(?elevation)\nLIMIT 1\n```\n\nThis query retrieves the mountain with the highest elevation in Italy from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who was the doctoral supervisor of Albert Einstein?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the doctoral supervisor of Albert Einstein:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?supervisor WHERE {\n  dbr:Albert_Einstein dbo:doctoralAdvisor ?supervisor.\n}\n```\n\nThis query will retrieve the doctoral supervisor of Albert Einstein from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "What is Donald Trump's main business?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia that corresponds to the natural language question \"What is Donald Trump's main business?\":\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?business WHERE {\n  dbr:Donald_Trump dbo:occupation ?business.\n}\n```\n\nThis query will retrieve the main business or occupation associated with Donald Trump from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who has Tom Cruise been married to?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To produce a SPARQL query for DBpedia to find out who Tom Cruise has been married to, you can use the following query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\n\nSELECT ?spouse WHERE {\n  res:Tom_Cruise dbo:spouse ?spouse.\n}\n```\n\nThis query will retrieve the names of the individuals that Tom Cruise has been married to according to DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "How many people live in Eurasia?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To find the number of people living in Eurasia using DBpedia, you can use the following SPARQL query. This query will retrieve the population of Eurasia.\n\nHere is the complete SPARQL query for DBpedia:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?population\nWHERE {\n  dbr:Eurasia dbp:populationEstimate ?population .\n}\n```\n\nExplanation:\n- `PREFIX dbo: <http://dbpedia.org/ontology/>`: Defines the prefix for DBpedia ontology.\n- `PREFIX dbp: <http://dbpedia.org/property/>`: Defines the prefix for DBpedia properties.\n- `PREFIX dbr: <http://dbpedia.org/resource/>`: Defines the prefix for DBpedia resources.\n- `SELECT ?population`: Selects the variable `?population`.\n- `WHERE { dbr:Eurasia dbp:populationEstimate ?population . }`: Retrieves the population estimate for Eurasia.\n\nThis query will give you the estimated population of Eurasia from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who is the author of the interpretation of dreams?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, given the context, here is the SPARQL query for DBpedia to find the author of \"The Interpretation of Dreams\":\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?author WHERE {\n  dbr:The_Interpretation_of_Dreams dbo:author ?author.\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "When was John Adams born?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To find the birth date of John Adams using DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?birthDate WHERE {\n  dbr:John_Adams dbo:birthDate ?birthDate.\n}\n```\n\nThis query retrieves the birth date of John Adams from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "how much is the total population of european union?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to get the total population of the European Union:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT (SUM(xsd:integer(?population)) AS ?totalPopulation)\nWHERE {\n  ?country dbo:populationTotal ?population .\n  ?country dbo:country ?europeanUnion .\n  ?europeanUnion dbp:name \"European Union\"@en .\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me the currency of China.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! Below is the SPARQL query for DBpedia to retrieve the currency of China.\n\n```\n<sparql>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?currency\nWHERE {\n  dbr:China dbo:currency ?currency .\n}\n</sparql>\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "When was the death of Shakespeare?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To find the death date of Shakespeare using DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?deathDate WHERE {\n  dbr:William_Shakespeare dbo:deathDate ?deathDate .\n}\n```\n\nThis query retrieves the death date of William Shakespeare from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which rockets were launched from Baikonur?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find rockets launched from Baikonur:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?rocket ?rocketLabel\nWHERE {\n  ?rocket dbo:launchSite dbr:Baikonur_Cosmodrome ;\n          rdfs:label ?rocketLabel .\n  FILTER (lang(?rocketLabel) = 'en')\n}\nORDER BY ?rocketLabel\n```\n\nThis query selects rockets (`?rocket`) and their labels (`?rocketLabel`) that have Baikonur Cosmodrome as their launch site. The results are filtered to include only labels in English and ordered by the rocket label."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all islands that belong to Japan.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to retrieve all islands that belong to Japan.\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?island ?islandLabel\nWHERE {\n  ?island dbo:location dbr:Japan .\n  ?island a dbo:Island .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\n</sparql>\n\nThis query selects all islands (`?island`) that have a location (`dbo:location`) of Japan (`dbr:Japan`) and are of type Island (`dbo:Island`). It also retrieves the labels for these islands."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who developed the video game World of Warcraft?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To find out who developed the video game \"World of Warcraft\" using DBpedia, you can construct a SPARQL query to retrieve the developer information. Below is the SPARQL query for DBpedia:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?developerLabel\nWHERE {\n  dbr:World_of_Warcraft dbo:developer ?developer.\n  ?developer rdfs:label ?developerLabel.\n  FILTER (lang(?developerLabel) = 'en')\n}\n```\n\nThis query uses the DBpedia ontology (`dbo:`) to find the developer (`dbo:developer`) of the resource \"World_of_Warcraft\" (`dbr:World_of_Warcraft`). It then retrieves the label of the developer in English."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all companies in the advertising industry.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to retrieve all companies in the advertising industry:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\nSELECT ?company ?companyLabel\nWHERE {\n  ?company rdf:type dbo:Company .\n  ?company dbo:industry ?industry .\n  ?industry dbp:name \"Advertising\"@en .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\" }\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "Which university did Angela Merkel attend?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To find out which university Angela Merkel attended using the DBpedia knowledge graph, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\n\nSELECT ?university WHERE {\n  dbr:Angela_Merkel dbo:almaMater ?university.\n}\n```\n\nThis query uses the DBpedia ontology to search for the alma mater of Angela Merkel."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all the TV shows with Neil Patrick Harris.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for KG2 (DBpedia) to retrieve all the TV shows with Neil Patrick Harris:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?tvShow ?tvShowLabel\nWHERE {\n  ?tvShow dbo:starring dbr:Neil_Patrick_Harris .\n  ?tvShow rdf:type dbo:TelevisionShow .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\nThis query selects all television shows that have Neil Patrick Harris as a starring actor and retrieves their labels."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all movies with Tom Cruise.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To retrieve all movies featuring Tom Cruise from DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?movie WHERE {\n  ?movie dbo:starring dbr:Tom_Cruise.\n}\n```\n\nThis query uses the DBpedia Ontology (`dbo`) and DBpedia Resources (`dbr`) prefixes to find all movies (`?movie`) that have Tom Cruise (`dbr:Tom_Cruise`) as a starring actor."
+    },
+    {
+        "context": {
+            "natural_language_question": "What country is Mount Everest in?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find the country where Mount Everest is located:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?country WHERE {\n  ?mountEverest dbo:location ?country .\n  ?mountEverest dbp:name \"Mount Everest\"@en .\n}\n```\n\nThis query searches for the location of Mount Everest using the DBpedia ontology and property names."
+    },
+    {
+        "context": {
+            "natural_language_question": "Where was JFK assassinated?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Given the natural language question \"Where was JFK assassinated?\" and the context provided, here is the corresponding SPARQL query for DBpedia:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?place WHERE {\n  dbr:John_F._Kennedy_assassination dbp:location ?place .\n}\n```\n\nThis query retrieves the location where John F. Kennedy was assassinated from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which river does the Brooklyn Bridge cross?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! To find out which river the Brooklyn Bridge crosses using DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\nSELECT ?river WHERE {\n  res:Brooklyn_Bridge dbo:crosses ?river .\n}\n```\n\nThis query will retrieve the river that the Brooklyn Bridge crosses according to DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give all swimmers that were born in Moscow.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to fetch all swimmers born in Moscow:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?swimmer ?swimmerName\nWHERE {\n  ?swimmer dbo:birthPlace dbr:Moscow .\n  ?swimmer dbo:type dbr:Swimmer .\n  ?swimmer dbp:name ?swimmerName .\n}\n```\n\nThis query selects all individuals (`?swimmer`) who have a birthplace of Moscow and are of type Swimmer, and retrieves their names."
+    },
+    {
+        "context": {
+            "natural_language_question": "What was the last movie with Alec Guinness?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To retrieve the last movie Alec Guinness acted in from DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dct: <http://purl.org/dc/terms/>\n\nSELECT ?movie ?movieLabel\nWHERE {\n  dbr:Alec_Guinness dbo:starring ?movie .\n  ?movie dct:date ?date .\n}\nORDER BY DESC(?date)\nLIMIT 1\n```\n</sparql>\n\nThis query selects the movies Alec Guinness starred in, orders them by date in descending order, and limits the results to the most recent one."
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the second highest mountain on Earth?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the second highest mountain on Earth:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?mountain ?elevation\nWHERE {\n  ?mountain dbo:elevation ?elevation .\n  ?mountain a dbo:Mountain .\n}\nORDER BY DESC(?elevation)\nLIMIT 1 OFFSET 1\n```\n\nThis query selects mountains and their elevations from DBpedia, orders them by elevation in descending order, and then retrieves the second highest mountain by using the `LIMIT 1 OFFSET 1` clause."
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the population of Cairo?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! To find the population of Cairo using the DBpedia knowledge graph, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?population WHERE {\n  dbr:Cairo dbo:populationTotal ?population.\n}\n```\n\nThis query will retrieve the population of Cairo from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which people were born in Heraklion?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find people who were born in Heraklion:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?person ?personLabel\nWHERE {\n  ?person dbo:birthPlace dbr:Heraklion .\n  ?person rdfs:label ?personLabel .\n  FILTER (lang(?personLabel) = 'en')\n}\n```\n\nThis query selects all entities (?person) that have Heraklion as their birthplace and retrieves their labels in English."
+    },
+    {
+        "context": {
+            "natural_language_question": "How many children did Benjamin Franklin have?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Here is the SPARQL query for DBpedia to find out how many children Benjamin Franklin had:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\n\nSELECT (COUNT(?child) AS ?numberOfChildren)\nWHERE {\n  res:Benjamin_Franklin dbo:child ?child .\n}\n```\n\nThis query uses the DBpedia ontology to count the number of children associated with Benjamin Franklin."
+    },
+    {
+        "context": {
+            "natural_language_question": "how much is the elevation of D\u00fcsseldorf Airport ?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the elevation of D\u00fcsseldorf Airport:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX res: <http://dbpedia.org/resource/>\n\nSELECT ?elevation WHERE {\n  res:D\u00fcsseldorf_Airport dbo:elevation ?elevation.\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "In which country is Mecca located?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find the country where Mecca is located.\n\n```\n<sparql>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?country WHERE {\n  dbr:Mecca dbo:country ?country.\n}\n</sparql>\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "How tall is Claudia Schiffer?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Here is the SPARQL query for DBpedia to find out how tall Claudia Schiffer is:\n\n```sparql\nPREFIX dbpedia-owl: <http://dbpedia.org/ontology/>\nPREFIX dbpedia: <http://dbpedia.org/resource/>\nPREFIX dbpedia-prop: <http://dbpedia.org/property/>\n\nSELECT ?height WHERE {\n  dbpedia:Claudia_Schiffer dbpedia-owl:height ?height .\n}\n```\n\nThis query will retrieve the height information for Claudia Schiffer from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which holidays are celebrated around the world?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! Below is the SPARQL query for DBpedia to find holidays celebrated around the world:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?holiday ?holidayLabel\nWHERE {\n  ?holiday a dbo:Holiday .\n  ?holiday dbp:celebrated dbr:World .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "What kind of music did Lou Reed play?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To find out what kind of music Lou Reed played using DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?genreLabel\nWHERE {\n  dbr:Lou_Reed dbo:genre ?genre .\n  ?genre rdfs:label ?genreLabel .\n  FILTER (lang(?genreLabel) = 'en')\n}\n```\n\nThis query looks for the genres associated with Lou Reed in DBpedia and retrieves their labels in English."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me the birth place of Frank Sinatra.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the birth place of Frank Sinatra:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT ?birthPlace WHERE {\n  dbr:Frank_Sinatra dbo:birthPlace ?birthPlace.\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "Which city has the least inhabitants?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the city with the least inhabitants:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?city ?population\nWHERE {\n  ?city a dbo:City ;\n        dbp:populationTotal ?population .\n}\nORDER BY ASC(?population)\nLIMIT 1\n```\n\nThis query selects cities and their populations from DBpedia, orders them by population in ascending order, and limits the result to the city with the least inhabitants."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which television shows were created by Walt Disney?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find television shows created by Walt Disney:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT ?tvShow ?tvShowLabel\nWHERE {\n  ?tvShow dbo:creator dbr:Walt_Disney .\n  ?tvShow rdf:type dbo:TelevisionShow .\n  ?tvShow rdfs:label ?tvShowLabel .\n  FILTER (lang(?tvShowLabel) = 'en')\n}\n```\n\nThis query selects television shows (`dbo:TelevisionShow`) that have Walt Disney (`dbr:Walt_Disney`) as their creator (`dbo:creator`) and retrieves their labels in English."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all Swedish holidays.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to retrieve all Swedish holidays:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?holiday ?holidayLabel\nWHERE {\n  ?holiday dbo:country dbr:Sweden ;\n           dbp:language dbr:Swedish .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\nExplanation:\n- The query uses the DBpedia ontology (`dbo`) and DBpedia resources (`dbr` and `dbp`) to filter for holidays related to Sweden and the Swedish language.\n- The `SERVICE wikibase:label` is used to fetch the labels of the holidays in the preferred language, with English as a fallback."
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the net income of Apple?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To retrieve the net income of Apple from DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\n\nSELECT ?netIncome WHERE {\n  res:Apple_Inc. dbo:netIncome ?netIncome .\n}\n```\n\nThis query selects the net income (`dbo:netIncome`) of the resource corresponding to Apple Inc. (`res:Apple_Inc.`) in the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Where did Abraham Lincoln die?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! To translate the given SPARQL query for Wikidata to a query for DBpedia, you would typically adjust the namespaces and properties to match DBpedia's structure. Below is the SPARQL query for DBpedia to find the location where Abraham Lincoln died.\n\n```sparql\n<sparql>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?place WHERE {\n  dbr:Abraham_Lincoln dbo:deathPlace ?place\n}\n</sparql>\n```\n\nThis query retrieves the death place of Abraham Lincoln from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me the capitals of all countries that the Himalayas run through.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to retrieve the capitals of all countries that the Himalayas run through:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?country ?capital WHERE {\n  dbr:Himalayas dbo:location ?country .\n  ?country dbo:capital ?capital .\n}\n```\n\nThis query uses the DBpedia Ontology (dbo) prefix to find the locations (countries) of the Himalayas and then retrieves the capitals of those countries."
+    },
+    {
+        "context": {
+            "natural_language_question": "In which country is the Limerick Lake?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find the country where Limerick Lake is located:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?countryLabel WHERE {\n  dbr:Limerick_Lake dbo:country ?country .\n  ?country rdfs:label ?countryLabel .\n  FILTER (lang(?countryLabel) = 'en')\n}\n```\n\nThis query will retrieve the country where Limerick Lake is located from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "How tall is Michael Jordan?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To produce a SPARQL query for DBpedia to find out how tall Michael Jordan is, you can use the following query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?height\nWHERE {\n  dbr:Michael_Jordan dbo:height ?height .\n}\n```\n\nThis query uses the DBpedia ontology (`dbo`) and resource (`dbr`) prefixes to query the height of Michael Jordan."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which films starring Clint Eastwood did he direct himself?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! Here's the SPARQL query for DBpedia to find films starring Clint Eastwood that he directed himself:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?film WHERE {\n  ?film dbo:director dbr:Clint_Eastwood ;\n        dbo:starring dbr:Clint_Eastwood .\n}\n```\n\nThis query searches for films in DBpedia where Clint Eastwood is both the director and one of the starring actors."
+    },
+    {
+        "context": {
+            "natural_language_question": "In which countries can you pay using the West African CFA franc?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! Below is the SPARQL query for DBpedia to find the countries where you can pay using the West African CFA franc:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT DISTINCT ?country ?countryLabel WHERE {\n  ?country dbo:currency dbr:West_African_CFA_franc.\n  ?country dbp:name ?countryLabel.\n  FILTER (lang(?countryLabel) = 'en')\n}\nORDER BY ?countryLabel\n```\n\nThis query retrieves the countries that use the West African CFA franc as their currency from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "how much is the population Iraq?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To query the population of Iraq from DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\n\nSELECT ?population WHERE {\n  res:Iraq dbo:populationTotal ?population.\n}\n```\n\nThis query uses the `dbo:populationTotal` property to retrieve the population of Iraq from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which holidays are celebrated around the world?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To produce a SPARQL query for DBpedia that retrieves holidays celebrated around the world, you can utilize the DBpedia ontology to search for instances of holidays. Below is a SPARQL query designed for this purpose:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT DISTINCT ?holiday ?holidayLabel\nWHERE {\n  ?holiday a dbo:Holiday .\n  ?holiday rdfs:label ?holidayLabel .\n  FILTER (lang(?holidayLabel) = 'en')\n}\nORDER BY ?holidayLabel\n```\n\nThis query retrieves distinct holidays from DBpedia and their labels, filtering them to only include English labels for clarity."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which Greek parties are pro-European?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia that retrieves Greek political parties that are pro-European:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dct: <http://purl.org/dc/terms/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?party ?partyLabel\nWHERE {\n  ?party dct:subject dbr:Category:Pro-Europeanism ;\n         dbo:country dbr:Greece ;\n         dbo:type dbr:Political_party .\n  ?party rdfs:label ?partyLabel .\n  FILTER (lang(?partyLabel) = 'en')\n}\n```\n\nThis query searches for political parties in Greece that are categorized under \"Pro-Europeanism\" and retrieves their labels in English."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me the birthdays of all actors of the television show Charmed.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, given the context and the natural language question, here is the SPARQL query for DBpedia to retrieve the birthdays of all actors of the television show \"Charmed\":\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?actor ?birthday WHERE {\n  dbr:Charmed_%28TV_series%29 dbo:starring ?actor .\n  ?actor dbp:birthDate ?birthday .\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "To which artistic movement did the painter of The Three Dancers belong?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the artistic movement of the painter of \"The Three Dancers\":\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?movement\nWHERE {\n  ?painting dbp:title \"The Three Dancers\"@en .\n  ?painting dbo:author ?painter .\n  ?painter dbo:movement ?movement .\n}\n```\n\nThis query retrieves the artistic movement associated with the painter of \"The Three Dancers\" from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which actors were born in Germany?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Here is the SPARQL query for DBpedia to find actors born in Germany:\n\n<sparql>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?actor ?actorName\nWHERE {\n  ?actor dbo:birthPlace dbr:Germany .\n  ?actor rdf:type dbo:Actor .\n  ?actor dbp:name ?actorName .\n}\n</sparql>\n\nThis query retrieves actors (`?actor`) who were born in Germany (`dbr:Germany`) and their names (`?actorName`)."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who designed the Brooklyn Bridge?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find out who designed the Brooklyn Bridge:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?designer WHERE {\n  dbr:Brooklyn_Bridge dbp:designer ?designer.\n}\n```\n\nThis query searches for the designer of the Brooklyn Bridge using DBpedia's properties and ontology."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who wrote the Game of Thrones theme?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find out who wrote the Game of Thrones theme:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?composer ?composerLabel\nWHERE {\n  dbr:Game_of_Thrones dbo:composer ?composer .\n  ?composer rdfs:label ?composerLabel .\n  FILTER (lang(?composerLabel) = 'en')\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all movies directed by Francis Ford Coppola.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for KG2 (DBpedia) to retrieve all movies directed by Francis Ford Coppola:\n\n```sparql\nSELECT ?movie ?movieLabel\nWHERE {\n  ?movie dbo:director dbr:Francis_Ford_Coppola .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the birth name of Adele?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! To create a SPARQL query for DBpedia to find the birth name of Adele, you can use the following query:\n\n```\n<sparql>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?birthName\nWHERE {\n  dbr:Adele dbp:birthName ?birthName .\n}\n</sparql>\n```\n\nThis query uses the DBpedia ontology to find the birth name of the resource identified as `dbr:Adele`."
+    },
+    {
+        "context": {
+            "natural_language_question": "What was the first Queen album?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the first Queen album:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?album ?albumLabel\nWHERE {\n  dbr:Queen_(band) dbp:firstAlbum ?album .\n  ?album rdfs:label ?albumLabel .\n  FILTER (lang(?albumLabel) = 'en')\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the currency of the Czech Republic?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the currency of the Czech Republic:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?currency\nWHERE {\n  dbr:Czech_Republic dbo:currency ?currency.\n}\n```\n\nThis query retrieves the currency of the Czech Republic from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all people that were born in Vienna and died in Berlin.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Given the context and the natural language question, here is the SPARQL query for DBpedia:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\n\nSELECT ?person ?personLabel\nWHERE {\n  ?person dbo:birthPlace dbr:Vienna .\n  ?person dbo:deathPlace dbr:Berlin .\n  ?person foaf:name ?personLabel .\n}\n```\n\n</sparql>\n\nThis query retrieves all people who were born in Vienna and died in Berlin from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which bridges cross the Seine?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, I can help with that. Here is the SPARQL query for the DBpedia knowledge graph to find which bridges cross the Seine:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT ?bridge ?bridgeLabel\nWHERE {\n  ?bridge dbo:crosses dbr:Seine .\n  ?bridge rdfs:label ?bridgeLabel .\n  FILTER (lang(?bridgeLabel) = 'en')\n}\n```\n\nThis query selects all bridges that cross the Seine and their labels in English."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which musician wrote the most books?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the musician who wrote the most books:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\nSELECT ?musician (COUNT(?book) AS ?bookCount)\nWHERE {\n  ?musician rdf:type dbo:MusicalArtist .\n  ?musician dbp:books ?book .\n}\nGROUP BY ?musician\nORDER BY DESC(?bookCount)\nLIMIT 1\n```\n\nThis query selects the musician who has the highest count of books associated with them in the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which television shows were created by John Cleese?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find television shows created by John Cleese:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?show ?showLabel\nWHERE {\n  ?show dbo:creator dbr:John_Cleese .\n  ?show a dbo:TelevisionShow .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all writers that won the Nobel Prize in literature.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Here is the SPARQL query for DBpedia to retrieve all writers that won the Nobel Prize in literature:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?writer ?writerLabel\nWHERE {\n  ?writer dbo:award dbr:Nobel_Prize_in_Literature .\n  ?writer rdf:type dbo:Writer .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\n</sparql>\n\nThis query will fetch all writers who have been awarded the Nobel Prize in Literature from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who discovered Ceres?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " To translate the given natural language question \"Who discovered Ceres?\" into a SPARQL query for DBpedia, you can use the following query. This query retrieves the discoverer of the dwarf planet Ceres from the DBpedia knowledge graph.\n\nHere is the complete SPARQL query for DBpedia:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?discoverer WHERE {\n  dbr:Ceres_%28dwarf_planet%29 dbo:discoverer ?discoverer .\n}\n```\n\nThis query uses the DBpedia ontology prefixes (`dbo` and `dbr`) to find the discoverer of Ceres. The resource `dbr:Ceres_%28dwarf_planet%29` represents Ceres in DBpedia, and the property `dbo:discoverer` is used to identify the discoverer."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me a list of all bandleaders that play trumpet.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to retrieve a list of all bandleaders that play the trumpet:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?bandleader ?bandleaderLabel\nWHERE {\n  ?bandleader dbo:instrument dbr:Trumpet ;\n              dbo:occupation dbr:Bandleader .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n</sparql>\n\nThis query retrieves individuals (`?bandleader`) from DBpedia who have both the occupation of \"Bandleader\" and play the \"Trumpet\" as their instrument. The `SERVICE wikibase:label` clause ensures that the labels for the bandleaders are retrieved in the appropriate language."
+    },
+    {
+        "context": {
+            "natural_language_question": "Show me all basketball players that are higher than 2 meters.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find all basketball players that are higher than 2 meters:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?player ?height\nWHERE {\n  ?player a dbo:BasketballPlayer .\n  ?player dbp:height ?height .\n  FILTER (?height > 200)\n}\n```\n\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "In which films did Julia Roberts as well as Richard Gere play?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! To find the films in which both Julia Roberts and Richard Gere played, you can use the following SPARQL query for DBpedia (KG2):\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT DISTINCT ?film WHERE {\n  ?film dbo:starring dbr:Julia_Roberts.\n  ?film dbo:starring dbr:Richard_Gere.\n  ?film a dbo:Film.\n}\n```\n\nThis query searches for films (`?film`) that have both Julia Roberts and Richard Gere listed as starring actors."
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the capital of Canada?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the capital of Canada:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?capital WHERE {\n  dbpedia:Canada dbo:capital ?capital.\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "Which soccer players were born on Malta?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia, which aims to retrieve soccer players born on Malta.\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dct: <http://purl.org/dc/terms/>\n\nSELECT ?player ?playerLabel\nWHERE {\n  ?player dct:subject dbc:Maltese_footballers ;\n          dbp:placeOfBirth ?place .\n  ?place dbo:country dbr:Malta .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\nThis query selects soccer players (`dct:subject dbc:Maltese_footballers`) who were born in a place (`dbp:placeOfBirth ?place`) that is located in Malta (`dbo:country dbr:Malta`). The `SERVICE wikibase:label` part ensures that the labels are fetched in the user's preferred language or English as a fallback."
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the capital of Cameroon?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find the capital of Cameroon.\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT ?capital WHERE {\n  <http://dbpedia.org/resource/Cameroon> dbo:capital ?capital .\n}\n```\n\nThis query uses the DBpedia ontology to retrieve the capital of Cameroon."
+    },
+    {
+        "context": {
+            "natural_language_question": "How many programming languages are there?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find out how many programming languages are there:\n\n```\n<sparql>\nSELECT (COUNT(?language) AS ?count) WHERE {\n  ?language a dbo:ProgrammingLanguage .\n}\n</sparql>\n```\n\nThis query will count the number of entities in DBpedia that are instances of the `ProgrammingLanguage` class."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all cosmonauts.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to retrieve all cosmonauts:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?cosmonaut ?cosmonautLabel\nWHERE {\n  ?cosmonaut dbo:profession dbr:Cosmonaut .\n  ?cosmonaut rdfs:label ?cosmonautLabel .\n  FILTER (lang(?cosmonautLabel) = 'en')\n}\n```\n\nThis query selects all entities that have the profession of \"Cosmonaut\" and retrieves their labels in English."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who created Family Guy?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find out who created Family Guy:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?creator\nWHERE {\n  dbr:Family_Guy dbo:creator ?creator.\n}\n```\n\nThis query retrieves the creator of Family Guy from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "How much is the population of mexico city ?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Here's the SPARQL query for DBpedia to find the population of Mexico City:\n\n```sparql\n<sparql>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\n\nSELECT ?population WHERE {\n  res:Mexico_City dbo:populationTotal ?population .\n}\n</sparql>\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "Who created Batman?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find out who created Batman:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?creator\nWHERE {\n  dbr:Batman dbo:creator ?creator.\n}\n```\n\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "How many people live in the capital of Australia?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! To answer the question \"How many people live in the capital of Australia?\" using DBpedia, you can construct a SPARQL query as follows:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?population WHERE {\n  dbr:Canberra dbp:populationTotal ?population.\n}\n```\n\nThis query selects the population of Canberra, the capital of Australia, from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "how big is the total area of North Rhine- Westphalia?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the total area of North Rhine-Westphalia:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?area\nWHERE {\n  dbr:North_Rhine-Westphalia dbo:areaTotal ?area .\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "How many employees does IBM have?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! Here is the SPARQL query for DBpedia to find out how many employees IBM has:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?employees\nWHERE {\n  dbr:IBM dbp:numberOfEmployees ?employees.\n}\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "How much did Pulp Fiction cost?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find out how much the movie \"Pulp Fiction\" cost:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?cost\nWHERE {\n  dbr:Pulp_Fiction dbp:budget ?cost.\n}\n```\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "What movies does Jesse Eisenberg play in?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! Below is the SPARQL query for DBpedia to find the movies that Jesse Eisenberg plays in:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?movie ?movieLabel\nWHERE {\n  dbr:Jesse_Eisenberg dbo:starring ?movie .\n  ?movie rdfs:label ?movieLabel .\n  FILTER (lang(?movieLabel) = 'en')\n}\n```\n\nThis query retrieves the movies in which Jesse Eisenberg stars by using the DBpedia ontology and properties."
+    },
+    {
+        "context": {
+            "natural_language_question": "Give me all Danish movies.",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here's the SPARQL query for DBpedia to retrieve all Danish movies:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dct: <http://purl.org/dc/terms/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?movie ?movieLabel\nWHERE {\n  ?movie dct:subject dbr:Category:Danish_films ;\n         dbo:country dbr:Denmark .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n```\n\nThis query selects all movies that are categorized under \"Danish films\" and have Denmark as their country. The `SERVICE wikibase:label` part ensures that the labels for the movies are retrieved in the appropriate language."
+    },
+    {
+        "context": {
+            "natural_language_question": "To which countries does the Himalayan mountain system extend?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure, here is the SPARQL query for DBpedia to find the countries to which the Himalayan mountain system extends:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/>\n\nSELECT DISTINCT ?country WHERE {\n  dbr:Himalayas dbo:location ?country .\n}\n```\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the largest country in the world?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! Below is the SPARQL query for DBpedia to find the largest country in the world:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?country ?countryLabel ?area\nWHERE {\n  ?country dbo:area ?area .\n  ?country a dbo:Country .\n  FILTER(?area = MAX(?area))\n}\nORDER BY DESC(?area)\nLIMIT 1\n```\n\nThis query retrieves the country with the largest area from the DBpedia knowledge graph."
+    },
+    {
+        "context": {
+            "natural_language_question": "What is the alma mater of the chancellor of Germany Angela Merkel?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Certainly! To find the alma mater of Angela Merkel using DBpedia, you can use the following SPARQL query:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?almaMater\nWHERE {\n  dbr:Angela_Merkel dbo:almaMater ?almaMater.\n}\n```\n\nThis query retrieves the alma mater of Angela Merkel from DBpedia."
+    },
+    {
+        "context": {
+            "natural_language_question": "Who created Goofy?",
+            "sparql_query_kg1": "",
+            "kg1_name": "Wikidata",
+            "kg2_name": "DBpedia",
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
+        },
+        "sparql_query_kg2": " Sure! Here is the SPARQL query for DBpedia to find out who created Goofy:\n\n```sparql\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\n\nSELECT ?creator\nWHERE {\n  dbr:Goofy dbp:creator ?creator.\n}\n```\n\nThis query uses the `dbp:creator` property to find the creator of Goofy in the DBpedia knowledge graph."
+    }
+]
