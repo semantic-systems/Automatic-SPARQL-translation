@@ -164,6 +164,10 @@
         "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>  SELECT DISTINCT ?uri WHERE {   ?uri wdt:P31 wd:Q11424 ;         wdt:P161 wd:Q103894 ;         wdt:P577 ?date . } ORDER BY DESC(?date) LIMIT 1"
     },
     {
+        "natural_language_question": "What is the second highest mountain on Earth?",
+        "sparql_query_kg2": "SELECT DISTINCT ?item WHERE {   ?item wdt:P31 wd:Q8502 ;          wdt:P2044 ?elevation . }"
+    },
+    {
         "natural_language_question": "What is the population of Cairo?",
         "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>  SELECT ?pop WHERE {   wd:Q85 wdt:P1082 ?pop. }"
     },
