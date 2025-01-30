@@ -1,18 +1,1 @@
-[
-    {
-        "natural_language_question": "Who has Tom Cruise been married to?",
-        "sparql_query_raw": "To find the information about Tom Cruise's spouses in the Wikidata knowledge graph, we need to use the correct property for spouse, which is `P26`. Here's the SPARQL query for KG2:\n\n`sparql`\nSELECT DISTINCT ?uri\nWHERE \n{\n    ?uri  wdt:P26  wd:Q23337  .\n}\n`sparql`\n\nThis query selects the `?uri` (the spouse's entity) where the property `P26` (spouse) is linked to the entity for Tom Cruise (`wd:Q23337`)."
-    },
-    {
-        "natural_language_question": "What kind of music did Lou Reed play?",
-        "sparql_query_raw": "To answer the question, we need to find the genre(s) associated with Lou Reed in Wikidata. Here's the SPARQL query for KG2:\n\n`sparql`\n`SELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q7336> <http://www.wikidata.org/property/P136> ?uri }`\n`</sparql>`\n\nExplanation:\n- `http://www.wikidata.org/entity/Q7336` is the Wikidata URI for Lou Reed.\n- `http://www.wikidata.org/property/P136` is the property for the musical genre in Wikidata.\n\nNote that the property used in Wikidata is P136, which is different from the ontology used in DBpedia (genre)."
-    },
-    {
-        "natural_language_question": "Which soccer players were born on Malta?",
-        "sparql_query_raw": "To produce a SPARQL query for KG2 (Wikidata), we need to use the equivalent properties and classes. In Wikidata, the property for birth place is `P20` and the class for soccer players is `Q471167`.\n\nHere's the SPARQL query for KG2:\n\n`sparql`\nSELECT DISTINCT ?uri WHERE { \n  ?uri a <http://www.wikidata.org/entity/Q471167> ; \n    <http://www.wikidata.org/prop/direct/P20> <http://www.wikidata.org/entity/Q143> \n  .\n}\n</sparql>"
-    },
-    {
-        "natural_language_question": "How many programming languages are there?",
-        "sparql_query_raw": "To create a SPARQL query for KG2 (Wikidata), we need to use the equivalent class for programming languages in Wikidata. \n\nAccording to the Wikidata documentation, the class for programming languages is `http://www.wikidata.org/entity/Qall-Miscellaneous/ProgrammingLanguage`. \n\nHere is the SPARQL query for KG2 (Wikidata):\n\n`sparql`\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://www.wikidata.org/entity/Qall-Miscellaneous/ProgrammingLanguage> }\n`sparql`\n\nThis query counts the number of distinct programming languages in KG2 (Wikidata) by matching URIs that are instances of the class for programming languages."
-    }
-]
+[]
