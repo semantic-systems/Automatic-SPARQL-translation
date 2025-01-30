@@ -1,10 +1,1 @@
-[
-    {
-        "natural_language_question": "What is the capital of Canada?",
-        "sparql_query_raw": " Sure, based on the information provided, you can produce a SPARQL query for DBpedia. The equivalent query for DBpedia would look for the capital of Canada using the mapped entities and relations.\n\nHere is the SPARQL query for DBpedia:\n\n```\n<sparql>\nSELECT DISTINCT ?o1 WHERE {\n  <http://dbpedia.org/resource/Canada> <http://dbpedia.org/ontology/capital> ?o1 .\n}\n</sparql>\n```\n\nThis query retrieves the capital of Canada from DBpedia, using the equivalent entities and relations mapped from Wikidata."
-    },
-    {
-        "natural_language_question": "Give me all cosmonauts.",
-        "sparql_query_raw": " To create a SPARQL query for DBpedia based on the given context and entity mappings, we can translate the Wikidata properties and entities to their corresponding DBpedia equivalents.\n\nHere is the translated SPARQL query for DBpedia:\n\n```\n<sparql>\nSELECT DISTINCT ?uri WHERE {\n  ?uri <http://dbpedia.org/ontology/Astronaut> [] .\n  { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Soviet_Union> }\n  UNION\n  { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Russia> }\n}\n</sparql>\n```\n\nThis query retrieves all entities that are classified as astronauts (`<http://dbpedia.org/ontology/Astronaut>`) and have a nationality of either the Soviet Union (`<http://dbpedia.org/resource/Soviet_Union>`) or Russia (`<http://dbpedia.org/resource/Russia>`)."
-    }
-]
+[]
