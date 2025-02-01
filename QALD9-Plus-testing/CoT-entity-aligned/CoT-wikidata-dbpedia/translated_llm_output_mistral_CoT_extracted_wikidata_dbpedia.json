@@ -1,0 +1,362 @@
+[
+    {
+        "natural_language_question": "Who is the founder of Penguin Books?",
+        "sparql_query_kg2": "select the object (`?founder`) where the subject is `Penguin Books` and the predicate is `founder`. Here is the final SPARQL query for DBpedia: ```sparql SELECT ?founder WHERE { <http://dbpedia.org/resource/Penguin_Books> <http://dbpedia.org/ontology/founder> ?founder . }"
+    },
+    {
+        "natural_language_question": "Which films did Stanley Kubrick direct?",
+        "sparql_query_kg2": "select distinct URIs of the films. - The films should have Stanley Kubrick as the director. 3. **Use the `dbpedia:director` property to link films to Stanley Kubrick**: - In DBpedia, the `director` property is used to link a film to its director. 4. **Formulate the query**: - We will use a triple pattern where the subject is the film (`?film`), the predicate is `dbpedia:director`, and the object is `dbpedia:Stanley_Kubrick`. 5. **Combine the components into a complete SPARQL query**: - The query will select distinct film URIs where the director is Stanley Kubrick. Here is the final SPARQL query for DBpedia: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?film WHERE { ?film dbo:director dbr:Stanley_Kubrick . }"
+    },
+    {
+        "natural_language_question": "List all the musicals with music by Elton John.",
+        "sparql_query_kg2": "select distinct URIs of musicals. - Use the `dbo:Musical` class to filter entities. - Use the `dbo:musicBy` property to find musicals where the music is by Elton John. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Musical ; dbo:musicBy dbr:Elton_John . }"
+    },
+    {
+        "natural_language_question": "Who developed Skype?",
+        "sparql_query_kg2": "select the URI of the developers of Skype. 4. **Final Query Structure**: - We will use the SELECT statement to retrieve the URI of the developers. - The WHERE clause will match the Skype entity with the developer property to find the developers. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { dbr:Skype dbo:developer ?uri . }"
+    },
+    {
+        "natural_language_question": "Show a list of soccer clubs that play in the Bundesliga.",
+        "sparql_query_kg2": "select distinct URIs of soccer clubs (`?uri`) that play in the Bundesliga. - The soccer clubs are instances of `http://dbpedia.org/ontology/SoccerClub`. - The relationship \"plays in league\" is represented by `http://dbpedia.org/ontology/league`. - The specific league we are interested in is the Bundesliga, represented by `http://dbpedia.org/resource/Bundesliga`. 3. **SPARQL Query Components**: - `PREFIX dbo: <http://dbpedia.org/ontology/>`: Defines the prefix for DBpedia ontology. - `PREFIX dbr: <http://dbpedia.org/resource/>`: Defines the prefix for DBpedia resources. - `SELECT DISTINCT ?uri`: Selects distinct URIs of soccer clubs. - `WHERE { ?uri rdf:type dbo:SoccerClub ; dbo:league dbr:Bundesliga . }"
+    },
+    {
+        "natural_language_question": "Give me all actors starring in movies directed by William Shatner.",
+        "sparql_query_kg2": "select distinct actors (`?uri`) where the movie (`?movie`) has William Shatner as the director and the movie has the actor starring in it. Here's the complete SPARQL query for DBpedia: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?movie dbo:director dbr:William_Shatner ; dbo:starring ?uri . }"
+    },
+    {
+        "natural_language_question": "What is the highest mountain?",
+        "sparql_query_kg2": "select mountains and their elevations, then order them by elevation in descending order to find the highest mountain. 3. **Translate Wikidata SPARQL to DBpedia SPARQL**: - The Wikidata query selects `?uri` where the entity is a mountain and has an elevation. - The DBpedia query will do the same but using DBpedia's ontology. 4. **Use Prefixes**: Define the necessary prefixes for DBpedia. 5. **Order and Limit**: Order the results by elevation in descending order and limit the results to 1 to get the highest mountain. 1. **Prefixes**: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> ``` 2. **Select Statement**: ```sparql SELECT DISTINCT ?uri ``` 3. **Where Clause**: - Identify the entity as a mountain. - Retrieve the elevation property. ```sparql WHERE { ?uri a dbo:Mountain ; dbo:elevation ?elevation . }"
+    },
+    {
+        "natural_language_question": "How many films did Leonardo DiCaprio star in?",
+        "sparql_query_kg2": "Select Clause**: We want to count the distinct films (`?uri`) that Leonardo DiCaprio starred in. - **Where Clause**: - The variable `?uri` represents a film. - The film should be of the type `http://dbpedia.org/ontology/Film`. - The film should have Leonardo DiCaprio (`http://dbpedia.org/resource/Leonardo_DiCaprio`) as a starring actor. 3. **Final Query**: - Using the above steps, the SPARQL query for DBpedia is constructed as follows: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a dbo:Film ; dbo:starring dbr:Leonardo_DiCaprio . }"
+    },
+    {
+        "natural_language_question": "When was Olof Palme shot?",
+        "sparql_query_kg2": "select the death date of Olof Palme by using the DBpedia resource `<http://dbpedia.org/resource/Olof_Palme>` and the property `<http://dbpedia.org/ontology/deathDate>`. ```sparql SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Olof_Palme> <http://dbpedia.org/ontology/deathDate> ?date . }"
+    },
+    {
+        "natural_language_question": "Which movies star both Liz Taylor and Richard Burton?",
+        "sparql_query_kg2": "Select the distinct films:** ```sparql SELECT DISTINCT ?film WHERE { ``` - **Find films starring Elizabeth Taylor:** ```sparql ?film dbo:starring <http://dbpedia.org/resource/Elizabeth_Taylor> . ``` - **Find films starring Richard Burton:** ```sparql ?film dbo:starring <http://dbpedia.org/resource/Richard_Burton> . ``` - **Close the SPARQL query:** ```sparql }"
+    },
+    {
+        "natural_language_question": "Who developed Minecraft?",
+        "sparql_query_kg2": "PREFIX Declaration:** - We need to declare the namespaces for DBpedia resources and properties. - **SELECT Clause:** - We want to select the developers, so we will select the variable that represents the developer. - **WHERE Clause:** - We will use the DBpedia resource for Minecraft and the DBpedia property for developer to find the developers. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?developer WHERE { dbr:Minecraft dbo:developer ?developer . }"
+    },
+    {
+        "natural_language_question": "How much did the Lego Movie cost?",
+        "sparql_query_kg2": "SELECT DISTINCT ?val WHERE { ?subject ?predicate ?val . }"
+    },
+    {
+        "natural_language_question": "For which label did Elvis record his first album?",
+        "sparql_query_kg2": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?label WHERE { dbr:Elvis_Presley dbo:artist ?album . ?album dbo:releaseDate ?date . ?album dbo:recordLabel ?label . } ORDER BY ?date LIMIT 1"
+    },
+    {
+        "natural_language_question": "Give me the runtime of Toy Story.",
+        "sparql_query_kg2": "select the runtime value (`?val`) for the resource `http://dbpedia.org/resource/Toy_Story` using the property `http://dbpedia.org/ontology/runtime`. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/resource/> SELECT ?val WHERE { dbp:Toy_Story dbo:runtime ?val . }"
+    },
+    {
+        "natural_language_question": "Give me a list of all trumpet players that were bandleaders.",
+        "sparql_query_kg2": "select distinct URIs of individuals (?person). - The individuals should have an occupation of \"Bandleader\". - The individuals should play the \"Trumpet\". Here is the reasoning for each part of the query: - `SELECT DISTINCT ?person`: We want to retrieve unique individuals. - `?person dbo:occupation dbr:Bandleader`: This ensures that the person has the occupation of \"Bandleader\". - `?person dbo:instrument dbr:Trumpet`: This ensures that the person plays the \"Trumpet\". Combining these components, we get the following SPARQL query for DBpedia: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?person WHERE { ?person dbo:occupation dbr:Bandleader ; dbo:instrument dbr:Trumpet . }"
+    },
+    {
+        "natural_language_question": "In which films directed by Garry Marshall was Julia Roberts starring?",
+        "sparql_query_kg2": "SELECT DISTINCT` to get unique films. - Use `?film` as the variable representing the films. - Use the triple patterns to match the required director and starring actor. Here is the detailed step-by-step reasoning and construction of the SPARQL query: - **SELECT DISTINCT ?film**: This part specifies that we want to retrieve unique film URIs. - **?film a dbo:Film**: This ensures that `?film` is of type `dbo:Film`. - **?film dbo:director dbr:Garry_Marshall**: This ensures that the director of `?film` is Garry Marshall. - **?film dbo:starring dbr:Julia_Roberts**: This ensures that Julia Roberts is starring in `?film`. Putting it all together, we get the following SPARQL query: ```sparql SELECT DISTINCT ?film WHERE { ?film a <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Garry_Marshall> . ?film <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> . }"
+    },
+    {
+        "natural_language_question": "In which year was Rachel Stevens born?",
+        "sparql_query_kg2": "Select the birth year directly since DBpedia typically stores birth years as literals. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?year WHERE { dbr:Rachel_Stevens dbo:birthYear ?year . }"
+    },
+    {
+        "natural_language_question": "What is the most frequent cause of death?",
+        "sparql_query_kg2": "select the `?uri` of the most frequent cause of death. - Use the `dbpedia-owl:deathCause` property to find the causes of death. - Group the results by `?uri` and order them by the count of distinct subjects (`?s`) in descending order. - Limit the results to the top one cause of death. - **PREFIX Definitions:** - `dbpedia-owl:` is a common namespace for DBpedia ontology properties. - `dbpedia:` is a common namespace for DBpedia resources. - **SELECT Clause:** - Select the `?uri` which represents the cause of death. - **WHERE Clause:** - Use a variable `?s` to represent subjects that have the `dbpedia-owl:deathCause` property. - Use the `dbpedia-owl:deathCause` property to link `?s` to `?uri`. - **GROUP BY Clause:** - Group the results by `?uri`. - **ORDER BY Clause:** - Order the results by the count of distinct subjects (`?s`) in descending order. - **LIMIT Clause:** - Limit the results to the top one cause of death. ```sparql PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> PREFIX dbpedia: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?s dbpedia-owl:deathCause ?uri. }"
+    },
+    {
+        "natural_language_question": "How high is the Yokohama Marine Tower?",
+        "sparql_query_kg2": "select the height value (`?height`) from the entity `http://dbpedia.org/resource/Yokohama_Marine_Tower` using the property `http://dbpedia.org/ontology/height`. - The basic structure of the SPARQL query is to select a variable (`?height`) where the subject is the Yokohama Marine Tower and the predicate is the height property. 4. **Finalize the Query:** - Use the `PREFIX` keyword to define the namespaces for DBpedia resources and properties. - Use the `SELECT DISTINCT` clause to get unique values. - Specify the entity and property in the `WHERE` clause. Given these steps, the final SPARQL query for DBpedia would look like this: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { dbr:Yokohama_Marine_Tower dbo:height ?height . }"
+    },
+    {
+        "natural_language_question": "What is the highest mountain in Italy?",
+        "sparql_query_kg2": "select mountains that are located in Italy and have an elevation property. - We will order the results by elevation in descending order and limit the results to the highest mountain. Here is the step-by-step construction of the SPARQL query for DBpedia: - **Select Statement**: We want to select the URI of the mountain. - **WHERE Clause**: - The mountain (`?mountain`) should be of type `dbo:Mountain`. - The mountain should be located in Italy (`dbr:Italy`) using the property `dbo:locatedInArea`. - The mountain should have an elevation property (`?elevation`). - **ORDER BY Clause**: We order the results by the elevation in descending order. - **LIMIT Clause**: We limit the results to the top 1. Putting it all together, the final SPARQL query for DBpedia is: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?mountain WHERE { ?mountain a dbo:Mountain ; dbo:locatedInArea dbr:Italy ; dbo:elevation ?elevation . }"
+    },
+    {
+        "natural_language_question": "Who was the doctoral supervisor of Albert Einstein?",
+        "sparql_query_kg2": "select the distinct URIs of the doctoral advisor. - We will use the DBpedia resource for Albert Einstein and the DBpedia property for doctoral advisor. The query structure is as follows: - `SELECT DISTINCT ?uri`: Selects the distinct URIs of the doctoral advisor. - `WHERE { <http://dbpedia.org/resource/Albert_Einstein> <http://dbpedia.org/ontology/doctoralAdvisor> ?uri }"
+    },
+    {
+        "natural_language_question": "What is Donald Trump's main business?",
+        "sparql_query_kg2": "Select the Distinct Businesses**: - We need to select distinct URIs of businesses owned by Donald Trump. 2. **Identify Ownership Relation**: - Use `dbo:owner` to find businesses owned by Donald Trump. 3. **Filter Active Businesses**: - Ensure the businesses are active by checking they do not have a dissolution date. Here is the step-by-step construction: - **SELECT DISTINCT ?uri**: We want distinct URIs of businesses. - **?uri dbo:owner dbr:Donald_Trump**: This identifies businesses owned by Donald Trump. - **?uri rdf:type dbo:Company**: This ensures we are dealing with companies. - **MINUS { ?uri dbo:dissolutionDate ?closed }"
+    },
+    {
+        "natural_language_question": "Who has Tom Cruise been married to?",
+        "sparql_query_kg2": "select the distinct values of the spouse(s) of Tom Cruise. - The `PREFIX` statements are used to define namespaces for convenience. - The `SELECT DISTINCT` clause is used to retrieve unique results. - The `WHERE` clause specifies the conditions: - The subject is `http://dbpedia.org/resource/Tom_Cruise`. - The predicate is `http://dbpedia.org/ontology/spouse`. - The object is the variable `?spouse`. 1. **Define Prefixes**: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> ``` 2. **Select Distinct Spouses**: ```sparql SELECT DISTINCT ?spouse WHERE { ``` 3. **Specify the Subject, Predicate, and Object**: ```sparql dbr:Tom_Cruise dbo:spouse ?spouse . ``` 4. **Close the Query**: ```sparql }"
+    },
+    {
+        "natural_language_question": "How many people live in Eurasia?",
+        "sparql_query_kg2": "select the population value (`?val`) for the entity Eurasia. - The query will use the `SELECT` statement to retrieve the population value. 3. **Define the Triple Pattern**: - The triple pattern will include the entity `http://dbpedia.org/resource/Eurasia` and the property `http://dbpedia.org/ontology/populationTotal`. - The variable `?val` will hold the population value. 4. **Finalize the Query**: - Use the `PREFIX` statements to define the namespaces for DBpedia entities and properties. - Construct the main `SELECT` query with the appropriate triple pattern. Here is the step-by-step construction of the query: 1. **Define Prefixes**: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> ``` 2. **Select the Population Value**: ```sparql SELECT DISTINCT ?val WHERE { ``` 3. **Specify the Entity and Property**: ```sparql dbr:Eurasia dbo:populationTotal ?val . ``` 4. **Close the Query Block**: ```sparql }"
+    },
+    {
+        "natural_language_question": "Who is the author of the interpretation of dreams?",
+        "sparql_query_kg2": "select the author(s) of the book. We use the `SELECT DISTINCT` clause to retrieve unique authors. The `WHERE` clause specifies the resource and the property. - **PREFIX**: Define the prefixes for DBpedia to make the query more readable. ```sparql PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> ``` - **SELECT DISTINCT**: Select distinct authors to avoid duplicates. ```sparql SELECT DISTINCT ?author ``` - **WHERE**: Specify the conditions. ```sparql WHERE { dbr:The_Interpretation_of_Dreams dbo:author ?author . }"
+    },
+    {
+        "natural_language_question": "When was John Adams born?",
+        "sparql_query_kg2": "select the birth date (`?val`) of John Adams. - The query should use the DBpedia URI for John Adams and the DBpedia property for birth date. 3. **Map the Wikidata SPARQL Query to DBpedia**: - The Wikidata query uses `wd:Q11806` for John Adams and `wdt:P569` for the birth date. - We replace these with the corresponding DBpedia URIs. 4. **Construct the SPARQL Query**: - Use the `SELECT` clause to specify what we want to retrieve (`?val`). - Use the `WHERE` clause to define the pattern that matches the desired data. - The pattern will use the DBpedia URI for John Adams and the DBpedia property for birth date. Here's the step-by-step construction: - **SELECT Clause**: We want to retrieve the birth date, so we select `?val`. - **WHERE Clause**: - We specify the subject (`<http://dbpedia.org/resource/John_Adams>`). - We specify the predicate (`<http://dbpedia.org/ontology/birthDate>`). - We specify the object (`?val`) which will hold the value of the birth date. Putting it all together, the SPARQL query for DBpedia is: ```sparql PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?val WHERE { dbr:John_Adams dbo:birthDate ?val . }"
+    },
+    {
+        "natural_language_question": "how much is the total population of european union?",
+        "sparql_query_kg2": "select the populationTotal property for the European Union entity. - The query should use the DBpedia prefixes and the specific entity and property IDs mentioned above. Here is the complete SPARQL query for DBpedia: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?population WHERE { dbr:European_Union dbo:populationTotal ?population . }"
+    },
+    {
+        "natural_language_question": "Give me the currency of China.",
+        "sparql_query_kg2": "SELECT ?o1 WHERE { <http://dbpedia.org/resource/China> <http://dbpedia.org/ontology/currency> ?o1 . }"
+    },
+    {
+        "natural_language_question": "When was the death of Shakespeare?",
+        "sparql_query_kg2": "select the death date (`?deathDate`) of the entity `http://dbpedia.org/resource/William_Shakespeare`. - The structure of the query will involve selecting the `?deathDate` where the subject is `http://dbpedia.org/resource/William_Shakespeare` and the predicate is `http://dbpedia.org/ontology/deathDate`. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?deathDate WHERE { dbr:William_Shakespeare dbo:deathDate ?deathDate . }"
+    },
+    {
+        "natural_language_question": "Which rockets were launched from Baikonur?",
+        "sparql_query_kg2": "select distinct URIs of rockets launched from Baikonur Cosmodrome. Here's the step-by-step breakdown: - **SELECT DISTINCT ?rocket**: This part of the query specifies that we want to retrieve distinct URIs of rockets. - **?rocket a <http://dbpedia.org/ontology/Rocket>**: This part ensures that the `?rocket` variable is of type Rocket. - **?rocket <http://dbpedia.org/ontology/launchSite> <http://dbpedia.org/resource/Baikonur_Cosmodrome>**: This part of the query specifies that the rocket has a launch site of Baikonur Cosmodrome. Putting it all together, the final SPARQL query for DBpedia is: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?rocket WHERE { ?rocket a dbo:Rocket . ?rocket dbo:launchSite dbr:Baikonur_Cosmodrome . }"
+    },
+    {
+        "natural_language_question": "Give me all islands that belong to Japan.",
+        "sparql_query_kg2": "select distinct URIs (`?uri`) where the entity is of type Island and has the country property set to Japan. - **SELECT Clause**: We want to retrieve distinct URIs of islands. ```sparql SELECT DISTINCT ?uri ``` - **WHERE Clause**: - The entity (`?uri`) should be of type Island. ```sparql ?uri a dbo:Island . ``` - The entity (`?uri`) should have a country property pointing to Japan. ```sparql ?uri dbo:country dbr:Japan . ``` - **Prefixes**: Define the necessary prefixes for DBpedia. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> ``` Combining all the parts, the final SPARQL query for DBpedia is: ```sparql <sparql> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Island . ?uri dbo:country dbr:Japan . }"
+    },
+    {
+        "natural_language_question": "Who developed the video game World of Warcraft?",
+        "sparql_query_kg2": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { dbr:World_of_Warcraft dbo:developer ?uri . }"
+    },
+    {
+        "natural_language_question": "Give me all companies in the advertising industry.",
+        "sparql_query_kg2": "select companies (`?uri`) that are instances of `dbo:Company` and have the industry set to `dbr:Advertising`. - **PREFIX Declaration:** ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> ``` - **SELECT Clause:** ```sparql SELECT DISTINCT ?uri ``` - **WHERE Clause:** ```sparql WHERE { ?uri a dbo:Company ; dbo:industry dbr:Advertising . }"
+    },
+    {
+        "natural_language_question": "Which university did Angela Merkel attend?",
+        "sparql_query_kg2": "select the universities (`?uri`) that Angela Merkel attended. - The basic structure of the query will be similar to the Wikidata query but using DBpedia IRIs and properties. - **PREFIX Declarations**: - We need to declare the prefixes for DBpedia resources and ontology. - **SELECT Clause**: - We select the distinct universities (`?uri`). - **WHERE Clause**: - We specify that Angela Merkel (`dbr:Angela_Merkel`) has an alma mater (`dbo:almaMater`) which is `?uri`. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { dbr:Angela_Merkel dbo:almaMater ?uri . }"
+    },
+    {
+        "natural_language_question": "Give me all the TV shows with Neil Patrick Harris.",
+        "sparql_query_kg2": "select the URIs of entities that are of type `http://dbpedia.org/ontology/TelevisionShow` and have Neil Patrick Harris as a starring actor. Here is the final SPARQL query for DBpedia: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?uri a dbo:TelevisionShow . ?uri dbo:starring dbr:Neil_Patrick_Harris . }"
+    },
+    {
+        "natural_language_question": "Give me all movies with Tom Cruise.",
+        "sparql_query_kg2": "SELECT Clause:** - Select the distinct URIs of the films. 3. **WHERE Clause:** - Specify the triple pattern that links the film (`?uri`) to Tom Cruise using the `starring` property. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:starring dbr:Tom_Cruise. }"
+    },
+    {
+        "natural_language_question": "What country is Mount Everest in?",
+        "sparql_query_kg2": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { dbr:Mount_Everest dbo:locatedInArea ?uri . ?uri a dbo:Country . }"
+    },
+    {
+        "natural_language_question": "Where was JFK assassinated?",
+        "sparql_query_kg2": "SELECT query to retrieve the death place of John F. Kennedy. Here's the final SPARQL query for DBpedia: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:deathPlace ?uri . }"
+    },
+    {
+        "natural_language_question": "Which river does the Brooklyn Bridge cross?",
+        "sparql_query_kg2": "select the objects that the Brooklyn Bridge crosses. - The basic structure of the query will be to find all objects (`?uri`) that are related to the Brooklyn Bridge through the \"crosses\" property. - **SELECT Clause**: We want to retrieve distinct URIs of the objects that the Brooklyn Bridge crosses. - **WHERE Clause**: We specify the subject (Brooklyn Bridge) and the property (crosses). Here is the final SPARQL query constructed based on the given mappings: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Brooklyn_Bridge> dbo:crosses ?uri . }"
+    },
+    {
+        "natural_language_question": "Give all swimmers that were born in Moscow.",
+        "sparql_query_kg2": "Select the distinct URIs of swimmers. - Use the `?uri` variable to represent the swimmer. - Use `dbo:birthPlace` to find the birthplace of the swimmer. - Use `dbr:Moscow` to filter swimmers born in Moscow. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Swimmer ; dbo:birthPlace dbr:Moscow . }"
+    },
+    {
+        "natural_language_question": "What was the last movie with Alec Guinness?",
+        "sparql_query_kg2": "Select the Movie:** ```sparql SELECT DISTINCT ?movie ``` - **Match the Movie with Alec Guinness as a Star:** ```sparql WHERE { ?movie a <http://dbpedia.org/ontology/Film> . ?movie <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Alec_Guinness> . ?movie <http://dbpedia.org/ontology/releaseDate> ?releaseDate . }"
+    },
+    {
+        "natural_language_question": "What is the second highest mountain on Earth?",
+        "sparql_query_kg2": "select mountains and their elevations. - We need to order the results by elevation in descending order. - We need to get the second highest mountain, which can be done using `LIMIT 1 OFFSET 1`. 4. **Write the SPARQL Query**: - Use the `PREFIX` to define the namespaces. - Use `SELECT` to specify the variables we want to retrieve. - Use `WHERE` to define the pattern to match. - Use `ORDER BY` to sort the results by elevation in descending order. - Use `LIMIT 1 OFFSET 1` to get the second highest mountain. Here is the complete SPARQL query for DBpedia (KG2): ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?mountain ?elevation WHERE { ?mountain a dbo:Mountain . ?mountain dbo:elevation ?elevation . }"
+    },
+    {
+        "natural_language_question": "What is the population of Cairo?",
+        "sparql_query_kg2": "select the population value (`?val`) for the entity Cairo (`http://dbpedia.org/resource/Cairo`) using the property `http://dbpedia.org/ontology/populationTotal`. The SPARQL query for DBpedia will look like this: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?val WHERE { <http://dbpedia.org/resource/Cairo> dbo:populationTotal ?val . }"
+    },
+    {
+        "natural_language_question": "Which people were born in Heraklion?",
+        "sparql_query_kg2": "select the URIs of individuals (`?uri`) who have a birthplace of Heraklion. - In the SPARQL query, we will use the property `http://dbpedia.org/ontology/birthPlace` to link the individual to the birthplace. 3. **Construct the SPARQL Query:** - Use the `SELECT` statement to specify the variable `?uri` which will hold the URIs of the individuals. - Use a triple pattern `?uri dbo:birthPlace dbr:Heraklion` to match individuals (`?uri`) who have Heraklion as their birthplace. Putting it all together: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?uri dbo:birthPlace dbr:Heraklion . }"
+    },
+    {
+        "natural_language_question": "How many children did Benjamin Franklin have?",
+        "sparql_query_kg2": "SELECT clause to count the distinct URIs that represent the children. 3. **Use the Identified Entity and Property:** - The entity `http://dbpedia.org/resource/Benjamin_Franklin` will be the subject. - The property `http://dbpedia.org/ontology/child` will be the predicate. - The object will be a variable representing the children. 4. **Formulate the SPARQL Query:** - We use the `COUNT` function to count the distinct children. - The `WHERE` clause will include the triple pattern with the subject (Benjamin Franklin), predicate (child), and object (variable for children). ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?child) as ?c) WHERE { res:Benjamin_Franklin dbo:child ?child . }"
+    },
+    {
+        "natural_language_question": "how much is the elevation of D\u00fcsseldorf Airport ?",
+        "sparql_query_kg2": "select the elevation of D\u00fcsseldorf Airport. - The query will use the `SELECT` statement to retrieve the elevation value. 3. **Define the Prefixes:** - We need to define the necessary prefixes for DBpedia resources and properties. 4. **Specify the Entity and Property in the Query:** - The entity `http://dbpedia.org/resource/D%C3%BCsseldorf_Airport` will be used as the subject. - The property `http://dbpedia.org/ontology/elevation` will be used to find the corresponding elevation value. 5. **Finalize the Query:** - Combine all parts to form the complete SPARQL query. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?elevation WHERE { res:D%C3%BCsseldorf_Airport dbo:elevation ?elevation . }"
+    },
+    {
+        "natural_language_question": "In which country is Mecca located?",
+        "sparql_query_kg2": "SELECT Clause**: - We want to select the distinct countries (`?country`). 3. **WHERE Clause**: - We specify that Mecca (`dbr:Mecca`) has a country (`dbo:country`) which we want to retrieve as `?country`. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?country WHERE { dbr:Mecca dbo:country ?country . }"
+    },
+    {
+        "natural_language_question": "How tall is Claudia Schiffer?",
+        "sparql_query_kg2": "select the height value for the given entity. - The basic structure will involve selecting a variable (let's call it `?height`) where the subject is Claudia Schiffer and the predicate is the height property. 4. **Formulate the Query:** - Use the `PREFIX` directive to define the namespaces for DBpedia. - Use the `SELECT` clause to specify the variable we want to retrieve (`?height`). - Use the `WHERE` clause to specify the triple pattern: subject (Claudia Schiffer), predicate (height), and object (`?height`). ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { dbr:Claudia_Schiffer dbo:height ?height . }"
+    },
+    {
+        "natural_language_question": "Which holidays are celebrated around the world?",
+        "sparql_query_kg2": "select entities (holidays) that are instances of `http://dbpedia.org/ontology/Holiday`. 4. **Formulate the SPARQL Query**: - We use the `PREFIX` declarations for DBpedia ontology and properties. - We use the `SELECT` clause to specify what we want to retrieve, which in this case is the URI of the holidays. - We use the `WHERE` clause to specify the conditions that the entities must meet, i.e., they must be instances of the `Holiday` class. Here is the step-by-step construction: - **PREFIX Declarations**: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> ``` - **SELECT Clause**: ```sparql SELECT ?uri ``` - **WHERE Clause**: ```sparql WHERE { ?uri a dbo:Holiday . }"
+    },
+    {
+        "natural_language_question": "What kind of music did Lou Reed play?",
+        "sparql_query_kg2": "SELECT DISTINCT` clause to get unique genres. - Use the Lou Reed entity as the subject. - Use the genre property to link the subject to the object (genres). - **SELECT DISTINCT ?genre**: - This part specifies that we want to retrieve distinct genres. - **WHERE**: - This clause specifies the conditions for the query. - **<http://dbpedia.org/resource/Lou_Reed> <http://dbpedia.org/ontology/genre> ?genre**: - This triple pattern matches the subject (Lou Reed), the predicate (genre), and the object (genres). Combining all the parts, we get the following SPARQL query for DBpedia: ```sparql SELECT DISTINCT ?genre WHERE { <http://dbpedia.org/resource/Lou_Reed> <http://dbpedia.org/ontology/genre> ?genre . }"
+    },
+    {
+        "natural_language_question": "Give me the birth place of Frank Sinatra.",
+        "sparql_query_kg2": "select the birthplace (`?birthPlace`) of the subject (`http://dbpedia.org/resource/Frank_Sinatra`) using the property (`http://dbpedia.org/ontology/birthPlace`). Here is the step-by-step construction of the query: - **SELECT Clause:** We will select the variable `?birthPlace` which represents the birthplace of Frank Sinatra. - **WHERE Clause:** - The subject is `http://dbpedia.org/resource/Frank_Sinatra`. - The predicate is `http://dbpedia.org/ontology/birthPlace`. - The object is `?birthPlace`, which is the variable we want to retrieve. Putting it all together, the complete SPARQL query for DBpedia is: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?birthPlace WHERE { dbr:Frank_Sinatra dbo:birthPlace ?birthPlace. }"
+    },
+    {
+        "natural_language_question": "Which city has the least inhabitants?",
+        "sparql_query_kg2": "Select cities (`?city`) and their populations (`?population`). - Filter to include only those entities that are cities and have a population. - Order the results by population in ascending order. - Limit the results to the top 1 entry. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?city WHERE { ?city dbo:populationTotal ?population . ?city a dbo:City . }"
+    },
+    {
+        "natural_language_question": "Which television shows were created by Walt Disney?",
+        "sparql_query_kg2": "Select the television shows (`?uri`) that have a creator (`http://dbpedia.org/ontology/creator`) who is Walt Disney (`http://dbpedia.org/resource/Walt_Disney`). 1. **Prefixes**: Define the necessary prefixes for DBpedia. 2. **Select Statement**: Select the distinct URIs of television shows. 3. **Pattern Matching**: Use the `dbo:creator` property to find television shows created by Walt Disney. Here is the complete SPARQL query for KG2 (DBpedia): ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:TelevisionShow ; dbo:creator dbr:Walt_Disney . }"
+    },
+    {
+        "natural_language_question": "Give me all Swedish holidays.",
+        "sparql_query_kg2": "select all holidays (`?holiday`) that have the country property (`http://dbpedia.org/ontology/country`) pointing to Sweden (`http://dbpedia.org/resource/Sweden`). 4. **SPARQL Query Structure**: - Use the `PREFIX` keyword to define the namespaces. - Use the `SELECT` statement to specify the variable (`?holiday`) we are interested in. - Use the `WHERE` clause to define the conditions: - `?holiday` should be of type `http://dbpedia.org/ontology/Holiday`. - `?holiday` should have the property `http://dbpedia.org/ontology/country` pointing to `http://dbpedia.org/resource/Sweden`. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?holiday WHERE { ?holiday a dbo:Holiday . ?holiday dbo:country dbr:Sweden . }"
+    },
+    {
+        "natural_language_question": "What is the net income of Apple?",
+        "sparql_query_kg2": "select the net income of Apple Inc. from DBpedia. - In SPARQL, we use the `SELECT` clause to specify what we want to retrieve. - The `WHERE` clause specifies the conditions that must be met. 3. **Specify the Entity and Property:** - Use the DBpedia resource for Apple Inc. (`<http://dbpedia.org/resource/Apple_Inc.>`) as the subject. - Use the DBpedia property for net income (`<http://dbpedia.org/ontology/netIncome>`) as the predicate. - Use a variable (e.g., `?netIncome`) as the object to capture the net income value. 4. **Formulate the SPARQL Query:** - Combine the above elements into a SPARQL query that retrieves the net income of Apple Inc. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?netIncome WHERE { dbr:Apple_Inc. dbo:netIncome ?netIncome . }"
+    },
+    {
+        "natural_language_question": "Where did Abraham Lincoln die?",
+        "sparql_query_kg2": "select the death place (`?deathPlace`) for the entity Abraham Lincoln (`dbr:Abraham_Lincoln`). - The query will use the `dbo:deathPlace` property to find the death place. Here is the step-by-step construction of the SPARQL query: - **PREFIX Declarations**: Define the necessary prefixes for DBpedia resources and ontologies. ```sparql PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> ``` - **SELECT Clause**: Specify the variable to retrieve the death place. ```sparql SELECT DISTINCT ?deathPlace ``` - **WHERE Clause**: Define the pattern to match the death place of Abraham Lincoln. ```sparql WHERE { dbr:Abraham_Lincoln dbo:deathPlace ?deathPlace . }"
+    },
+    {
+        "natural_language_question": "Give me the capitals of all countries that the Himalayas run through.",
+        "sparql_query_kg2": "select the capitals (`?capital`). - **Where**: - The Himalayas (`dbr:Himalayas`) have the property `dbo:country` linking to `?country`. - The `?country` has the property `dbo:capital` linking to `?capital`. The final SPARQL query for DBpedia is as follows: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?capital WHERE { dbr:Himalayas dbo:country ?country . ?country dbo:capital ?capital . }"
+    },
+    {
+        "natural_language_question": "In which country is the Limerick Lake?",
+        "sparql_query_kg2": "SELECT Clause**: We need to select the country, so we will use `?country`. - **WHERE Clause**: - The subject of our query is Limerick Lake (`<http://dbpedia.org/resource/Limerick_Lake>`). - The predicate is the property that links Limerick Lake to its country (`<http://dbpedia.org/ontology/country>`). - The object is the variable `?country` that we want to retrieve. ```sparql SELECT DISTINCT ?country WHERE { <http://dbpedia.org/resource/Limerick_Lake> <http://dbpedia.org/ontology/country> ?country . }"
+    },
+    {
+        "natural_language_question": "Which actors were born in Germany?",
+        "sparql_query_kg2": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Actor . ?uri dbo:birthPlace dbr:Germany . }"
+    },
+    {
+        "natural_language_question": "Who designed the Brooklyn Bridge?",
+        "sparql_query_kg2": "PREFIX Statements**: - Define the namespaces for DBpedia resources and properties. 2. **SELECT Clause**: - Specify that we want to retrieve distinct URIs of the architects. 3. **WHERE Clause**: - Use the entity `http://dbpedia.org/resource/Brooklyn_Bridge`. - Use the property `http://dbpedia.org/ontology/architect` to find the architects. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { dbr:Brooklyn_Bridge dbo:architect ?uri . }"
+    },
+    {
+        "natural_language_question": "Who wrote the Game of Thrones theme?",
+        "sparql_query_kg2": "select distinct URIs of the composers of the Game of Thrones theme. - The query will use the `<http://dbpedia.org/resource/Game_of_Thrones>` as the subject and `<http://dbpedia.org/ontology/composer>` as the predicate to find the objects (composers). Here is the reasoning in detail: - **SELECT DISTINCT ?composer**: This part of the query selects distinct URIs of the composers. - **WHERE { ... }"
+    },
+    {
+        "natural_language_question": "Give me all movies directed by Francis Ford Coppola.",
+        "sparql_query_kg2": "select distinct URIs of movies. - We filter these URIs to be of type `dbo:Film`. - We further filter these to have a director property pointing to `dbr:Francis_Ford_Coppola`. Putting it all together, the SPARQL query for DBpedia would look like this: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Film ; dbo:director dbr:Francis_Ford_Coppola . }"
+    },
+    {
+        "natural_language_question": "What is the birth name of Adele?",
+        "sparql_query_kg2": "select the birth name of Adele. - The entity `http://dbpedia.org/resource/Adele` is the subject. - The property `http://dbpedia.org/ontology/birthName` is the predicate. - The object (birth name) is what we want to retrieve. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE { dbr:Adele dbo:birthName ?name. }"
+    },
+    {
+        "natural_language_question": "What was the first Queen album?",
+        "sparql_query_kg2": "SELECT DISTINCT ?album**: We want to select distinct albums. - **WHERE**: This clause specifies the conditions. - **?album a dbo:Album**: The variable `?album` should be of type `dbo:Album`. - **?album dbo:artist dbr:Queen_(band)**: The album should be linked to the artist Queen. - **?album dbo:releaseDate ?date**: The album should have a release date. - **ORDER BY ?date**: Order the results by the release date. - **LIMIT 1**: Limit the results to the first album. Putting it all together, the final SPARQL query for DBpedia is: ```sparql <sparql> SELECT DISTINCT ?album WHERE { ?album a <http://dbpedia.org/ontology/Album> . ?album <http://dbpedia.org/ontology/artist> <http://dbpedia.org/resource/Queen_(band)> . ?album <http://dbpedia.org/ontology/releaseDate> ?date . }"
+    },
+    {
+        "natural_language_question": "Which bridges cross the Seine?",
+        "sparql_query_kg2": "select bridges (`?uri`) that are of type `http://dbpedia.org/ontology/Bridge` and cross (`http://dbpedia.org/ontology/crosses`) the Seine (`http://dbpedia.org/resource/Seine`). 3. **Define the Prefixes**: - We need to define the prefixes for DBpedia ontology and resource. 4. **Write the SPARQL Query**: - Use the `SELECT` statement to retrieve the URIs of the bridges. - Use the `WHERE` clause to filter the bridges that are of type `http://dbpedia.org/ontology/Bridge` and cross the Seine. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:crosses dbr:Seine . ?uri a dbo:Bridge . }"
+    },
+    {
+        "natural_language_question": "Which musician wrote the most books?",
+        "sparql_query_kg2": "Prefix Declarations:** - We need to declare the prefixes for DBpedia ontology (`dbo:`) and DBpedia resource (`dbr:`). 2. **SELECT Clause:** - We select the URI of the musician. 3. **WHERE Clause:** - We specify that the entity has the occupation of a musician. - We specify that the entity is the author of books. 4. **GROUP BY and ORDER BY Clauses:** - We group by the musician URI to count the number of books. - We order the results by the count of books in descending order. 5. **LIMIT Clause:** - We limit the results to the top musician. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation dbr:Musician . ?x a dbo:Book ; dbo:author ?uri . }"
+    },
+    {
+        "natural_language_question": "Which television shows were created by John Cleese?",
+        "sparql_query_kg2": "select distinct television shows (`?uri`) where the creator is John Cleese. 3. **Use the Correct Properties and Entities:** - The query should use the `dbo:creator` property to link the television shows to John Cleese. - The type of the entity should be `dbo:TelevisionShow`. 4. **Build the SPARQL Query:** - We'll use `SELECT DISTINCT ?uri` to get the distinct television shows. - We'll use the `?uri dbo:creator dbr:John_Cleese` pattern to filter shows created by John Cleese. - We'll ensure that `?uri` is of type `dbo:TelevisionShow`. Here is the step-by-step construction of the query: - **Select Clause:** We want distinct television show URIs. ```sparql SELECT DISTINCT ?uri ``` - **Where Clause:** We specify that `?uri` should be of type `dbo:TelevisionShow` and should have `dbo:creator` property pointing to `dbr:John_Cleese`. ```sparql WHERE { ?uri rdf:type dbo:TelevisionShow . ?uri dbo:creator dbr:John_Cleese . }"
+    },
+    {
+        "natural_language_question": "Give me all writers that won the Nobel Prize in literature.",
+        "sparql_query_kg2": "SELECT Clause**: We want to select the URI of the writers. - **WHERE Clause**: - `?uri a ontology:Writer` ensures that `?uri` is a writer. - `?uri ontology:award dbpedia:Nobel_Prize_in_Literature` ensures that the writer has won the Nobel Prize in Literature. ```sparql PREFIX ontology: <http://dbpedia.org/ontology/> PREFIX dbpedia: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?uri a ontology:Writer . ?uri ontology:award dbpedia:Nobel_Prize_in_Literature . }"
+    },
+    {
+        "natural_language_question": "Who discovered Ceres?",
+        "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ceres_(dwarf_planet)> <http://dbpedia.org/ontology/discoverer> ?uri . }"
+    },
+    {
+        "natural_language_question": "Give me a list of all bandleaders that play trumpet.",
+        "sparql_query_kg2": "select a variable (`?res`) that represents bandleaders. - The variable `?res` should have the occupation of Bandleader. - The variable `?res` should also have the instrument Trumpet. 4. **Query Structure:** - Use the `SELECT` clause to specify the variable `?res`. - Use the `WHERE` clause to specify the conditions: - `?res` has the occupation Bandleader. - `?res` plays the instrument Trumpet. Here is the complete SPARQL query for DBpedia: ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?res WHERE { ?res dbo:occupation dbr:Bandleader . ?res dbo:instrument dbr:Trumpet . }"
+    },
+    {
+        "natural_language_question": "Show me all basketball players that are higher than 2 meters.",
+        "sparql_query_kg2": "select distinct URIs of basketball players. - The players must have the type `<http://dbpedia.org/ontology/BasketballPlayer>`. - The players must have a height property `<http://dbpedia.org/ontology/height>` with a value greater than 200 cm. ```sparql <sparql> SELECT DISTINCT ?uri WHERE { ?uri rdf:type <http://dbpedia.org/ontology/BasketballPlayer> . ?uri <http://dbpedia.org/ontology/height> ?height . FILTER(?height > 200) }"
+    },
+    {
+        "natural_language_question": "In which films did Julia Roberts as well as Richard Gere play?",
+        "sparql_query_kg2": "SELECT Statement**: - We want to select distinct URIs of films. ```sparql SELECT DISTINCT ?film ``` 3. **Define the WHERE Clause**: - We need to find films that have the type `Film`. ```sparql WHERE { ?film rdf:type <http://dbpedia.org/ontology/Film> . ``` 4. **Add Starring Relationships**: - We need to ensure that both Julia Roberts and Richard Gere starred in these films. ```sparql ?film <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> . ?film <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Gere> . }"
+    },
+    {
+        "natural_language_question": "What is the capital of Canada?",
+        "sparql_query_kg2": "select the distinct object (capital) where the subject is Canada and the predicate is the capital relation. Based on the reasoning above, the SPARQL query for DBpedia would be: ```sparql SELECT DISTINCT ?o1 WHERE { <http://dbpedia.org/resource/Canada> <http://dbpedia.org/ontology/capital> ?o1 . }"
+    },
+    {
+        "natural_language_question": "Which soccer players were born on Malta?",
+        "sparql_query_kg2": "select distinct URIs (`?uri`) of soccer players who were born in Malta. - The query will involve the soccer player entity (`SoccerPlayer`), the birthplace property (`birthPlace`), and the location entity (`Malta`). 3. **Translate Wikidata Query to DBpedia**: - In Wikidata, the query selects soccer players (`wdt:P106 wd:Q937857`) and filters by birthplace (`wdt:P19 ?birthPlace`) where the birthplace is Malta (`wdt:P17 wd:Q233`). - For DBpedia, we will use `rdf:type` to specify the type as `SoccerPlayer` and `dbo:birthPlace` to specify the birthplace as `Malta`. 4. **Assemble the Query**: - The `SELECT DISTINCT ?uri` clause remains the same. - The `WHERE` clause will include: - `?uri rdf:type dbo:SoccerPlayer` to filter for soccer players. - `?uri dbo:birthPlace dbr:Malta` to filter for those born in Malta. ```sparql PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:SoccerPlayer . ?uri dbo:birthPlace dbr:Malta . }"
+    },
+    {
+        "natural_language_question": "What is the capital of Cameroon?",
+        "sparql_query_kg2": "SELECT DISTINCT ?capital WHERE { <http://dbpedia.org/resource/Cameroon> <http://dbpedia.org/ontology/capital> ?capital. }"
+    },
+    {
+        "natural_language_question": "How many programming languages are there?",
+        "sparql_query_kg2": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns SELECT (COUNT(DISTINCT ?sub) AS ?count) WHERE { ?sub rdf:type dbo:ProgrammingLanguage . }"
+    },
+    {
+        "natural_language_question": "Give me all cosmonauts.",
+        "sparql_query_kg2": "select distinct URIs of entities that are astronauts and have a nationality of either the Soviet Union or Russia. - The query structure will involve filtering on the `http://dbpedia.org/ontology/Astronaut` type and the `http://dbpedia.org/ontology/nationality` property with the specified nationalities. ```sparql SELECT DISTINCT ?uri WHERE { ?uri rdf:type <http://dbpedia.org/ontology/Astronaut> . { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Soviet_Union> }"
+    },
+    {
+        "natural_language_question": "Who created Family Guy?",
+        "sparql_query_kg2": "select distinct values of the `?creator` variable. - The `WHERE` clause will contain the triple pattern that matches the subject, predicate, and object. ```sparql SELECT DISTINCT ?creator WHERE { <http://dbpedia.org/resource/Family_Guy> <http://dbpedia.org/ontology/creator> ?creator }"
+    },
+    {
+        "natural_language_question": "How much is the population of mexico city ?",
+        "sparql_query_kg2": "SELECT clause specifies the variables to be returned, and the WHERE clause specifies the pattern to match. 3. **Use the Entity and Property in the Query**: - We use the DBpedia resource for Mexico City and the DBpedia property for populationTotal in the WHERE clause. - The pattern will match the entity (Mexico City) with the property (populationTotal) to find the population value. Here is the step-by-step construction: - **SELECT Clause**: We select a variable `?population` to hold the population value. - **WHERE Clause**: We specify the pattern to match the entity `http://dbpedia.org/resource/Mexico_City` with the property `http://dbpedia.org/ontology/populationTotal`. Putting it all together, the final SPARQL query for KG2 (DBpedia) is: ```sparql PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?population WHERE { dbr:Mexico_City dbo:populationTotal ?population . }"
+    },
+    {
+        "natural_language_question": "Who created Batman?",
+        "sparql_query_kg2": "select the creators of Batman. - The query should use the DBpedia resource for \"Batman\" and the DBpedia property for \"creator\". - **PREFIX Declarations**: - `PREFIX dbo: <http://dbpedia.org/ontology/>` - `PREFIX dbr: <http://dbpedia.org/resource/>` - **SELECT Clause**: - We want to select distinct URIs of creators. - **WHERE Clause**: - Specify the resource `dbr:Batman` and the property `dbo:creator`. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { dbr:Batman dbo:creator ?uri . }"
+    },
+    {
+        "natural_language_question": "How many people live in the capital of Australia?",
+        "sparql_query_kg2": "SELECT DISTINCT ?number WHERE { <http://dbpedia.org/resource/Australia> <http://dbpedia.org/ontology/capital> ?capital . ?capital <http://dbpedia.org/ontology/populationTotal> ?number . }"
+    },
+    {
+        "natural_language_question": "how big is the total area of North Rhine- Westphalia?",
+        "sparql_query_kg2": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/>"
+    },
+    {
+        "natural_language_question": "How many employees does IBM have?",
+        "sparql_query_kg2": "select the number of employees for IBM. - The query will use the identified entity (`http://dbpedia.org/resource/IBM`) and the property (`http://dbpedia.org/ontology/numberOfEmployees`). Here's the detailed construction: - **PREFIX Declarations**: - We need to declare the prefixes for DBpedia resources and ontology. - **SELECT Clause**: - We want to select the number of employees, so we will use `?employees`. - **WHERE Clause**: - The triple pattern will match the subject (IBM), the predicate (numberOfEmployees), and the object (the number of employees). Putting it all together, we get the following SPARQL query: ```sparql PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?employees WHERE { dbr:IBM dbo:numberOfEmployees ?employees . }"
+    },
+    {
+        "natural_language_question": "How much did Pulp Fiction cost?",
+        "sparql_query_kg2": "select the budget value for the entity \"Pulp Fiction\". - The basic structure of a SPARQL query includes selecting the value (`?value`), specifying the entity (`dbpedia:Pulp_Fiction`), and the property (`dbpedia-owl:budget`). Here is the step-by-step construction: - **PREFIX Declaration**: - We declare the prefixes for DBpedia resources and ontology. - `PREFIX dbpedia: <http://dbpedia.org/resource/>` - `PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>` - **SELECT Clause**: - We select the budget value (`?value`). - `SELECT DISTINCT ?value` - **WHERE Clause**: - We specify the triple pattern where the subject is \"Pulp Fiction\", the predicate is \"budget\", and the object is the budget value. - `WHERE { dbpedia:Pulp_Fiction dbpedia-owl:budget ?value . }"
+    },
+    {
+        "natural_language_question": "What movies does Jesse Eisenberg play in?",
+        "sparql_query_kg2": "SELECT DISTINCT ?film**: We want to select distinct films. - **WHERE { ?film dbo:starring dbr:Jesse_Eisenberg . }"
+    },
+    {
+        "natural_language_question": "Give me all Danish movies.",
+        "sparql_query_kg2": "select films (`?uri`) that have the country property set to Denmark. - We use the DBpedia ontology and resource URIs from the mappings. 1. **Prefixes**: - Define the prefixes for DBpedia ontology and resource. 2. **SELECT Clause**: - Select the distinct URIs of the films. 3. **WHERE Clause**: - Specify the conditions: - The `?uri` should be a type of `dbo:Film`. - The `?uri` should have the country property set to `dbres:Denmark`. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbres: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Film ; dbo:country dbres:Denmark . }"
+    },
+    {
+        "natural_language_question": "To which countries does the Himalayan mountain system extend?",
+        "sparql_query_kg2": "SELECT Clause:** - We want to retrieve distinct countries, so we will use `SELECT DISTINCT ?country`. 5. **WHERE Clause:** - The WHERE clause will contain the triple pattern `dbpedia:Himalayas dbo:country ?country`. ```sparql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbpedia: <http://dbpedia.org/resource/> SELECT DISTINCT ?country WHERE { dbpedia:Himalayas dbo:country ?country . }"
+    },
+    {
+        "natural_language_question": "What is the largest country in the world?",
+        "sparql_query_kg2": "select the countries and their areas from DBpedia. - We will order the results by the area in descending order. - We will limit the results to get the largest country. - **SELECT Clause**: - We need to select the URI of the country. - **WHERE Clause**: - We need to find entities that are of type `http://dbpedia.org/ontology/Country`. - We need to find the area of these countries using the property `http://dbpedia.org/ontology/areaTotal`. - **ORDER BY Clause**: - We need to order the results by the area in descending order. - **LIMIT Clause**: - We need to limit the results to 1 to get the largest country. ```sparql SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> . ?uri <http://dbpedia.org/ontology/areaTotal> ?area . }"
+    },
+    {
+        "natural_language_question": "What is the alma mater of the chancellor of Germany Angela Merkel?",
+        "sparql_query_kg2": "select the alma mater of Angela Merkel. - We will use the DBpedia ontology to find the alma mater. 4. **SPARQL Query Components**: - `PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>`: This prefix is used to refer to the DBpedia ontology. - `SELECT ?almaMater`: This is the variable that will hold the alma mater. - `WHERE {`: The beginning of the query pattern. - `dbpedia:Angela_Merkel dbpedia-owl:almaMater ?almaMater .`: This triple pattern connects Angela Merkel to her alma mater. ```sparql PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> PREFIX dbpedia: <http://dbpedia.org/resource/> SELECT ?almaMater WHERE { dbpedia:Angela_Merkel dbpedia-owl:almaMater ?almaMater . }"
+    },
+    {
+        "natural_language_question": "Who created Goofy?",
+        "sparql_query_kg2": "select the distinct URIs of the creators. - The entity `http://dbpedia.org/resource/Goofy` will be the subject. - The property `http://dbpedia.org/ontology/creator` will be used to find the objects (creators). ```sparql SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Goofy> <http://dbpedia.org/ontology/creator> ?uri . }"
+    }
+]
