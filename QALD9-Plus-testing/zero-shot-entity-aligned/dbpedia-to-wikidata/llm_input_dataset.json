@@ -9,8 +9,7 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Penguin_Books",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q1336200",
-                        "http://www.wikidata.org/entity/Q3374730"
+                        "http://www.wikidata.org/entity/Q1336200"
                     ]
                 },
                 {
@@ -20,7 +19,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -43,7 +42,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -72,7 +71,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -95,7 +94,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -124,7 +123,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -153,7 +152,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -176,7 +175,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -205,7 +204,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -228,7 +227,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -257,7 +256,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -280,7 +279,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -303,7 +302,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -344,7 +343,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -367,7 +366,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -399,12 +398,11 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Trumpet",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q119621",
                         "http://www.wikidata.org/entity/Q8338"
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -445,7 +443,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -468,7 +466,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -485,7 +483,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -508,7 +506,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -543,7 +541,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -566,7 +564,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -589,7 +587,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -612,7 +610,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -635,7 +633,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -658,7 +656,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -681,7 +679,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -704,7 +702,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -717,14 +715,7 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/China",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q12205470",
-                        "http://www.wikidata.org/entity/Q13426199",
-                        "http://www.wikidata.org/entity/Q127864",
-                        "http://www.wikidata.org/entity/Q29520",
-                        "http://www.wikidata.org/entity/Q865",
-                        "http://www.wikidata.org/entity/Q22502",
-                        "http://www.wikidata.org/entity/Q148",
-                        "http://www.wikidata.org/entity/Q942154"
+                        "http://www.wikidata.org/entity/Q148"
                     ]
                 },
                 {
@@ -734,7 +725,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -757,7 +748,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -786,7 +777,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -815,7 +806,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -838,7 +829,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -869,7 +860,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -892,7 +883,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -921,7 +912,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -950,7 +941,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -963,8 +954,7 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Mount_Everest",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q513",
-                        "http://www.wikidata.org/entity/Q19977041"
+                        "http://www.wikidata.org/entity/Q513"
                     ]
                 },
                 {
@@ -980,7 +970,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1003,7 +993,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1026,7 +1016,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1055,7 +1045,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1090,7 +1080,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1113,7 +1103,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1126,8 +1116,7 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Cairo",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q85",
-                        "http://www.wikidata.org/entity/Q20230483"
+                        "http://www.wikidata.org/entity/Q85"
                     ]
                 },
                 {
@@ -1137,7 +1126,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1167,7 +1156,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1190,7 +1179,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1213,7 +1202,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1236,7 +1225,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1259,7 +1248,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1276,7 +1265,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1299,7 +1288,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1322,7 +1311,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1345,7 +1334,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1374,7 +1363,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1404,7 +1393,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1427,7 +1416,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1450,7 +1439,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1463,8 +1452,6 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Himalayas",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q105981852",
-                        "http://www.wikidata.org/entity/Q26235529",
                         "http://www.wikidata.org/entity/Q5451"
                     ]
                 },
@@ -1481,7 +1468,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1504,7 +1491,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1527,7 +1514,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1556,7 +1543,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1579,7 +1566,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1592,8 +1579,7 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Iraq",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q796",
-                        "http://www.wikidata.org/entity/Q3041595"
+                        "http://www.wikidata.org/entity/Q796"
                     ]
                 },
                 {
@@ -1603,7 +1589,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1620,7 +1606,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1645,8 +1631,7 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Greece",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q41",
-                        "http://www.wikidata.org/entity/Q194327"
+                        "http://www.wikidata.org/entity/Q41"
                     ]
                 },
                 {
@@ -1658,12 +1643,11 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Pro-Europeanism",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q3781399",
-                        "http://www.wikidata.org/entity/Q1377153"
+                        "http://www.wikidata.org/entity/Q3781399"
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1692,7 +1676,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1721,7 +1705,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1746,9 +1730,7 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Germany",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q43287",
-                        "http://www.wikidata.org/entity/Q183",
-                        "http://www.wikidata.org/entity/Q41304"
+                        "http://www.wikidata.org/entity/Q183"
                     ]
                 },
                 {
@@ -1758,7 +1740,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1781,7 +1763,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1804,7 +1786,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1833,7 +1815,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1856,7 +1838,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1891,7 +1873,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1914,7 +1896,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1945,14 +1927,11 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Berlin",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q64",
-                        "http://www.wikidata.org/entity/Q31910788",
-                        "http://www.wikidata.org/entity/Q56036",
-                        "http://www.wikidata.org/entity/Q56037"
+                        "http://www.wikidata.org/entity/Q64"
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -1977,12 +1956,11 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Seine",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q1142326",
                         "http://www.wikidata.org/entity/Q1471"
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2017,7 +1995,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2046,7 +2024,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2075,7 +2053,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2098,7 +2076,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2117,7 +2095,6 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Bandleader",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q5280538",
                         "http://www.wikidata.org/entity/Q806349"
                     ]
                 },
@@ -2130,12 +2107,11 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Trumpet",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q119621",
                         "http://www.wikidata.org/entity/Q8338"
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2158,7 +2134,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2193,7 +2169,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2217,7 +2193,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2246,7 +2222,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2269,7 +2245,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2286,7 +2262,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2311,7 +2287,6 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Russia",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q2184",
                         "http://www.wikidata.org/entity/Q159"
                     ]
                 },
@@ -2322,7 +2297,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2345,7 +2320,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2368,7 +2343,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2391,7 +2366,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2404,9 +2379,7 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Australia",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q25907685",
-                        "http://www.wikidata.org/entity/Q408",
-                        "http://www.wikidata.org/entity/Q3960"
+                        "http://www.wikidata.org/entity/Q408"
                     ]
                 },
                 {
@@ -2422,7 +2395,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2445,7 +2418,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2458,7 +2431,6 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/IBM",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q70096636",
                         "http://www.wikidata.org/entity/Q37156"
                     ]
                 },
@@ -2469,7 +2441,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2492,7 +2464,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2521,7 +2493,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2546,12 +2518,11 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Denmark",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q5257925",
                         "http://www.wikidata.org/entity/Q35"
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2564,8 +2535,6 @@
                 {
                     "dbpedia_id": "http://dbpedia.org/resource/Himalayas",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q105981852",
-                        "http://www.wikidata.org/entity/Q26235529",
                         "http://www.wikidata.org/entity/Q5451"
                     ]
                 },
@@ -2576,7 +2545,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2599,7 +2568,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2622,7 +2591,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     },
     {
@@ -2645,7 +2614,7 @@
                     ]
                 }
             ],
-            "instruction": "Given the information above, produce a SPARQL query for KG2."
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please hightlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
         }
     }
 ]
