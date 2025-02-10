@@ -21,7 +21,7 @@
     },
     {
         "natural_language_question": "Give me all actors starring in movies directed by William Shatner.",
-        "sparql_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { ?movie a dbo:Film ; dbo:director res:William_Shatner ; ?movie dbo:actor ?uri. }"
+        "sparql_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { ?movie a dbo:Film ; dbo:director res:William_Shatner ; dbo:starring ?uri. }"
     },
     {
         "natural_language_question": "What is the highest mountain?",
