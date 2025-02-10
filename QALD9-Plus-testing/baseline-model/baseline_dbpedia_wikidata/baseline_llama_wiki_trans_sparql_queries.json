@@ -1,402 +1,402 @@
 [
     {
         "natural_language_question": "Who is the founder of Penguin Books?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { wd:Penguin_Books wdt:P112 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { wd:P82 wdt:P112 ?uri }"
     },
     {
         "natural_language_question": "Which films did Stanley Kubrick direct?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?uri WHERE { ?uri wdt:P57 wd:Q95 }"
+        "sparql_query": "PREFIX wikibase: <http://wikiba.info/ontology#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P57 wd:Q95 }"
     },
     {
         "natural_language_question": "List all the musicals with music by Elton John.",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> However, we also need to use the Wikidata property `P110` for the composer (musicBy), which is equivalent to DBpedia's `dbo:musicBy`. Here's the final, complete SPARQL query: <sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wdt:P279* wdt:P577 ?uri ; wdt:P110 wdt:P180 ?musicBy . FILTER regex(?musicBy, \"Elton John\") . FILTER (lang(?musicBy) = \"en\"). }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?item WHERE { ?item wdt:P31 wd:Q11424. ?item wdt:P86 ?composer. ?composer wdt:P175 wd:Q60759. FILTER (lang(?item) = 'en') }"
     },
     {
         "natural_language_question": "Who developed Skype?",
-        "sparql_query": "prefix and the property for developer. The property for developer in Wikidata is p62. The final, complete SPARQL query for KG2 is: <sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?uri WHERE { wdt:Q21266 wdt:p62 ?uri. }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Skype wdt:P127 ?uri. }"
     },
     {
         "natural_language_question": "Show a list of soccer clubs that play in the Bundesliga.",
-        "sparql_query": "SELECT ?item WHERE { ?item a <http://schema.org/SportsTeam> ; schema:memberOf <https://www.wikidata.org/wiki/Q482332> . }"
+        "sparql_query": "SELECT ?item WHERE { ?item wdt:P345 ?name; wdt:P463 wd:Q7649. } LIMIT 100"
     },
     {
         "natural_language_question": "Give me all actors starring in movies directed by William Shatner.",
-        "sparql_query": "prefix and properties. Assuming the Wikidata prefix is `wdt:`, we can write the SPARQL query as follows: `PREFIX wdt: <http://www.w3.org/2007/03/fw/xhtml/property However, this query is not quite correct. In Wikidata, the property for director is `wdt:P57` (also known as `P57`) and the property for starring is `wdt:P161`. We also need to filter the results to only include instances where the director is William Shatner. We can use the `FILTER` function with the `regex` function to achieve this. But, we made a mistake in the property for director - William Shatner is actually an actor, not a director. We should be looking for a property that relates him to a movie, such as `wdt:P345`. The correct query is: `<sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?x wdt:P345 ?movie ; wdt:P31 wd:Q838721 ; wdt:P50 ?uri . FILTER(regex(str(?movie), \"William_Shatner\")) }"
+        "sparql_query": "SELECT ?uri WHERE { ?x wdt:P57 ?directorUri ; wdt:P161 ?uri . FILTER(BOUND(?directorUri) && STRSTARTS(?directorUri, \"Q\")) }"
     },
     {
         "natural_language_question": "What is the highest mountain?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/prop/direct/P416> ; <http://www.wikidata.org/prop/direct/P2046> ?elevation. FILTER( ?elevation > 0 ) }"
+        "sparql_query": "SELECT ?uri WHERE { ?uri a <https://www.wikidata.org/prop/directroperty/rdfs:type> ; <https://www.wikidata.org/prop/directroperty/P2043> ?elevation . } ORDER BY DESC(?elevation) OFFSET 0 LIMIT 1"
     },
     {
         "natural_language_question": "How many films did Leonardo DiCaprio star in?",
-        "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://www.wikidata.org/prop/directstatement/WD:P31>; <http://www.wikidata.org/prop/directstatement/WD:P161> <http://www.wikidata.org/entity/Q115> . }"
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT (COUNT(DISTINCT ?film) AS ?count) WHERE { ?film wdt:P31 wd:Q11424. ?film wdt:P161 wd:Q81096. }"
     },
     {
         "natural_language_question": "When was Olof Palme shot?",
-        "sparql_query": "SELECT DISTINCT ?date WHERE { <http://www.wikidata.org/entity/Q34292> P570 ?date }"
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?date WHERE { wd:Q34290 wdt:P31 wd:Q5. wd:Q34290 wdt:P569 ?date. FILTER regex(str(?date), \"19.*\") }"
     },
     {
         "natural_language_question": "Which movies star both Liz Taylor and Richard Burton?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri p161 [ps:P161 Q13345 ] . ?uri p161 [ps:P161 Q33548 ] . }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://www.wikidata.org/prop/direct/instances/partOf> <http://www.wikidata.org/entity/Q8168> ; <http://www.wikidata.org/prop/direct/instances/partOf> <http://www.wikidata.org/entity/Q33548> . }"
     },
     {
         "natural_language_question": "Who developed Minecraft?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q188617> dcterms:creator ?uri . FILTER(BOUND(?uri)) }"
+        "sparql_query": "SELECT DISTINCT ?uri ?label WHERE { wd:Q470021 p:P137 ?p ; ?p rdfs:label ?label . ?uri wdt:P137 ?p }"
     },
     {
         "natural_language_question": "How much did the Lego Movie cost?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?item WHERE { ?item wdt:P31 wd:Q1148703. ?item wdt:P1813 wd:Q17518255. }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?n WHERE { wd:The_Lego_Movie wdt:P161 ?n }"
     },
     {
         "natural_language_question": "For which label did Elvis record his first album?",
-        "sparql_query": "SELECT ?label WHERE { ?album wdt:P120 (wd:Elvis_Presley) ; wdt:P577 ?date ; wdt:P112 ?label . }"
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/> SELECT ?label WHERE { wd:Q7596 wdt:P175 ?album . ?album wdt:P577 ?date . ?album wdt:P110 ?label . FILTER(lang(?label) = 'en') ORDER BY ?date (ASC) LIMIT 1 }"
     },
     {
         "natural_language_question": "Give me the runtime of Toy Story.",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?runtime WHERE { wd:Q3938040 wdt:P408 ?runtime }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?runtime WHERE { wd:Toy_Story wdt:P291 ?runtime }"
     },
     {
         "natural_language_question": "Give me a list of all trumpet players that were bandleaders.",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> The Wikidata query would look like this: SELECT ?uri WHERE { ?uri wdt:P106 wdt:P108 ; wdt:P1207 wd:Q134482 }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P106 Q637098 ; wdt:P110 Q106108 }"
     },
     {
         "natural_language_question": "In which films directed by Garry Marshall was Julia Roberts starring?",
-        "sparql_query": "SELECT DISTINCT ?film WHERE { ?film a <http://www.wikidata.org/ontology <http://www.wikidata.org/prop/direct/instances/starring> <http://www.wikidata.org/entity/Q141> ; <http://www.wikidata.org/prop/direct/instances/director> <http://www.wikidata.org/entity/Q2802> }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/entailment/WDtE#Film> ; <http://www.wikidata.org/property/wiki/P1545> <http://www.wikidata.org/entity/Q21595> ; <http://www.wikidata.org/property/wiki/P57> <http://www.wikidata.org/entity/Q113238> }"
     },
     {
         "natural_language_question": "In which year was Rachel Stevens born?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Q194265 wdt:P580 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Q208577 wdt:P569 ?uri }"
     },
     {
         "natural_language_question": "What is the most frequent cause of death?",
-        "sparql_query": "SELECT DISTINCT ?x WHERE { ?uri <http://www.wikidata.org/prop/direct/P509> ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1"
+        "sparql_query": "SELECT DISTINCT ?x WHERE { ?uri wdt:P509 ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1"
     },
     {
         "natural_language_question": "How high is the Yokohama Marine Tower?",
-        "sparql_query": "prefix and property for height. The prefix for Wikidata is typically 'wdt:' and the property for height is 'height' or in Wikidata terminology, 'widths/heights' but the more common used one is 'height'. However, in Wikidata the property is named 'P2043'. Therefore, the SPARQL query for KG2 would be: <pre> PREFIX wdt: <http://www.wikidata.org/prop/> SELECT ?num WHERE { wd:Yokohama_Marine_Tower wdt:P2043 ?num }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?num WHERE { wd:Yokohama_Marine_Tower wdt:P2048 ?num }"
     },
     {
         "natural_language_question": "What is the highest mountain in Italy?",
-        "sparql_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain ; dbo:locatedInArea res:Italy ; dbo:elevation ?num } ORDER BY DESC(?num) OFFSET 0 LIMIT 1"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { ?uri rdf:type wdt:P800 ; wdt:P131 wd:Q38 ; wdt:P2046 ?num } ORDER BY DESC(?num) OFFSET 0 LIMIT 1"
     },
     {
         "natural_language_question": "Who was the doctoral supervisor of Albert Einstein?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Albert_Einstein wdt:P1259 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wkt: <http://www.wikidata.org/prop/qualifier/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Albert_Einstein wdt:P102 ?uri }"
     },
     {
         "natural_language_question": "What is Donald Trump's main business?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?mainBusiness WHERE { wd:Q7378 wdt:P108 ?mainBusiness . }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?item WHERE { wd:Q76 wdt:P31 ?instance; wdt:P112 ?item. FILTER(?item != wd:Q76) }"
     },
     {
         "natural_language_question": "Who has Tom Cruise been married to?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/2007/05/trix/rdfsource <http://www.wikidata.org/prop/direct/P26> <https://www.wikidata.org/wiki/Q5436> . FILTER ( bind(strafter(str(?uri),str(<https://www.wikidata.org/wiki/Q5436>)), strlang(?uri)) = 'wikipedia/en') }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P26 wd:Q23347 }"
     },
     {
         "natural_language_question": "How many people live in Eurasia?",
-        "sparql_query": "prefix for Wikidata is `wdt:`. Here is the complete SPARQL query for KG2 (Wikidata): <sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?population WHERE { wd:Q5108 wdt:P1082 ?population }"
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?population WHERE { SERVICE wikibase:labelSuggests { wd:Q148 ? } ?entity wdt:P31 wd:Q6256. ?entity wdt:P1082 ?population. }"
     },
     {
         "natural_language_question": "Who is the author of the interpretation of dreams?",
-        "sparql_query": "PREFIX wdt: <http://www.w3.org/2002/07/owl PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?Author WHERE { wd:Q179836 wdt:P50 ?Author }"
+        "sparql_query": "SELECT ?Author WHERE { dbr:The_Interpretation_of_Dreams wdt:P50 ?Author . }"
     },
     {
         "natural_language_question": "When was John Adams born?",
-        "sparql_query": "prefix for the ontology, which will be `wdt:` for Wikidata instead of `dbo:` for DBpedia. Prefix `wdt:` is used for the properties in Wikidata, so I'll replace `dbo:` with `wdt:` in the original query. Additionally, the prefix for resources in Wikidata is `wd:`, so I'll replace `res:` with `wd:`. Here's the adjusted SPARQL query for KG2 (Wikidata): ```sparql PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?date WHERE { wd:John_Adams wdt:P569 ?date }"
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?date WHERE { wd:Q159?? wdt:P569 ?date }"
     },
     {
         "natural_language_question": "how much is the total population of european union?",
-        "sparql_query": "prefix and the query pattern from KG1 (DBpedia) to KG2 (Wikidata). The Wikidata prefix is `wd:` for entities and `wdt:` for properties. The prefix mapping is as follows: - `dbo:` in DBpedia becomes `wdt:` in Wikidata (e.g., `dbo:populationTotal` becomes `wdt:P108`) - `dbr:` in DBpedia becomes `wd:` in Wikidata (e.g., `dbr:European_Union` becomes `wd:Q142`) The Wikidata property for population total is `wdt:P108`. Here is the SPARQL query for KG2: <sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?europop WHERE { wd:Q142 wdt:P108 ?europop }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?europop WHERE { wd:European_Union wdt:P1082 ?europop }"
     },
     {
         "natural_language_question": "Give me the currency of China.",
-        "sparql_query": "prefix and entity for Wikidata. Assuming the entity for China in Wikidata is \"Q5\", the corrected SPARQL query for KG2 would be: PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Q5 wdt:P38 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?uri WHERE { wd:China wdt:P818 ?uri }"
     },
     {
         "natural_language_question": "When was the death of Shakespeare?",
-        "sparql_query": "prefix for the class that represents death date, as it might be different in Wikidata. Let's assume it's `wdt:` for Wikidata. * Change the prefix for the resource that represents William Shakespeare, let's assume it's `wd:` for Wikidata. Here's the modified SPARQL query for KG2: <sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?x WHERE { wd:Q9192 wdt:P570 ?x }"
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?x WHERE { wd:Q919 (wdt:P570)/?x } LIMIT 1"
     },
     {
         "natural_language_question": "Which rockets were launched from Baikonur?",
-        "sparql_query": "SELECT ?uri WHERE { ?uri a <http://www.wikidata.org/entitydoc.htm"
+        "sparql_query": "SELECT ?item WHERE { ?item wdt:P402 wdt:P1015. FILTER (strstart(?item, \"http://www.wikidata.org/entity/\")) . }"
     },
     {
         "natural_language_question": "Give me all islands that belong to Japan.",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a wikidata:island ; wikidata:country wikidata:Japan . }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/prop/direct/P17> ; <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q71> . FILTER( ?uri != <http://www.wikidata.org/entity/Q71> ) }"
     },
     {
         "natural_language_question": "Who developed the video game World of Warcraft?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?uri WHERE { wd:World_of_Warcraft wdt:P800 ?uri }"
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { wd:World_of_Warcraft wdt:P80 ?uri }"
     },
     {
         "natural_language_question": "Give me all companies in the advertising industry.",
-        "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q829759. ?uri wdt:P136 ?industry. FILTER (regex(?industry, \"advertising\", \"i\")). UNION { ?uri wdt:P275 ?founder. ?founder wdt:P106 ?industry. FILTER (regex(?industry, \"advertising\", \"i\")). } }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wds: <http://www.wikidata.org/entity/statement/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q82972. ?uri wdt:P160 ?industry. FILTER regex(?industry, \"advertising\", \"i\") }"
     },
     {
         "natural_language_question": "Which university did Angela Merkel attend?",
-        "sparql_query": "prefix `wdt:` for the property names and `wd:` for the resource URIs. In the original query, we had: ```sql PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE { res:Angela_Merkel dbo:almaMater ?university }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?university WHERE { wd:Q1423 wdt:P69 ?university }"
     },
     {
         "natural_language_question": "Give me all the TV shows with Neil Patrick Harris.",
-        "sparql_query": "<sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?tvShow WHERE { ?tvShow wdt:P175 ?work. ?work wdt:P161 ?actor. ?actor wdt:P31 wd:Q5. ?actor wdt:P21 wd:Q184. FILTER (regex(str(?actor), \"Neil_Patrick_Harris\")). } </sparql>"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/prop/directProperty/P345> ; <http://www.wikidata.org/prop/directProperty/P161> <http://www.wikidata.org/entity/Q109265> }"
     },
     {
         "natural_language_question": "Give me all movies with Tom Cruise.",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q43318 }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/entitiy/Q114147> ; <http://www.wikidata.org/prop/direct/P161> <http://www.wikidata.org/entity/Q9649>}"
     },
     {
         "natural_language_question": "What country is Mount Everest in?",
-        "sparql_query": "prefix and that the property in Wikidata for \"located in\" or \"country\" is similar to DBpedia's, we can adjust the query as follows: ```sparql PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { wd:Mount_Everest wdt:P30 ?uri . ?uri wdt:P31 wd:Q6256 . }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?country WHERE { wd:Mount_Everest wdt:P156 ?location . ?location wdt:P17 ?country . }"
     },
     {
         "natural_language_question": "Where was JFK assassinated?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q64654> <http://www.wikidata.org/prop/direct/P570> ?uri }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q919> <http://www.wikidata.org/prop/direct/P100> ?uri }"
     },
     {
         "natural_language_question": "Which river does the Brooklyn Bridge cross?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Brooklyn_Bridge wdt:P402 ?uri }"
+        "sparql_query": "PREFIX schema: <http://schema.org/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Brooklyn_Bridge schema:crosses ?uri }"
     },
     {
         "natural_language_question": "Give all swimmers that were born in Moscow.",
-        "sparql_query": "SELECT ?uri WHERE { ?uri a wikidata:Q134428 ; wikidata:P19 wikidata:Q22 }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q145333. ?uri wdt:P19 wd:Q22. }"
     },
     {
         "natural_language_question": "What was the last movie with Alec Guinness?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424; wdt:P161 wd:Q42678; wdt:P577 ?date. } ORDER BY DESC(?date) LIMIT 1"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wdt:P577 ?date; wdt:P463 wd:Q4117187; wdt:P161 ?actor. FILTER (lang(?date) = \"en\") FILTER (isibar:lastName(?actor) = \"Guinness\") FILTER (isibar:firstName(?actor) = \"Alec\") FILTER (isibar:birthDate(?actor) = \"1914-04-24\") }"
     },
     {
         "natural_language_question": "What is the second highest mountain on Earth?",
-        "sparql_query": "Select the second-highest mountain Here's how we can adapt the query: Given that the property for elevation in Wikidata is `http://www.wikidata.org/prop/direct/Q3848673` (which is the property for the highest point of something), we can use the following query: `sparql` SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/ontology ?uri <http://www.wikidata.org/prop/direct/Q3848673> ?elevation . FILTER (!bound(?elevation) || ?elevation > 0) }"
+        "sparql_query": "SELECT ?item ?itemLabel ?elevation WHERE { ?item a <http://www.wikidata.org/entity/Q101> . ?item <http://www.wikidata.org/prop/direct/P2046> ?elevation . SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". } } ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1 SELECT ?item ?itemLabel ?elevation WHERE { ?item a <http://www.wikidata.org/entity/Q101> . ?item <http://www.wikidata.org/prop/direct/P2046> ?elevation . SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". } } ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1 UNION SELECT ?item ?itemLabel ?elevation WHERE { ?item a <http://www.wikidata.org/entity/Q101> . ?item <http://www.wikidata.org/prop/direct/P2046> ?elevation . SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". } } ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1"
     },
     {
         "natural_language_question": "What is the population of Cairo?",
-        "sparql_query": "<sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?pop WHERE { wd:Q9294378 wdt:P1082 ?pop } </sparql>"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?pop WHERE { dbr:Cairo wdt:P31 wd:Q85; wdt:P1082 ?pop. }"
     },
     {
         "natural_language_question": "Which people were born in Heraklion?",
-        "sparql_query": "prefix and will remain the same. - `rdf:` is also a standard prefix and will remain the same. - `onto:` is used for DBpedia's ontology; in Wikidata, we'll use `wdt:` for properties. - `http://dbpedia.org/class/yago/` is not needed. - `http://www.w3.org/2000/01/rdf-schema - `http://www.w3.org/1999/02/22-rdf-syntax-ns - `http://dbpedia.org/ontology/` is replaced with `http://www.wikidata.org/prop/direct/` for direct properties or `http://www.wikidata.org/prop/statement/` for statements. - To specify that a person was born in Heraklion, we use the property `P19` (birth place) instead of `onto:birthPlace`. Here's the Wikidata SPARQL query: `sparql` PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q5; wdt:P19 <http://www.wikidata.org/entity/Q4345>. }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wikibase: <http://wikiba.se/ontology#> SELECT ?item WHERE { ?item wdt:P31 wdt:P279* wd:Q5 ; wdt:P20 wd:Q160. }"
     },
     {
         "natural_language_question": "How many children did Benjamin Franklin have?",
-        "sparql_query": "prefix for the ontology is `wdt:` and the URI for Benjamin Franklin is `http://www.wikidata.org/entity/Q3794`. Here's the SPARQL query for KG2: <sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { wd:Q86 wdt:P40 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.w3.org/2002/07/owl#> PREFIX wd: <http://www.wikidata.org/entity/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { wd:Q506 wdt:P25 ?uri }"
     },
     {
         "natural_language_question": "how much is the elevation of D\u00fcsseldorf Airport ?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/>` `PREFIX wdt: <http://www.wikidata.org/prop/>` `SELECT ?ele WHERE { wd:D\u00fcsseldorf_Airport wdt:P2046 ?ele }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?ele WHERE { wd:Airport_in_D\u00fcsseldorf wdt:P2040 ?ele }"
     },
     {
         "natural_language_question": "In which country is Mecca located?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?uri WHERE { wd:Mecca wdt:P27 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Mecca wdt:P27 ?uri }"
     },
     {
         "natural_language_question": "How tall is Claudia Schiffer?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?height WHERE { wdt:P31 wdt:P279* wd:Q159434; wdt:P2037 ?height . }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?height WHERE { wd:Q124615 dbo:height ?height }"
     },
     {
         "natural_language_question": "Which holidays are celebrated around the world?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P121 [] }"
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q526. }"
     },
     {
         "natural_language_question": "What kind of music did Lou Reed play?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q602367> <http://www.wikidata.org/prop/direct/P31> ?type. ?type wdt:P279* <http://www.wikidata.org/entity/Q1081> . ?type wdt:P136 ?uri }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q75918> <http://www.wikidata.org/prop/direct/P31> ?uri }"
     },
     {
         "natural_language_question": "Give me the birth place of Frank Sinatra.",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?place WHERE { wd:Q75 wdt:P20 ?place }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?place WHERE { wd:Frank_Sinatra wdt:P19 ?place }"
     },
     {
         "natural_language_question": "Which city has the least inhabitants?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q515 (instance of city). ?uri wdt:P1082 ?pop. }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q515 ; wdt:P388 ?pop } ORDER BY ASC(?pop) OFFSET 0 LIMIT 1"
     },
     {
         "natural_language_question": "Which television shows were created by Walt Disney?",
-        "sparql_query": "prefix for television shows is `wdt:P136` (TV series) and the creator property is `wdt:P50`. Here's the SPARQL query for KG2: PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { ?uri wdt:P136 [] ; wdt:P50 wd:Q37593 }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P345 ?creator . FILTER( ?creator = \"Walt Disney\"^^xsd:string ) }"
     },
     {
         "natural_language_question": "Give me all Swedish holidays.",
-        "sparql_query": "PREFIX wikibase: <http://wikiba.se/ontology PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?item WHERE { ?item wikibase:language \"sv\" . ?item wdt:P31 wd:P1364 . ?item wdt:P17 wd:Q142 . }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P121 ?holiday ; wdt:P17 ?country . FILTER(?country = wd:Q142) }"
     },
     {
         "natural_language_question": "What is the net income of Apple?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?ni WHERE { wd:Q973 wdt:P1168 ?ni }"
+        "sparql_query": "SELECT ?ni WHERE { wd:Q93 wdt:P1161 ?ni }"
     },
     {
         "natural_language_question": "Where did Abraham Lincoln die?",
-        "sparql_query": "prefix and the resource URI based on Wikidata's schema. The Wikidata prefix is `wdt:` for properties and `wd:` for resources. Here's the modified SPARQL query for KG2: ``` PREFIX wdt: <http://www.w3.org/2007/03/ann/ld-sparql PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Abraham_Lincoln wdt:P570 ?uri. }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Abraham_Lincoln wdt:P19 ?uri }"
     },
     {
         "natural_language_question": "Give me the capitals of all countries that the Himalayas run through.",
-        "sparql_query": "SELECT ?uri WHERE { <http://www.wikidata.org/entity/Q30> wdt:P17 ?country . ?country wdt:P36 ?uri } SERVICE wikibase:autocomplete { bind(\"country:\" + str(?country) + \" to json\" as $autocompleted) return distinct ?uri }"
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q1517 wdt:P30 ?country . ?country wdt:P36 ?uri }"
     },
     {
         "natural_language_question": "In which country is the Limerick Lake?",
-        "sparql_query": "prefix for its ontology, we need to adjust the query accordingly. The prefix for Wikidata's ontology is `wdt:`. Here is the modified SPARQL query for KG2 (Wikidata): ``` PREFIX wdt: <https://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q189733 wdt:P17 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Limerick_Lake wdt:P17 ?uri }"
     },
     {
         "natural_language_question": "How tall is Michael Jordan?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/> SELECT DISTINCT ?num WHERE { wd:Q183 wdt:P173 ?num }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?num WHERE { wd:Q2 wdt:P2045 ?num }"
     },
     {
         "natural_language_question": "Which films starring Clint Eastwood did he direct himself?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://www.wikidata.org/prop/statement/P31> <http://www.wikidata.org/entity/Q5> ; <http://www.wikidata.org/prop/statement/P57> <http://www.wikidata.org/entity/Q159> ; <http://www.wikidata.org/prop/statement/P180> <http://www.wikidata.org/entity/Q159> . FILTER(regex(str(?uri), \"Film\")) }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://www.wikidata.org/prop/directive/P111> <http://www.wikidata.org/entity/Q42618> ; <http://www.wikidata.org/prop/starring/P161> <http://www.wikidata.org/entity/Q42618> . }"
     },
     {
         "natural_language_question": "In which countries can you pay using the West African CFA franc?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?country WHERE { ?country wdt:P38 wd:Q482468. SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". } }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { ?uri wdt:P344 ?currency. ?currency wdt:P233 <http://www.wikidata.org/entity/Q2152>. FILTER(lang(?currency) = 'en') }"
     },
     {
         "natural_language_question": "how much is the population Iraq?",
-        "sparql_query": "prefix for Wikidata is `wdt:` for the property and `wd:` for the entity. Here's the modified SPARQL query: PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?pIraq WHERE { wd:Q142 wd:populationTotal ?pIraq }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?pIraq WHERE { wd:Q34 wdt:P1082 ?pIraq }"
     },
     {
         "natural_language_question": "Which holidays are celebrated around the world?",
-        "sparql_query": "prefix and selecting distinct holiday URIs. The Wikidata prefix is `wdt:` (for `http://www.wikidata.org/prop/direct/`), and for types, it uses `rdf:type` without a specific prefix, but we can add it for consistency: `rdfs:`. Here's the query: <pre> <sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema SELECT DISTINCT ?uri WHERE { ?uri rdfs:type wdt:P31. FILTER regex(str(?uri), \"holiday\", \"i\") }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 ?class. FILTER(STRSTARTS(STR(?class), \"http://www.wikidata.org/entity/Q\")) BIND(STRAFTER(STR(?uri), \"http://www.wikidata.org/entity/\") AS ?label). FILTER(STR(?label) CONTAINS \"holiday\" OR STR(?label) CONTAINS \"festivity\") }"
     },
     {
         "natural_language_question": "Which Greek parties are pro-European?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a wikidata:Q345 ; wikidata:P17 wikidata:Q1075665 ; wikidata:P146 wikidata:Q183221 }"
+        "sparql_query": "SELECT DISTINCT ?party WHERE { ?party a <http://www.wikidata.org/prop/direct/P31> ; <http://www.wikidata.org/prop/direct/P144> \"Greece\"^^<http://www.w3.org/2001/XMLSchema#string> ; <http://www.wikidata.org/prop/direct/P135> \"pro-European\"^^<http://www.w3.org/2001/XMLSchema#string> . }"
     },
     {
         "natural_language_question": "Give me the birthdays of all actors of the television show Charmed.",
-        "sparql_query": "prefix for the property of starring in a movie or show is `http://www.wikidata.org/prop/directProperty/P161`, and for the birth date is `http://www.wikidata.org/prop/directProperty/P569`. Here is the complete SPARQL query for Wikidata: ``` PREFIX wikibase: <http://wikiba.se/ontology PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?date WHERE { wd:Q11906 wdt:P161 ?actor . ?actor wdt:P569 ?date . }"
+        "sparql_query": "SELECT DISTINCT ?date WHERE { <http://www.wikidata.org/entity/Q21503> <http://www.wikidata.org/prop/direct/P161> ?actor . ?actor wdt:P31 wd:Q5 . ?actor wdt:P569 ?date }"
     },
     {
         "natural_language_question": "To which artistic movement did the painter of The Three Dancers belong?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Q... (the ID of The Three Dancers in Wikidata) wdt:P163 ?person . ?person wdt:P110 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Three_Dancers dbo:author ?person . ?person wdt:P150 ?uri }"
     },
     {
         "natural_language_question": "Which actors were born in Germany?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/ontology FILTER(BOUND(?uri)) . UNION { ?uri wdt:P20 wd:Q30 . } UNION { ?uri wdt:P20 ?place . ?place wdt:P17 wd:Q30 . } }"
+        "sparql_query": "SELECT ?actor WHERE { ?actor a <http://www.wikidata.org/ontology#Human> . ?actor <http://www.wikidata.org/prop/direct/claim/P20> ?place . ?place <http://www.wikidata.org/prop/direct/claim/P17> <http://www.wikidata.org/entity/Q149> }"
     },
     {
         "natural_language_question": "Who designed the Brooklyn Bridge?",
-        "sparql_query": "prefix for Wikidata properties and `wd` for Wikidata entities. The property for architect in Wikidata is `wdt:P24`, which translates to \"architect\". Here's the SPARQL query for KG2: ```sparql PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { wd:Brooklyn_Bridge wdt:P24 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?uri WHERE { wd:Brooklyn_Bridge wdt:P62 ?uri }"
     },
     {
         "natural_language_question": "Who wrote the Game of Thrones theme?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Game_of_Thrones wdt:P132 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?uri WHERE { wd:Game_of_Thrones wdt:P110 ?uri }"
     },
     {
         "natural_language_question": "Give me all movies directed by Francis Ford Coppola.",
-        "sparql_query": "prefix for RDF syntax. 2. **Resource URI**: Instead of `res:`, we'll use `wd:` for Wikidata resources. 3. **Query Pattern**: The query pattern for selecting films directed by a specific person remains the same. Here's the complete SPARQL query for Wikidata: <sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns SELECT ?uri WHERE { ?uri rdf:type wdt:P31 ?uri wdt:P57 wd:Q41112 }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P57 wd:Q37376 }"
     },
     {
         "natural_language_question": "What is the birth name of Adele?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?bn WHERE { dbr:Adele wdt:P1472 ?bn }"
+        "sparql_query": "PREFIX wikibase: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?bn WHERE { wd:Adele wikibase:birthName ?bn }"
     },
     {
         "natural_language_question": "What was the first Queen album?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wdt:P111 ; wdt:P175 wd:Q4164124 ; wdt:P577 ?d }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q486972 ; wdt:P115 ?album ; wdt:P577 ?d . FILTER ( wcld:contains(?album, \"Queen\") ). FILTER (lang(?album) = \"en\"). FILTER (regex(?album, \"Queen\", \"i\")). FILTER (lang(?d) = \"en\"). } ORDER BY ASC(?d) OFFSET 0 LIMIT 1"
     },
     {
         "natural_language_question": "What is the currency of the Czech Republic?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?currency WHERE { wd:Q208 wdt:P18 ?currency }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Czech_Republic wdt:P184 ?uri FILTER(isLiteral(?uri)) FILTER( datatype(?uri) = xsd:string) }"
     },
     {
         "natural_language_question": "Give me all people that were born in Vienna and died in Berlin.",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P569 wd:Q6849; wdt:P20 wd:Q3957; wdt:P570 ?deathDate. FILTER (lang(?deathDate) = 'en') }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P19 <http://www.wikidata.org/entity/Q106> ; wdt:P20 <http://www.wikidata.org/entity/Q162> . }"
     },
     {
         "natural_language_question": "Which bridges cross the Seine?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a wd:P31 ; wd:P31 wd:Q12179 ; wd:P119 wd:Q233 }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a wd:P31 ?uri wdt:P162 ?text. FILTER (str(?text) = \"Seine\" OR regex(?text, \"^Seine$\") OR regex(?text, \"^Seine river$\") BIND (str(?uri) AS ?uri) }"
     },
     {
         "natural_language_question": "Which musician wrote the most books?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wdt:P31 wd:Q5. ?x wdt:P50 ?uri. ?x a wdt:P577 wd:Q571. } ORDER BY DESC(COUNT(?x)) OFFSET 0 LIMIT 1"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q5 . ?x wdt:P50 ?uri . ?x wdt:P31 wd:Q33999 . FILTER( ?x wdt:P142 ?y OR ?x wdt:P577 ?y ) } ORDER BY DESC(COUNT(?x)) OFFSET 0 LIMIT 1"
     },
     {
         "natural_language_question": "Which television shows were created by John Cleese?",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/entity/Q175878> ; <http://www.wikidata.org/prop/direct/P50> <http://www.wikidata.org/entity/Q1616> . }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/entailment/HDRC/1.1/wikidata-ontology#CreativeWork> ; wdt:P50 ?creator . FILTER (regex(str(?creator), \"John Cleese\")) }"
     },
     {
         "natural_language_question": "Give me all writers that won the Nobel Prize in literature.",
-        "sparql_query": "SELECT DISTINCT ?writer WHERE { ?writer (wdt:P50|wdt:P31) wd:Q5 ; (wdt:P166|wdt:P1412) wd:Q80 . }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a wd:Q5 ; wd:P166 wd:Q1062866 . }"
     },
     {
         "natural_language_question": "Who discovered Ceres?",
-        "sparql_query": "PREFIX wdt: <http://www.w3.org/2002/07/owl PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q323174> wdt:P97 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?discovererLabel WHERE { <http://www.wikidata.org/entity/Q148> wdt:P97 ?discoverer. SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". } BIND (rdfs:label AS ?discovererLabel) }"
     },
     {
         "natural_language_question": "Give me a list of all bandleaders that play trumpet.",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q506 (instance of Bandleader). ?uri wdt:P130 wd:Q13406 (played instrument Trumpet). }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://www.wikidata.org/prop/direct/P110> <http://www.wikidata.org/entity/Q856172> ; <http://www.wikidata.org/prop/qualifier/P921> <http://www.wikidata.org/entity/Q767218> . }"
     },
     {
         "natural_language_question": "Show me all basketball players that are higher than 2 meters.",
-        "sparql_query": "SELECT ?uri WHERE { ?uri a <http://www.wikidata.org/entity/Q1610> ; <http://www.wikidata.org/prop/direct/P2048> ?n FILTER ( ?n > 2.0 ) }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a wd:Q1160943 ; wdt:P2048 ?n . FILTER ( ?n > 2.0 ) }"
     },
     {
         "natural_language_question": "In which films did Julia Roberts as well as Richard Gere play?",
-        "sparql_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere }"
+        "sparql_query": "PREFIX wdt: <http://www.w3.org/2002/07/owl#> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?item WHERE { ?item wdt:P31 wd:Q11424 ; wdt:P161 wd:WD:Q95 ; wdt:P161 wd:WD:Q9460 }"
     },
     {
         "natural_language_question": "What is the capital of Canada?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Canada wdt:P36 ?uri }"
+        "sparql_query": "prefix wd: <http://www.wikidata.org/entity/> wdt: <http://www.wikidata.org/prop/direct/> wikibase: <http://wikiba.se/ontology#> ps: <http://www.wikidata.org/prop/statement/> SELECT ?capital WHERE { wd:Canada wdt:P36 ?capital. }"
     },
     {
         "natural_language_question": "Which soccer players were born on Malta?",
-        "sparql_query": "SELECT ?item WHERE { ?item a <http://www.wikidata.org/entity/Q5> . ?item <http://www.wikidata.org/prop/direct/P20> <http://www.wikidata.org/entity/Q116> . }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/entity/Q5> ; <http://www.wikidata.org/prop/direct/P19> <http://www.wikidata.org/entity/Q83761> . }"
     },
     {
         "natural_language_question": "What is the capital of Cameroon?",
-        "sparql_query": "prefix for the ontology with the one corresponding to Wikidata, which is `wdt:` (for `http://www.wikidata.org/prop/direct/`) * Change the namespace for `Cameroon` to its Wikidata counterpart, which is `Q157` * Use the `wdt:P36` property to represent the capital of a country Here's the final SPARQL query: <sparql> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q157 wdt:P36 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Cameroon wdt:P36 ?uri }"
     },
     {
         "natural_language_question": "How many programming languages are there?",
-        "sparql_query": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://www.wikidata.org/prop/direct/property/P373> }"
+        "sparql_query": "SELECT (COUNT(DISTINCT ?item) AS ?c) WHERE { ?item a <http://www.wikidata.org/ontology#EntityType/subclassOf/Property:P31> <http://www.wikidata.org/entity/Q8387> . }"
     },
     {
         "natural_language_question": "Give me all cosmonauts.",
-        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/entity/Q420> . { ?uri <http://www.wikidata.org/prop/P27> <http://www.wikidata.org/entity/Q72> } UNION { ?uri <http://www.wikidata.org/prop/P27> <http://www.wikidata.org/entity/Q155> } }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/ontology#Human> . BIND(STRAFTER(STR(?uri), STR(<http://www.wikidata.org/entity/>) ) AS ?id) ?uri <http://www.wikidata.org/prop/direct/instance_of> <http://www.wikidata.org/entity/Q2060> ?uri <http://www.wikidata.org/prop/p396> <http://www.wikidata.org/entity/Q11424> UNION ?uri <http://www.wikidata.org/prop/p396> <http://www.wikidata.org/entity/Q15890248> }"
     },
     {
         "natural_language_question": "Who created Family Guy?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/>` `PREFIX wd: <http://www.wikidata.org/entity/>` `SELECT DISTINCT ?uri WHERE { wd:Family_Guy wdt:P112 ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Family_Guy wdt:P50 ?uri }"
     },
     {
         "natural_language_question": "How much is the population of mexico city ?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?Mexico_City WHERE { wd:Q144 dcterms:population ?Mexico_City . }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?Mexico_City WHERE { ?Mexico_City wdt:P31 wd:Q515; wdt:P1082 ?Mexico_City FILTER(regex(str(?Mexico_City), \"Mexico City\")) }"
     },
     {
         "natural_language_question": "Who created Batman?",
-        "sparql_query": "prefix for properties is \"p:\", and the subject is defined as \"Q30\" (Batman in Wikidata). Therefore, the query would look something like this: ``` SELECT ?uri WHERE { wd:Q30 (wdt:P50 | wdt:P170 | wdt:P136) ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Batman wdt:P170 ?uri }"
     },
     {
         "natural_language_question": "How many people live in the capital of Australia?",
-        "sparql_query": "prefix with `wdt:` and the `res:` prefix with `wd:`. Here's the modified SPARQL query for KG2: SELECT ?num WHERE { wd:Australia wdt:P36 ?x . ?x wdt:P1082 ?num }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?capital ?num WHERE { wd:Australia wdt:P36 ?capital . ?capital wdt:P1082 ?num }"
     },
     {
         "natural_language_question": "how big is the total area of North Rhine- Westphalia?",
-        "sparql_query": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE { dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?tarea WHERE { wd:North_Rhine-Westphalia wdt:P217 ?tarea }"
     },
     {
         "natural_language_question": "How many employees does IBM have?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?number WHERE { wd:IBM wdt:P845 ?number }"
+        "sparql_query": "SELECT DISTINCT ?number WHERE { wd:Q189 wikibase:propertyObject:P1126 ?number . }"
     },
     {
         "natural_language_question": "How much did Pulp Fiction cost?",
-        "sparql_query": "PREFIX wdt: <http://www.w3.org/2002/07/owl PREFIX wd: <http://www.wikidata.org/entity/> And we need to replace the DBpedia resource prefix with the Wikidata resource prefix: PREFIX res: <http://www.wikidata.org/entity/> So, the final, complete SPARQL query for KG2 (Wikidata) would be: <sparql> PREFIX wdt: <http://www.w3.org/2002/07/owl PREFIX wd: <http://www.wikidata.org/entity/> PREFIX res: <http://www.wikidata.org/entity/> SELECT DISTINCT ?n WHERE { wd:Pulp_Fiction wdt:budget ?n }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?n WHERE { wd:Pulp_Fiction wdt:P31 ?n }"
     },
     {
         "natural_language_question": "What movies does Jesse Eisenberg play in?",
-        "sparql_query": "SELECT DISTINCT ?movie WHERE { ?movie a <http://www.wikidata.org/prop/direct/P31> ; <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> ; <http://www.wikidata.org/prop/p162> <http://www.wikidata.org/entity/Q110462> . OPTIONAL { ?movie <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> } }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q17066 . }"
     },
     {
         "natural_language_question": "Give me all Danish movies.",
-        "sparql_query": "SELECT ?item WHERE { ?item wdt:P31 wd:Q11424. ?item wdt:P17 wd:Q15253. }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri a <http://www.wikidata.org/entity/Q1148702> ; <http://www.wikidata.org/prop/direct/P30> <http://www.wikidata.org/entity/Q142> }"
     },
     {
         "natural_language_question": "To which countries does the Himalayan mountain system extend?",
-        "sparql_query": "SELECT DISTINCT ?item WHERE { <http://www.wikidata.org/entity/Q30> <http://www.wikidata.org/prop/direct/P17> ?item }"
+        "sparql_query": "SELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q30> wdt:P175 ?country . ?country wdt:P31 wd:Q142 . ?country wdt:P856 ?uri . }"
     },
     {
         "natural_language_question": "What is the largest country in the world?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q6256 ; wdt:P2046 ?n . FILTER( !BOUND(?n) || ?n > 0 ) } ORDER BY DESC(?n) OFFSET 0 LIMIT 1"
+        "sparql_query": "PREFIX wdt: <https://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wdt:P275 ; wdt:P25 ?n } ORDER BY DESC(?n) OFFSET 0 LIMIT 1"
     },
     {
         "natural_language_question": "What is the alma mater of the chancellor of Germany Angela Merkel?",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?Almamater WHERE { wdt:Q80973 wdt:P170 ?Almamater }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?Almamater WHERE { wd:Q8147 wdt:P69 ?Almamater }"
     },
     {
         "natural_language_question": "Who created Goofy?",
-        "sparql_query": "prefix is `wd`. Here's the SPARQL query for Wikidata: `SELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q116974> <http://www.wikidata.org/prop/direct/P136> ?uri }"
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { wd:Q41560 wdt:P50 ?uri }"
     }
 ]
