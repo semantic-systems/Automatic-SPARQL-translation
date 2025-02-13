@@ -29,7 +29,7 @@
     },
     {
         "natural_language_question": "How many films did Leonardo DiCaprio star in?",
-        "sparql_query": "' and '"
+        "sparql_query": "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT (COUNT(?film) AS ?count) WHERE { ?film dbo:actor ?actor. ?actor dbo:film ?film. ?actor rdfs:label \"Leonardo DiCaprio\"@en. } GROUP BY ?actor FILTER (lang(?actor) = \"en\")"
     },
     {
         "natural_language_question": "When was Olof Palme shot?",
@@ -149,7 +149,7 @@
     },
     {
         "natural_language_question": "Where was JFK assassinated?",
-        "sparql_query": "' and '"
+        "sparql_query": "PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema PREFIX dbpedia: <http://dbpedia.org/resource/> SELECT ?location ?label WHERE { ?location a dbpedia-owl:Event. ?location rdfs:label ?label. FILTER (lang(?label) = 'en') FILTER (CONTAINS(UCASE(?label), \"JFK ASSASSINATION\")) }"
     },
     {
         "natural_language_question": "Which river does the Brooklyn Bridge cross?",
@@ -229,7 +229,7 @@
     },
     {
         "natural_language_question": "In which country is the Limerick Lake?",
-        "sparql_query": "' and '"
+        "sparql_query": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> SELECT ?country WHERE { ?lake dbpedia-owl:country ?country . ?lake rdfs:label \"Limerick Lake\"@en . }"
     },
     {
         "natural_language_question": "How tall is Michael Jordan?",
@@ -249,7 +249,7 @@
     },
     {
         "natural_language_question": "Which holidays are celebrated around the world?",
-        "sparql_query": "` and `"
+        "sparql_query": "PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> PREFIX dbpedia2: <http://dbpedia.org/ontology/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?holiday ?holidayLabel WHERE { ?holiday a dbo:Holiday . ?holiday rdfs:label ?holidayLabel . FILTER (lang(?holidayLabel) = 'en') . OPTIONAL { ?holiday dbo:celebratedIn ?country . } SERVICE <http://dbpedia.org/sparql> { ?country a dbo:Country . } } GROUP BY ?holiday ?holidayLabel ORDER BY ?holidayLabel"
     },
     {
         "natural_language_question": "Which Greek parties are pro-European?",

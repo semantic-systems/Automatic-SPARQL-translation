@@ -50,7 +50,7 @@
     },
     {
         "natural_language_question": "How many films did Leonardo DiCaprio star in?",
-        "sparql_query": "\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\nPREFIX yago: <http://dbpedia.org/class/yago/>\nPREFIX onto: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX dbc: <http://dbpedia.org/resource/Category:>\nPREFIX dct: <http://purl.org/dc/terms/>\n' and '",
+        "sparql_query": "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT (COUNT(?film) AS ?count) WHERE { ?film dbo:actor ?actor. ?actor dbo:film ?film. ?actor rdfs:label \"Leonardo DiCaprio\"@en. } GROUP BY ?actor FILTER (lang(?actor) = \"en\")",
         "answers": [
             "Query failed"
         ]
@@ -261,7 +261,7 @@
     },
     {
         "natural_language_question": "Where was JFK assassinated?",
-        "sparql_query": "\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\nPREFIX yago: <http://dbpedia.org/class/yago/>\nPREFIX onto: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX dbc: <http://dbpedia.org/resource/Category:>\nPREFIX dct: <http://purl.org/dc/terms/>\n' and '",
+        "sparql_query": "PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema PREFIX dbpedia: <http://dbpedia.org/resource/> SELECT ?location ?label WHERE { ?location a dbpedia-owl:Event. ?location rdfs:label ?label. FILTER (lang(?label) = 'en') FILTER (CONTAINS(UCASE(?label), \"JFK ASSASSINATION\")) }",
         "answers": [
             "Query failed"
         ]
@@ -402,7 +402,7 @@
     },
     {
         "natural_language_question": "In which country is the Limerick Lake?",
-        "sparql_query": "\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\nPREFIX yago: <http://dbpedia.org/class/yago/>\nPREFIX onto: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX dbc: <http://dbpedia.org/resource/Category:>\nPREFIX dct: <http://purl.org/dc/terms/>\n' and '",
+        "sparql_query": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> SELECT ?country WHERE { ?lake dbpedia-owl:country ?country . ?lake rdfs:label \"Limerick Lake\"@en . }",
         "answers": [
             "Query failed"
         ]
@@ -437,7 +437,7 @@
     },
     {
         "natural_language_question": "Which holidays are celebrated around the world?",
-        "sparql_query": "\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX res: <http://dbpedia.org/resource/>\nPREFIX yago: <http://dbpedia.org/class/yago/>\nPREFIX onto: <http://dbpedia.org/ontology/>\nPREFIX dbp: <http://dbpedia.org/property/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX dbc: <http://dbpedia.org/resource/Category:>\nPREFIX dct: <http://purl.org/dc/terms/>\n` and `",
+        "sparql_query": "PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> PREFIX dbpedia2: <http://dbpedia.org/ontology/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?holiday ?holidayLabel WHERE { ?holiday a dbo:Holiday . ?holiday rdfs:label ?holidayLabel . FILTER (lang(?holidayLabel) = 'en') . OPTIONAL { ?holiday dbo:celebratedIn ?country . } SERVICE <http://dbpedia.org/sparql> { ?country a dbo:Country . } } GROUP BY ?holiday ?holidayLabel ORDER BY ?holidayLabel",
         "answers": [
             "Query failed"
         ]
