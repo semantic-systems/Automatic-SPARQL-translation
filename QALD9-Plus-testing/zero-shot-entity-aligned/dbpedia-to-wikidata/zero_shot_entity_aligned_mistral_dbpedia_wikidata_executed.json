@@ -1,7 +1,7 @@
 [
     {
         "natural_language_question": "Who is the founder of Penguin Books?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?founder WHERE { wd:Q1336200 wdt:P112 ?founder }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?founder WHERE { wd:Q1336200 wdt:P112 ?founder. }",
         "answers": [
             "http://www.wikidata.org/entity/Q1263483"
         ]
@@ -31,14 +31,14 @@
     },
     {
         "natural_language_question": "List all the musicals with music by Elton John.",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q2743 ; wdt:P86 wd:Q2808 . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?musical WHERE { ?musical wdt:P31 wd:Q2743 ; wdt:P86 wd:Q2808 . }",
         "answers": [
             "No answer"
         ]
     },
     {
         "natural_language_question": "Who developed Skype?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q40984 wdt:P178 ?uri. }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?developer WHERE { wd:Q40984 wdt:P178 ?developer. }",
         "answers": [
             "http://www.wikidata.org/entity/Q246125"
         ]
@@ -69,7 +69,7 @@
     },
     {
         "natural_language_question": "Give me all actors starring in movies directed by William Shatner.",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?actor WHERE { ?movie wdt:P57 wd:Q16297 ; wdt:P161 ?actor . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?x wdt:P57 wd:Q16297 ; wdt:P161 ?uri . }",
         "answers": [
             "http://www.wikidata.org/entity/Q110154",
             "http://www.wikidata.org/entity/Q116281",
@@ -133,28 +133,28 @@
     },
     {
         "natural_language_question": "What is the highest mountain?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q8502 ; wdt:P2044 ?elevation . } ORDER BY DESC(?elevation) OFFSET 0 LIMIT 1",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q8502 ; wdt:P2044 ?elevation . } ORDER BY DESC(?elevation) LIMIT 1",
         "answers": [
             "http://www.wikidata.org/entity/Q123374100"
         ]
     },
     {
         "natural_language_question": "How many films did Leonardo DiCaprio star in?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT (COUNT(DISTINCT ?film) AS ?c) WHERE { ?film wdt:P31 wd:Q11424 ; wdt:P161 wd:Q38111 . }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q38111 . }",
         "answers": [
             "38"
         ]
     },
     {
         "natural_language_question": "When was Olof Palme shot?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?date WHERE { <http://www.wikidata.org/entity/Q53713> <http://www.wikidata.org/entity/P570> ?date }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?date WHERE { wd:Q53713 wdt:P570 ?date . }",
         "answers": [
-            "No answer"
+            "1986-02-28T00:00:00Z"
         ]
     },
     {
         "natural_language_question": "Which movies star both Liz Taylor and Richard Burton?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P161 wd:Q34851 . ?uri wdt:P161 wd:Q151973 . }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P161 wd:Q34851 ; wdt:P161 wd:Q151973 . }",
         "answers": [
             "http://www.wikidata.org/entity/Q1198059",
             "http://www.wikidata.org/entity/Q1235065",
@@ -180,28 +180,28 @@
     },
     {
         "natural_language_question": "How much did the Lego Movie cost?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?n WHERE { wd:Q2608065 wdt:P2769 ?n }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?n WHERE { wd:Q2608065 wdt:P2769 ?n }",
         "answers": [
             "No answer"
         ]
     },
     {
         "natural_language_question": "For which label did Elvis record his first album?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?x wdt:P31 wd:Q482994 ; wdt:P175 wd:Q303 ; wdt:P577 ?y ; wdt:P264 ?uri . } ORDER BY ASC(?y) LIMIT 1",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?label WHERE { ?album wdt:P31 wd:Q482994 ; wdt:P175 wd:Q303 ; wdt:P577 ?releaseDate ; wdt:P264 ?label . } ORDER BY ASC(?releaseDate) LIMIT 1",
         "answers": [
             "http://www.wikidata.org/entity/Q3415083"
         ]
     },
     {
         "natural_language_question": "Give me the runtime of Toy Story.",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?runtime WHERE { wd:Q171048 wdt:P2047 ?runtime . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?runtime WHERE { wd:Q171048 wdt:P2047 ?runtime. }",
         "answers": [
             "81"
         ]
     },
     {
         "natural_language_question": "Give me a list of all trumpet players that were bandleaders.",
-        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q5280538 ; wdt:P106 wd:Q806349 ; wdt:P1303 wd:Q8338. }",
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q5280538, wd:Q806349 ; wdt:P1303 wd:Q119621, wd:Q8338 . }",
         "answers": [
             "No answer"
         ]
@@ -218,35 +218,35 @@
     },
     {
         "natural_language_question": "In which year was Rachel Stevens born?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q241665 wdt:P569 ?uri . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q241665 wdt:P569 ?uri. }",
         "answers": [
             "1978-04-09T00:00:00Z"
         ]
     },
     {
         "natural_language_question": "What is the most frequent cause of death?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?x WHERE { ?uri <http://www.wikidata.org/entity/P509> ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?x WHERE { ?uri wdt:P509 ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1",
         "answers": [
-            "Query failed"
+            "http://www.wikidata.org/entity/Q1324130"
         ]
     },
     {
         "natural_language_question": "How high is the Yokohama Marine Tower?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?num WHERE { wd:Q1207989 wdt:P2048 ?num }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?num WHERE { wd:Q1207989 wdt:P2048 ?num . }",
         "answers": [
             "101"
         ]
     },
     {
         "natural_language_question": "What is the highest mountain in Italy?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q8502 ; wdt:P131 wd:Q38 ; wdt:P2044 ?num . } ORDER BY DESC(?num) LIMIT 1",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q8502 ; wdt:P131 wd:Q38 ; wdt:P2044 ?num . } ORDER BY DESC(?num) OFFSET 0 LIMIT 1",
         "answers": [
             "http://www.wikidata.org/entity/Q3506451"
         ]
     },
     {
         "natural_language_question": "Who was the doctoral supervisor of Albert Einstein?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q937 wdt:P184 ?uri }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q937 wdt:P184 ?uri. }",
         "answers": [
             "http://www.wikidata.org/entity/Q116635",
             "http://www.wikidata.org/entity/Q4175282",
@@ -255,9 +255,19 @@
     },
     {
         "natural_language_question": "What is Donald Trump's main business?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?owner WHERE { wd:Q22686 wdt:P127 ?owner }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?owner WHERE { ?owner wdt:P127 wd:Q22686 . }",
         "answers": [
-            "No answer"
+            "http://www.wikidata.org/entity/Q115934307",
+            "http://www.wikidata.org/entity/Q123134707",
+            "http://www.wikidata.org/entity/Q123352703",
+            "http://www.wikidata.org/entity/Q1262898",
+            "http://www.wikidata.org/entity/Q18011281",
+            "http://www.wikidata.org/entity/Q20714076",
+            "http://www.wikidata.org/entity/Q286493",
+            "http://www.wikidata.org/entity/Q54869832",
+            "http://www.wikidata.org/entity/Q60789091",
+            "http://www.wikidata.org/entity/Q7847774",
+            "http://www.wikidata.org/entity/Q844324"
         ]
     },
     {
@@ -269,7 +279,7 @@
     },
     {
         "natural_language_question": "How many people live in Eurasia?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?population WHERE { wd:Q5401 wdt:P1082 ?population. }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?population WHERE { wd:Q5401 wdt:P1082 ?population }",
         "answers": [
             "5348554000"
         ]
@@ -283,28 +293,28 @@
     },
     {
         "natural_language_question": "When was John Adams born?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?date WHERE { wd:Q11806 wdt:P569 ?date. }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?date WHERE { wd:Q11806 wdt:P569 ?date . }",
         "answers": [
             "1735-10-30T00:00:00Z"
         ]
     },
     {
         "natural_language_question": "how much is the total population of european union?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?europop WHERE { wd:Q458 wdt:P1082 ?europop . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?europop WHERE { wd:Q458 wdt:P1082 ?europop. }",
         "answers": [
             "447706209"
         ]
     },
     {
         "natural_language_question": "Give me the currency of China.",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?currency WHERE { wd:Q148 wdt:P38 ?currency . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?currency WHERE { VALUES ?china { wd:Q148 } ?china wdt:P38 ?currency. }",
         "answers": [
             "http://www.wikidata.org/entity/Q39099"
         ]
     },
     {
         "natural_language_question": "When was the death of Shakespeare?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?x WHERE { wd:Q692 wdt:P570 ?x . } LIMIT 1",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?x WHERE { wd:Q692 wdt:P570 ?x } LIMIT 1",
         "answers": [
             "1616-05-03T00:00:00Z"
         ]
@@ -1981,14 +1991,14 @@
     },
     {
         "natural_language_question": "Give me all companies in the advertising industry.",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q4830453. { ?uri wdt:P452 wd:Q854995 } UNION { ?uri wdt:P452 wd:Q37038 } UNION { ?uri wdt:P452 wd:Q1286627 } UNION { ?uri wdt:P452 ?industry. FILTER regex(?industry, \"advertising\", \"i\") } }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q4830453 . { ?uri wdt:P452 wd:Q854995 . } UNION { ?uri wdt:P452 wd:Q37038 . } UNION { ?uri wdt:P452 wd:Q1286627 . } UNION { ?uri wdt:P452 ?industry . FILTER regex(str(?industry), \"advertising\", \"i\") . } }",
         "answers": [
             "134"
         ]
     },
     {
         "natural_language_question": "Which university did Angela Merkel attend?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?university WHERE { wd:Q567 wdt:P69 ?university }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?university WHERE { wd:Q567 wdt:P69 ?university. }",
         "answers": [
             "http://www.wikidata.org/entity/Q154804",
             "http://www.wikidata.org/entity/Q49738",
@@ -1998,7 +2008,7 @@
     },
     {
         "natural_language_question": "Give me all the TV shows with Neil Patrick Harris.",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q15416 ; wdt:P161 wd:Q485310 . }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q15416 ; wdt:P161 wd:Q485310 }",
         "answers": [
             "No answer"
         ]
@@ -2064,16 +2074,16 @@
     },
     {
         "natural_language_question": "What country is Mount Everest in?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q513 wdt:P131 ?uri . ?uri wdt:P31 wd:Q6256 . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wikibase: <http://wikiba.se/ontology#> SELECT DISTINCT ?country WHERE { wd:Q513 wdt:P131 ?country . ?country wdt:P31 wd:Q6256 . }",
         "answers": [
             "No answer"
         ]
     },
     {
         "natural_language_question": "Where was JFK assassinated?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { wd:Q9696 wdt:P20 ?uri. }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { <http://www.wikidata.org/entity/Q9696> <http://www.wikidata.org/entity/P20> ?uri }",
         "answers": [
-            "http://www.wikidata.org/entity/Q3896131"
+            "No answer"
         ]
     },
     {
@@ -2092,7 +2102,7 @@
     },
     {
         "natural_language_question": "What was the last movie with Alec Guinness?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q103894 ; wdt:P577 ?date . } ORDER BY DESC(?date) LIMIT 1",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX pq: <http://www.wikidata.org/prop/qualifier/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q103894 ; wdt:P577 ?date . } ORDER BY DESC(?date) LIMIT 1",
         "answers": [
             "http://www.wikidata.org/entity/Q6074"
         ]
@@ -2113,7 +2123,7 @@
     },
     {
         "natural_language_question": "Which people were born in Heraklion?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 ?human . ?human wdt:P279* wd:Q5 . ?uri wdt:P19 wd:Q160544 . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q5 ; wdt:P19 wd:Q160544 . }",
         "answers": [
             "http://www.wikidata.org/entity/Q100331972",
             "http://www.wikidata.org/entity/Q100394144",
@@ -2469,7 +2479,7 @@
     },
     {
         "natural_language_question": "How many children did Benjamin Franklin have?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT (COUNT(DISTINCT ?child) AS ?c) WHERE { wd:Q34969 wdt:P40 ?child . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT (COUNT(DISTINCT ?child) AS ?c) WHERE { wd:Q34969 wdt:P40 ?child. }",
         "answers": [
             "3"
         ]
@@ -2483,21 +2493,21 @@
     },
     {
         "natural_language_question": "In which country is Mecca located?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q5806 wdt:P17 ?uri . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?country WHERE { wd:Q5806 wdt:P17 ?country }",
         "answers": [
             "http://www.wikidata.org/entity/Q851"
         ]
     },
     {
         "natural_language_question": "How tall is Claudia Schiffer?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?height WHERE { wd:Q76717 wdt:P2048 ?height }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?height WHERE { wd:Q76717 wdt:P2048 ?height. }",
         "answers": [
             "180"
         ]
     },
     {
         "natural_language_question": "Which holidays are celebrated around the world?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q1445650. }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q1445650 }",
         "answers": [
             "http://www.wikidata.org/entity/Q100329955",
             "http://www.wikidata.org/entity/Q100597341",
@@ -4777,9 +4787,20 @@
     },
     {
         "natural_language_question": "What kind of music did Lou Reed play?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?genre WHERE { <http://www.wikidata.org/entity/Q189080> <http://www.wikidata.org/entity/P136> ?genre. }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?genre WHERE { wd:Q189080 wdt:P136 ?genre. }",
         "answers": [
-            "No answer"
+            "http://www.wikidata.org/entity/Q11366",
+            "http://www.wikidata.org/entity/Q11399",
+            "http://www.wikidata.org/entity/Q1428637",
+            "http://www.wikidata.org/entity/Q1641839",
+            "http://www.wikidata.org/entity/Q181861",
+            "http://www.wikidata.org/entity/Q186472",
+            "http://www.wikidata.org/entity/Q206159",
+            "http://www.wikidata.org/entity/Q217467",
+            "http://www.wikidata.org/entity/Q27190",
+            "http://www.wikidata.org/entity/Q650316",
+            "http://www.wikidata.org/entity/Q76092",
+            "http://www.wikidata.org/entity/Q885561"
         ]
     },
     {
@@ -4791,7 +4812,7 @@
     },
     {
         "natural_language_question": "Which city has the least inhabitants?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q515 ; wdt:P1082 ?pop } ORDER BY ASC(?pop) LIMIT 1",
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?city WHERE { ?city wdt:P31 wd:Q515 ; wdt:P1082 ?pop . } ORDER BY ASC(?pop) LIMIT 1",
         "answers": [
             "http://www.wikidata.org/entity/Q2590944"
         ]
@@ -4820,24 +4841,40 @@
     },
     {
         "natural_language_question": "What is the net income of Apple?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?ni WHERE { <http://www.wikidata.org/entity/Q312> <http://www.wikidata.org/entity/P2295> ?ni }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?ni WHERE { wd:Q312 p:P2295 ?statement. ?statement ps:P2295 ?ni. }",
         "answers": [
-            "No answer"
+            "6119000000",
+            "8235000000",
+            "14013000000",
+            "25922000000",
+            "37037000000",
+            "39510000000",
+            "41733000000",
+            "45687000000",
+            "48351000000",
+            "53394000000",
+            "55256000000",
+            "57411000000",
+            "59531000000",
+            "94680000000",
+            "96995000000",
+            "99803000000"
         ]
     },
     {
         "natural_language_question": "Where did Abraham Lincoln die?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX pq: <http://www.wikidata.org/prop/qualifier/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { wd:Q91 wdt:P20 ?uri. }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q91 wdt:P20 ?uri. }",
         "answers": [
             "http://www.wikidata.org/entity/Q4799733"
         ]
     },
     {
         "natural_language_question": "Give me the capitals of all countries that the Himalayas run through.",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?capital WHERE { wd:Q5451 wdt:P17 ?country . ?country wdt:P36 ?capital . }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?capital WHERE { VALUES ?himalayas { wd:Q105981852 wd:Q26235529 wd:Q5451 } ?himalayas wdt:P17 ?country . ?country wdt:P36 ?capital . }",
         "answers": [
             "http://www.wikidata.org/entity/Q1362",
             "http://www.wikidata.org/entity/Q3037",
+            "http://www.wikidata.org/entity/Q3630",
             "http://www.wikidata.org/entity/Q37400",
             "http://www.wikidata.org/entity/Q5838",
             "http://www.wikidata.org/entity/Q9270",
@@ -4861,40 +4898,14 @@
     },
     {
         "natural_language_question": "Which films starring Clint Eastwood did he direct himself?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P57 wd:Q43203 ; wdt:P161 wd:Q43203 . }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri <http://www.wikidata.org/entity/P57> <http://www.wikidata.org/entity/Q43203> ; <http://www.wikidata.org/entity/P161> <http://www.wikidata.org/entity/Q43203> . }",
         "answers": [
-            "http://www.wikidata.org/entity/Q103817549",
-            "http://www.wikidata.org/entity/Q104137",
-            "http://www.wikidata.org/entity/Q1125083",
-            "http://www.wikidata.org/entity/Q126699",
-            "http://www.wikidata.org/entity/Q1305799",
-            "http://www.wikidata.org/entity/Q1418932",
-            "http://www.wikidata.org/entity/Q1423573",
-            "http://www.wikidata.org/entity/Q1627161",
-            "http://www.wikidata.org/entity/Q174683",
-            "http://www.wikidata.org/entity/Q184255",
-            "http://www.wikidata.org/entity/Q332497",
-            "http://www.wikidata.org/entity/Q3382188",
-            "http://www.wikidata.org/entity/Q375186",
-            "http://www.wikidata.org/entity/Q399823",
-            "http://www.wikidata.org/entity/Q477630",
-            "http://www.wikidata.org/entity/Q502189",
-            "http://www.wikidata.org/entity/Q503338",
-            "http://www.wikidata.org/entity/Q544434",
-            "http://www.wikidata.org/entity/Q54812267",
-            "http://www.wikidata.org/entity/Q577306",
-            "http://www.wikidata.org/entity/Q598338",
-            "http://www.wikidata.org/entity/Q602522",
-            "http://www.wikidata.org/entity/Q611424",
-            "http://www.wikidata.org/entity/Q653251",
-            "http://www.wikidata.org/entity/Q741196",
-            "http://www.wikidata.org/entity/Q785461",
-            "http://www.wikidata.org/entity/Q906705"
+            "No answer"
         ]
     },
     {
         "natural_language_question": "In which countries can you pay using the West African CFA franc?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P38 wd:Q861690 }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P38 wd:Q861690 . }",
         "answers": [
             "http://www.wikidata.org/entity/Q1007",
             "http://www.wikidata.org/entity/Q1008",
@@ -4915,7 +4926,7 @@
     },
     {
         "natural_language_question": "how much is the population Iraq?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?pIraq WHERE { wd:Q796 wdt:P1082 ?pIraq. }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?pIraq WHERE { wd:Q796 wdt:P1082 ?pIraq . }",
         "answers": [
             "38274618"
         ]
@@ -7223,14 +7234,14 @@
     },
     {
         "natural_language_question": "To which artistic movement did the painter of The Three Dancers belong?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q3235867 wdt:P50 ?person . ?person wdt:P135 ?uri }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q3235867 wdt:P50 ?person . ?person wdt:P135 ?uri . }",
         "answers": [
             "No answer"
         ]
     },
     {
         "natural_language_question": "Which actors were born in Germany?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q33999 . { ?uri wdt:P19 wd:Q183 } UNION { ?uri wdt:P19 ?place . ?place wdt:P17 wd:Q183 } }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q33999 . { ?uri wdt:P19 wd:Q183 . } UNION { ?uri wdt:P19 ?place . ?place wdt:P17 wd:Q183 . } }",
         "answers": [
             "http://www.wikidata.org/entity/Q1000015",
             "http://www.wikidata.org/entity/Q1000204",
@@ -16680,7 +16691,7 @@
     },
     {
         "natural_language_question": "Give me all movies directed by Francis Ford Coppola.",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P57 wd:Q56094 . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?movie WHERE { ?movie wdt:P31 wd:Q11424 ; wdt:P57 wd:Q56094 . }",
         "answers": [
             "http://www.wikidata.org/entity/Q1009788",
             "http://www.wikidata.org/entity/Q1055332",
@@ -16725,14 +16736,14 @@
     },
     {
         "natural_language_question": "What was the first Queen album?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q482994 ; wdt:P175 wd:Q15862 ; wdt:P577 ?date . } ORDER BY ASC(?date) LIMIT 1",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q482994 ; wdt:P175 wd:Q15862 ; wdt:P577 ?d . } ORDER BY ASC(?d) OFFSET 0 LIMIT 1",
         "answers": [
             "http://www.wikidata.org/entity/Q193490"
         ]
     },
     {
         "natural_language_question": "What is the currency of the Czech Republic?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?currency WHERE { wd:Q213 wdt:P38 ?currency }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q213 wdt:P38 ?uri. }",
         "answers": [
             "http://www.wikidata.org/entity/Q131016"
         ]
@@ -16943,87 +16954,9 @@
     },
     {
         "natural_language_question": "Which bridges cross the Seine?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q12280 ; wdt:P177 wd:Q1471 . }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q12280 ; wdt:P177 wd:Q1142326 . }",
         "answers": [
-            "http://www.wikidata.org/entity/Q113840426",
-            "http://www.wikidata.org/entity/Q123580629",
-            "http://www.wikidata.org/entity/Q14628924",
-            "http://www.wikidata.org/entity/Q14628936",
-            "http://www.wikidata.org/entity/Q16510093",
-            "http://www.wikidata.org/entity/Q17636970",
-            "http://www.wikidata.org/entity/Q19366968",
-            "http://www.wikidata.org/entity/Q19370810",
-            "http://www.wikidata.org/entity/Q19945222",
-            "http://www.wikidata.org/entity/Q2073282",
-            "http://www.wikidata.org/entity/Q2073308",
-            "http://www.wikidata.org/entity/Q21079205",
-            "http://www.wikidata.org/entity/Q21500125",
-            "http://www.wikidata.org/entity/Q21500144",
-            "http://www.wikidata.org/entity/Q21500156",
-            "http://www.wikidata.org/entity/Q2236752",
-            "http://www.wikidata.org/entity/Q2307670",
-            "http://www.wikidata.org/entity/Q2426843",
-            "http://www.wikidata.org/entity/Q2787259",
-            "http://www.wikidata.org/entity/Q2799240",
-            "http://www.wikidata.org/entity/Q3368279",
-            "http://www.wikidata.org/entity/Q3368297",
-            "http://www.wikidata.org/entity/Q3368324",
-            "http://www.wikidata.org/entity/Q3368325",
-            "http://www.wikidata.org/entity/Q3368327",
-            "http://www.wikidata.org/entity/Q3389968",
-            "http://www.wikidata.org/entity/Q3396471",
-            "http://www.wikidata.org/entity/Q3396505",
-            "http://www.wikidata.org/entity/Q3396552",
-            "http://www.wikidata.org/entity/Q3396554",
-            "http://www.wikidata.org/entity/Q3396581",
-            "http://www.wikidata.org/entity/Q3396643",
-            "http://www.wikidata.org/entity/Q3396668",
-            "http://www.wikidata.org/entity/Q3396677",
-            "http://www.wikidata.org/entity/Q3396680",
-            "http://www.wikidata.org/entity/Q3396700",
-            "http://www.wikidata.org/entity/Q3396702",
-            "http://www.wikidata.org/entity/Q3396751",
-            "http://www.wikidata.org/entity/Q3396799",
-            "http://www.wikidata.org/entity/Q3396824",
-            "http://www.wikidata.org/entity/Q3396841",
-            "http://www.wikidata.org/entity/Q3396842",
-            "http://www.wikidata.org/entity/Q3396857",
-            "http://www.wikidata.org/entity/Q3396868",
-            "http://www.wikidata.org/entity/Q3396873",
-            "http://www.wikidata.org/entity/Q3396920",
-            "http://www.wikidata.org/entity/Q3396929",
-            "http://www.wikidata.org/entity/Q3396944",
-            "http://www.wikidata.org/entity/Q3396970",
-            "http://www.wikidata.org/entity/Q3397013",
-            "http://www.wikidata.org/entity/Q3397027",
-            "http://www.wikidata.org/entity/Q3397043",
-            "http://www.wikidata.org/entity/Q3397089",
-            "http://www.wikidata.org/entity/Q3397099",
-            "http://www.wikidata.org/entity/Q3397103",
-            "http://www.wikidata.org/entity/Q3397124",
-            "http://www.wikidata.org/entity/Q3397125",
-            "http://www.wikidata.org/entity/Q3397165",
-            "http://www.wikidata.org/entity/Q3397185",
-            "http://www.wikidata.org/entity/Q3397245",
-            "http://www.wikidata.org/entity/Q3397248",
-            "http://www.wikidata.org/entity/Q3397462",
-            "http://www.wikidata.org/entity/Q3397482",
-            "http://www.wikidata.org/entity/Q3397487",
-            "http://www.wikidata.org/entity/Q3397607",
-            "http://www.wikidata.org/entity/Q3397642",
-            "http://www.wikidata.org/entity/Q3397797",
-            "http://www.wikidata.org/entity/Q3401780",
-            "http://www.wikidata.org/entity/Q3556527",
-            "http://www.wikidata.org/entity/Q3556533",
-            "http://www.wikidata.org/entity/Q3556553",
-            "http://www.wikidata.org/entity/Q3556564",
-            "http://www.wikidata.org/entity/Q3556573",
-            "http://www.wikidata.org/entity/Q3556615",
-            "http://www.wikidata.org/entity/Q504710",
-            "http://www.wikidata.org/entity/Q95374345",
-            "http://www.wikidata.org/entity/Q95377822",
-            "http://www.wikidata.org/entity/Q95628130",
-            "http://www.wikidata.org/entity/Q95685874"
+            "No answer"
         ]
     },
     {
@@ -17049,236 +16982,16 @@
     },
     {
         "natural_language_question": "Who discovered Ceres?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?discoverer WHERE { wd:Q596 wdt:P61 ?discoverer. }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q596 wdt:P61 ?uri }",
         "answers": [
             "http://www.wikidata.org/entity/Q14280"
         ]
     },
     {
         "natural_language_question": "Give me a list of all bandleaders that play trumpet.",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q806349 ; wdt:P1303 wd:Q8338 . }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q5280538, wd:Q806349 ; wdt:P1303 wd:Q119621, wd:Q8338 . }",
         "answers": [
-            "http://www.wikidata.org/entity/Q100249671",
-            "http://www.wikidata.org/entity/Q1026959",
-            "http://www.wikidata.org/entity/Q1027629",
-            "http://www.wikidata.org/entity/Q1036753",
-            "http://www.wikidata.org/entity/Q1039172",
-            "http://www.wikidata.org/entity/Q1050088",
-            "http://www.wikidata.org/entity/Q106959617",
-            "http://www.wikidata.org/entity/Q109094",
-            "http://www.wikidata.org/entity/Q110182609",
-            "http://www.wikidata.org/entity/Q1103685",
-            "http://www.wikidata.org/entity/Q11290964",
-            "http://www.wikidata.org/entity/Q1138796",
-            "http://www.wikidata.org/entity/Q11409656",
-            "http://www.wikidata.org/entity/Q11473196",
-            "http://www.wikidata.org/entity/Q116745984",
-            "http://www.wikidata.org/entity/Q1173729",
-            "http://www.wikidata.org/entity/Q1238872",
-            "http://www.wikidata.org/entity/Q124042030",
-            "http://www.wikidata.org/entity/Q12469951",
-            "http://www.wikidata.org/entity/Q1248972",
-            "http://www.wikidata.org/entity/Q1266275",
-            "http://www.wikidata.org/entity/Q1282429",
-            "http://www.wikidata.org/entity/Q1282945",
-            "http://www.wikidata.org/entity/Q1282967",
-            "http://www.wikidata.org/entity/Q130324694",
-            "http://www.wikidata.org/entity/Q1308870",
-            "http://www.wikidata.org/entity/Q1311188",
-            "http://www.wikidata.org/entity/Q1318323",
-            "http://www.wikidata.org/entity/Q1347472",
-            "http://www.wikidata.org/entity/Q13571046",
-            "http://www.wikidata.org/entity/Q13571677",
-            "http://www.wikidata.org/entity/Q1364120",
-            "http://www.wikidata.org/entity/Q1412239",
-            "http://www.wikidata.org/entity/Q144622",
-            "http://www.wikidata.org/entity/Q1452661",
-            "http://www.wikidata.org/entity/Q1453118",
-            "http://www.wikidata.org/entity/Q14545268",
-            "http://www.wikidata.org/entity/Q1454645",
-            "http://www.wikidata.org/entity/Q1535887",
-            "http://www.wikidata.org/entity/Q15453836",
-            "http://www.wikidata.org/entity/Q15485363",
-            "http://www.wikidata.org/entity/Q1557440",
-            "http://www.wikidata.org/entity/Q15815145",
-            "http://www.wikidata.org/entity/Q1583816",
-            "http://www.wikidata.org/entity/Q15840407",
-            "http://www.wikidata.org/entity/Q15851160",
-            "http://www.wikidata.org/entity/Q16017359",
-            "http://www.wikidata.org/entity/Q1607887",
-            "http://www.wikidata.org/entity/Q16090563",
-            "http://www.wikidata.org/entity/Q161753",
-            "http://www.wikidata.org/entity/Q1622068",
-            "http://www.wikidata.org/entity/Q1631802",
-            "http://www.wikidata.org/entity/Q163861",
-            "http://www.wikidata.org/entity/Q1675549",
-            "http://www.wikidata.org/entity/Q1678838",
-            "http://www.wikidata.org/entity/Q1687893",
-            "http://www.wikidata.org/entity/Q1689131",
-            "http://www.wikidata.org/entity/Q1689347",
-            "http://www.wikidata.org/entity/Q1691548",
-            "http://www.wikidata.org/entity/Q1701204",
-            "http://www.wikidata.org/entity/Q1701748",
-            "http://www.wikidata.org/entity/Q1702274",
-            "http://www.wikidata.org/entity/Q1703633",
-            "http://www.wikidata.org/entity/Q17306038",
-            "http://www.wikidata.org/entity/Q17352853",
-            "http://www.wikidata.org/entity/Q1738588",
-            "http://www.wikidata.org/entity/Q1738949",
-            "http://www.wikidata.org/entity/Q1740093",
-            "http://www.wikidata.org/entity/Q1745395",
-            "http://www.wikidata.org/entity/Q177824",
-            "http://www.wikidata.org/entity/Q1779",
-            "http://www.wikidata.org/entity/Q1791341",
-            "http://www.wikidata.org/entity/Q1806037",
-            "http://www.wikidata.org/entity/Q1820504",
-            "http://www.wikidata.org/entity/Q18410973",
-            "http://www.wikidata.org/entity/Q1872759",
-            "http://www.wikidata.org/entity/Q188046",
-            "http://www.wikidata.org/entity/Q1902146",
-            "http://www.wikidata.org/entity/Q1903353",
-            "http://www.wikidata.org/entity/Q1912807",
-            "http://www.wikidata.org/entity/Q1917393",
-            "http://www.wikidata.org/entity/Q19275122",
-            "http://www.wikidata.org/entity/Q1935815",
-            "http://www.wikidata.org/entity/Q193645",
-            "http://www.wikidata.org/entity/Q19561422",
-            "http://www.wikidata.org/entity/Q19629147",
-            "http://www.wikidata.org/entity/Q1971146",
-            "http://www.wikidata.org/entity/Q19832476",
-            "http://www.wikidata.org/entity/Q199406",
-            "http://www.wikidata.org/entity/Q19960682",
-            "http://www.wikidata.org/entity/Q19962541",
-            "http://www.wikidata.org/entity/Q19968522",
-            "http://www.wikidata.org/entity/Q201500",
-            "http://www.wikidata.org/entity/Q2041252",
-            "http://www.wikidata.org/entity/Q204943",
-            "http://www.wikidata.org/entity/Q2061143",
-            "http://www.wikidata.org/entity/Q2075755",
-            "http://www.wikidata.org/entity/Q210173",
-            "http://www.wikidata.org/entity/Q210289",
-            "http://www.wikidata.org/entity/Q2216444",
-            "http://www.wikidata.org/entity/Q222798",
-            "http://www.wikidata.org/entity/Q22670541",
-            "http://www.wikidata.org/entity/Q22958430",
-            "http://www.wikidata.org/entity/Q2302261",
-            "http://www.wikidata.org/entity/Q2347504",
-            "http://www.wikidata.org/entity/Q23874600",
-            "http://www.wikidata.org/entity/Q2396601",
-            "http://www.wikidata.org/entity/Q2401961",
-            "http://www.wikidata.org/entity/Q2405288",
-            "http://www.wikidata.org/entity/Q2478090",
-            "http://www.wikidata.org/entity/Q2544934",
-            "http://www.wikidata.org/entity/Q26196818",
-            "http://www.wikidata.org/entity/Q2645829",
-            "http://www.wikidata.org/entity/Q2686238",
-            "http://www.wikidata.org/entity/Q273076",
-            "http://www.wikidata.org/entity/Q276068",
-            "http://www.wikidata.org/entity/Q27916182",
-            "http://www.wikidata.org/entity/Q313368",
-            "http://www.wikidata.org/entity/Q313529",
-            "http://www.wikidata.org/entity/Q313868",
-            "http://www.wikidata.org/entity/Q3196381",
-            "http://www.wikidata.org/entity/Q322210",
-            "http://www.wikidata.org/entity/Q329362",
-            "http://www.wikidata.org/entity/Q344822",
-            "http://www.wikidata.org/entity/Q355481",
-            "http://www.wikidata.org/entity/Q356715",
-            "http://www.wikidata.org/entity/Q376146",
-            "http://www.wikidata.org/entity/Q432924",
-            "http://www.wikidata.org/entity/Q436176",
-            "http://www.wikidata.org/entity/Q465105",
-            "http://www.wikidata.org/entity/Q4760598",
-            "http://www.wikidata.org/entity/Q4767267",
-            "http://www.wikidata.org/entity/Q4797599",
-            "http://www.wikidata.org/entity/Q4833896",
-            "http://www.wikidata.org/entity/Q491100",
-            "http://www.wikidata.org/entity/Q4911881",
-            "http://www.wikidata.org/entity/Q492677",
-            "http://www.wikidata.org/entity/Q495464",
-            "http://www.wikidata.org/entity/Q49575",
-            "http://www.wikidata.org/entity/Q4998586",
-            "http://www.wikidata.org/entity/Q510651",
-            "http://www.wikidata.org/entity/Q5214487",
-            "http://www.wikidata.org/entity/Q5220273",
-            "http://www.wikidata.org/entity/Q523899",
-            "http://www.wikidata.org/entity/Q5263018",
-            "http://www.wikidata.org/entity/Q528340",
-            "http://www.wikidata.org/entity/Q5290919",
-            "http://www.wikidata.org/entity/Q539159",
-            "http://www.wikidata.org/entity/Q5392650",
-            "http://www.wikidata.org/entity/Q5394010",
-            "http://www.wikidata.org/entity/Q539883",
-            "http://www.wikidata.org/entity/Q545464",
-            "http://www.wikidata.org/entity/Q54957569",
-            "http://www.wikidata.org/entity/Q5508594",
-            "http://www.wikidata.org/entity/Q5525190",
-            "http://www.wikidata.org/entity/Q5531061",
-            "http://www.wikidata.org/entity/Q558118",
-            "http://www.wikidata.org/entity/Q562871",
-            "http://www.wikidata.org/entity/Q5736141",
-            "http://www.wikidata.org/entity/Q590792",
-            "http://www.wikidata.org/entity/Q600700",
-            "http://www.wikidata.org/entity/Q6074256",
-            "http://www.wikidata.org/entity/Q612855",
-            "http://www.wikidata.org/entity/Q6175185",
-            "http://www.wikidata.org/entity/Q6208919",
-            "http://www.wikidata.org/entity/Q6221178",
-            "http://www.wikidata.org/entity/Q6224104",
-            "http://www.wikidata.org/entity/Q6240203",
-            "http://www.wikidata.org/entity/Q6309190",
-            "http://www.wikidata.org/entity/Q64683137",
-            "http://www.wikidata.org/entity/Q64985242",
-            "http://www.wikidata.org/entity/Q65028314",
-            "http://www.wikidata.org/entity/Q65028506",
-            "http://www.wikidata.org/entity/Q65032384",
-            "http://www.wikidata.org/entity/Q65034989",
-            "http://www.wikidata.org/entity/Q65034994",
-            "http://www.wikidata.org/entity/Q658636",
-            "http://www.wikidata.org/entity/Q6687998",
-            "http://www.wikidata.org/entity/Q668856",
-            "http://www.wikidata.org/entity/Q675810",
-            "http://www.wikidata.org/entity/Q6793340",
-            "http://www.wikidata.org/entity/Q6846424",
-            "http://www.wikidata.org/entity/Q6849142",
-            "http://www.wikidata.org/entity/Q7052586",
-            "http://www.wikidata.org/entity/Q70552207",
-            "http://www.wikidata.org/entity/Q7087874",
-            "http://www.wikidata.org/entity/Q708990",
-            "http://www.wikidata.org/entity/Q711921",
-            "http://www.wikidata.org/entity/Q713273",
-            "http://www.wikidata.org/entity/Q727418",
-            "http://www.wikidata.org/entity/Q7298839",
-            "http://www.wikidata.org/entity/Q737521",
-            "http://www.wikidata.org/entity/Q743585",
-            "http://www.wikidata.org/entity/Q7441108",
-            "http://www.wikidata.org/entity/Q7524109",
-            "http://www.wikidata.org/entity/Q7614243",
-            "http://www.wikidata.org/entity/Q7694080",
-            "http://www.wikidata.org/entity/Q772645",
-            "http://www.wikidata.org/entity/Q776453",
-            "http://www.wikidata.org/entity/Q7781439",
-            "http://www.wikidata.org/entity/Q7781727",
-            "http://www.wikidata.org/entity/Q7924906",
-            "http://www.wikidata.org/entity/Q7982390",
-            "http://www.wikidata.org/entity/Q8009347",
-            "http://www.wikidata.org/entity/Q807401",
-            "http://www.wikidata.org/entity/Q808916",
-            "http://www.wikidata.org/entity/Q861545",
-            "http://www.wikidata.org/entity/Q861938",
-            "http://www.wikidata.org/entity/Q870113",
-            "http://www.wikidata.org/entity/Q887760",
-            "http://www.wikidata.org/entity/Q888472",
-            "http://www.wikidata.org/entity/Q888620",
-            "http://www.wikidata.org/entity/Q888671",
-            "http://www.wikidata.org/entity/Q895829",
-            "http://www.wikidata.org/entity/Q923409",
-            "http://www.wikidata.org/entity/Q93341",
-            "http://www.wikidata.org/entity/Q936536",
-            "http://www.wikidata.org/entity/Q973166",
-            "http://www.wikidata.org/entity/Q975609",
-            "http://www.wikidata.org/entity/Q98308750",
-            "http://www.wikidata.org/entity/Q99438820"
+            "No answer"
         ]
     },
     {
@@ -17290,7 +17003,7 @@
     },
     {
         "natural_language_question": "In which films did Julia Roberts as well as Richard Gere play?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?film WHERE { ?film wdt:P31 wd:Q11424 ; wdt:P161 wd:Q40523 ; wdt:P161 wd:Q48410 . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q40523 ; wdt:P161 wd:Q48410 . }",
         "answers": [
             "http://www.wikidata.org/entity/Q1160813",
             "http://www.wikidata.org/entity/Q207954"
@@ -17298,7 +17011,7 @@
     },
     {
         "natural_language_question": "What is the capital of Canada?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q16 wdt:P36 ?uri. }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q16 wdt:P36 ?uri . }",
         "answers": [
             "http://www.wikidata.org/entity/Q1930"
         ]
@@ -17319,28 +17032,28 @@
     },
     {
         "natural_language_question": "How many programming languages are there?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q9143 . }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q9143 }",
         "answers": [
             "1487"
         ]
     },
     {
         "natural_language_question": "Give me all cosmonauts.",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11631. { ?uri wdt:P27 wd:Q159. } UNION { ?uri wdt:P27 wd:Q15180. } }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11631. { ?uri wdt:P27 wd:Q2184 } UNION { ?uri wdt:P27 wd:Q159 } UNION { ?uri wdt:P27 wd:Q15180 } }",
         "answers": [
             "No answer"
         ]
     },
     {
         "natural_language_question": "Who created Family Guy?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?creator WHERE { wd:Q5930 wdt:P170 ?creator. }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q5930 wdt:P170 ?uri }",
         "answers": [
             "http://www.wikidata.org/entity/Q188492"
         ]
     },
     {
         "natural_language_question": "How much is the population of mexico city ?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?Mexico_City WHERE { wd:Q1489 wdt:P1082 ?Mexico_City . }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?Mexico_City WHERE { wd:Q1489 wdt:P1082 ?Mexico_City }",
         "answers": [
             "9209944"
         ]
@@ -17362,14 +17075,14 @@
     },
     {
         "natural_language_question": "how big is the total area of North Rhine- Westphalia?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?tarea WHERE { wd:Q1198 wdt:P2046 ?tarea }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?tarea WHERE { wd:Q1198 wdt:P2046 ?tarea . }",
         "answers": [
             "34112.5"
         ]
     },
     {
         "natural_language_question": "How many employees does IBM have?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?number WHERE { wd:Q37156 wdt:P1128 ?number }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?number WHERE { VALUES ?item { wd:Q70096636 wd:Q37156 } ?item wdt:P1128 ?number }",
         "answers": [
             "352600"
         ]
@@ -17435,9 +17148,10 @@
     },
     {
         "natural_language_question": "To which countries does the Himalayan mountain system extend?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?country WHERE { wd:Q5451 wdt:P17 ?country. }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { VALUES ?himalayas { wd:Q105981852 wd:Q26235529 wd:Q5451 } ?himalayas wdt:P17 ?uri }",
         "answers": [
             "http://www.wikidata.org/entity/Q148",
+            "http://www.wikidata.org/entity/Q252",
             "http://www.wikidata.org/entity/Q668",
             "http://www.wikidata.org/entity/Q836",
             "http://www.wikidata.org/entity/Q837",
@@ -17448,14 +17162,14 @@
     },
     {
         "natural_language_question": "What is the largest country in the world?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q6256 ; wdt:P2046 ?n . } ORDER BY DESC(?n) LIMIT 1",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q6256 ; wdt:P2046 ?n } ORDER BY DESC(?n) OFFSET 0 LIMIT 1",
         "answers": [
             "http://www.wikidata.org/entity/Q159"
         ]
     },
     {
         "natural_language_question": "What is the alma mater of the chancellor of Germany Angela Merkel?",
-        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?AlmaMater WHERE { wd:Q567 wdt:P69 ?AlmaMater }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?Almamater WHERE { wd:Q567 wdt:P69 ?Almamater }",
         "answers": [
             "http://www.wikidata.org/entity/Q154804",
             "http://www.wikidata.org/entity/Q49738",
@@ -17465,7 +17179,7 @@
     },
     {
         "natural_language_question": "Who created Goofy?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { wd:Q111135 wdt:P170 ?uri }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?uri WHERE { wd:Q111135 wdt:P170 ?uri. }",
         "answers": [
             "http://www.wikidata.org/entity/Q2420722"
         ]
