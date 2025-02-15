@@ -142,20 +142,14 @@
     },
     {
         "natural_language_question": "Give me all actors starring in movies directed by William Shatner.",
-        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?movie rdf:type dbo:Film ; dbo:director res:William_Shatner ; dbo:starring ?uri . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?movie wdt:P31 wd:Q11424 ; wdt:P57 wd:Q16297 ; wdt:P161 ?uri . }",
         "answers": [
-            "http://dbpedia.org/resource/DeForest_Kelley",
-            "http://dbpedia.org/resource/George_Takei",
-            "http://dbpedia.org/resource/James_Doohan",
-            "http://dbpedia.org/resource/Leonard_Nimoy",
-            "http://dbpedia.org/resource/Nichelle_Nichols",
-            "http://dbpedia.org/resource/Walter_Koenig",
-            "http://dbpedia.org/resource/William_Shatner"
+            "No answer"
         ]
     },
     {
         "natural_language_question": "What is the highest mountain?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain ; dbo:elevation ?elevation . } ORDER BY DESC(?elevation) LIMIT 1",
+        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain ; dbo:elevation ?elevation . } ORDER BY DESC(?elevation) LIMIT 1",
         "answers": [
             "http://dbpedia.org/resource/Alpide_belt"
         ]
@@ -176,7 +170,7 @@
     },
     {
         "natural_language_question": "Which movies star both Liz Taylor and Richard Burton?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:starring res:Elizabeth_Taylor . ?uri dbo:starring res:Richard_Burton . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Elizabeth_Taylor> . ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Burton> . }",
         "answers": [
             "http://dbpedia.org/resource/Boom!_(film)",
             "http://dbpedia.org/resource/Divorce_His,_Divorce_Hers",
@@ -192,21 +186,21 @@
     },
     {
         "natural_language_question": "Who developed Minecraft?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Minecraft dbo:developer ?uri . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Minecraft> dbo:developer ?uri . }",
         "answers": [
             "http://dbpedia.org/resource/Mojang_Studios"
         ]
     },
     {
         "natural_language_question": "How much did the Lego Movie cost?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?val WHERE { <http://dbpedia.org/resource/The_Lego_Movie> dbo:budget ?val }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?val WHERE { res:The_Lego_Movie dbo:budget ?val }",
         "answers": [
             "60.0"
         ]
     },
     {
         "natural_language_question": "For which label did Elvis record his first album?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?label WHERE { ?uri dbo:artist res:Elvis_Presley . ?uri dbo:releaseDate ?date . ?uri dbo:recordLabel ?label . } ORDER BY ?date LIMIT 1",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?label WHERE { ?uri dbo:artist res:Elvis_Presley . ?uri dbo:releaseDate ?date . ?uri dbo:recordLabel ?label . } ORDER BY ?date LIMIT 1",
         "answers": [
             "http://dbpedia.org/resource/Sun_Records"
         ]
@@ -246,7 +240,7 @@
     },
     {
         "natural_language_question": "In which films directed by Garry Marshall was Julia Roberts starring?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:starring res:Julia_Roberts . ?uri dbo:director res:Garry_Marshall . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:director res:Garry_Marshall . ?uri dbo:starring res:Julia_Roberts . }",
         "answers": [
             "http://dbpedia.org/resource/Mother's_Day_(2016_film)",
             "http://dbpedia.org/resource/Pretty_Woman",
@@ -256,50 +250,51 @@
     },
     {
         "natural_language_question": "In which year was Rachel Stevens born?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?year WHERE { <http://dbpedia.org/resource/Rachel_Stevens> dbo:birthYear ?year }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?year WHERE { res:Rachel_Stevens dbo:birthYear ?year . }",
         "answers": [
             "1978"
         ]
     },
     {
         "natural_language_question": "What is the most frequent cause of death?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?uri WHERE { ?s dbo:deathCause ?uri . } GROUP BY ?uri ORDER BY DESC(COUNT(DISTINCT ?s)) LIMIT 1",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?s dbo:deathCause ?uri . } GROUP BY ?uri ORDER BY DESC(COUNT(DISTINCT ?s)) LIMIT 1",
         "answers": [
             "http://dbpedia.org/resource/Execution_by_hanging"
         ]
     },
     {
         "natural_language_question": "How high is the Yokohama Marine Tower?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Yokohama_Marine_Tower dbo:height ?num . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbp: <http://dbpedia.org/property/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Yokohama_Marine_Tower dbo:height ?num . }",
         "answers": [
             "106.07"
         ]
     },
     {
         "natural_language_question": "What is the highest mountain in Italy?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:locatedInArea res:Italy ; dbo:elevation ?elevation . } ORDER BY DESC(?elevation) LIMIT 1",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:Mountain ; dbo:locatedInArea res:Italy ; dbo:elevation ?elevation . } ORDER BY DESC(?elevation) LIMIT 1",
         "answers": [
-            "http://dbpedia.org/resource/Mont_Blanc"
+            "Query failed"
         ]
     },
     {
         "natural_language_question": "Who was the doctoral supervisor of Albert Einstein?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Albert_Einstein> dbo:doctoralAdvisor ?uri }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Albert_Einstein dbo:doctoralAdvisor ?uri }",
         "answers": [
             "http://dbpedia.org/resource/Alfred_Kleiner"
         ]
     },
     {
         "natural_language_question": "What is Donald Trump's main business?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { ?uri dbo:owner res:Donald_Trump . ?uri rdf:type ?type . ?type rdfs:subClassOf* dbo:Organisation . MINUS { ?uri dbo:closure ?closed } }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:owner res:Donald_Trump . MINUS { ?uri dbo:dissolved ?closed } }",
         "answers": [
+            "http://dbpedia.org/resource/GoTrump.com",
             "http://dbpedia.org/resource/The_Trump_Organization",
             "http://dbpedia.org/resource/Trump_Model_Management"
         ]
     },
     {
         "natural_language_question": "Who has Tom Cruise been married to?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?o1 WHERE { res:Tom_Cruise dbo:spouse ?o1 . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?spouse WHERE { res:Tom_Cruise dbo:spouse ?spouse . }",
         "answers": [
             "No answer"
         ]
@@ -327,14 +322,14 @@
     },
     {
         "natural_language_question": "how much is the total population of european union?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?population WHERE { res:European_Union dbo:populationTotal ?population . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { dbr:European_Union dbo:populationTotal ?uri . }",
         "answers": [
             "446828803"
         ]
     },
     {
         "natural_language_question": "Give me the currency of China.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT ?currency WHERE { <http://dbpedia.org/resource/China> <http://dbpedia.org/ontology/currency> ?currency . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT ?o1 WHERE { <http://dbpedia.org/resource/China> <http://dbpedia.org/ontology/currency> ?o1 . }",
         "answers": [
             "http://dbpedia.org/resource/Renminbi"
         ]
@@ -348,20 +343,10 @@
     },
     {
         "natural_language_question": "Which rockets were launched from Baikonur?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:launchSite res:Baikonur_Cosmodrome . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Rocket . ?uri dbo:launchSite res:Baikonur_Cosmodrome . }",
         "answers": [
-            "http://dbpedia.org/resource/Baikonur_Cosmodrome_Site_109",
-            "http://dbpedia.org/resource/Baikonur_Cosmodrome_Site_110",
-            "http://dbpedia.org/resource/Baikonur_Cosmodrome_Site_200",
-            "http://dbpedia.org/resource/Baikonur_Cosmodrome_Site_250",
-            "http://dbpedia.org/resource/Baikonur_Cosmodrome_Site_31",
-            "http://dbpedia.org/resource/Baikonur_Cosmodrome_Site_41",
-            "http://dbpedia.org/resource/Baikonur_Cosmodrome_Site_45",
-            "http://dbpedia.org/resource/Baikonur_Cosmodrome_Site_81",
-            "http://dbpedia.org/resource/Baikonur_Cosmodrome_Site_90",
             "http://dbpedia.org/resource/Dnepr_(rocket)",
             "http://dbpedia.org/resource/Energia_(rocket)",
-            "http://dbpedia.org/resource/Gagarin's_Start",
             "http://dbpedia.org/resource/Irtysh_(rocket)",
             "http://dbpedia.org/resource/Kosmos_3_(rocket)",
             "http://dbpedia.org/resource/Kosmos-1",
@@ -401,7 +386,7 @@
     },
     {
         "natural_language_question": "Give me all islands that belong to Japan.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Island ; dbo:country res:Japan . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Island ; dbo:country res:Japan . }",
         "answers": [
             "http://dbpedia.org/resource/Ainoshima_(Shing\u016b)",
             "http://dbpedia.org/resource/Aka_Island",
@@ -541,7 +526,7 @@
     },
     {
         "natural_language_question": "Give me all companies in the advertising industry.",
-        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:industry res:Advertising . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Company ; dbo:industry res:Advertising . }",
         "answers": [
             "http://dbpedia.org/resource/140_Proof",
             "http://dbpedia.org/resource/495_Communications",
@@ -753,7 +738,7 @@
     },
     {
         "natural_language_question": "Give me all the TV shows with Neil Patrick Harris.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?uri rdf:type dbo:TelevisionShow . ?uri dbo:starring res:Neil_Patrick_Harris . }",
+        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri rdf:type dbo:TelevisionShow . ?uri dbo:starring res:Neil_Patrick_Harris . }",
         "answers": [
             "http://dbpedia.org/resource/A_Series_of_Unfortunate_Events_(TV_series)",
             "http://dbpedia.org/resource/Capitol_Critters",
@@ -774,7 +759,7 @@
     },
     {
         "natural_language_question": "Give me all movies with Tom Cruise.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:starring res:Tom_Cruise . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:starring res:Tom_Cruise. }",
         "answers": [
             "http://dbpedia.org/resource/A_Few_Good_Men",
             "http://dbpedia.org/resource/All_the_Right_Moves_(film)",
@@ -823,7 +808,7 @@
     },
     {
         "natural_language_question": "What country is Mount Everest in?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Mount_Everest dbo:locatedInArea ?uri . ?uri a dbo:Country . }",
+        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Mount_Everest dbo:locatedInArea ?uri . ?uri rdf:type dbo:Country . }",
         "answers": [
             "http://dbpedia.org/resource/China",
             "http://dbpedia.org/resource/Nepal"
@@ -838,7 +823,7 @@
     },
     {
         "natural_language_question": "Which river does the Brooklyn Bridge cross?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Brooklyn_Bridge> dbo:crosses ?uri . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Brooklyn_Bridge> <http://dbpedia.org/ontology/crosses> ?uri . }",
         "answers": [
             "http://dbpedia.org/resource/East_River"
         ]
@@ -914,16 +899,17 @@
     },
     {
         "natural_language_question": "What was the last movie with Alec Guinness?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?s1 WHERE { ?s1 rdf:type dbo:Film . ?s1 dbo:starring res:Alec_Guinness . ?s1 dbo:releaseDate ?o1 . } ORDER BY DESC(?o1) LIMIT 1",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?s1 WHERE { ?s1 dbo:starring res:Alec_Guinness . ?s1 dbo:releaseDate ?o1 . } ORDER BY DESC(?o1) LIMIT 1",
         "answers": [
-            "http://dbpedia.org/resource/Star_Wars_original_trilogy"
+            "http://dbpedia.org/resource/Edwin_(film)"
         ]
     },
     {
         "natural_language_question": "What is the second highest mountain on Earth?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?res WHERE { ?res rdf:type dbo:Mountain . ?res dbo:elevation ?elevation . ?res dbo:locationCountry res:Earth . } ORDER BY DESC(?elevation) LIMIT 1 OFFSET 1",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?mountain ?elevation WHERE { ?mountain rdf:type dbo:Mountain . ?mountain dbo:elevation ?elevation . } ORDER BY DESC(?elevation) LIMIT 1 OFFSET 1",
         "answers": [
-            "No answer"
+            "8848.86",
+            "http://dbpedia.org/resource/Alpide_belt"
         ]
     },
     {
@@ -1060,14 +1046,14 @@
     },
     {
         "natural_language_question": "How many children did Benjamin Franklin have?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Benjamin_Franklin dbo:child ?uri . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE { wd:Q34969 wdt:P40 ?uri . }",
         "answers": [
-            "3"
+            "No answer"
         ]
     },
     {
         "natural_language_question": "how much is the elevation of D\u00fcsseldorf Airport ?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:D\u00fcsseldorf_Airport dbo:elevation ?uri . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?elevation WHERE { res:D\u00fcsseldorf_Airport dbo:elevation ?elevation . }",
         "answers": [
             "44.8",
             "44.8056"
@@ -1082,14 +1068,166 @@
     },
     {
         "natural_language_question": "How tall is Claudia Schiffer?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?val WHERE { res:Claudia_Schiffer dbo:height ?val . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?val WHERE { res:Claudia_Schiffer dbo:height ?val . }",
         "answers": [
             "1.8"
         ]
     },
     {
         "natural_language_question": "Which holidays are celebrated around the world?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?uri rdf:type dbo:Holiday . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { ?uri wdt:P31/wdt:P279* wd:Q1445650 . }",
+        "answers": [
+            "No answer"
+        ]
+    },
+    {
+        "natural_language_question": "What kind of music did Lou Reed play?",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lou_Reed> dbo:genre ?uri . }",
+        "answers": [
+            "http://dbpedia.org/resource/Art_rock",
+            "http://dbpedia.org/resource/Experimental_music",
+            "http://dbpedia.org/resource/Glam_rock",
+            "http://dbpedia.org/resource/Noise_rock",
+            "http://dbpedia.org/resource/Proto-punk",
+            "http://dbpedia.org/resource/Rock_music"
+        ]
+    },
+    {
+        "natural_language_question": "Give me the birth place of Frank Sinatra.",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Frank_Sinatra dbo:birthPlace ?uri. }",
+        "answers": [
+            "http://dbpedia.org/resource/Hoboken,_New_Jersey"
+        ]
+    },
+    {
+        "natural_language_question": "Which city has the least inhabitants?",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri dbo:populationTotal ?population . } ORDER BY ?population LIMIT 1",
+        "answers": [
+            "http://dbpedia.org/resource/Centrum_Island"
+        ]
+    },
+    {
+        "natural_language_question": "Which television shows were created by Walt Disney?",
+        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:TelevisionShow ; dbo:creator res:Walt_Disney . }",
+        "answers": [
+            "http://dbpedia.org/resource/Disney_anthology_television_series",
+            "http://dbpedia.org/resource/Donald_Duck",
+            "http://dbpedia.org/resource/Oswald_the_Lucky_Rabbit"
+        ]
+    },
+    {
+        "natural_language_question": "Give me all Swedish holidays.",
+        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri rdf:type dbo:Holiday . ?uri dbo:country res:Sweden . }",
+        "answers": [
+            "http://dbpedia.org/resource/Black_Friday_(shopping)",
+            "http://dbpedia.org/resource/Cinnamon_Roll_Day",
+            "http://dbpedia.org/resource/Gustavus_Adolphus_Day",
+            "http://dbpedia.org/resource/International_Men's_Day",
+            "http://dbpedia.org/resource/Knut's_party",
+            "http://dbpedia.org/resource/Saint_Knut's_Day",
+            "http://dbpedia.org/resource/Sweden_Finns'_Day",
+            "http://dbpedia.org/resource/Veterans_Day_(Sweden)",
+            "http://dbpedia.org/resource/Victoria_Days"
+        ]
+    },
+    {
+        "natural_language_question": "What is the net income of Apple?",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Apple_Inc. dbo:netIncome ?uri . }",
+        "answers": [
+            "Query failed"
+        ]
+    },
+    {
+        "natural_language_question": "Where did Abraham Lincoln die?",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:deathPlace ?uri }",
+        "answers": [
+            "http://dbpedia.org/resource/Washington,_D.C."
+        ]
+    },
+    {
+        "natural_language_question": "Give me the capitals of all countries that the Himalayas run through.",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?capital WHERE { res:Himalayas dbo:country ?country . ?country dbo:capital ?capital . }",
+        "answers": [
+            "http://dbpedia.org/resource/New_Delhi"
+        ]
+    },
+    {
+        "natural_language_question": "In which country is the Limerick Lake?",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Limerick_Lake dbo:country ?uri . }",
+        "answers": [
+            "http://dbpedia.org/resource/Canada"
+        ]
+    },
+    {
+        "natural_language_question": "How tall is Michael Jordan?",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?val WHERE { res:Michael_Jordan dbo:height ?val . }",
+        "answers": [
+            "1.9812"
+        ]
+    },
+    {
+        "natural_language_question": "Which films starring Clint Eastwood did he direct himself?",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Clint_Eastwood ; dbo:starring res:Clint_Eastwood . }",
+        "answers": [
+            "http://dbpedia.org/resource/A_Perfect_World",
+            "http://dbpedia.org/resource/Absolute_Power_(film)",
+            "http://dbpedia.org/resource/Blood_Work_(film)",
+            "http://dbpedia.org/resource/Cry_Macho_(film)",
+            "http://dbpedia.org/resource/Dirty_Harry_(film_series)",
+            "http://dbpedia.org/resource/Firefox_(film)",
+            "http://dbpedia.org/resource/Gran_Torino",
+            "http://dbpedia.org/resource/Heartbreak_Ridge",
+            "http://dbpedia.org/resource/High_Plains_Drifter",
+            "http://dbpedia.org/resource/Honkytonk_Man",
+            "http://dbpedia.org/resource/Million_Dollar_Baby__Million_Dollar_Baby__1",
+            "http://dbpedia.org/resource/Pale_Rider",
+            "http://dbpedia.org/resource/Play_Misty_for_Me",
+            "http://dbpedia.org/resource/Space_Cowboys",
+            "http://dbpedia.org/resource/Sudden_Impact",
+            "http://dbpedia.org/resource/The_Bridges_of_Madison_County_(film)",
+            "http://dbpedia.org/resource/The_Eiger_Sanction_(film)",
+            "http://dbpedia.org/resource/The_Mule_(2018_film)",
+            "http://dbpedia.org/resource/The_Outlaw_Josey_Wales__The_Outlaw_Josey_Wales__1",
+            "http://dbpedia.org/resource/The_Rookie_(1990_film)",
+            "http://dbpedia.org/resource/True_Crime_(1999_film)",
+            "http://dbpedia.org/resource/Unforgiven",
+            "http://dbpedia.org/resource/White_Hunter_Black_Heart"
+        ]
+    },
+    {
+        "natural_language_question": "In which countries can you pay using the West African CFA franc?",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:currency res:West_African_CFA_franc . }",
+        "answers": [
+            "http://dbpedia.org/resource/Benin",
+            "http://dbpedia.org/resource/Burkina_Faso",
+            "http://dbpedia.org/resource/Colonial_Mauritania",
+            "http://dbpedia.org/resource/Colony_of_Niger",
+            "http://dbpedia.org/resource/Economic_Community_of_West_African_States",
+            "http://dbpedia.org/resource/French_Dahomey",
+            "http://dbpedia.org/resource/French_Togoland",
+            "http://dbpedia.org/resource/Guinea-Bissau",
+            "http://dbpedia.org/resource/History_of_Togo",
+            "http://dbpedia.org/resource/Ivory_Coast",
+            "http://dbpedia.org/resource/Mali",
+            "http://dbpedia.org/resource/Niger",
+            "http://dbpedia.org/resource/People's_Republic_of_Benin",
+            "http://dbpedia.org/resource/Republic_of_Dahomey",
+            "http://dbpedia.org/resource/Republic_of_Upper_Volta",
+            "http://dbpedia.org/resource/Senegal",
+            "http://dbpedia.org/resource/Senegambia_Confederation",
+            "http://dbpedia.org/resource/Togo"
+        ]
+    },
+    {
+        "natural_language_question": "how much is the population Iraq?",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?val WHERE { res:Iraq dbo:populationTotal ?val . }",
+        "answers": [
+            "40462701"
+        ]
+    },
+    {
+        "natural_language_question": "Which holidays are celebrated around the world?",
+        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Holiday . }",
         "answers": [
             "http://dbpedia.org/resource/140th_Anniversary_Celebration_of_the_Emancipation_Proclamation",
             "http://dbpedia.org/resource/19_Kislev",
@@ -2783,160 +2921,8 @@
         ]
     },
     {
-        "natural_language_question": "What kind of music did Lou Reed play?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?genre WHERE { res:Lou_Reed dbo:genre ?genre . }",
-        "answers": [
-            "http://dbpedia.org/resource/Art_rock",
-            "http://dbpedia.org/resource/Experimental_music",
-            "http://dbpedia.org/resource/Glam_rock",
-            "http://dbpedia.org/resource/Noise_rock",
-            "http://dbpedia.org/resource/Proto-punk",
-            "http://dbpedia.org/resource/Rock_music"
-        ]
-    },
-    {
-        "natural_language_question": "Give me the birth place of Frank Sinatra.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Frank_Sinatra dbo:birthPlace ?uri }",
-        "answers": [
-            "http://dbpedia.org/resource/Hoboken,_New_Jersey"
-        ]
-    },
-    {
-        "natural_language_question": "Which city has the least inhabitants?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:populationTotal ?population . } ORDER BY ?population LIMIT 1",
-        "answers": [
-            "http://dbpedia.org/resource/Chagan_(closed_city)"
-        ]
-    },
-    {
-        "natural_language_question": "Which television shows were created by Walt Disney?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:TelevisionShow ; dbo:creator res:Walt_Disney . }",
-        "answers": [
-            "http://dbpedia.org/resource/Disney_anthology_television_series",
-            "http://dbpedia.org/resource/Donald_Duck",
-            "http://dbpedia.org/resource/Oswald_the_Lucky_Rabbit"
-        ]
-    },
-    {
-        "natural_language_question": "Give me all Swedish holidays.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?uri rdf:type dbo:Holiday . ?uri dbo:country res:Sweden . }",
-        "answers": [
-            "http://dbpedia.org/resource/Black_Friday_(shopping)",
-            "http://dbpedia.org/resource/Cinnamon_Roll_Day",
-            "http://dbpedia.org/resource/Gustavus_Adolphus_Day",
-            "http://dbpedia.org/resource/International_Men's_Day",
-            "http://dbpedia.org/resource/Knut's_party",
-            "http://dbpedia.org/resource/Saint_Knut's_Day",
-            "http://dbpedia.org/resource/Sweden_Finns'_Day",
-            "http://dbpedia.org/resource/Veterans_Day_(Sweden)",
-            "http://dbpedia.org/resource/Victoria_Days"
-        ]
-    },
-    {
-        "natural_language_question": "What is the net income of Apple?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?netIncome WHERE { res:Apple_Inc. dbo:netIncome ?netIncome . }",
-        "answers": [
-            "Query failed"
-        ]
-    },
-    {
-        "natural_language_question": "Where did Abraham Lincoln die?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:deathPlace ?uri }",
-        "answers": [
-            "http://dbpedia.org/resource/Washington,_D.C."
-        ]
-    },
-    {
-        "natural_language_question": "Give me the capitals of all countries that the Himalayas run through.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?capital WHERE { res:Himalayas dbo:country ?country . ?country dbo:capital ?capital . }",
-        "answers": [
-            "http://dbpedia.org/resource/New_Delhi"
-        ]
-    },
-    {
-        "natural_language_question": "In which country is the Limerick Lake?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Limerick_Lake> <http://dbpedia.org/ontology/country> ?uri . }",
-        "answers": [
-            "http://dbpedia.org/resource/Canada"
-        ]
-    },
-    {
-        "natural_language_question": "How tall is Michael Jordan?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?val WHERE { res:Michael_Jordan dbo:height ?val . }",
-        "answers": [
-            "1.9812"
-        ]
-    },
-    {
-        "natural_language_question": "Which films starring Clint Eastwood did he direct himself?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Clint_Eastwood ; dbo:starring res:Clint_Eastwood . }",
-        "answers": [
-            "http://dbpedia.org/resource/A_Perfect_World",
-            "http://dbpedia.org/resource/Absolute_Power_(film)",
-            "http://dbpedia.org/resource/Blood_Work_(film)",
-            "http://dbpedia.org/resource/Cry_Macho_(film)",
-            "http://dbpedia.org/resource/Dirty_Harry_(film_series)",
-            "http://dbpedia.org/resource/Firefox_(film)",
-            "http://dbpedia.org/resource/Gran_Torino",
-            "http://dbpedia.org/resource/Heartbreak_Ridge",
-            "http://dbpedia.org/resource/High_Plains_Drifter",
-            "http://dbpedia.org/resource/Honkytonk_Man",
-            "http://dbpedia.org/resource/Million_Dollar_Baby__Million_Dollar_Baby__1",
-            "http://dbpedia.org/resource/Pale_Rider",
-            "http://dbpedia.org/resource/Play_Misty_for_Me",
-            "http://dbpedia.org/resource/Space_Cowboys",
-            "http://dbpedia.org/resource/Sudden_Impact",
-            "http://dbpedia.org/resource/The_Bridges_of_Madison_County_(film)",
-            "http://dbpedia.org/resource/The_Eiger_Sanction_(film)",
-            "http://dbpedia.org/resource/The_Mule_(2018_film)",
-            "http://dbpedia.org/resource/The_Outlaw_Josey_Wales__The_Outlaw_Josey_Wales__1",
-            "http://dbpedia.org/resource/The_Rookie_(1990_film)",
-            "http://dbpedia.org/resource/True_Crime_(1999_film)",
-            "http://dbpedia.org/resource/Unforgiven",
-            "http://dbpedia.org/resource/White_Hunter_Black_Heart"
-        ]
-    },
-    {
-        "natural_language_question": "In which countries can you pay using the West African CFA franc?",
-        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri dbo:currency res:West_African_CFA_franc . }",
-        "answers": [
-            "http://dbpedia.org/resource/Benin",
-            "http://dbpedia.org/resource/Burkina_Faso",
-            "http://dbpedia.org/resource/Colonial_Mauritania",
-            "http://dbpedia.org/resource/Colony_of_Niger",
-            "http://dbpedia.org/resource/Economic_Community_of_West_African_States",
-            "http://dbpedia.org/resource/French_Dahomey",
-            "http://dbpedia.org/resource/French_Togoland",
-            "http://dbpedia.org/resource/Guinea-Bissau",
-            "http://dbpedia.org/resource/History_of_Togo",
-            "http://dbpedia.org/resource/Ivory_Coast",
-            "http://dbpedia.org/resource/Mali",
-            "http://dbpedia.org/resource/Niger",
-            "http://dbpedia.org/resource/People's_Republic_of_Benin",
-            "http://dbpedia.org/resource/Republic_of_Dahomey",
-            "http://dbpedia.org/resource/Republic_of_Upper_Volta",
-            "http://dbpedia.org/resource/Senegal",
-            "http://dbpedia.org/resource/Senegambia_Confederation",
-            "http://dbpedia.org/resource/Togo"
-        ]
-    },
-    {
-        "natural_language_question": "how much is the population Iraq?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?val WHERE { res:Iraq dbo:populationTotal ?val . }",
-        "answers": [
-            "40462701"
-        ]
-    },
-    {
-        "natural_language_question": "Which holidays are celebrated around the world?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?type wdt:P279* wd:Q1445650 . ?uri wdt:P31 ?type . }",
-        "answers": [
-            "No answer"
-        ]
-    },
-    {
         "natural_language_question": "Which Greek parties are pro-European?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:PoliticalParty ; dbo:country res:Greece ; dbo:ideology res:Pro-Europeanism . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:country res:Greece ; dbo:ideology res:Pro-Europeanism . }",
         "answers": [
             "http://dbpedia.org/resource/Democratic_Alignment_(2015)",
             "http://dbpedia.org/resource/Movement_of_Democratic_Socialists",
@@ -2948,7 +2934,7 @@
     },
     {
         "natural_language_question": "Give me the birthdays of all actors of the television show Charmed.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Charmed dbo:starring ?actor . ?actor dbo:birthDate ?date . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Charmed> dbo:starring ?actor . ?actor dbo:birthDate ?date . }",
         "answers": [
             "1965-10-01",
             "1968-07-27",
@@ -2973,12 +2959,9 @@
     },
     {
         "natural_language_question": "Which actors were born in Germany?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:birthPlace res:Germany . ?uri a dbo:Actor . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?uri WHERE { ?uri <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q10800557> . { ?uri <http://www.wikidata.org/prop/direct/P19> <http://www.wikidata.org/entity/Q183> . } UNION { ?uri <http://www.wikidata.org/prop/direct/P19>/<http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183> . } }",
         "answers": [
-            "http://dbpedia.org/resource/David_Epley_(entertainer)",
-            "http://dbpedia.org/resource/Friederike_Caroline_Neuber",
-            "http://dbpedia.org/resource/Gordon_Hopkirk",
-            "http://dbpedia.org/resource/Shimon_Schwarzschild"
+            "No answer"
         ]
     },
     {
@@ -2997,7 +2980,7 @@
     },
     {
         "natural_language_question": "Give me all movies directed by Francis Ford Coppola.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Francis_Ford_Coppola . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:director res:Francis_Ford_Coppola . }",
         "answers": [
             "http://dbpedia.org/resource/Apocalypse_Now_Redux",
             "http://dbpedia.org/resource/Battle_Beyond_the_Sun",
@@ -3022,7 +3005,6 @@
             "http://dbpedia.org/resource/The_Godfather_Part_II",
             "http://dbpedia.org/resource/The_Godfather_Part_III",
             "http://dbpedia.org/resource/The_Godfather_Saga__The_Godfather_Trilogy:_1901\u20131980__1",
-            "http://dbpedia.org/resource/The_Godfather_Saga",
             "http://dbpedia.org/resource/The_Godfather",
             "http://dbpedia.org/resource/The_Outsiders_(film)",
             "http://dbpedia.org/resource/The_Rain_People",
@@ -3037,28 +3019,28 @@
     },
     {
         "natural_language_question": "What is the birth name of Adele?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?name WHERE { res:Adele dbo:birthName ?name. }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?name WHERE { res:Adele dbo:birthName ?name }",
         "answers": [
             "Adele Laurie Blue Adkins"
         ]
     },
     {
         "natural_language_question": "What was the first Queen album?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Album . ?uri dbo:artist res:Queen_(band) . ?uri dbo:releaseDate ?date } ORDER BY ?date LIMIT 1",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Album . ?uri dbo:artist res:Queen_(band) . ?uri dbo:releaseDate ?date . } ORDER BY ?date LIMIT 1",
         "answers": [
             "Query failed"
         ]
     },
     {
         "natural_language_question": "What is the currency of the Czech Republic?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Czech_Republic> dbo:currency ?uri . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Czech_Republic dbo:currency ?uri . }",
         "answers": [
             "http://dbpedia.org/resource/Czech_koruna"
         ]
     },
     {
         "natural_language_question": "Give me all people that were born in Vienna and died in Berlin.",
-        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri dbo:birthPlace res:Vienna . ?uri dbo:deathPlace res:Berlin . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?uri dbo:birthPlace dbr:Vienna . ?uri dbo:deathPlace dbr:Berlin . }",
         "answers": [
             "http://dbpedia.org/resource/Adolf_Klein",
             "http://dbpedia.org/resource/Eduard_von_Winterstein",
@@ -3087,7 +3069,7 @@
     },
     {
         "natural_language_question": "Which bridges cross the Seine?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:crosses res:Seine . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Bridge ; dbo:crosses res:Seine . }",
         "answers": [
             "http://dbpedia.org/resource/Passerelle_Debilly",
             "http://dbpedia.org/resource/Passerelle_Simone-de-Beauvoir",
@@ -3128,25 +3110,21 @@
     },
     {
         "natural_language_question": "Which musician wrote the most books?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Musician . ?x a dbo:Book ; dbo:author ?uri . } GROUP BY ?uri ORDER BY DESC(COUNT(?x)) LIMIT 1",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Musician . ?x a dbo:Book ; dbo:author ?uri . } GROUP BY ?uri ORDER BY DESC(COUNT(?x)) LIMIT 1",
         "answers": [
             "http://dbpedia.org/resource/Julius_Lester"
         ]
     },
     {
         "natural_language_question": "Which television shows were created by John Cleese?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:creator res:John_Cleese . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:TelevisionShow . { ?uri dbo:creator res:John_Cleese . } UNION { ?uri dbo:creator/dbo:creator res:John_Cleese . } }",
         "answers": [
-            "http://dbpedia.org/resource/Basil_Fawlty",
             "http://dbpedia.org/resource/Fawlty_Towers",
-            "http://dbpedia.org/resource/Manuel_(Fawlty_Towers)",
             "http://dbpedia.org/resource/Monty_Python's_Fliegender_Zirkus",
             "http://dbpedia.org/resource/Monty_Python's_Flying_Circus",
             "http://dbpedia.org/resource/Monty_Python's_Personal_Best",
             "http://dbpedia.org/resource/Parrot_Sketch_Not_Included_\u2013_20_Years_of_Monty_Python",
-            "http://dbpedia.org/resource/Polly_Sherman",
-            "http://dbpedia.org/resource/Python_Night_\u2013_30_Years_of_Monty_Python",
-            "http://dbpedia.org/resource/Sybil_Fawlty"
+            "http://dbpedia.org/resource/Python_Night_\u2013_30_Years_of_Monty_Python"
         ]
     },
     {
@@ -3182,7 +3160,7 @@
     },
     {
         "natural_language_question": "Who discovered Ceres?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ceres_(dwarf_planet)> dbo:discoverer ?uri . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ceres_(dwarf_planet)> <http://dbpedia.org/ontology/discoverer> ?uri . }",
         "answers": [
             "http://dbpedia.org/resource/Giuseppe_Piazzi"
         ]
@@ -3215,14 +3193,14 @@
     },
     {
         "natural_language_question": "Show me all basketball players that are higher than 2 meters.",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:BasketballPlayer . ?uri dbo:height ?height . FILTER(?height > 200) }",
+        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:BasketballPlayer . ?uri dbo:height ?height . FILTER(?height > 200) }",
         "answers": [
             "No answer"
         ]
     },
     {
         "natural_language_question": "In which films did Julia Roberts as well as Richard Gere play?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri a dbo:Film . ?uri dbo:starring res:Julia_Roberts . ?uri dbo:starring res:Richard_Gere . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> . ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Gere> . }",
         "answers": [
             "http://dbpedia.org/resource/Pretty_Woman",
             "http://dbpedia.org/resource/Runaway_Bride_(film)"
@@ -3230,97 +3208,112 @@
     },
     {
         "natural_language_question": "What is the capital of Canada?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?o1 WHERE { <http://www.wikidata.org/entity/Q16> <http://www.wikidata.org/prop/direct/P36> ?o1 . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?capital WHERE { <http://dbpedia.org/resource/Canada> <http://dbpedia.org/ontology/capital> ?capital . }",
         "answers": [
-            "No answer"
+            "http://dbpedia.org/resource/Ottawa"
         ]
     },
     {
         "natural_language_question": "Which soccer players were born on Malta?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:SoccerPlayer ; dbo:birthPlace ?birthPlace . ?birthPlace dbo:country res:Malta . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:birthPlace res:Malta . ?uri a dbo:SoccerPlayer . }",
         "answers": [
             "http://dbpedia.org/resource/Aaron_Xuereb",
+            "http://dbpedia.org/resource/Adrian_Ciantar",
             "http://dbpedia.org/resource/Adrian_Mifsud",
-            "http://dbpedia.org/resource/Alex_Muscat",
+            "http://dbpedia.org/resource/Adrian_Pulis",
+            "http://dbpedia.org/resource/Alishia_Sultana",
             "http://dbpedia.org/resource/Andrei_Agius",
             "http://dbpedia.org/resource/Andrew_Cohen_(footballer)",
             "http://dbpedia.org/resource/Antoine_Zahra_(footballer,_born_1977)",
             "http://dbpedia.org/resource/Antoine_Zahra_(footballer,_born_1981)",
-            "http://dbpedia.org/resource/Bjorn_Kristensen_(footballer,_born_1993)",
+            "http://dbpedia.org/resource/Brenda_Borg",
             "http://dbpedia.org/resource/Brian_Said",
+            "http://dbpedia.org/resource/Brian_Strutt",
             "http://dbpedia.org/resource/Callum_Talbot",
             "http://dbpedia.org/resource/Carlo_Mamo",
-            "http://dbpedia.org/resource/Chantal_Bondin",
             "http://dbpedia.org/resource/Charles_Azzopardi",
+            "http://dbpedia.org/resource/Charles_Micallef",
+            "http://dbpedia.org/resource/Charles_Muscat",
             "http://dbpedia.org/resource/Charlie_Williams_(footballer,_born_1944)",
             "http://dbpedia.org/resource/Claude_Mattocks",
-            "http://dbpedia.org/resource/Clayton_Failla",
             "http://dbpedia.org/resource/Cleavon_Frendo",
+            "http://dbpedia.org/resource/Cornelius_Hogan",
+            "http://dbpedia.org/resource/Daniel_Theuma",
+            "http://dbpedia.org/resource/Darren_Debono",
+            "http://dbpedia.org/resource/David_Camilleri",
+            "http://dbpedia.org/resource/David_Cluett",
             "http://dbpedia.org/resource/Denis_Cauchi",
+            "http://dbpedia.org/resource/Dennis_Mizzi",
             "http://dbpedia.org/resource/Dexter_Xuereb",
-            "http://dbpedia.org/resource/Dylan_Kerr",
-            "http://dbpedia.org/resource/Dyson_Falzon",
-            "http://dbpedia.org/resource/Eddie_Dwane",
+            "http://dbpedia.org/resource/Dorianne_Theuma",
+            "http://dbpedia.org/resource/Edmond_Agius",
             "http://dbpedia.org/resource/Edward_Azzopardi",
-            "http://dbpedia.org/resource/Edward_Herrera",
-            "http://dbpedia.org/resource/Emanuel_Briffa",
-            "http://dbpedia.org/resource/Etienne_Barbara",
+            "http://dbpedia.org/resource/Emanuel_Fabri",
+            "http://dbpedia.org/resource/Emma_Xuerreb",
             "http://dbpedia.org/resource/Gareth_Sciberras",
             "http://dbpedia.org/resource/George_Mallia",
-            "http://dbpedia.org/resource/Graham_Bencini",
-            "http://dbpedia.org/resource/Haley_Bugeja",
-            "http://dbpedia.org/resource/Henry_Bonello",
-            "http://dbpedia.org/resource/Ian_Stevens_(footballer)",
+            "http://dbpedia.org/resource/Hubert_Suda",
+            "http://dbpedia.org/resource/Ian_Azzopardi",
+            "http://dbpedia.org/resource/Ian_Ciantar",
             "http://dbpedia.org/resource/Ivan_Zammit",
+            "http://dbpedia.org/resource/Jade_Flask",
+            "http://dbpedia.org/resource/Jamie_Zerafa",
             "http://dbpedia.org/resource/Jean_Paul_Farrugia",
-            "http://dbpedia.org/resource/Jean_Pierre_Mifsud_Triganza",
-            "http://dbpedia.org/resource/Joe_Zarb",
+            "http://dbpedia.org/resource/Jeffrey_Chetcuti",
+            "http://dbpedia.org/resource/Jesmond_Delia",
+            "http://dbpedia.org/resource/Joe_Brincat",
+            "http://dbpedia.org/resource/Johann_Bezzina",
             "http://dbpedia.org/resource/John_Bonello",
-            "http://dbpedia.org/resource/John_Buttigieg_(footballer)",
-            "http://dbpedia.org/resource/John_Holland_(footballer)",
+            "http://dbpedia.org/resource/John_McNeill_(footballer)",
+            "http://dbpedia.org/resource/Jonathan_Caruana",
             "http://dbpedia.org/resource/Jonathan_Holland_(footballer)",
+            "http://dbpedia.org/resource/Jonathan_Magri_Overend",
             "http://dbpedia.org/resource/Josef_Mifsud",
             "http://dbpedia.org/resource/Joseph_Farrugia",
-            "http://dbpedia.org/resource/Jurgen_Degabriele",
+            "http://dbpedia.org/resource/Juan_Carlos_Corbalan",
             "http://dbpedia.org/resource/Justin_Haber",
-            "http://dbpedia.org/resource/Justin_Tellus",
             "http://dbpedia.org/resource/Kenneth_Scicluna",
             "http://dbpedia.org/resource/Kevin_Sammut",
-            "http://dbpedia.org/resource/Kyrian_Nwoko",
-            "http://dbpedia.org/resource/Leonard_Farrugia",
-            "http://dbpedia.org/resource/Luke_Dimech",
+            "http://dbpedia.org/resource/Kristian_Laferla",
+            "http://dbpedia.org/resource/Lino_Galea",
+            "http://dbpedia.org/resource/Lolly_Vella",
             "http://dbpedia.org/resource/Malcolm_Licari",
-            "http://dbpedia.org/resource/Michael_Mifsud",
-            "http://dbpedia.org/resource/Myles_Beerman",
+            "http://dbpedia.org/resource/Maria_Farrugia",
+            "http://dbpedia.org/resource/Mario_Farrugia",
+            "http://dbpedia.org/resource/Martina_Borg",
+            "http://dbpedia.org/resource/Massimo_Grima",
+            "http://dbpedia.org/resource/Matthew_Guillaumier",
+            "http://dbpedia.org/resource/Michael_Cutajar",
+            "http://dbpedia.org/resource/Michael_Galea",
+            "http://dbpedia.org/resource/Michael_Johnson_(footballer,_born_1994)",
+            "http://dbpedia.org/resource/Nicole_Buttigieg",
+            "http://dbpedia.org/resource/Nicole_Sciberras",
             "http://dbpedia.org/resource/Noel_Turner_(footballer)",
-            "http://dbpedia.org/resource/Norman_Buttigieg",
             "http://dbpedia.org/resource/Paul_Fenech_(footballer)",
-            "http://dbpedia.org/resource/Paul_Mbong",
-            "http://dbpedia.org/resource/Paul_Tisdale",
+            "http://dbpedia.org/resource/Pierre_Aquilina",
             "http://dbpedia.org/resource/Ray_Farrugia",
             "http://dbpedia.org/resource/Raymond_Xuereb",
-            "http://dbpedia.org/resource/Reuben_Gauci",
+            "http://dbpedia.org/resource/Rebecca_D'Agostino",
+            "http://dbpedia.org/resource/Reginald_Cini",
             "http://dbpedia.org/resource/Roderick_Briffa",
             "http://dbpedia.org/resource/Ronnie_Cocks",
-            "http://dbpedia.org/resource/Rowen_Muscat",
-            "http://dbpedia.org/resource/Ryan_Camilleri",
+            "http://dbpedia.org/resource/Saviour_Darmanin",
             "http://dbpedia.org/resource/Sean_Sullivan_(footballer)",
-            "http://dbpedia.org/resource/Shaun_Bajada",
             "http://dbpedia.org/resource/Simon_Tortell",
             "http://dbpedia.org/resource/Stefan_Giglio",
+            "http://dbpedia.org/resource/Stefania_Farrugia",
             "http://dbpedia.org/resource/Stephen_Wellman",
             "http://dbpedia.org/resource/Steve_Bezzina",
-            "http://dbpedia.org/resource/Steve_Borg",
+            "http://dbpedia.org/resource/Steve_Pisani",
             "http://dbpedia.org/resource/Terence_Scerri",
             "http://dbpedia.org/resource/Terence_Vella",
-            "http://dbpedia.org/resource/Trevor_Cilia",
-            "http://dbpedia.org/resource/Tristan_Caruana",
+            "http://dbpedia.org/resource/Vincent_Borg_Bonaci",
             "http://dbpedia.org/resource/William_Camenzuli"
         ]
     },
     {
         "natural_language_question": "What is the capital of Cameroon?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Cameroon dbo:capital ?uri }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Cameroon> <http://dbpedia.org/ontology/capital> ?uri }",
         "answers": [
             "http://dbpedia.org/resource/Yaound\u00e9"
         ]
@@ -3341,7 +3334,7 @@
     },
     {
         "natural_language_question": "Who created Family Guy?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Family_Guy dbo:creator ?uri }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Family_Guy> <http://dbpedia.org/ontology/creator> ?uri }",
         "answers": [
             "http://dbpedia.org/resource/Seth_MacFarlane"
         ]
@@ -3363,9 +3356,9 @@
     },
     {
         "natural_language_question": "How many people live in the capital of Australia?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?number WHERE { <http://dbpedia.org/resource/Australia> <http://dbpedia.org/ontology/capital> ?uri . ?uri <http://dbpedia.org/ontology/populationTotal> ?number . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?number WHERE { ?uri dbo:capital res:Australia . ?uri dbo:populationTotal ?number . }",
         "answers": [
-            "453558"
+            "No answer"
         ]
     },
     {
@@ -3384,9 +3377,9 @@
     },
     {
         "natural_language_question": "How much did Pulp Fiction cost?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?value WHERE { res:Pulp_Fiction dbo:budget ?value . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?value WHERE { wd:Q104123 wdt:P2130 ?value . }",
         "answers": [
-            "8.0"
+            "No answer"
         ]
     },
     {
@@ -3435,7 +3428,7 @@
     },
     {
         "natural_language_question": "Give me all Danish movies.",
-        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:country res:Denmark . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:country res:Denmark . }",
         "answers": [
             "http://dbpedia.org/resource/A_Summer_Tale",
             "http://dbpedia.org/resource/Afghan_Muscles",
@@ -3576,7 +3569,7 @@
     },
     {
         "natural_language_question": "What is the largest country in the world?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country . ?uri dbo:areaTotal ?area . } ORDER BY DESC(?area) LIMIT 1",
+        "sparql_query": "PREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country . ?uri dbo:areaTotal ?area . } ORDER BY DESC(?area) LIMIT 1",
         "answers": [
             "http://dbpedia.org/resource/Asia"
         ]
@@ -3591,7 +3584,7 @@
     },
     {
         "natural_language_question": "Who created Goofy?",
-        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbr: <http://dbpedia.org/resource/>\nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Goofy dbo:creator ?uri . }",
+        "sparql_query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dbo: <http://dbpedia.org/ontology/>\nPREFIX dbr: <http://dbpedia.org/resource/>\nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Goofy> <http://dbpedia.org/ontology/creator> ?uri . }",
         "answers": [
             "http://dbpedia.org/resource/Bob_Ogle",
             "http://dbpedia.org/resource/Paul_Murry"
