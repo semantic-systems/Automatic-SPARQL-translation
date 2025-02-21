@@ -1,23 +1,23 @@
 {
     "questions": [
         {
-            "id": "Q0104",
+            "id": "Q0141",
             "query_type": "SINGLE_FACT",
             "question": {
-                "string": "What are the papers written by the person Laura Franzoi?"
+                "string": "What are the papers written by the person Mike E. Davies?"
             },
             "paraphrased_question": {
-                "string": "Which papers did the author Laura Franzoi write?"
+                "string": "What are the papers written by Mike E. Davies?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/117/9834> }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/d/MikeEDavis> }"
             },
             "template_id": "TC01",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/117/9834>",
+                    "author": "<https://dblp.org/pid/d/MikeEDavis>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-6963-0532"
+                        "https://orcid.org/0000-0003-2327-236X"
                     ]
                 }
             ],
@@ -28,23 +28,23 @@
             "held_out": false
         },
         {
-            "id": "Q0027",
+            "id": "Q0041",
             "query_type": "SINGLE_FACT",
             "question": {
-                "string": "Which publications did Brooks, S. author?"
+                "string": "Which publications did Xu, D. author?"
             },
             "paraphrased_question": {
-                "string": "What are the papers written by the person Stoney Brooks?"
+                "string": "What are the papers written by Dong Xu?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/01/10677> }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/09/3493-2> }"
             },
             "template_id": "TC01",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/01/10677>",
+                    "author": "<https://dblp.org/pid/09/3493-2>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-1965-339X"
+                        "https://orcid.org/0000-0002-4809-0514"
                     ]
                 }
             ],
@@ -55,23 +55,23 @@
             "held_out": false
         },
         {
-            "id": "Q0125",
+            "id": "Q0123",
             "query_type": "SINGLE_FACT",
             "question": {
-                "string": "Which papers did the author Yi Jiang write?"
+                "string": "Which publications did Mutlu, B. author?"
             },
             "paraphrased_question": {
-                "string": "What are the papers written by the person Yi Jiang?"
+                "string": "What are the papers written by Begum Mutlu?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/66/3172-4> }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/158/0641> }"
             },
             "template_id": "TC01",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/66/3172-4>",
+                    "author": "<https://dblp.org/pid/158/0641>",
                     "orcid": [
-                        "https://orcid.org/0000-0003-0409-4692"
+                        "https://orcid.org/0000-0003-1960-2143"
                     ]
                 }
             ],
@@ -82,23 +82,23 @@
             "held_out": false
         },
         {
-            "id": "Q0323",
+            "id": "Q0214",
             "query_type": "SINGLE_FACT",
             "question": {
-                "string": "Which publications did Koen v. der Blom author?"
+                "string": "Which publications did Peter L. author?"
             },
             "paraphrased_question": {
-                "string": "Which papers did the author Koen v. der Blom write?"
+                "string": "Which papers did the author Peter L. write?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/184/9197> }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/49/5258> }"
             },
             "template_id": "TC01",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/184/9197>",
+                    "author": "<https://dblp.org/pid/49/5258>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-4653-0707"
+                        "https://orcid.org/0000-0003-3576-0504"
                     ]
                 }
             ],
@@ -109,23 +109,23 @@
             "held_out": false
         },
         {
-            "id": "Q0217",
+            "id": "Q0247",
             "query_type": "SINGLE_FACT",
             "question": {
-                "string": "What are the papers written by Johansson, F.?"
+                "string": "Which papers did the author Francesco Cardinale write?"
             },
             "paraphrased_question": {
-                "string": "Which papers did the author Fredrik Johansson write?"
+                "string": "Which publications did Francesco Cardinale author?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/58/1342-1> }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/50/10751> }"
             },
             "template_id": "TC01",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/58/1342-1>",
+                    "author": "<https://dblp.org/pid/50/10751>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-7368-092X"
+                        "https://orcid.org/0000-0002-5141-9202"
                     ]
                 }
             ],
@@ -136,23 +136,77 @@
             "held_out": false
         },
         {
-            "id": "Q0503",
+            "id": "Q0246",
+            "query_type": "SINGLE_FACT",
+            "question": {
+                "string": "Which publications did Julia Lieb author?"
+            },
+            "paraphrased_question": {
+                "string": "Which papers did the author Julia Lieb write?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/177/9433> }"
+            },
+            "template_id": "TC01",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/177/9433>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-4211-1596"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0064",
+            "query_type": "SINGLE_FACT",
+            "question": {
+                "string": "What are the papers written by Maarten Mennes?"
+            },
+            "paraphrased_question": {
+                "string": "What are the papers written by the person Maarten Mennes?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/68/11383> }"
+            },
+            "template_id": "TC01",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/68/11383>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-7279-3439"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0695",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "Which papers did St\\u00E9phane R. publish in the last four years?"
+                "string": "List the papers published by Ralf K\\u00FCsters in the last 9 years."
             },
             "paraphrased_question": {
-                "string": "List the papers published by St\\u00E9phane Redon in the last four years."
+                "string": "Which papers did Ralf K\\u00FCsters publish in the last 9 years?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/r/StephaneRedon> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-4) }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/k/RKusters> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-9) }"
             },
             "template_id": "TC15",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/r/StephaneRedon>",
+                    "author": "<https://dblp.org/pid/k/RKusters>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-2618-8975"
+                        "https://orcid.org/0000-0002-9071-9312"
                     ]
                 }
             ],
@@ -164,23 +218,23 @@
             "held_out": false
         },
         {
-            "id": "Q0456",
+            "id": "Q0394",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "List the papers published by A. Yautsiukhin in the last 6 years."
+                "string": "Which papers did Blaise G. publish in the last 5 years?"
             },
             "paraphrased_question": {
-                "string": "Which papers did Artsiom Yautsiukhin publish in the last 6 years?"
+                "string": "List the papers published by Blaise Genest in the last five years."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/07/4404> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-6) }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/59/6859> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-5) }"
             },
             "template_id": "TC15",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/07/4404>",
+                    "author": "<https://dblp.org/pid/59/6859>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-8493-1915"
+                        "https://orcid.org/0000-0002-5758-1876"
                     ]
                 }
             ],
@@ -192,23 +246,23 @@
             "held_out": false
         },
         {
-            "id": "Q0492",
+            "id": "Q0410",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "List the papers published by Steve Benford in the last seven years."
+                "string": "List the papers published by Sylvain Schmitz in the last 8 years."
             },
             "paraphrased_question": {
-                "string": "Which papers did Steve Benford publish in the last 7 years?"
+                "string": "Which papers did Schmitz, Sylvain publish in the last 8 years?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/SteveBenford> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-7) }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/62/6048> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-8) }"
             },
             "template_id": "TC15",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/b/SteveBenford>",
+                    "author": "<https://dblp.org/pid/62/6048>",
                     "orcid": [
-                        "https://orcid.org/0000-0001-8041-2520"
+                        "https://orcid.org/0000-0002-4101-4308"
                     ]
                 }
             ],
@@ -220,23 +274,23 @@
             "held_out": false
         },
         {
-            "id": "Q0603",
+            "id": "Q0424",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "Which papers did Vaithilingam Jeyakumar publish in the last 2 years?"
+                "string": "Which papers did E. Francine Barbosa publish in the last 2 years?"
             },
             "paraphrased_question": {
-                "string": "List the papers published by Jeyakumar, Vaithilingam in the last two years."
+                "string": "List the papers published by Ellen Francine Barbosa in the last two years."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/v/VaithilingamJeyakumar> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-2) }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/66/2060> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-2) }"
             },
             "template_id": "TC15",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/v/VaithilingamJeyakumar>",
+                    "author": "<https://dblp.org/pid/66/2060>",
                     "orcid": [
-                        "https://orcid.org/0000-0003-0267-7800"
+                        "https://orcid.org/0000-0003-3275-2293"
                     ]
                 }
             ],
@@ -276,23 +330,79 @@
             "held_out": false
         },
         {
-            "id": "Q0515",
+            "id": "Q0422",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "Mention the venues in which Bouguelia, Mohamed-Rafik published."
+                "string": "Which papers did Richard Bowden publish in the last eight years?"
             },
             "paraphrased_question": {
-                "string": "In which conferences or journals has Bouguelia, Mohamed-Rafik published papers?"
+                "string": "List the papers published by Richard Bowden in the last eight years."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/23/10872> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/RichardBowden> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-8) }"
+            },
+            "template_id": "TC15",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/b/RichardBowden>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-3285-8020"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": true,
+            "held_out": false
+        },
+        {
+            "id": "Q0603",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "Which papers did Vaithilingam Jeyakumar publish in the last 2 years?"
+            },
+            "paraphrased_question": {
+                "string": "List the papers published by Jeyakumar, Vaithilingam in the last two years."
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/v/VaithilingamJeyakumar> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-2) }"
+            },
+            "template_id": "TC15",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/v/VaithilingamJeyakumar>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-0267-7800"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": true,
+            "held_out": false
+        },
+        {
+            "id": "Q0575",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "What are the venues in which J. Platos published?"
+            },
+            "paraphrased_question": {
+                "string": "Mention the venues in which J. Platos published."
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/64/2617> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
             },
             "template_id": "TC11",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/23/10872>",
+                    "author": "<https://dblp.org/pid/64/2617>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-2859-6155"
+                        "https://orcid.org/0000-0002-8481-0136"
                     ]
                 }
             ],
@@ -304,23 +414,107 @@
             "held_out": false
         },
         {
-            "id": "Q0372",
+            "id": "Q0455",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "In which conferences or journals has Gangi, M. Antonino Di published papers?"
+                "string": "What are the venues in which David F. Nettleton published?"
             },
             "paraphrased_question": {
-                "string": "What are the venues in which Mattia Antonino Di Gangi published?"
+                "string": "Mention the venues in which D. F. Nettleton published."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/194/3473> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/21/708> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
             },
             "template_id": "TC11",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/194/3473>",
+                    "author": "<https://dblp.org/pid/21/708>",
                     "orcid": [
-                        "https://orcid.org/0000-0003-4491-0025"
+                        "https://orcid.org/0000-0002-5852-7716"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#publishedIn>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0505",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "In which conferences or journals has Sharad Malik published papers?"
+            },
+            "paraphrased_question": {
+                "string": "What are the venues in which S. Malik published?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/79/6934> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
+            },
+            "template_id": "TC11",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/79/6934>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-0837-5443"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#publishedIn>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0388",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "What are the venues in which Turner, Martin J. published?"
+            },
+            "paraphrased_question": {
+                "string": "In which conferences or journals has Martin J. Turner published papers?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/t/MartinJTurner> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
+            },
+            "template_id": "TC11",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/t/MartinJTurner>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-0117-8049"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#publishedIn>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0665",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "What are the venues in which Rafael Dueire Lins published?"
+            },
+            "paraphrased_question": {
+                "string": "In which conferences or journals has Rafael Dueire Lins published papers?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/44/4611> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
+            },
+            "template_id": "TC11",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/44/4611>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-3497-5044"
                     ]
                 }
             ],
@@ -360,23 +554,23 @@
             "held_out": false
         },
         {
-            "id": "Q0622",
+            "id": "Q0642",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "What are the venues in which Virg\\u00EDlio A. F. Almeida published?"
+                "string": "In which conferences or journals has V. Latora published papers?"
             },
             "paraphrased_question": {
-                "string": "Mention the venues in which Virg\\u00EDlio A. F. Almeida published."
+                "string": "What are the venues in which V. Latora published?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/a/VirgilioAlmeida> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/16/1297> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
             },
             "template_id": "TC11",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/a/VirgilioAlmeida>",
+                    "author": "<https://dblp.org/pid/16/1297>",
                     "orcid": [
-                        "https://orcid.org/0000-0001-6452-0361"
+                        "https://orcid.org/0000-0002-0984-8038"
                     ]
                 }
             ],
@@ -388,111 +582,56 @@
             "held_out": false
         },
         {
-            "id": "Q0565",
+            "id": "Q0360",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "In which conferences or journals has Peyman Milanfar published papers?"
+                "string": "What are the papers written by Wu, C. and C. Jason Xue together?"
             },
             "paraphrased_question": {
-                "string": "What are the venues in which Peyman Milanfar published?"
+                "string": "Which papers did Wu, C. and Chun Jason Xue write together?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/48/6882> . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }"
-            },
-            "template_id": "TC11",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/48/6882>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-1455-7662"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#publishedIn>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0601",
-            "query_type": "MULTI_FACT",
-            "question": {
-                "string": "What are the papers written by Stepan Shevtsov and Maggio, M. together?"
-            },
-            "paraphrased_question": {
-                "string": "Find the papers written by S. Shevtsov and Martina Maggio together."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/156/4418> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/02/8575> }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/45/3158-6> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/x/ChunJasonXue> }"
             },
             "template_id": "TC12",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/02/8575>",
+                    "author": "<https://dblp.org/pid/45/3158-6>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-1143-1127"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0667",
-            "query_type": "MULTI_FACT",
-            "question": {
-                "string": "Which papers did Peng Zhang and Li-Yun Dong write together?"
-            },
-            "paraphrased_question": {
-                "string": "Find the papers written by Peng Zhang and Li-Yun Dong together."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/21/1048-14> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/11/3891> }"
-            },
-            "template_id": "TC12",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/21/1048-14>",
-                    "orcid": [
-                        "https://orcid.org/0000-0001-6953-800X"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0688",
-            "query_type": "MULTI_FACT",
-            "question": {
-                "string": "Find the papers written by Kenneth O. Stanley and Risto M. together."
-            },
-            "paraphrased_question": {
-                "string": "Which papers did Kenneth O. Stanley and Risto M. write together?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/s/KennethOStanley> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/m/RistoMiikkulainen> }"
-            },
-            "template_id": "TC12",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/s/KennethOStanley>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-4503-0839"
+                        "https://orcid.org/0000-0002-7829-1413"
                     ]
                 },
                 {
-                    "author": "<https://dblp.org/pid/m/RistoMiikkulainen>",
+                    "author": "<https://dblp.org/pid/x/ChunJasonXue>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-0062-0037"
+                        "https://orcid.org/0000-0002-6431-9868"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0540",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "What are the papers written by Rissland, Edwina L. and Jensen, D. D. together?"
+            },
+            "paraphrased_question": {
+                "string": "Which papers did Edwina L. Rissland and Jensen, D. D. write together?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/r/EdwinaLRissland> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/38/828> }"
+            },
+            "template_id": "TC12",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/38/828>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-5653-3349"
                     ]
                 }
             ],
@@ -536,23 +675,110 @@
             "held_out": false
         },
         {
-            "id": "Q0507",
+            "id": "Q0605",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "Which papers did Mattia F. and Giuseppe Nunnari write together?"
+                "string": "What are the papers written by Chen, Ziqian and Gentiane Venture together?"
             },
             "paraphrased_question": {
-                "string": "What are the papers written by Mattia F. and Giuseppe Nunnari together?"
+                "string": "Which papers did Chen, Ziqian and Gentiane Venture write together?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/19/1859> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/93/2552> }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/168/3805> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/56/7043> }"
             },
             "template_id": "TC12",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/93/2552>",
+                    "author": "<https://dblp.org/pid/56/7043>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-7117-3174"
+                        "https://orcid.org/0000-0001-7767-4765"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0689",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "Find the papers written by Ryo Hayakawa and Nakai-Kasai, Ayano together."
+            },
+            "paraphrased_question": {
+                "string": "Which papers did Ryo H. and Nakai-Kasai, Ayano write together?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/146/1419> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/214/2262> }"
+            },
+            "template_id": "TC12",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/214/2262>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-0832-0423"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0408",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "Which papers did Huseyin Topaloglu and Sumit Kunnumkal write together?"
+            },
+            "paraphrased_question": {
+                "string": "What are the papers written by Huseyin Topaloglu and Sumit Kunnumkal together?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/79/2081> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/80/6714> }"
+            },
+            "template_id": "TC12",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/79/2081>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-3049-6719"
+                    ]
+                },
+                {
+                    "author": "<https://dblp.org/pid/80/6714>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-6832-0508"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0589",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "Which papers did Murali Krishna Ramanathan and Grama, A. write together?"
+            },
+            "paraphrased_question": {
+                "string": "Find the papers written by Murali K. Ramanathan and Ananth Grama together."
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/75/541> . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/g/AnanthGrama> }"
+            },
+            "template_id": "TC12",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/g/AnanthGrama>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-9378-9244"
                     ]
                 }
             ],
@@ -590,50 +816,23 @@
             "held_out": false
         },
         {
-            "id": "Q0627",
+            "id": "Q0370",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "Who are the co-authors of Yingfei Xiong?"
+                "string": "Who are the co-authors of Antonio Ruiz-Mart\\u00EDnez?"
             },
             "paraphrased_question": {
-                "string": "Mention the co-authors of Yingfei Xiong."
+                "string": "With which other authors has the author A. Ruiz-Mart\\u00EDnez written papers?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/82/2673> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/82/2673>) }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/28/2375> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/28/2375>) }"
             },
             "template_id": "TC14",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/82/2673>",
+                    "author": "<https://dblp.org/pid/28/2375>",
                     "orcid": [
-                        "https://orcid.org/0000-0001-8991-747X"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0482",
-            "query_type": "MULTI_FACT",
-            "question": {
-                "string": "Mention the co-authors of Folino, Francesco."
-            },
-            "paraphrased_question": {
-                "string": "With which other authors has the author Francesco Folino written papers?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/76/5134> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/76/5134>) }"
-            },
-            "template_id": "TC14",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/76/5134>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-4952-1187"
+                        "https://orcid.org/0000-0002-8433-159X"
                     ]
                 }
             ],
@@ -671,28 +870,221 @@
             "held_out": false
         },
         {
-            "id": "Q0699",
+            "id": "Q0459",
             "query_type": "MULTI_FACT",
             "question": {
-                "string": "Mention the co-authors of Brunskill, E.."
+                "string": "With which other authors has the author B. Barakat written papers?"
             },
             "paraphrased_question": {
-                "string": "With which other authors has the author Emma Brunskill written papers?"
+                "string": "Who are the co-authors of Basel Barakat?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/27/1277> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/27/1277>) }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/163/9987> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/163/9987>) }"
             },
             "template_id": "TC14",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/27/1277>",
+                    "author": "<https://dblp.org/pid/163/9987>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-3971-7127"
+                        "https://orcid.org/0000-0001-9126-7613"
                     ]
                 }
             ],
             "relations": [
                 "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0593",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "With which other authors has the author S. A. Meijer written papers?"
+            },
+            "paraphrased_question": {
+                "string": "Who are the co-authors of Sebastiaan A. Meijer?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/31/6596> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/31/6596>) }"
+            },
+            "template_id": "TC14",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/31/6596>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-1126-3781"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0627",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "Who are the co-authors of Yingfei Xiong?"
+            },
+            "paraphrased_question": {
+                "string": "Mention the co-authors of Yingfei Xiong."
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/82/2673> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/82/2673>) }"
+            },
+            "template_id": "TC14",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/82/2673>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-8991-747X"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0533",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "Mention the co-authors of Liu, C.."
+            },
+            "paraphrased_question": {
+                "string": "With which other authors has the author Liu, C. written papers?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/52/5716-2> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/52/5716-2>) }"
+            },
+            "template_id": "TC14",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/52/5716-2>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-7686-2510"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0802",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "Mention the papers published by Ioannis K. and in which year."
+            },
+            "paraphrased_question": {
+                "string": "Which papers did author Ioannis Krikidis publish and in which year?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/79/5692> . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }"
+            },
+            "template_id": "TC21",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/79/5692>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-4036-1364"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0906",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "Mention the papers published by Christian A. Mueller and in which year."
+            },
+            "paraphrased_question": {
+                "string": "Which papers did author Christian A. Mueller publish and in which year?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/117/3215> . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }"
+            },
+            "template_id": "TC21",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/117/3215>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-1895-987X"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0885",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "Mention the papers published by Pieters, R. and in which year."
+            },
+            "paraphrased_question": {
+                "string": "Which papers did author Roel Pieters publish and in which year?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/68/7414> . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }"
+            },
+            "template_id": "TC21",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/68/7414>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-6728-304X"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0763",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "Which papers did author Ernesto Bribiesca-Correa publish and in which year?"
+            },
+            "paraphrased_question": {
+                "string": "Mention the papers published by Ernesto Bribiesca-Correa and in which year."
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/57/6560> . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }"
+            },
+            "template_id": "TC21",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/57/6560>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-6663-9438"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
             ],
             "temporal": false,
             "held_out": false
@@ -715,90 +1107,6 @@
                     "author": "<https://dblp.org/pid/l/YiBingLin>",
                     "orcid": [
                         "https://orcid.org/0000-0001-6841-4718"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0908",
-            "query_type": "DOUBLE_INTENT",
-            "question": {
-                "string": "Which publications did Boht\\u00E9, Sander M. author and in which year?"
-            },
-            "paraphrased_question": {
-                "string": "Which papers did author Sander M. Boht\\u00E9 publish and in which year?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/15/5737> . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }"
-            },
-            "template_id": "TC21",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/15/5737>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-7866-278X"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0737",
-            "query_type": "DOUBLE_INTENT",
-            "question": {
-                "string": "Mention the papers published by Christos Koukouvinos and in which year."
-            },
-            "paraphrased_question": {
-                "string": "Which papers did author C. Koukouvinos publish and in which year?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/43/87> . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }"
-            },
-            "template_id": "TC21",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/43/87>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-1907-2031"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0819",
-            "query_type": "DOUBLE_INTENT",
-            "question": {
-                "string": "Mention the papers published by Margherita Peruzzini and in which year."
-            },
-            "paraphrased_question": {
-                "string": "Which papers did author Margherita P. publish and in which year?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/76/8777> . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }"
-            },
-            "template_id": "TC21",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/76/8777>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-2260-0392"
                     ]
                 }
             ],
@@ -838,23 +1146,51 @@
             "held_out": false
         },
         {
-            "id": "Q0759",
+            "id": "Q1017",
             "query_type": "DOUBLE_INTENT",
             "question": {
-                "string": "What are the titles of the papers that Chadi A. published and in which venues?"
+                "string": "Which publications did Ant\\u00F4nio Padilha Lanari B\\u00F3 author and in which year?"
             },
             "paraphrased_question": {
-                "string": "In which venues did Chadi A. publish papers and what are the titles of these papers?"
+                "string": "Mention the papers published by Ant\\u00F4nio Padilha Lanari B\\u00F3 and in which year."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/a/ChadiAssi> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/04/3218> . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }"
+            },
+            "template_id": "TC21",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/04/3218>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-8229-0512"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0754",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "What are the titles of the papers that Fatimah Khalid published and in which venues?"
+            },
+            "paraphrased_question": {
+                "string": "In which venues did Khalid, Fatimah publish papers and what are the titles of these papers?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/98/10159> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
             },
             "template_id": "TC24",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/a/ChadiAssi>",
+                    "author": "<https://dblp.org/pid/98/10159>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-3161-1846"
+                        "https://orcid.org/0000-0002-5791-065X"
                     ]
                 }
             ],
@@ -867,23 +1203,139 @@
             "held_out": false
         },
         {
-            "id": "Q0931",
+            "id": "Q0789",
             "query_type": "DOUBLE_INTENT",
             "question": {
-                "string": "What are the titles of the papers that Zehavi, Meirav published and in which venues?"
+                "string": "List the venues in which K. Karlapalem published papers and the titles of these papers."
             },
             "paraphrased_question": {
-                "string": "In which venues did Zehavi, Meirav publish papers and what are the titles of these papers?"
+                "string": "List the titles of the papers that Kamalakar Karlapalem published and in which venues."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/133/1023> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/k/KKarlapalem> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
             },
             "template_id": "TC24",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/133/1023>",
+                    "author": "<https://dblp.org/pid/k/KKarlapalem>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-3636-5322"
+                        "https://orcid.org/0000-0003-2528-7979"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#publishedIn>",
+                "<https://dblp.org/rdf/schema#title>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0842",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "What are the titles of the papers that Tao, J. published and in which venues?"
+            },
+            "paraphrased_question": {
+                "string": "In which venues did Jia Tao publish papers and what are the titles of these papers?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/25/6764-1> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+            },
+            "template_id": "TC24",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/25/6764-1>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-2342-3271"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#publishedIn>",
+                "<https://dblp.org/rdf/schema#title>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0771",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "In which venues did Wan, X. publish papers and what are the titles of these papers?"
+            },
+            "paraphrased_question": {
+                "string": "What are the titles of the papers that Xiaojun Wan published and in which venues?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/07/1521> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+            },
+            "template_id": "TC24",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/07/1521>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-6887-1994"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#publishedIn>",
+                "<https://dblp.org/rdf/schema#title>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0753",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "What are the titles of the papers that Georg Rose published and in which venues?"
+            },
+            "paraphrased_question": {
+                "string": "In which venues did Georg Rose publish papers and what are the titles of these papers?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/04/4271> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+            },
+            "template_id": "TC24",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/04/4271>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-2215-150X"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#publishedIn>",
+                "<https://dblp.org/rdf/schema#title>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0837",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "In which venues did Vicente P. Guerrero-Bote publish papers and what are the titles of these papers?"
+            },
+            "paraphrased_question": {
+                "string": "List the venues in which Vicente P. Guerrero-Bote published papers and the titles of these papers."
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/83/3581> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+            },
+            "template_id": "TC24",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/83/3581>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-4821-9768"
                     ]
                 }
             ],
@@ -925,81 +1377,23 @@
             "held_out": false
         },
         {
-            "id": "Q0857",
+            "id": "Q0761",
             "query_type": "DOUBLE_INTENT",
             "question": {
-                "string": "In which venues did Sezer, Mehmet publish papers and what are the titles of these papers?"
+                "string": "What are the titles of the papers that Garay, J. A. published in the last three years and in which venues?"
             },
             "paraphrased_question": {
-                "string": "What are the titles of the papers that Mehmet Sezer published and in which venues?"
+                "string": "List the venues in which Garay, J. A. published papers in the last 3 years and the titles of these papers."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/61/4336> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
-            },
-            "template_id": "TC24",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/61/4336>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-7744-2574"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#publishedIn>",
-                "<https://dblp.org/rdf/schema#title>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0754",
-            "query_type": "DOUBLE_INTENT",
-            "question": {
-                "string": "What are the titles of the papers that Fatimah Khalid published and in which venues?"
-            },
-            "paraphrased_question": {
-                "string": "In which venues did Khalid, Fatimah publish papers and what are the titles of these papers?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/98/10159> . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
-            },
-            "template_id": "TC24",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/98/10159>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-5791-065X"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#publishedIn>",
-                "<https://dblp.org/rdf/schema#title>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0768",
-            "query_type": "DOUBLE_INTENT",
-            "question": {
-                "string": "What are the titles of the papers that Sheu, T. W. H. published in the last two years and in which venues?"
-            },
-            "paraphrased_question": {
-                "string": "List the venues in which Sheu, T. W. H. published papers in the last 2 years and the titles of these papers."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/14/9316> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-2) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/10/4788> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-3) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
             },
             "template_id": "TC25",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/14/9316>",
+                    "author": "<https://dblp.org/pid/10/4788>",
                     "orcid": [
-                        "https://orcid.org/0000-0001-8533-3282"
+                        "https://orcid.org/0000-0003-0366-7110"
                     ]
                 }
             ],
@@ -1013,53 +1407,23 @@
             "held_out": false
         },
         {
-            "id": "Q0892",
+            "id": "Q0862",
             "query_type": "DOUBLE_INTENT",
             "question": {
-                "string": "What are the titles of the papers that Emina Soljanin published in the last 9 years and in which venues?"
+                "string": "List the titles of the papers that Tian He published in the last five years and in which venues."
             },
             "paraphrased_question": {
-                "string": "List the venues in which Emina S. published papers in the last nine years and the titles of these papers."
+                "string": "What are the titles of the papers that T. He published in the last 5 years and in which venues?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/00/6219> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-9) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/h/TianHe> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-5) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
             },
             "template_id": "TC25",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/00/6219>",
+                    "author": "<https://dblp.org/pid/h/TianHe>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-7464-4242"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>",
-                "<https://dblp.org/rdf/schema#publishedIn>",
-                "<https://dblp.org/rdf/schema#title>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q0703",
-            "query_type": "DOUBLE_INTENT",
-            "question": {
-                "string": "What are the titles of the papers that Andrew P. Black published in the last six years and in which venues?"
-            },
-            "paraphrased_question": {
-                "string": "In which venues did Andrew P. Black publish papers in the last 6 years and what are the titles of these papers?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/APBlack> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-6) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
-            },
-            "template_id": "TC25",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/b/APBlack>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-0014-6483"
+                        "https://orcid.org/0000-0001-6062-2619"
                     ]
                 }
             ],
@@ -1103,23 +1467,23 @@
             "held_out": false
         },
         {
-            "id": "Q0879",
+            "id": "Q0801",
             "query_type": "DOUBLE_INTENT",
             "question": {
-                "string": "List the venues in which Bondavalli, A. published papers in the last four years and the titles of these papers."
+                "string": "List the titles of the papers that Yuan, B. published in the last two years and in which venues."
             },
             "paraphrased_question": {
-                "string": "List the titles of the papers that Andrea Bondavalli published in the last 4 years and in which venues."
+                "string": "In which venues did Bo Yuan publish papers in the last 2 years and what are the titles of these papers?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/31/4416> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-4) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/41/1662-2> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-2) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
             },
             "template_id": "TC25",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/31/4416>",
+                    "author": "<https://dblp.org/pid/41/1662-2>",
                     "orcid": [
-                        "https://orcid.org/0000-0001-7366-6530"
+                        "https://orcid.org/0000-0002-0004-6733"
                     ]
                 }
             ],
@@ -1133,23 +1497,113 @@
             "held_out": false
         },
         {
-            "id": "Q2048",
-            "query_type": "DOUBLE_NEGATION",
+            "id": "Q0868",
+            "query_type": "DOUBLE_INTENT",
             "question": {
-                "string": "Didn't Katharina Quast and Andr\\u00E9 Kaup not co-author a paper?"
+                "string": "What are the titles of the papers that Varma, V. published in the last four years and in which venues?"
             },
             "paraphrased_question": {
-                "string": "Was a paper not not co-authored by Katharina Quast and Andr\\u00E9 Kaup?"
+                "string": "List the titles of the papers that Varma, V. published in the last four years and in which venues."
             },
             "query": {
-                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/77/7731> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/00/6329> }"
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/03/4045> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-4) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+            },
+            "template_id": "TC25",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/03/4045>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-1923-1725"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>",
+                "<https://dblp.org/rdf/schema#publishedIn>",
+                "<https://dblp.org/rdf/schema#title>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0741",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "In which venues did Lasota, Slawomir publish papers in the last 7 years and what are the titles of these papers?"
+            },
+            "paraphrased_question": {
+                "string": "What are the titles of the papers that Lasota, Slawomir published in the last 7 years and in which venues?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/97/3803> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-7) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+            },
+            "template_id": "TC25",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/97/3803>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-8674-4470"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>",
+                "<https://dblp.org/rdf/schema#publishedIn>",
+                "<https://dblp.org/rdf/schema#title>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q0751",
+            "query_type": "DOUBLE_INTENT",
+            "question": {
+                "string": "In which venues did Weinberg, Gil publish papers in the last four years and what are the titles of these papers?"
+            },
+            "paraphrased_question": {
+                "string": "List the venues in which Weinberg, Gil published papers in the last 4 years and the titles of these papers."
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/w/GilWeinberg> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-4) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+            },
+            "template_id": "TC25",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/w/GilWeinberg>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-5263-2235"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>",
+                "<https://dblp.org/rdf/schema#publishedIn>",
+                "<https://dblp.org/rdf/schema#title>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q1844",
+            "query_type": "DOUBLE_NEGATION",
+            "question": {
+                "string": "Didn't Jian Wang and L. Lin not co-author a paper?"
+            },
+            "paraphrased_question": {
+                "string": "Was a paper not not co-authored by Jian W. and L. Lin?"
+            },
+            "query": {
+                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/39/449-4> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/13/3315> }"
             },
             "template_id": "TC53",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/00/6329>",
+                    "author": "<https://dblp.org/pid/39/449-4>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-0929-5074"
+                        "https://orcid.org/0000-0003-4317-5022"
                     ]
                 }
             ],
@@ -1160,23 +1614,29 @@
             "held_out": false
         },
         {
-            "id": "Q1926",
+            "id": "Q1859",
             "query_type": "DOUBLE_NEGATION",
             "question": {
-                "string": "Didn't Phillip Shvartsman and Xinmiao Zhang not co-author a paper?"
+                "string": "Didn't Nicolas Trotignon and Vuskovic, K. not co-author a paper?"
             },
             "paraphrased_question": {
-                "string": "Was a paper not not co-authored by Phillip Shvartsman and Xinmiao Z.?"
+                "string": "Was a paper not not co-authored by Nicolas Trotignon and Vuskovic, K.?"
             },
             "query": {
-                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/244/7559> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/80/3657> }"
+                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/91/4388> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/00/2530> }"
             },
             "template_id": "TC53",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/80/3657>",
+                    "author": "<https://dblp.org/pid/91/4388>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-8289-2377"
+                        "https://orcid.org/0000-0003-1978-0687"
+                    ]
+                },
+                {
+                    "author": "<https://dblp.org/pid/00/2530>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-3286-3145"
                     ]
                 }
             ],
@@ -1187,23 +1647,23 @@
             "held_out": false
         },
         {
-            "id": "Q1974",
+            "id": "Q1828",
             "query_type": "DOUBLE_NEGATION",
             "question": {
-                "string": "Was a paper not not co-authored by Benjam\\u00EDn R. C. Bedregal and Ant\\u00F4nio Carlos da Rocha Costa?"
+                "string": "Didn't Shahbaz, Muhammad and Maria Zafar not co-author a paper?"
             },
             "paraphrased_question": {
-                "string": "Didn't B. R. C. Bedregal and Ant\\u00F4nio Carlos da Rocha Costa not co-author a paper?"
+                "string": "Was a paper not not co-authored by Muhammad Shahbaz and Maria Zafar?"
             },
             "query": {
-                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/32/3731> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/36/5618> }"
+                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/73/6941-3> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/265/3209> }"
             },
             "template_id": "TC53",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/32/3731>",
+                    "author": "<https://dblp.org/pid/73/6941-3>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-6757-7934"
+                        "https://orcid.org/0000-0003-2391-6997"
                     ]
                 }
             ],
@@ -1214,23 +1674,56 @@
             "held_out": false
         },
         {
-            "id": "Q2000",
+            "id": "Q2005",
             "query_type": "DOUBLE_NEGATION",
             "question": {
-                "string": "Was a paper not not co-authored by E. Ann Patitsas and Alex M. Andrew?"
+                "string": "Was a paper not not co-authored by Hentenryck, Pascal Van and J. Yip?"
             },
             "paraphrased_question": {
-                "string": "Didn't E. Ann Patitsas and Alex M. Andrew not co-author a paper?"
+                "string": "Didn't Hentenryck, Pascal Van and J. Yip not co-author a paper?"
             },
             "query": {
-                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/52/10988> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/24/1735> }"
+                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/h/PVHentenryck> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/y/JustinYip> }"
             },
             "template_id": "TC53",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/52/10988>",
+                    "author": "<https://dblp.org/pid/h/PVHentenryck>",
                     "orcid": [
-                        "https://orcid.org/0000-0003-4088-1589"
+                        "https://orcid.org/0000-0001-7085-9994"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q1877",
+            "query_type": "DOUBLE_NEGATION",
+            "question": {
+                "string": "Was a paper not not co-authored by Zwieback, S. and Marina Leibman?"
+            },
+            "paraphrased_question": {
+                "string": "Didn't Zwieback, S. and Marina L. not co-author a paper?"
+            },
+            "query": {
+                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/117/7182> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/210/0174> }"
+            },
+            "template_id": "TC53",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/117/7182>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-1398-6046"
+                    ]
+                },
+                {
+                    "author": "<https://dblp.org/pid/210/0174>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-4634-6413"
                     ]
                 }
             ],
@@ -1268,23 +1761,23 @@
             "held_out": false
         },
         {
-            "id": "Q2153",
-            "query_type": "UNION",
+            "id": "Q1776",
+            "query_type": "DOUBLE_NEGATION",
             "question": {
-                "string": "List all the papers that Agrawala, M. and G. Humphreys published."
+                "string": "Didn't I. Ounis and Gupta, N. not co-author a paper?"
             },
             "paraphrased_question": {
-                "string": "What are the papers that Agrawala, M. and G. Humphreys published?"
+                "string": "Was a paper not not co-authored by Iadh Ounis and Gupta, N.?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/64/2431> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/36/5153> } }"
+                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/21/141> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/91/7449> }"
             },
-            "template_id": "TC61",
+            "template_id": "TC53",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/64/2431>",
+                    "author": "<https://dblp.org/pid/21/141>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-8996-7327"
+                        "https://orcid.org/0000-0003-4701-3223"
                     ]
                 }
             ],
@@ -1295,29 +1788,23 @@
             "held_out": false
         },
         {
-            "id": "Q2289",
+            "id": "Q2380",
             "query_type": "UNION",
             "question": {
-                "string": "What are the papers that Hans-Arno J. and Kaiwen Zhang published?"
+                "string": "What are the papers that V\\u00E1zquez, Guillermo and Mart\\u00EDnez, Eduardo Ju\\u00E1rez published?"
             },
             "paraphrased_question": {
-                "string": "List all the papers that Hans-Arno Jacobsen and Kaiwen Zhang published."
+                "string": "List all the papers that V\\u00E1zquez, Guillermo and Mart\\u00EDnez, Eduardo Ju\\u00E1rez published."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/j/HansArnoJacobsen> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/12/4550-1> } }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/131/3343> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/41/1797> } }"
             },
             "template_id": "TC61",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/j/HansArnoJacobsen>",
+                    "author": "<https://dblp.org/pid/41/1797>",
                     "orcid": [
-                        "https://orcid.org/0000-0003-0813-0101"
-                    ]
-                },
-                {
-                    "author": "<https://dblp.org/pid/12/4550-1>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-5599-0190"
+                        "https://orcid.org/0000-0002-6096-1511"
                     ]
                 }
             ],
@@ -1328,29 +1815,23 @@
             "held_out": false
         },
         {
-            "id": "Q2404",
+            "id": "Q2341",
             "query_type": "UNION",
             "question": {
-                "string": "What are the papers that Andr\\u00E9 Kaup and C. Lin published?"
+                "string": "List all the papers that Paal E. Engelstad and Aleksander Bai published."
             },
             "paraphrased_question": {
-                "string": "List all the papers that Andr\\u00E9 Kaup and C. Lin published."
+                "string": "What are the papers that Engelstad, Paal E. and Aleksander Bai published?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/00/6329> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/04/7485> } }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/e/PaalEngelstad> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/160/6282> } }"
             },
             "template_id": "TC61",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/00/6329>",
+                    "author": "<https://dblp.org/pid/e/PaalEngelstad>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-0929-5074"
-                    ]
-                },
-                {
-                    "author": "<https://dblp.org/pid/04/7485>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-2847-0349"
+                        "https://orcid.org/0009-0000-8371-927X"
                     ]
                 }
             ],
@@ -1361,23 +1842,23 @@
             "held_out": false
         },
         {
-            "id": "Q2365",
+            "id": "Q2333",
             "query_type": "UNION",
             "question": {
-                "string": "List all the papers that Chi-Hsiang Yeh and Mollah R. Alam published."
+                "string": "What are the papers that Kimmitt, Jonathan and Marcian N. Cirstea published?"
             },
             "paraphrased_question": {
-                "string": "What are the papers that Chi-Hsiang Yeh and Mollah R. Alam published?"
+                "string": "List all the papers that Kimmitt, Jonathan and Cirstea, Marcian N. published."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/17/448> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/286/2310> } }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/169/1987> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/34/9697> } }"
             },
             "template_id": "TC61",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/286/2310>",
+                    "author": "<https://dblp.org/pid/34/9697>",
                     "orcid": [
-                        "https://orcid.org/0000-0001-6017-764X"
+                        "https://orcid.org/0000-0003-3373-9816"
                     ]
                 }
             ],
@@ -1388,23 +1869,23 @@
             "held_out": false
         },
         {
-            "id": "Q2394",
+            "id": "Q2447",
             "query_type": "UNION",
             "question": {
-                "string": "List all the papers that K. Wong and Kiyoshi Tanaka published."
+                "string": "List all the papers that Felix Lindner and Bentzen, Martin Mose published."
             },
             "paraphrased_question": {
-                "string": "What are the papers that KokSheik Wong and Kiyoshi Tanaka published?"
+                "string": "What are the papers that Lindner, Felix and Bentzen, Martin Mose published?"
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/19/6841> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/57/5748> } }"
+                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/25/2707-1> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/45/8414> } }"
             },
             "template_id": "TC61",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/19/6841>",
+                    "author": "<https://dblp.org/pid/25/2707-1>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-4893-2291"
+                        "https://orcid.org/0000-0002-6439-8930"
                     ]
                 }
             ],
@@ -1415,23 +1896,104 @@
             "held_out": false
         },
         {
-            "id": "Q2927",
+            "id": "Q2378",
+            "query_type": "UNION",
+            "question": {
+                "string": "List all the papers that Martin Kouteck\\u00FD and Kolman, Petr published."
+            },
+            "paraphrased_question": {
+                "string": "What are the papers that Martin Kouteck\\u00FD and Kolman, Petr published?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/159/1762> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/58/4155> } }"
+            },
+            "template_id": "TC61",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/159/1762>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-7846-0053"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q2290",
+            "query_type": "UNION",
+            "question": {
+                "string": "List all the papers that Celso B. M. Ribeiro and Leonardo G. da Fonseca published."
+            },
+            "paraphrased_question": {
+                "string": "What are the papers that Celso B. M. Ribeiro and Leonardo G. da Fonseca published?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/278/7443> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/04/6144> } }"
+            },
+            "template_id": "TC61",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/04/6144>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-2844-9470"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q2361",
+            "query_type": "UNION",
+            "question": {
+                "string": "What are the papers that Sottana, Matteo and Carla P. published?"
+            },
+            "paraphrased_question": {
+                "string": "List all the papers that Matteo Sottana and Carla P. published."
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/217/4776> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/p/CarlaPiazza> } }"
+            },
+            "template_id": "TC61",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/p/CarlaPiazza>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-2072-1628"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q3117",
             "query_type": "COUNT",
             "question": {
-                "string": "What is the average number of papers published by I. Tyukin per year?"
+                "string": "What is the average number of papers published by Anisur Rahaman Molla per year?"
             },
             "paraphrased_question": {
-                "string": "What is the average number of research papers published by the author Ivan Tyukin per year?"
+                "string": "Report the average number of publications by Anisur Rahaman Molla per year."
             },
             "query": {
-                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/87/1262> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/12/10827> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
             },
             "template_id": "TC75",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/87/1262>",
+                    "author": "<https://dblp.org/pid/12/10827>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-7359-7966"
+                        "https://orcid.org/0000-0002-1537-3462"
                     ]
                 }
             ],
@@ -1471,23 +2033,23 @@
             "held_out": false
         },
         {
-            "id": "Q2898",
+            "id": "Q2833",
             "query_type": "COUNT",
             "question": {
-                "string": "What is the average number of research papers published by the author Andrew M. per year?"
+                "string": "What is the average number of research papers published by the author Strohmer, T. per year?"
             },
             "paraphrased_question": {
-                "string": "Report the average number of publications by Andrew McCallum per year."
+                "string": "Report the average number of publications by Thomas Strohmer per year."
             },
             "query": {
-                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/m/AndrewMcCallum> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/s/ThomasStrohmer> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
             },
             "template_id": "TC75",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/m/AndrewMcCallum>",
+                    "author": "<https://dblp.org/pid/s/ThomasStrohmer>",
                     "orcid": [
-                        "https://orcid.org/0009-0004-5487-2848"
+                        "https://orcid.org/0000-0003-2029-3317"
                     ]
                 }
             ],
@@ -1499,23 +2061,23 @@
             "held_out": false
         },
         {
-            "id": "Q3048",
+            "id": "Q2841",
             "query_type": "COUNT",
             "question": {
-                "string": "What is the average number of papers published by B. Lin per year?"
+                "string": "What is the average number of papers published by T. Bryksin per year?"
             },
             "paraphrased_question": {
-                "string": "Report the average number of publications by Bill Lin per year."
+                "string": "What is the average number of research papers published by the author Timofey Bryksin per year?"
             },
             "query": {
-                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/l/BillLin> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/136/0260> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
             },
             "template_id": "TC75",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/l/BillLin>",
+                    "author": "<https://dblp.org/pid/136/0260>",
                     "orcid": [
-                        "https://orcid.org/0000-0003-0965-7247"
+                        "https://orcid.org/0000-0001-9022-3563"
                     ]
                 }
             ],
@@ -1527,23 +2089,23 @@
             "held_out": false
         },
         {
-            "id": "Q3073",
+            "id": "Q2927",
             "query_type": "COUNT",
             "question": {
-                "string": "What is the average number of papers published by Frank S. de Boer per year?"
+                "string": "What is the average number of papers published by I. Tyukin per year?"
             },
             "paraphrased_question": {
-                "string": "What is the average number of research papers published by the author Frank S. de Boer per year?"
+                "string": "What is the average number of research papers published by the author Ivan Tyukin per year?"
             },
             "query": {
-                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/DSsBoer> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/87/1262> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
             },
             "template_id": "TC75",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/b/DSsBoer>",
+                    "author": "<https://dblp.org/pid/87/1262>",
                     "orcid": [
-                        "https://orcid.org/0000-0003-3950-6271"
+                        "https://orcid.org/0000-0002-7359-7966"
                     ]
                 }
             ],
@@ -1555,23 +2117,79 @@
             "held_out": false
         },
         {
-            "id": "Q2846",
+            "id": "Q3063",
             "query_type": "COUNT",
             "question": {
-                "string": "How many co-authors does Denis S. Krotov have?"
+                "string": "Report the average number of publications by Cimini, Gionata per year."
             },
             "paraphrased_question": {
-                "string": "Count the number of co-authors that Denis S. Krotov has."
+                "string": "What is the average number of papers published by Gionata Cimini per year?"
             },
             "query": {
-                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/46/6457> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/46/6457>) }"
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/154/6043> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
+            },
+            "template_id": "TC75",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/154/6043>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-8673-0922"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": true,
+            "held_out": false
+        },
+        {
+            "id": "Q2974",
+            "query_type": "COUNT",
+            "question": {
+                "string": "What is the average number of papers published by Stefano Longo per year?"
+            },
+            "paraphrased_question": {
+                "string": "Report the average number of publications by Longo, S. per year."
+            },
+            "query": {
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/05/10317> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }"
+            },
+            "template_id": "TC75",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/05/10317>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-7874-4526"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": true,
+            "held_out": false
+        },
+        {
+            "id": "Q2851",
+            "query_type": "COUNT",
+            "question": {
+                "string": "Count the number of co-authors that Kifer, M. has."
+            },
+            "paraphrased_question": {
+                "string": "How many co-authors does Kifer, M. have?"
+            },
+            "query": {
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/k/MichaelKifer> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/k/MichaelKifer>) }"
             },
             "template_id": "TC73",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/46/6457>",
+                    "author": "<https://dblp.org/pid/k/MichaelKifer>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-8516-755X"
+                        "https://orcid.org/0000-0003-3177-5792"
                     ]
                 }
             ],
@@ -1582,50 +2200,24 @@
             "held_out": false
         },
         {
-            "id": "Q2936",
+            "id": "Q2838",
             "query_type": "COUNT",
             "question": {
-                "string": "How many co-authors does Michael B. have?"
+                "string": "How many co-authors does B. Li have?"
             },
             "paraphrased_question": {
-                "string": "Count the number of co-authors that Michael Bourlakis has."
+                "string": "Count the number of co-authors that Bing Li has."
             },
             "query": {
-                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/73/4232> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/73/4232>) }"
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/13/2692-1> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/13/2692-1>) }"
             },
             "template_id": "TC73",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/73/4232>",
+                    "author": "<https://dblp.org/pid/13/2692-1>",
                     "orcid": [
-                        "https://orcid.org/0000-0001-5093-5398"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q3090",
-            "query_type": "COUNT",
-            "question": {
-                "string": "Count the number of co-authors that Ignacio S. has."
-            },
-            "paraphrased_question": {
-                "string": "How many co-authors does Ignacio S. have?"
-            },
-            "query": {
-                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/70/310> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/70/310>) }"
-            },
-            "template_id": "TC73",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/70/310>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-7421-3733"
+                        "https://orcid.org/0000-0001-6114-1411",
+                        "https://orcid.org/0000-0002-5888-6735"
                     ]
                 }
             ],
@@ -1663,23 +2255,104 @@
             "held_out": false
         },
         {
-            "id": "Q2891",
+            "id": "Q2989",
             "query_type": "COUNT",
             "question": {
-                "string": "Count the number of co-authors that Trung Nguyen-Thoi has."
+                "string": "Count the number of co-authors that Yier Jin has."
             },
             "paraphrased_question": {
-                "string": "How many co-authors does Trung N. have?"
+                "string": "How many co-authors does Yier Jin have?"
             },
             "query": {
-                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/164/9253> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/164/9253>) }"
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/34/756> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/34/756>) }"
             },
             "template_id": "TC73",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/164/9253>",
+                    "author": "<https://dblp.org/pid/34/756>",
                     "orcid": [
-                        "https://orcid.org/0000-0001-7985-6706"
+                        "https://orcid.org/0000-0002-8791-0597"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q2945",
+            "query_type": "COUNT",
+            "question": {
+                "string": "Count the number of co-authors that Xiao F. has."
+            },
+            "paraphrased_question": {
+                "string": "How many co-authors does Xiao Fu have?"
+            },
+            "query": {
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/60/4601-1> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/60/4601-1>) }"
+            },
+            "template_id": "TC73",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/60/4601-1>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-4847-9586"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q2977",
+            "query_type": "COUNT",
+            "question": {
+                "string": "How many co-authors does Juan Gabriel Pedroza Bernal have?"
+            },
+            "paraphrased_question": {
+                "string": "Count the number of co-authors that Juan Gabriel Pedroza Bernal has."
+            },
+            "query": {
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/138/6625> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/138/6625>) }"
+            },
+            "template_id": "TC73",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/138/6625>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-7889-2892"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q3039",
+            "query_type": "COUNT",
+            "question": {
+                "string": "Count the number of co-authors that Michael K. Reiter has."
+            },
+            "paraphrased_question": {
+                "string": "How many co-authors does Michael K. Reiter have?"
+            },
+            "query": {
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/r/MichaelKReiter> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/r/MichaelKReiter>) }"
+            },
+            "template_id": "TC73",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/r/MichaelKReiter>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-7007-8274"
                     ]
                 }
             ],
@@ -1717,6 +2390,87 @@
             "held_out": false
         },
         {
+            "id": "Q2867",
+            "query_type": "COUNT",
+            "question": {
+                "string": "Mention the number of papers that Zhang, Meihui has published."
+            },
+            "paraphrased_question": {
+                "string": "How many papers has Meihui Zhang published?"
+            },
+            "query": {
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/08/7259> }"
+            },
+            "template_id": "TC71",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/08/7259>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-0752-9877"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q2916",
+            "query_type": "COUNT",
+            "question": {
+                "string": "How many research papers has Maria C. Pettenati published?"
+            },
+            "paraphrased_question": {
+                "string": "Mention the number of papers that Maria C. Pettenati has published."
+            },
+            "query": {
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/57/864> }"
+            },
+            "template_id": "TC71",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/57/864>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-7911-3435"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q3098",
+            "query_type": "COUNT",
+            "question": {
+                "string": "Mention the number of papers that Cerda, Mauricio has published."
+            },
+            "paraphrased_question": {
+                "string": "How many research papers has Mauricio Cerda published?"
+            },
+            "query": {
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/89/2682> }"
+            },
+            "template_id": "TC71",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/89/2682>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-3447-1815"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
             "id": "Q2986",
             "query_type": "COUNT",
             "question": {
@@ -1744,23 +2498,23 @@
             "held_out": false
         },
         {
-            "id": "Q2880",
+            "id": "Q3000",
             "query_type": "COUNT",
             "question": {
-                "string": "How many research papers has Zhang, Daqing published?"
+                "string": "How many research papers has Benedikt Wiestler published?"
             },
             "paraphrased_question": {
-                "string": "How many papers has Daqing Zhang published?"
+                "string": "How many papers has Benedikt Wiestler published?"
             },
             "query": {
-                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/83/1359-1> }"
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/165/7294> }"
             },
             "template_id": "TC71",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/83/1359-1>",
+                    "author": "<https://dblp.org/pid/165/7294>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-6608-1267"
+                        "https://orcid.org/0000-0002-2963-7772"
                     ]
                 }
             ],
@@ -1771,23 +2525,23 @@
             "held_out": false
         },
         {
-            "id": "Q2969",
+            "id": "Q3071",
             "query_type": "COUNT",
             "question": {
-                "string": "How many research papers has Yu, P. S. published?"
+                "string": "How many research papers has Nicolas Usunier published?"
             },
             "paraphrased_question": {
-                "string": "How many papers has Yu, P. S. published?"
+                "string": "How many papers has N. Usunier published?"
             },
             "query": {
-                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/y/PhilipSYu> }"
+                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/79/3983> }"
             },
             "template_id": "TC71",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/y/PhilipSYu>",
+                    "author": "<https://dblp.org/pid/79/3983>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-3491-5968"
+                        "https://orcid.org/0000-0002-9324-1457"
                     ]
                 }
             ],
@@ -1798,28 +2552,29 @@
             "held_out": false
         },
         {
-            "id": "Q2845",
+            "id": "Q3107",
             "query_type": "COUNT",
             "question": {
-                "string": "How many research papers has Gregory M. Provan published?"
+                "string": "What is the average number of co-authors for papers published by Michael Vynnycky?"
             },
             "paraphrased_question": {
-                "string": "Mention the number of papers that Gregory M. Provan has published."
+                "string": "What is the average number of co-authors for research papers published by Michael Vynnycky?"
             },
             "query": {
-                "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/81/2894> }"
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/43/3744> . ?x <https://dblp.org/rdf/schema#numberOfCreators> ?y } GROUP BY ?y }"
             },
-            "template_id": "TC71",
+            "template_id": "TC76",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/81/2894>",
+                    "author": "<https://dblp.org/pid/43/3744>",
                     "orcid": [
-                        "https://orcid.org/0000-0003-3678-046X"
+                        "https://orcid.org/0000-0002-8318-1251"
                     ]
                 }
             ],
             "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#numberOfCreators>"
             ],
             "temporal": false,
             "held_out": false
@@ -1842,6 +2597,62 @@
                     "author": "<https://dblp.org/pid/63/2317>",
                     "orcid": [
                         "https://orcid.org/0000-0002-4066-3111"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#numberOfCreators>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q2934",
+            "query_type": "COUNT",
+            "question": {
+                "string": "What is the average number of co-authors for papers published by P. R. S. Mendon\\u00E7a?"
+            },
+            "paraphrased_question": {
+                "string": "What is the average number of co-authors for research papers published by Paulo R. S. Mendon\\u00E7a?"
+            },
+            "query": {
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/99/1560> . ?x <https://dblp.org/rdf/schema#numberOfCreators> ?y } GROUP BY ?y }"
+            },
+            "template_id": "TC76",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/99/1560>",
+                    "orcid": [
+                        "https://orcid.org/0000-0003-4025-4083"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#numberOfCreators>"
+            ],
+            "temporal": false,
+            "held_out": false
+        },
+        {
+            "id": "Q2995",
+            "query_type": "COUNT",
+            "question": {
+                "string": "What is the average number of co-authors for papers published by Alberto Prieto?"
+            },
+            "paraphrased_question": {
+                "string": "Report the average number of co-authors for publications published by Alberto Prieto."
+            },
+            "query": {
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/18/4462> . ?x <https://dblp.org/rdf/schema#numberOfCreators> ?y } GROUP BY ?y }"
+            },
+            "template_id": "TC76",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/18/4462>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-0814-6544"
                     ]
                 }
             ],
@@ -1909,23 +2720,23 @@
             "held_out": false
         },
         {
-            "id": "Q2856",
+            "id": "Q3050",
             "query_type": "COUNT",
             "question": {
-                "string": "Report the average number of co-authors for publications published by Menc\\u00EDa, E. Loza."
+                "string": "What is the average number of co-authors for research papers published by Gustaf S\\u00F6derlind?"
             },
             "paraphrased_question": {
-                "string": "What is the average number of co-authors for papers published by Menc\\u00EDa, E. Loza?"
+                "string": "Report the average number of co-authors for publications published by S\\u00F6derlind, Gustaf."
             },
             "query": {
-                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/87/1869> . ?x <https://dblp.org/rdf/schema#numberOfCreators> ?y } GROUP BY ?y }"
+                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/26/1608> . ?x <https://dblp.org/rdf/schema#numberOfCreators> ?y } GROUP BY ?y }"
             },
             "template_id": "TC76",
             "entities": [
                 {
-                    "author": "<https://dblp.org/pid/87/1869>",
+                    "author": "<https://dblp.org/pid/26/1608>",
                     "orcid": [
-                        "https://orcid.org/0000-0002-2735-9326"
+                        "https://orcid.org/0000-0003-3559-960X"
                     ]
                 }
             ],
@@ -1937,53 +2748,21 @@
             "held_out": false
         },
         {
-            "id": "Q2995",
-            "query_type": "COUNT",
+            "id": "Q2018",
+            "query_type": "DOUBLE_NEGATION",
             "question": {
-                "string": "What is the average number of co-authors for papers published by Alberto Prieto?"
+                "string": "Didn't Lipitakis, Alexandra and Evanthia Faliagka not co-author a paper?"
             },
             "paraphrased_question": {
-                "string": "Report the average number of co-authors for publications published by Alberto Prieto."
+                "string": "Was a paper not not co-authored by Alexandra Lipitakis and E. Faliagka?"
             },
             "query": {
-                "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/18/4462> . ?x <https://dblp.org/rdf/schema#numberOfCreators> ?y } GROUP BY ?y }"
+                "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/77/3581> . ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/49/3381> }"
             },
-            "template_id": "TC76",
+            "template_id": "TC53",
             "entities": [
-                {
-                    "author": "<https://dblp.org/pid/18/4462>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-0814-6544"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#numberOfCreators>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q3361",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "Who is the most frequent co-author of Muhammad Torabi Dashti and how many publications do they have together?"
-            },
-            "paraphrased_question": {
-                "string": "Report the most frequent co-author of Muhammad Torabi Dashti and how many papers do they have together?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/95/1815> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/95/1815>)} GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC84",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/95/1815>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-0273-3577"
-                    ]
-                }
+                "<https://dblp.org/pid/77/3581>",
+                "<https://dblp.org/pid/49/3381>"
             ],
             "relations": [
                 "<https://dblp.org/rdf/schema#authoredBy>"
@@ -1992,789 +2771,31 @@
             "held_out": false
         },
         {
-            "id": "Q3189",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "With which author does Philippe Kruchten has the most papers and how many?"
-            },
-            "paraphrased_question": {
-                "string": "Who is the most frequent co-author of Kruchten, Philippe and how many publications do they have together?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/k/PhilippeKruchten> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/k/PhilippeKruchten>)} GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC84",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/k/PhilippeKruchten>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-1359-4867"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q3340",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "Who is the most frequent co-author of Xu, Lei and how many publications do they have together?"
-            },
-            "paraphrased_question": {
-                "string": "Report the most frequent co-author of Lei Xu and how many papers do they have together?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/19/360-15> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/19/360-15>)} GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC84",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/19/360-15>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-9306-5844"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q3257",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "Report the most frequent co-author of Christopher J. Taylor and how many papers do they have together?"
-            },
-            "paraphrased_question": {
-                "string": "Who is the most frequent co-author of Taylor, Christopher J. and how many publications do they have together?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/37/6755> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/37/6755>)} GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC84",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/37/6755>",
-                    "orcid": [
-                        "https://orcid.org/0000-0001-7867-9533"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q3397",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "Report the most frequent co-author of Jonathan L. and how many papers do they have together?"
-            },
-            "paraphrased_question": {
-                "string": "With which author does Jonathan Li has the most papers and how many?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/85/6906-1> . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != <https://dblp.org/pid/85/6906-1>)} GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC84",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/85/6906-1>",
-                    "orcid": [
-                        "https://orcid.org/0000-0001-7899-0049"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q3462",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "Mention the year in which Giuseppina Gini published the most papers."
-            },
-            "paraphrased_question": {
-                "string": "In which year did the author Giuseppina Gini publish the most research papers?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/44/5394> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC81",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/44/5394>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-0334-420X",
-                        "https://orcid.org/0000-0002-3876-8360"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3206",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year did the author Jure Leskovec publish the most research papers?"
-            },
-            "paraphrased_question": {
-                "string": "Mention the year in which J. Leskovec published the most papers."
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/l/JureLeskovec> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC81",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/l/JureLeskovec>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-5411-923X"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3457",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "Mention the year in which Tomoaki Moriya published the most papers."
-            },
-            "paraphrased_question": {
-                "string": "In which year did Tomoaki Moriya publish the most papers?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/72/7961> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC81",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/72/7961>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-9423-0653"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3280",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year did the author Bart T. publish the most research papers?"
-            },
-            "paraphrased_question": {
-                "string": "Mention the year in which Bart Thijs published the most papers."
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/07/5145> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC81",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/07/5145>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-0446-8332"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3319",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "Mention the year in which Simon Steyskal published the most papers."
-            },
-            "paraphrased_question": {
-                "string": "In which year did the author Steyskal, Simon publish the most research papers?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/134/9913> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY DESC(?count) LIMIT 1"
-            },
-            "template_id": "TC81",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/134/9913>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-5183-2486"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3199",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "Find the year in which Marc Hassenzahl published their first paper."
-            },
-            "paraphrased_question": {
-                "string": "When was the first paper by Marc Hassenzahl published?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MIN(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/78/80> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC85",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/78/80>",
-                    "orcid": [
-                        "https://orcid.org/0000-0001-9798-1762"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3482",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "When was the first paper by Dacheng T. published?"
-            },
-            "paraphrased_question": {
-                "string": "Find the year in which Dacheng Tao published their first paper."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MIN(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/46/3391> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC85",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/46/3391>",
-                    "orcid": [
-                        "https://orcid.org/0000-0001-7225-5449",
-                        "https://orcid.org/0000-0002-5979-578X"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3390",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year was the first paper by Simon S. Lam published?"
-            },
-            "paraphrased_question": {
-                "string": "When was the first paper by S. S. Lam published?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MIN(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/l/SimonSLam> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC85",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/l/SimonSLam>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-4447-6401"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3304",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "When was the first paper by Andreas Dengel published?"
-            },
-            "paraphrased_question": {
-                "string": "In which year was the first paper by Andreas D. published?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MIN(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/d/AndreasDengel> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC85",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/d/AndreasDengel>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-6100-8255"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3194",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year was the first paper by Ju, W. published?"
-            },
-            "paraphrased_question": {
-                "string": "When was the first paper by Wendy Ju published?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MIN(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/04/4068> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC85",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/04/4068>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-3119-611X"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3260",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year was the last paper by Xiao W. published?"
-            },
-            "paraphrased_question": {
-                "string": "Report the year in which Xiao Wei published their last paper."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MAX(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/181/2867-2> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC86",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/181/2867-2>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-6258-6129"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3233",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "When was the last paper by G. Yin published?"
-            },
-            "paraphrased_question": {
-                "string": "Report the year in which G. Yin published their last paper."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MAX(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/152/6192> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC86",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/152/6192>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-9828-7139"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3300",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year was the last paper by P. Sengers published?"
-            },
-            "paraphrased_question": {
-                "string": "Report the year in which P. Sengers published their last paper."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MAX(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/s/PhoebeSengers> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC86",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/s/PhoebeSengers>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-5778-5262"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3328",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year was the last paper by Mingming Liu published?"
-            },
-            "paraphrased_question": {
-                "string": "Report the year in which Liu, Mingming published their last paper."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MAX(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/18/5977-1> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC86",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/18/5977-1>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-8988-2104"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3273",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "When was the last paper by Jos\\u00E9 C. Pr\\u00EDncipe published?"
-            },
-            "paraphrased_question": {
-                "string": "Report the year in which J. C. Pr\\u00EDncipe published their last paper."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MAX(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/p/JoseCPrincipe> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC86",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/p/JoseCPrincipe>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-3449-3531"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3479",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year did Thomas N. publish the least papers and how many?"
-            },
-            "paraphrased_question": {
-                "string": "Least number of papers were published by Thomas Neumann in which year?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/n/ThomasNeumann> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY ASC(?count) LIMIT 1"
-            },
-            "template_id": "TC82",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/n/ThomasNeumann>",
-                    "orcid": [
-                        "https://orcid.org/0000-0001-5787-142X"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3269",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year did the author O. Lopez de Lacalle publish the least publications?"
-            },
-            "paraphrased_question": {
-                "string": "Least number of papers were published by O. Lopez de Lacalle in which year?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/11/4461> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY ASC(?count) LIMIT 1"
-            },
-            "template_id": "TC82",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/11/4461>",
-                    "orcid": [
-                        "https://orcid.org/0000-0003-4969-2055"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3299",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year did Leon J. Osterweil publish the least papers and how many?"
-            },
-            "paraphrased_question": {
-                "string": "Report the year in which Leon J. Osterweil published the least papers."
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/o/LJOsterweil> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY ASC(?count) LIMIT 1"
-            },
-            "template_id": "TC82",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/o/LJOsterweil>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-5407-2646"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3476",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year did the author Zhiyong Wu publish the least publications?"
-            },
-            "paraphrased_question": {
-                "string": "In which year did Zhiyong Wu publish the least papers and how many?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/24/968-1> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY ASC(?count) LIMIT 1"
-            },
-            "template_id": "TC82",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/24/968-1>",
-                    "orcid": [
-                        "https://orcid.org/0000-0001-8533-0524"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q3436",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year did Valeria Carofiglio publish the least papers and how many?"
-            },
-            "paraphrased_question": {
-                "string": "Least number of papers were published by Valeria Carofiglio in which year?"
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/64/5366> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY ASC(?count) LIMIT 1"
-            },
-            "template_id": "TC82",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/64/5366>",
-                    "orcid": [
-                        "https://orcid.org/0000-0002-8481-0419"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q2387",
-            "query_type": "UNION",
-            "question": {
-                "string": "What are the papers that Manuel D. Rossetti and Turitto, Timothy published?"
-            },
-            "paraphrased_question": {
-                "string": "List all the papers that Rossetti, Manuel D. and Timothy Turitto published."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/64/2053> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/34/412> } }"
-            },
-            "template_id": "TC61",
-            "entities": [
-                "<https://dblp.org/pid/64/2053>",
-                "<https://dblp.org/pid/34/412>"
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q3324",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "In which year was the last paper by Antonio L. published?"
-            },
-            "paraphrased_question": {
-                "string": "Report the year in which Antonio Leanza published their last paper."
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT MAX(xsd:integer(?answer)) AS ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/142/5935> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer }"
-            },
-            "template_id": "TC86",
-            "entities": [
-                "<https://dblp.org/pid/142/5935>"
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q0391",
-            "query_type": "MULTI_FACT",
-            "question": {
-                "string": "List the papers published by Neil McGlohon in the last 5 years."
-            },
-            "paraphrased_question": {
-                "string": "Which papers did McGlohon, Neil publish in the last five years?"
-            },
-            "query": {
-                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/156/0179> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-5) }"
-            },
-            "template_id": "TC15",
-            "entities": [
-                {
-                    "author": "<https://dblp.org/pid/156/0179>",
-                    "orcid": [
-                        "https://orcid.org/0000-0001-8304-4911"
-                    ]
-                }
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>"
-            ],
-            "temporal": true,
-            "held_out": false
-        },
-        {
-            "id": "Q0776",
+            "id": "Q0889",
             "query_type": "DOUBLE_INTENT",
             "question": {
-                "string": "List the venues in which Xiucheng Dong published papers in the last 5 years and the titles of these papers."
+                "string": "Which publications did R. Mester author and in which year?"
             },
             "paraphrased_question": {
-                "string": "In which venues did Xiucheng Dong publish papers in the last 5 years and what are the titles of these papers?"
+                "string": "Mention the papers published by Rudolf Mester and in which year."
             },
             "query": {
-                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/17/3855> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-5) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }"
+                "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/04/2727> . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }"
             },
-            "template_id": "TC25",
+            "template_id": "TC21",
             "entities": [
-                "<https://dblp.org/pid/17/3855>"
-            ],
-            "relations": [
-                "<https://dblp.org/rdf/schema#authoredBy>",
-                "<https://dblp.org/rdf/schema#yearOfPublication>",
-                "<https://dblp.org/rdf/schema#publishedIn>",
-                "<https://dblp.org/rdf/schema#title>"
-            ],
-            "temporal": false,
-            "held_out": false
-        },
-        {
-            "id": "Q3158",
-            "query_type": "SUPERLATIVE+COMPARATIVE",
-            "question": {
-                "string": "Least number of papers were published by Younis Al Rozz in which year?"
-            },
-            "paraphrased_question": {
-                "string": "Report the year in which Younis A. Rozz published the least papers."
-            },
-            "query": {
-                "sparql": "SELECT (GROUP_CONCAT(?answer; separator=', ') AS ?answer) ?count WHERE { SELECT DISTINCT ?answer (COUNT(?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/209/8796> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?answer } GROUP BY ?answer } ORDER BY ASC(?count) LIMIT 1"
-            },
-            "template_id": "TC82",
-            "entities": [
-                "<https://dblp.org/pid/209/8796>"
+                {
+                    "author": "<https://dblp.org/pid/04/2727>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-6932-0606"
+                    ]
+                }
             ],
             "relations": [
                 "<https://dblp.org/rdf/schema#authoredBy>",
                 "<https://dblp.org/rdf/schema#yearOfPublication>"
             ],
-            "temporal": true,
+            "temporal": false,
             "held_out": false
         }
     ]
