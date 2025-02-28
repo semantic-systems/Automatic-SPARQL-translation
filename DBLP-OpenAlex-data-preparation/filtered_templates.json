@@ -1,0 +1,336 @@
+{
+    "TC01": {
+        "id": "TC01",
+        "query": {
+            "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> ?c1 }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "What are the papers written by [CREATOR_NAME]?",
+                "What are the publications written by the author [CREATOR_NAME]?",
+                "What are the papers written by the person [CREATOR_NAME]?",
+                "Which publications did [CREATOR_NAME] write?",
+                "Which papers did the author [CREATOR_NAME] write?",
+                "Which publications did [CREATOR_NAME] author?"
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC11": {
+        "id": "TC11",
+        "query": {
+            "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?x <https://dblp.org/rdf/schema#publishedIn> ?answer }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "What are the venues in which [CREATOR_NAME] published?",
+                "Which venues has [CREATOR_NAME] published in?",
+                "In which conferences or journals has [CREATOR_NAME] published papers?",
+                "List the venues in which [CREATOR_NAME] published.",
+                "Mention the venues in which [CREATOR_NAME] published."
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#publishedIn>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC12": {
+        "id": "TC12",
+        "query": {
+            "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?answer <https://dblp.org/rdf/schema#authoredBy> ?c2 }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "What are the papers written by [CREATOR_NAME] and [OTHER_CREATOR_NAME] together?",
+                "What are the publications written by the authors [CREATOR_NAME] and [OTHER_CREATOR_NAME] in collaboration?",
+                "Which papers did [CREATOR_NAME] and [OTHER_CREATOR_NAME] write together?",
+                "Which papers did the authors [CREATOR_NAME] and [OTHER_CREATOR_NAME] co-write?",
+                "Find the papers written by [CREATOR_NAME] and [OTHER_CREATOR_NAME] together."
+            ],
+            "entities": [
+                "?c1",
+                "?c2"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC14": {
+        "id": "TC14",
+        "query": {
+            "sparql": "SELECT DISTINCT ?answer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != ?c1) }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "Who are the co-authors of [CREATOR_NAME]?",
+                "With which other authors has [CREATOR_NAME] written papers?",
+                "With which other authors has the author [CREATOR_NAME] written papers?",
+                "List the co-authors of [CREATOR_NAME].",
+                "Mention the co-authors of [CREATOR_NAME]."
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC15": {
+        "id": "TC15",
+        "query": {
+            "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-[DURATION]) }",
+            "temporal": true
+        },
+        "question": {
+            "strings": [
+                "Which papers did [CREATOR_NAME] publish in the last [DURATION] years?",
+                "Which papers did the author [CREATOR_NAME] publish in the last [DURATION] years?",
+                "List the papers published by [CREATOR_NAME] in the last [DURATION] years.",
+                "In the last [DURATION] years, which papers did [CREATOR_NAME] publish?"
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC21": {
+        "id": "TC21",
+        "query": {
+            "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?firstanswer <https://dblp.org/rdf/schema#yearOfPublication> ?secondanswer }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "Which papers did author [CREATOR_NAME] publish and in which year?",
+                "What are the papers published by [CREATOR_NAME] and in which year?",
+                "Which publications did [CREATOR_NAME] author and in which year?",
+                "List the papers published by [CREATOR_NAME] and in which year.",
+                "Mention the papers published by [CREATOR_NAME] and in which year."
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC24": {
+        "id": "TC24",
+        "query": {
+            "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "In which venues did [CREATOR_NAME] publish papers and what are the titles of these papers?",
+                "In which venues did the author [CREATOR_NAME] publish papers and what are the titles of these papers?",
+                "What are the titles of the papers that [CREATOR_NAME] published and in which venues?",
+                "What are the titles of the papers that the author [CREATOR_NAME] published and in which venues?",
+                "List the titles of the papers that [CREATOR_NAME] published and in which venues.",
+                "List the venues in which [CREATOR_NAME] published papers and the titles of these papers."
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#publishedIn>",
+                "<https://dblp.org/rdf/schema#title>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC25": {
+        "id": "TC25",
+        "query": {
+            "sparql": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-[DURATION]) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "In which venues did [CREATOR_NAME] publish papers in the last [DURATION] years and what are the titles of these papers?",
+                "In which venues did the author [CREATOR_NAME] publish papers in the last [DURATION] years and what are the titles of these papers?",
+                "What are the titles of the papers that [CREATOR_NAME] published in the last [DURATION] years and in which venues?",
+                "What are the titles of the papers that the author [CREATOR_NAME] published in the last [DURATION] years and in which venues?",
+                "List the titles of the papers that [CREATOR_NAME] published in the last [DURATION] years and in which venues.",
+                "List the venues in which [CREATOR_NAME] published papers in the last [DURATION] years and the titles of these papers."
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>",
+                "<https://dblp.org/rdf/schema#publishedIn>",
+                "<https://dblp.org/rdf/schema#title>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC53": {
+        "id": "TC53",
+        "query": {
+            "sparql": "ASK { ?x <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?x <https://dblp.org/rdf/schema#authoredBy> ?c2 }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "Didn't [CREATOR_NAME] and [OTHER_CREATOR_NAME] not co-author a paper?",
+                "Did the authors [CREATOR_NAME] and [OTHER_CREATOR_NAME] not not co-author a paper?",
+                "Was a paper not not co-authored by [CREATOR_NAME] and [OTHER_CREATOR_NAME]?",
+                "Have [CREATOR_NAME] and [OTHER_CREATOR_NAME] not not co-authored a paper?"
+            ],
+            "entities": [
+                "?c1",
+                "?c2"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC61": {
+        "id": "TC61",
+        "query": {
+            "sparql": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> ?c1 } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> ?c2 } }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "What are the papers that [CREATOR_NAME] and [OTHER_CREATOR_NAME] published?",
+                "What are all the papers that [CREATOR_NAME] and [OTHER_CREATOR_NAME] published?",
+                "List all the papers that [CREATOR_NAME] and [OTHER_CREATOR_NAME] published.",
+                "[CREATOR_NAME] and [OTHER_CREATOR_NAME] published which papers?"
+            ],
+            "entities": [
+                "?c1",
+                "?c2"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC71": {
+        "id": "TC71",
+        "query": {
+            "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> ?c1 }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "How many papers has [CREATOR_NAME] published?",
+                "How many publications has the author [CREATOR_NAME] published?",
+                "How many research papers has [CREATOR_NAME] published?",
+                "Count the number of papers that [CREATOR_NAME] has published.",
+                "Mention the number of papers that [CREATOR_NAME] has published."
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC73": {
+        "id": "TC73",
+        "query": {
+            "sparql": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?x <https://dblp.org/rdf/schema#authoredBy> ?answer FILTER(?answer != ?c1) }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "How many co-authors does [CREATOR_NAME] have?",
+                "With how many other authors has [CREATOR_NAME] co-authored papers?",
+                "Count the number of co-authors that [CREATOR_NAME] has.",
+                "Report the number of co-authors that [CREATOR_NAME] has."
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC75": {
+        "id": "TC75",
+        "query": {
+            "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y } GROUP BY ?y }",
+            "temporal": true
+        },
+        "question": {
+            "strings": [
+                "What is the average number of papers published by [CREATOR_NAME] per year?",
+                "What is the average number of publications published by [CREATOR_NAME] per year?",
+                "What is the average number of research papers published by the author [CREATOR_NAME] per year?",
+                "Calculate the average number of papers published by [CREATOR_NAME] per year.",
+                "Report the average number of publications by [CREATOR_NAME] per year."
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ]
+        },
+        "test_only": false
+    },
+    "TC76": {
+        "id": "TC76",
+        "query": {
+            "sparql": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> ?c1 . ?x <https://dblp.org/rdf/schema#numberOfCreators> ?y } GROUP BY ?y }",
+            "temporal": false
+        },
+        "question": {
+            "strings": [
+                "What is the average number of co-authors for papers published by [CREATOR_NAME]?",
+                "What is the average number of co-authors for publications published by the author [CREATOR_NAME]?",
+                "What is the average number of co-authors for research papers published by [CREATOR_NAME]?",
+                "Calculate the average number of co-authors for papers published by [CREATOR_NAME].",
+                "Report the average number of co-authors for publications published by [CREATOR_NAME]."
+            ],
+            "entities": [
+                "?c1"
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#numberOfCreators>"
+            ]
+        },
+        "test_only": false
+    }
+}
