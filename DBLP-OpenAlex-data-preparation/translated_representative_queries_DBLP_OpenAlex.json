@@ -1,0 +1,22 @@
+[
+    {
+        "id": "Q0394",
+        "template_id": "TC15",
+        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/> PREFIX fabio: <http://purl.org/spar/fabio/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-5758-1876\" .  ?work fabio:hasPublicationYear ?year .  FILTER(?year > YEAR(NOW()) - 5) } "
+    },
+    {
+        "id": "Q0385",
+        "template_id": "TC12",
+        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship1 . ?authorship1 oa:hasAuthor ?author1 . ?author1 <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-9772-263X\" .  ?work oa:hasAuthorship ?authorship2 . ?authorship2 oa:hasAuthor ?author2 . ?author2 <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-5265-8988\" .  FILTER(?author1 != ?author2) } "
+    },
+    {
+        "id": "Q0008",
+        "template_id": "TC01",
+        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-2728-8273\" . }  "
+    },
+    {
+        "id": "Q0713",
+        "template_id": "TC24",
+        "sparql_OpenAlex": "PREFIX dct: <http://purl.org/dc/terms/> PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?venue ?title WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-8939-9833\" .  ?work oa:hasLocation ?location . ?location oa:hasSource ?venue .  ?work dct:title ?title . } "
+    }
+]
