@@ -1,0 +1,270 @@
+[
+    {
+        "context": {
+            "natural_language_question": "Which papers did the author Gennady L. Andrienko write?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/a/GennadyLAndrienko> }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/a/GennadyLAndrienko",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0002-8574-6295"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce a SPARQL query for KG2 (OpenAlex) based on the given information, we'll follow the entity and relation mapping (ER2) provided to map the relations and entities from DBLP to OpenAlex. The main focus is to find the papers authored by Gennady L. Andrienko.\n\nGiven the ER2 mapping:\n\n1. Gennady L. Andrienko is mapped to an ORCID ID which is \"https://orcid.org/0000-0002-8574-6295\" in OpenAlex.\n2. The relation `<https://dblp.org/rdf/schema#authoredBy>` is mapped to two different relations in OpenAlex: `https://semopenalex.org/ontology/hasAuthorship` and `https://semopenalex.org/ontology/hasAuthor`.\n\nSince we're looking to find the papers authored by Gennady L. Andrienko, and we have the ORCID ID, we can query OpenAlex directly using the ORCID ID to get the `hasAuthorship` relation, which in turn will give us the authorship details including the papers.\n\nThe SPARQL query to achieve this would be:\n\n```\n<sparql>\n    PREFIX orcid: <https://orcid.org/>\n    PREFIX semoa: <https://semopenalex.org/ontology/>\n\n    SELECT DISTINCT ?paper\n    WHERE {\n        orcid:0000-0002-8574-6295 a semoa:Author.\n        ?authorship a semoa:hasAuthorship.\n        ?authorship semoa:hasAuthor orcid:0000-0002-8574-6295.\n        ?paper semoa:hasAuthorship ?authorship.\n    }\n</sparql>\n```\n\nHowever, the above SPARQL query is not directly answering which papers were written but rather which authorships were attributed to the author. To correct this and directly answer the question of which papers the author wrote, we would need to adjust the query to directly relate `orcid:0000-0002-8574-6295` with the papers it has authored through the `hasAuthor` relation. This would typically involve a more complex query that directly links papers to the author through the `hasAuthor` relation in OpenAlex, which might look like this:\n\n```\n<sparql>\n    PREFIX orcid: <https://orcid.org/>\n    PREFIX semoa: <https://semopenalex.org/ontology/>\n\n    SELECT DISTINCT ?paper\n    WHERE {\n        orcid:0000-0002-8574-6295 a semoa:Author.\n        ?paper a semoa:Paper.\n        ?paper semoa:hasAuthor orcid:0000-0002-8574-6295.\n    }\n</sparql>\n```\n\nThis query, however, simplifies the problem by assuming a direct linkage between papers and authors without considering the intermediate `hasAuthorship` relationship. For a more accurate query that reflects the original mapping provided, we would need to incorporate the intermediate step correctly, which might involve additional queries or a more complex join in the SPARQL query. \n\nFor the sake of providing a complete SPARQL query based on the original instruction and focusing on the direct authorship relation in OpenAlex:\n\n```\n<sparql>\n    PREFIX orcid: <https://orcid.org/>\n    PREFIX semoa: <https://semopenalex.org/ontology/>\n\n    SELECT DISTINCT ?paper\n    WHERE {\n        orcid:0000-0002-8574-6295 a semoa:Author.\n        ?paper a semoa:Paper.\n        ?paper semoa:hasAuthor orcid:0000-0002-8574-6295.\n    }\n</sparql>\n```\n\nPlease note, this query does not incorporate the `hasAuthorship` relation as suggested in the ER2 mapping for a more complex query that accurately reflects the original mapping."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which publications did Maia Rohm author?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/222/1191> }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/222/1191",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0002-5108-6874"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce the SPARQL query for KG2 (OpenAlex), we need to follow the ER2 mapping and use the correct properties and URIs. The task is to find the publications authored by Maia Rohm, which is represented by the entity \"https://dblp.org/pid/222/1191\" in DBLP. We need to find the ORCID of this author and then use it to query the OpenAlex KG.\n\nFirst, we find the ORCID of Maia Rohm in DBLP using the SPARQL query:\n```\nSELECT DISTINCT ?orcid WHERE { ?answer <https://dblp.org/rdf/schema#author> <https://dblp.org/pid/222/1191> . FILTER regex(str(?answer), \"Maia Rohm\") }\n```\nThis query finds the publications authored by Maia Rohm in DBLP. Note that this query is not needed as we have the direct mapping to the ORCID in the ER2. However, I included it for clarity.\n\nNow, we use the ER2 mapping to find the ORCID of Maia Rohm in OpenAlex:\n```\nSELECT ?orcid WHERE { <https://dblp.org/pid/222/1191> <https://dblp.org/rdf/schema#authoredBy> ?answer . ?answer a <https://semopenalex.org/ontology/Author> ; <https://semopenalex.org/ontology/hasAuthorship> ?authorship . ?authorship <https://semopenalex.org/ontology/hasAuthor> ?author ; <https://dbpedia.org/ontology/orcidId> ?orcid }\n```\nHowever, we need to correct the query to only match the ORCID of Maia Rohm. The correct query should be:\n```\nSELECT ?orcid WHERE { ?authorship <https://semopenalex.org/ontology/hasAuthor> ?author ; <https://dbpedia.org/ontology/orcidId> ?orcid . FILTER regex(str(?author), \"Maia Rohm\") }\n```\nWait, we don't have the author's name in the ER2. We have the DBLP PID, which is used to find the ORCID. Let's correct the approach.\n\nWe use the ER2 to find the ORCID of Maia Rohm in OpenAlex using the DBLP PID:\n```\nSELECT ?orcid WHERE { <https://dblp.org/pid/222/1191> <https://dblp.org/rdf/schema#authoredBy> ?answer . ?answer a <https://semopenalex.org/ontology/Author> ; <https://dbpedia.org/ontology/orcidId> ?orcid }\n```\nNow that we have the ORCID of Maia Rohm, we can use it to find the publications she authored in OpenAlex. We use the ER2 to find the correct properties and URIs:\n```\nSELECT ?publication WHERE { <https://orcid.org/0000-0002-5108-6874> <https://semopenalex.org/ontology/hasAuthorship> ?authorship . ?authorship <https://semopenalex.org/ontology/hasAuthor> ?author ; <https://semopenalex.org/ontology/hasPublication> ?publication }\n```\nHowever, we need to match the authorship of Maia Rohm. We can use the ORCID to filter the results. Here's the complete SPARQL query for KG2 (OpenAlex), within the tags '<sparql>' and '</sparql>':\n```\n<sparql>\nSELECT ?publication\nWHERE {\n  ?authorship <https://semopenalex.org/ontology/hasAuthor> ?author .\n  ?author <https://dbpedia.org/ontology/orcidId> <https://orcid.org/0000-0002-5108-6874> .\n  ?authorship <https://semopenalex.org/ontology/hasPublication> ?publication\n}\n</sparql>\n```\nHowever, the question asks for the publications authored by Maia Rohm, which means we should be looking for the publications that are the object of the <https://semopenalex.org/ontology/hasPublication> property, and that are connected to the authorship that has Maia Rohm as its subject.\n\nHere's the corrected final SPARQL query within the tags '<sparql>' and '</sparql>':\n```\n<sparql>\nSELECT ?publication\nWHERE {\n  <https://orcid.org/0000-0002-5108-6874> <https://semopenalex.org/ontology/hasAuthorship> ?authorship .\n  ?authorship <https://semopenalex.org/ontology/hasAuthor> ?author .\n  ?author <https://dbpedia.org/ontology/orcidId> <https://orcid.org/0000-0002-5108-6874> .\n  ?authorship <https://semopenalex.org/ontology/hasPublication> ?publication\n}\n</sparql>\n```"
+    },
+    {
+        "context": {
+            "natural_language_question": "What are the papers written by the person A. V. Thakur?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/68/1945> }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/68/1945",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0003-3166-1517"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce a SPARQL query for KG2 (OpenAlex), we need to follow these steps:\n\n1. Identify the relevant information from the ER2 mapping:\n   - The DBLP ID for A. V. Thakur is \"https://dblp.org/pid/68/1945\".\n   - The OpenAlex equivalent of the DBLP ID is \"https://orcid.org/0000-0003-3166-1517\".\n   - The relation in OpenAlex that corresponds to \"authoredBy\" in DBLP is \"hasAuthorship\" or \"hasAuthor\".\n\n2. Construct the SPARQL query:\n   - We want to find all papers written by A. V. Thakur, so we'll start with the OpenAlex ID.\n   - We use the `hasAuthorship` relation to link to the authorship, then use the `:hasAuthor` relation to get the author.\n   - The author is linked to the ORCID ID, which we can use to filter the results.\n\nHere's the final SPARQL query:\n\n<sparql>\nSELECT DISTINCT ?paper WHERE {\n  ?authorship :hasAuthor ?author .\n  ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-3166-1517\" .\n  ?paper :hasAuthorship ?authorship .\n  ?authorship :hasPublication ?publication .\n  ?publication :hasTitle ?paper .\n}\n</sparql>\n\nHowever, if you want to stick strictly to the information given, the query should reflect the direct relation from the author to the papers without explicitly mentioning `:hasPublication` or `:hasTitle` since those details aren't provided in the context. The corrected query reflects what we know from the given data directly.\n\n<sparql>\nSELECT DISTINCT ?paper WHERE {\n  ?authorship <https://semopenalex.org/ontology/hasAuthorship> ?author .\n  ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-3166-1517\" .\n  ?authorship <https://semopenalex.org/ontology/hasAuthor> ?author .\n  ?paper <https://semopenalex.org/ontology/hasAuthorship> ?authorship .\n  ?paper <https://dbpedia.org/ontology/orcidId> ?paper .\n}\n</sparql>\n\nThis query will return all papers directly associated with A. V. Thakur through the provided relations in OpenAlex."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which publications did Mutlu, B. author?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/158/0641> }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/158/0641",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0003-1960-2143"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce a SPARQL query for KG2 (OpenAlex), we need to use the entity and relation mapping provided. We will focus on the entity and relation ID mapping between DBLP and OpenAlex.\n\nGiven that we need to find the publications of Mutlu, B. (author) on DBLP, and we have the mapping between DBLP and OpenAlex, we can start by querying the hasAuthorship relation in OpenAlex.\n\nHere's the breakdown of the query:\n\n1.  We start by specifying the query pattern to match the ORCID of Mutlu, B., which is `https://orcid.org/0000-0003-1960-2143` in OpenAlex.\n2.  We use the `hasAuthorship` relation to get the authorship information.\n3.  We then use the `hasAuthor` relation to get the author.\n4.  We filter the results to only include authors that match the ORCID of Mutlu, B.\n\nHere is the final SPARQL query for KG2 (OpenAlex):\n\n<sparql>\nPREFIX : <https://semopenalex.org/ontology/>\nPREFIX dbpedia-owl: <http://dbpedia.org/ontology/>\n\nSELECT ?answer WHERE {\n  ?authorship :hasAuthor ?author .\n  ?author dbpedia-owl:orcidId \"https://orcid.org/0000-0003-1960-2143\" .\n  ?authorship :hasAuthorship ?pub .\n  ?pub :hasContributor ?answer .\n  ?answer <https://dblp.org/rdf/schema#pub> ?pub .\n}\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "Which publications did Pedro R. D'Argenio author?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/61/441> }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/61/441",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0002-8528-9215"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce a SPARQL query for KG2, we need to map the corresponding entities and relations from DBLP to OpenAlex. From the provided ER2 mapping, we can see that:\n\n* The author's ID in DBLP is `https://dblp.org/pid/61/441`, which maps to an ORCID in OpenAlex, `https://orcid.org/0000-0002-8528-9215`.\n* The `authoredBy` relation in DBLP maps to both `hasAuthorship` and `hasAuthor` in OpenAlex.\n\nGiven this mapping, we want to find the publications (in OpenAlex) authored by Pedro R. D'Argenio (with the specified ORCID). We'll use the `hasAuthorship` and `hasAuthor` relations to link the author to their publications.\n\nHere's the final, complete SPARQL query within the tags `<sparql>` and `</sparql>`:\n\n<sparql>\nSELECT DISTINCT ?publication WHERE {\n  OPTIONAL { ?authorship <https://semopenalex.org/ontology/hasAuthorship> ?pub . }\n  OPTIONAL { ?authorship :hasAuthor ?author . }\n  ?author and ?author <http://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-8528-9215\" .\n  ?pub <https://semopenalex.org/ontology/hasAuthorship> ?authorship .\n}\n</sparql>\n\nNote: This query assumes that the author's ORCID is the one we're looking for, based on the provided ER2 mapping. In a real-world scenario, you might need to filter or join with additional information to ensure the correct author is selected."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which publications did Ranst, Wiebe Van author?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/170/4064> }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/170/4064",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0003-0931-0913"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce the SPARQL query for KG2, we first identify the entities involved:\n\n1. **Subject (author)**: We need to find the ORCID ID of the author \"Wiebe Van Ranst\". To do this, we use the ER2 mapping to link the DBLP PID \"https://dblp.org/pid/170/4064\" to the ORCID ID \"https://orcid.org/0000-0003-0931-0913\".\n\n2. **Predicate (relation)**: The relation we are interested in is \"hasAuthorship\" or \"hasAuthor\" in OpenAlex, which corresponds to the \"authoredBy\" relation in DBLP.\n\n3. **Object (publications)**: We are looking for publications authored by \"Wiebe Van Ranst\".\n\nGiven the above steps and the logic for the author, we can construct the SPARQL query for KG2 as follows:\n\n<sparql>\nSELECT DISTINCT ?publication\nWHERE {\n  VALUES ?author { <https://orcid.org/0000-0003-0931-0913> }\n  ?authorship a <https://semopenalex.org/ontology/Authorship> ;\n              :hasAuthor ?author .\n  ?publication a <https://semopenalex.org/ontology/Publication> ;\n               :hasAuthorship ?authorship .\n}\n</sparql>\n\nHowever, this does not exactly match the instructions because we need to incorporate the \"authoredBy\" relation equivalent in OpenAlex into the query. The corrected query should directly link the author to the publications without using a generic \"hasAuthorship\" relation. Since the ER2 mapping provides the exact equivalents for DBLP's \"authoredBy\" in OpenAlex as \"hasAuthorship\" or \"hasAuthor\", we would actually be looking for publications that have the authorship by Wiebe Van Ranst, but the direct equivalent relation is not explicitly listed in the ER2 mapping for OpenAlex. The closest match to achieve the desired result based on the given information would involve using the \"hasAuthor\" relation as a proxy for \"authoredBy\". Therefore, the query should be modified as follows to correctly implement the author logic as specified:\n\n<sparql>\nSELECT DISTINCT ?publication\nWHERE {\n  VALUES ?author { <https://orcid.org/0000-0003-0931-0913> }\n  ?publication :hasAuthor ?author .\n}\n</sparql>\n\nThis query directly selects publications that have the author \"Wiebe Van Ranst\" based on their ORCID ID, which is the closest implementation of the provided logic given the available mappings."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which publications did W. Wu author?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/92/382-5> }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/92/382-5",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0001-6942-0589"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce a SPARQL query for KG2 (OpenAlex), we need to follow the instructions and the given ER2 mapping. The main goal is to find publications authored by W. Wu. We know that in DBLP, the relation between an author and their authored works is represented by `<https://dblp.org/rdf/schema#authoredBy>`. We also know the mapping of this relation to OpenAlex, which includes `https://semopenalex.org/ontology/hasAuthorship` and `https://semopenalex.org/ontology/hasAuthor`. \n\nMoreover, the ORCID of W. Wu in OpenAlex is `https://orcid.org/0000-0001-6942-0589`. We will use this to identify the author.\n\nHere's the breakdown of how we will construct the SPARQL query:\n\n1. We will use the ORCID to find the author in OpenAlex.\n2. We will then use the hasAuthorship relation to get the publications that the author has authored.\n3. Finally, we will use the hasAuthor relation to get the author from the hasAuthorship relation.\n\nGiven these steps, here is how we can construct the SPARQL query:\n\n```sparql\nPREFIX dbo: <https://dbpedia.org/ontology/>\nPREFIX soa: <https://semopenalex.org/ontology/>\n\nSELECT ?publication\nWHERE\n{\n  ?author dbo:orcidId \"https://orcid.org/0000-0001-6942-0589\" .\n  ?authorship soa:hasAuthorship ?authorship .\n  ?authorship soa:hasAuthor ?author .\n  ?author dbo:orcidId ?authorOrCID .\n  ?publication ?relation ?authorship .\n  FILTER(?relation IN (soa:hasAuthorship, soa:hasAuthor) && ?authorship ?soa:hasAuthor ?author )\n  FILTER(?author = ?authorOrCID)\n}\n```\n\nHowever, this query still needs refinement. The original question asks for what W. Wu authored, so we need to replace `?publication` with the actual publication and use the relation to get the publication's details.\n\nHere's how we would construct that:\n\n```sparql\nPREFIX dbo: <https://dbpedia.org/ontology/>\nPREFIX soa: <https://semopenalex.org/ontology/>\n\nSELECT ?publication\nWHERE\n{\n  ?author dbo:orcidId \"https://orcid.org/0000-0001-6942-0589\" .\n  ?authorship soa:hasAuthorship ?authorship .\n  ?authorship soa:hasAuthor ?author .\n  ?author dbo:orcidId ?authorOrCID .\n  ?publication soa:hasAuthorship ?authorship .\n  FILTER(?author = ?authorOrCID)\n}\n```\n\nThis will give us all the publications authored by W. Wu.\n\nHowever, we are still missing one crucial piece of information. We need to filter by the author's name, which is W. Wu. Unfortunately, we are missing the mapping of the author's name to the ORCID in the ER2 mapping provided.\n\nIf we had the mapping, we could add another filter to the query to match the author's name with W. Wu.\n\nSince we don't have that information, let's assume that the ORCID `https://orcid.org/0000-0001-6942-0589` is unique to W. Wu, and we can proceed with the query as is.\n\nHere is the final query within the required tags:\n\n<sparql>\nPREFIX dbo: <https://dbpedia.org/ontology/>\nPREFIX soa: <https://semopenalex.org/ontology/>\n\nSELECT ?publication\nWHERE\n{\n  ?author dbo:orcidId \"https://orcid.org/0000-0001-6942-0589\" .\n  ?authorship soa:hasAuthorship ?authorship .\n  ?authorship soa:hasAuthor ?author .\n  ?author dbo:orcidId ?authorOrCID .\n  ?publication soa:hasAuthorship ?authorship .\n  FILTER(?author = ?authorOrCID)\n}\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "Which papers did Richard Bowden publish in the last eight years?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/RichardBowden> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-8) }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/b/RichardBowden",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0003-3285-8020"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#yearOfPublication>",
+                    "OpenAlex": [
+                        "http://purl.org/spar/fabio/hasPublicationYear"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce the SPARQL query for KG2 (OpenAlex), we need to follow the instructions and the ER2 mapping provided. The goal is to find papers authored by Richard Bowden in the last eight years.\n\nGiven the ER2 mapping, we see that:\n\n- The DBLP entity for Richard Bowden is linked to the OpenAlex entity via the ORCID ID.\n- The relation `<https://dblp.org/rdf/schema#authoredBy>` in DBLP is linked to the relation `https://semopenalex.org/ontology/hasAuthorship` in OpenAlex.\n- The relation `<https://dblp.org/rdf/schema#yearOfPublication>` in DBLP is linked to the relation `http://purl.org/spar/fabio/hasPublicationYear` in OpenAlex.\n\nTo author the query, we will start by linking Richard Bowden's entity from OpenAlex to DBLP, then use the relations to query for papers authored by him within the last eight years.\n\nHere's the step-by-step construction of the SPARQL query:\n\n1. **Link to Richard Bowden's entity in OpenAlex**: We start with the entity that represents Richard Bowden on OpenAlex. The query to link to his DBLP entity based on the ORCID ID is:\n   ```\n   ?orcid <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-3285-8020\" .\n   ?orcid a :Author .\n   ?authorship :hasAuthor ?author .\n   ?author a :Person .\n   ?author <https://orcid.org/ identifiers/isni> ?isni .\n   ?isni <https://dbpedia.org/ontology/identifier> \"http://isni.org/isni/0000000090834539\" .\n   ?author <https://semopenalex.org/ontology/hasAuthorship> ?authorship .\n   ```\n\n2. **Link to Richard Bowden's entity in DBLP**: We're linking the authorship to Richard Bowden's DBLP entity directly:\n   ```\n   ?authorship <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/RichardBowden> .\n   ```\n\n3. **Query for papers within the last eight years**: We now query for papers where the year of publication is within the last eight years from the current year:\n   ```\n   ?paper <http://purl.org/spar/fabio/hasPublicationYear> ?year .\n   FILTER(?year > (YEAR(NOW())-8))\n   ```\n\nHere's the complete SPARQL query within the `<sparql>` tags:\n\n<sparql>\n   PREFIX : <https://semopenalex.org/>\n   PREFIX fabio: <http://purl.org/spar/fabio/>\n   PREFIX dbpedia: <https://dbpedia.org/>\n   PREFIX orcid: <https://orcid.org/>\n\n   SELECT ?paper\n   WHERE {\n     ?orcid dbpedia:orcidId \"https://orcid.org/0000-0003-3285-8020\" .\n     ?orcid a :Author .\n     ?authorship :hasAuthor ?author .\n     ?author a :Person .\n     ?author <https://orcid.org/ identifiers/isni> ?isni .\n     ?isni <https://dbpedia.org/ontology/identifier> \"http://isni.org/isni/0000000090834539\" .\n     ?author :hasAuthorship ?authorship .\n     ?authorship :hasAuthor ?author .\n     ?authorship <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/RichardBowden> .\n     ?paper fabio:hasPublicationYear ?year .\n     FILTER(?year > (YEAR(NOW())-8))\n   }\n</sparql>"
+    },
+    {
+        "context": {
+            "natural_language_question": "List the papers published by Neil McGlohon in the last 5 years.",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/156/0179> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-5) }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/156/0179",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0001-8304-4911"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#yearOfPublication>",
+                    "OpenAlex": [
+                        "http://purl.org/spar/fabio/hasPublicationYear"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce the SPARQL query for KG2 (OpenAlex), we need to follow the ER2 mapping and combine it with the logic for retrieving the author's ORCID.\n\nFrom the ER2 mapping, we can see that the relation `<https://dblp.org/rdf/schema#authoredBy>` in DBLP corresponds to `https://semopenalex.org/ontology/hasAuthorship` in OpenAlex. The relation `<https://dblp.org/rdf/schema#yearOfPublication>` in DBLP corresponds to `http://purl.org/spar/fabio/hasPublicationYear` in OpenAlex.\n\nGiven that we want to find papers published by an author with ORCID \"https://orcid.org/0000-0001-8304-4911\" in the last 5 years, we'll use the following SPARQL query:\n\n```sparql\nSELECT DISTINCT ?answer WHERE {\n  SERVICE <https://dblp.org/rdf/> {\n    ?paper <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/156/0179> .\n  }\n  SERVICE <https://openalex.org/rdf/> {\n    ?paper <https://semopenalex.org/ontology/hasAuthorship> ?authorship .\n    ?authorship :hasAuthor ?author .\n    ?paper <http://purl.org/spar/fabio/hasPublicationYear> ?y .\n    ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-8304-4911\" .\n    FILTER(?y > YEAR(NOW())-5)\n  }\n}\n```\n\nHowever, we need to modify this query to also filter the papers based on the year of publication, as specified in the problem. We can merge the two conditions using the following SPARQL query:\n\n```sparql\nSELECT DISTINCT ?answer WHERE {\n  SERVICE <https://dblp.org/rdf/> {\n    ?paper <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/156/0179> ;\n           <https://dblp.org/rdf/schema#yearOfPublication> ?y .\n    FILTER(?y > YEAR(NOW())-5)\n  }\n  SERVICE <https://openalex.org/rdf/> {\n    ?paper <https://semopenalex.org/ontology/hasAuthorship> ?authorship ;\n           <https://semopenalex.org/ontology/hasAuthor> ?author .\n    ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-8304-4911\" .\n  }\n}\n```\n\nIn this modified query, we first filter the papers in DBLP that have been published in the last 5 years, and then filter the corresponding papers in OpenAlex that have the required author.\n\n**<sparql>**\nSELECT DISTINCT ?answer WHERE {\n  SERVICE <https://dblp.org/rdf/> {\n    ?paper <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/156/0179> ;\n           <https://dblp.org/rdf/schema#yearOfPublication> ?y .\n    FILTER(?y > YEAR(NOW())-5)\n  }\n  SERVICE <https://openalex.org/rdf/> {\n    ?paper <https://semopenalex.org/ontology/hasAuthorship> ?authorship ;\n           <https://semopenalex.org/ontology/hasAuthor> ?author .\n    ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-8304-4911\" .\n  }\n}\n**</sparql>**\n\nThis query will return the papers published by the author with ORCID \"https://orcid.org/0000-0001-8304-4911\" in the last 5 years."
+    },
+    {
+        "context": {
+            "natural_language_question": "Which papers did Olga Veksler publish in the last four years?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/v/OlgaVeksler> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-4) }",
+            "kg1_name": "DBLP",
+            "kg2_name": "OpenAlex",
+            "er2": [
+                {
+                    "DBLP": "https://dblp.org/pid/v/OlgaVeksler",
+                    "OpenAlex": [
+                        "https://orcid.org/0000-0002-9664-6601"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#authoredBy>",
+                    "OpenAlex": [
+                        "https://semopenalex.org/ontology/hasAuthorship",
+                        "https://semopenalex.org/ontology/hasAuthor"
+                    ]
+                },
+                {
+                    "DBLP": "<https://dblp.org/rdf/schema#yearOfPublication>",
+                    "OpenAlex": [
+                        "http://purl.org/spar/fabio/hasPublicationYear"
+                    ]
+                }
+            ],
+            "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final,complete SPARQL query within the tags '<sparql>' and '</sparql>'. For the author use the following logic: hasAuthorship ?authorship . ?authorship :hasAuthor ?author . ?author and the ORCID \"https://dbpedia.org/ontology/orcidId\"."
+        },
+        "sparql_query_kg2": "To produce a SPARQL query for KG2 (OpenAlex), we need to map the relations and entities from DBLP to OpenAlex using the ER2 mapping provided. The query will involve finding the papers authored by Olga Veksler in the last four years.\n\nFirst, we need to find the authorship of Olga Veksler in OpenAlex. From the ER2 mapping, we know that the relation `<https://dblp.org/rdf/schema#authoredBy>` in DBLP maps to `https://semopenalex.org/ontology/hasAuthorship` in OpenAlex, and then to `:hasAuthor` and ultimately to the ORCID ID.\n\nThe SPARQL query for this part would be:\n```sparql\nPREFIX : <https://semopenalex.org/ontology/>\nPREFIX dbpedia: <https://dbpedia.org/ontology/>\n\nSELECT ?authorship\nWHERE {\n  dbpedia:OlgaVeksler ?authorship .\n  ?authorship :hasAuthor ?author .\n  ?author dbpedia:orcidId \"https://orcid.org/0000-0002-9664-6601\" .\n}\n```\nNext, we need to find the publications in the last four years. From the ER2 mapping, we know that the relation `<https://dblp.org/rdf/schema#yearOfPublication>` in DBLP maps to `http://purl.org/spar/fabio/hasPublicationYear` in OpenAlex.\n\nThe SPARQL query for this part would be:\n```sparql\nPREFIX fabio: <http://purl.org/spar/fabio/>\n\nSELECT ?publication\nWHERE {\n  ?publication fabio:hasPublicationYear ?year .\n  FILTER(?year > (YEAR(NOW()) - 4)) .\n}\n```\nNow, we need to combine these two queries to find the publications authored by Olga Veksler in the last four years.\n\nThe final SPARQL query for KG2 (OpenAlex) would be:\n```sparql\nPREFIX : <https://semopenalex.org/ontology/>\nPREFIX fabio: <http://purl.org/spar/fabio/>\nPREFIX dbpedia: <https://dbpedia.org/ontology/>\n\nSELECT ?publication\nWHERE {\n  { dbpedia:OlgaVeksler ?authorship .\n    ?authorship :hasAuthor ?author .\n    ?author dbpedia:orcidId \"https://orcid.org/0000-0002-9664-6601\" . }\n  ?publication fabio:hasPublicationYear ?year .\n  FILTER(?year > (YEAR(NOW()) - 4)) .\n}\n```\nPlease note that we're using the ORCID ID to identify the author Olga Veksler in OpenAlex. The final query is within the tags `<sparql>` and `</sparql>`:\n<sparql>\nPREFIX : <https://semopenalex.org/ontology/>\nPREFIX fabio: <http://purl.org/spar/fabio/>\nPREFIX dbpedia: <https://dbpedia.org/ontology/>\n\nSELECT ?publication\nWHERE {\n  { dbpedia:OlgaVeksler ?authorship .\n    ?authorship :hasAuthor ?author .\n    ?author dbpedia:orcidId \"https://orcid.org/0000-0002-9664-6601\" . }\n  ?publication fabio:hasPublicationYear ?year .\n  FILTER(?year > (YEAR(NOW()) - 4)) .\n}\n</sparql>"
+    }
+]
