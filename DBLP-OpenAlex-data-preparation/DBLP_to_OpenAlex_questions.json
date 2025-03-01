@@ -96,16 +96,16 @@
         ]
     },
     {
-        "id": "Q0317",
+        "id": "Q0008",
         "query_type": "SINGLE_FACT",
-        "question": "Which publications did Pedro R. D'Argenio author?",
-        "query": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/61/441> }",
+        "question": "Which publications did Nicholas D. Lane author?",
+        "query": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/03/2663> }",
         "template_id": "TC01",
         "entities": [
             {
-                "author": "https://dblp.org/pid/61/441",
+                "author": "https://dblp.org/pid/03/2663",
                 "orcid": [
-                    "https://orcid.org/0000-0002-8528-9215"
+                    "https://orcid.org/0000-0002-2728-8273"
                 ]
             }
         ],
@@ -120,16 +120,16 @@
         ]
     },
     {
-        "id": "Q0291",
+        "id": "Q0136",
         "query_type": "SINGLE_FACT",
-        "question": "Which publications did Ranst, Wiebe Van author?",
-        "query": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/170/4064> }",
+        "question": "Which publications did W. Wu author?",
+        "query": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/92/382-5> }",
         "template_id": "TC01",
         "entities": [
             {
-                "author": "https://dblp.org/pid/170/4064",
+                "author": "https://dblp.org/pid/92/382-5",
                 "orcid": [
-                    "https://orcid.org/0000-0003-0931-0913"
+                    "https://orcid.org/0000-0001-6942-0589"
                 ]
             }
         ],
@@ -348,16 +348,16 @@
         ]
     },
     {
-        "id": "Q0503",
+        "id": "Q0456",
         "query_type": "MULTI_FACT",
-        "question": "Which papers did St\\u00E9phane R. publish in the last four years?",
-        "query": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/r/StephaneRedon> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-4) }",
+        "question": "List the papers published by A. Yautsiukhin in the last 6 years.",
+        "query": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/07/4404> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-6) }",
         "template_id": "TC15",
         "entities": [
             {
-                "author": "https://dblp.org/pid/r/StephaneRedon",
+                "author": "https://dblp.org/pid/07/4404",
                 "orcid": [
-                    "https://orcid.org/0000-0002-2618-8975"
+                    "https://orcid.org/0000-0002-8493-1915"
                 ]
             }
         ],
@@ -1700,16 +1700,16 @@
         ]
     },
     {
-        "id": "Q0768",
+        "id": "Q0703",
         "query_type": "DOUBLE_INTENT",
-        "question": "What are the titles of the papers that Sheu, T. W. H. published in the last two years and in which venues?",
-        "query": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/14/9316> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-2) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }",
+        "question": "What are the titles of the papers that Andrew P. Black published in the last six years and in which venues?",
+        "query": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/APBlack> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-6) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }",
         "template_id": "TC25",
         "entities": [
             {
-                "author": "https://dblp.org/pid/14/9316",
+                "author": "https://dblp.org/pid/b/APBlack",
                 "orcid": [
-                    "https://orcid.org/0000-0001-8533-3282"
+                    "https://orcid.org/0000-0003-0014-6483"
                 ]
             }
         ],
@@ -2043,22 +2043,22 @@
         ]
     },
     {
-        "id": "Q2404",
+        "id": "Q2145",
         "query_type": "UNION",
-        "question": "What are the papers that Andr\\u00E9 Kaup and C. Lin published?",
-        "query": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/00/6329> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/04/7485> } }",
+        "question": "What are the papers that Antonio P. and Tomarchio, Orazio published?",
+        "query": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/15/7009> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/43/5379> } }",
         "template_id": "TC61",
         "entities": [
             {
-                "author": "https://dblp.org/pid/00/6329",
+                "author": "https://dblp.org/pid/15/7009",
                 "orcid": [
-                    "https://orcid.org/0000-0002-0929-5074"
+                    "https://orcid.org/0000-0003-0385-2711"
                 ]
             },
             {
-                "author": "https://dblp.org/pid/04/7485",
+                "author": "https://dblp.org/pid/43/5379",
                 "orcid": [
-                    "https://orcid.org/0000-0003-2847-0349"
+                    "https://orcid.org/0000-0003-4653-0480"
                 ]
             }
         ],

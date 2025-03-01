@@ -1,0 +1,88 @@
+{
+    "TC15": [
+        {
+            "id": "Q0394",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "Which papers did Blaise G. publish in the last 5 years?"
+            },
+            "paraphrased_question": {
+                "string": "List the papers published by Blaise Genest in the last five years."
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/59/6859> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-5) }"
+            },
+            "template_id": "TC15",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/59/6859>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-5758-1876"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": true,
+            "held_out": false
+        },
+        {
+            "id": "Q0456",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "List the papers published by A. Yautsiukhin in the last 6 years."
+            },
+            "paraphrased_question": {
+                "string": "Which papers did Artsiom Yautsiukhin publish in the last 6 years?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/07/4404> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-6) }"
+            },
+            "template_id": "TC15",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/07/4404>",
+                    "orcid": [
+                        "https://orcid.org/0000-0002-8493-1915"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": true,
+            "held_out": false
+        },
+        {
+            "id": "Q0492",
+            "query_type": "MULTI_FACT",
+            "question": {
+                "string": "List the papers published by Steve Benford in the last seven years."
+            },
+            "paraphrased_question": {
+                "string": "Which papers did Steve Benford publish in the last 7 years?"
+            },
+            "query": {
+                "sparql": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/SteveBenford> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-7) }"
+            },
+            "template_id": "TC15",
+            "entities": [
+                {
+                    "author": "<https://dblp.org/pid/b/SteveBenford>",
+                    "orcid": [
+                        "https://orcid.org/0000-0001-8041-2520"
+                    ]
+                }
+            ],
+            "relations": [
+                "<https://dblp.org/rdf/schema#authoredBy>",
+                "<https://dblp.org/rdf/schema#yearOfPublication>"
+            ],
+            "temporal": true,
+            "held_out": false
+        }
+    ]
+}

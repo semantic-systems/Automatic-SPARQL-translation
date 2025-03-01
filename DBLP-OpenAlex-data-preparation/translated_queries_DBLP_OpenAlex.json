@@ -20,14 +20,14 @@
         "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-1960-2143\" . }  "
     },
     {
-        "id": "Q0317",
+        "id": "Q0008",
         "template_id": "TC01",
-        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-8528-9215\" . }  "
+        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-2728-8273\" . }  "
     },
     {
-        "id": "Q0291",
+        "id": "Q0136",
         "template_id": "TC01",
-        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-0931-0913\" . }  "
+        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-6942-0589\" . }  "
     },
     {
         "id": "Q0136",
@@ -65,9 +65,9 @@
         "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/> PREFIX fabio: <http://purl.org/spar/fabio/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-2044-1279\" .  ?work fabio:hasPublicationYear ?year .  FILTER(?year > YEAR(NOW()) - 2) } "
     },
     {
-        "id": "Q0503",
+        "id": "Q0456",
         "template_id": "TC15",
-        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/> PREFIX fabio: <http://purl.org/spar/fabio/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-2618-8975\" .  ?work fabio:hasPublicationYear ?year .  FILTER(?year > YEAR(NOW()) - 4) } "
+        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/> PREFIX fabio: <http://purl.org/spar/fabio/>  SELECT DISTINCT ?work WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-8493-1915\" .  ?work fabio:hasPublicationYear ?year .  FILTER(?year > YEAR(NOW()) - 6) } "
     },
     {
         "id": "Q0617",
@@ -275,9 +275,9 @@
         "sparql_OpenAlex": "PREFIX dct: <http://purl.org/dc/terms/> PREFIX oa: <https://semopenalex.org/ontology/> PREFIX fabio: <http://purl.org/spar/fabio/>  SELECT DISTINCT ?venue ?title WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-5740-1938\" .  ?work fabio:hasPublicationYear ?year . FILTER(?year > YEAR(NOW()) - 6) .  ?work oa:hasLocation ?location . ?location oa:hasSource ?venue .  ?work dct:title ?title . } "
     },
     {
-        "id": "Q0768",
+        "id": "Q0703",
         "template_id": "TC25",
-        "sparql_OpenAlex": "PREFIX dct: <http://purl.org/dc/terms/> PREFIX oa: <https://semopenalex.org/ontology/> PREFIX fabio: <http://purl.org/spar/fabio/>  SELECT DISTINCT ?venue ?title WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-8533-3282\" .  ?work fabio:hasPublicationYear ?year . FILTER(?year > YEAR(NOW()) - 2) .  ?work oa:hasLocation ?location . ?location oa:hasSource ?venue .  ?work dct:title ?title . } "
+        "sparql_OpenAlex": "PREFIX dct: <http://purl.org/dc/terms/> PREFIX oa: <https://semopenalex.org/ontology/> PREFIX fabio: <http://purl.org/spar/fabio/>  SELECT DISTINCT ?venue ?title WHERE { ?work oa:hasAuthorship ?authorship . ?authorship oa:hasAuthor ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-0014-6483\" .  ?work fabio:hasPublicationYear ?year . FILTER(?year > YEAR(NOW()) - 6) .  ?work oa:hasLocation ?location . ?location oa:hasSource ?venue .  ?work dct:title ?title . } "
     },
     {
         "id": "Q1819",
@@ -330,9 +330,9 @@
         "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { { ?work oa:hasAuthorship ?authorship1 . ?authorship1 oa:hasAuthor ?author1 . ?author1 <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-5470-6621\" . } UNION { ?work oa:hasAuthorship ?authorship2 . ?authorship2 oa:hasAuthor ?author2 . ?author2 <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-1118-0321\" . } } "
     },
     {
-        "id": "Q2404",
+        "id": "Q2145",
         "template_id": "TC61",
-        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { { ?work oa:hasAuthorship ?authorship1 . ?authorship1 oa:hasAuthor ?author1 . ?author1 <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-0929-5074\" . } UNION { ?work oa:hasAuthorship ?authorship2 . ?authorship2 oa:hasAuthor ?author2 . ?author2 <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-2847-0349\" . } } "
+        "sparql_OpenAlex": "PREFIX oa: <https://semopenalex.org/ontology/>  SELECT DISTINCT ?work WHERE { { ?work oa:hasAuthorship ?authorship1 . ?authorship1 oa:hasAuthor ?author1 . ?author1 <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-0385-2711\" . } UNION { ?work oa:hasAuthorship ?authorship2 . ?authorship2 oa:hasAuthor ?author2 . ?author2 <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-4653-0480\" . } } "
     },
     {
         "id": "Q2289",

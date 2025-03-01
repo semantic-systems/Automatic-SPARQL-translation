@@ -97,15 +97,15 @@
     },
     {
         "context": {
-            "natural_language_question": "Which publications did Pedro R. D'Argenio author?",
-            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/61/441> }",
+            "natural_language_question": "Which publications did Nicholas D. Lane author?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/03/2663> }",
             "kg1_name": "DBLP",
             "kg2_name": "OpenAlex",
             "er2": [
                 {
-                    "DBLP": "https://dblp.org/pid/61/441",
+                    "DBLP": "https://dblp.org/pid/03/2663",
                     "OpenAlex": [
-                        "https://orcid.org/0000-0002-8528-9215"
+                        "https://orcid.org/0000-0002-2728-8273"
                     ]
                 },
                 {
@@ -121,15 +121,15 @@
     },
     {
         "context": {
-            "natural_language_question": "Which publications did Ranst, Wiebe Van author?",
-            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/170/4064> }",
+            "natural_language_question": "Which publications did W. Wu author?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/92/382-5> }",
             "kg1_name": "DBLP",
             "kg2_name": "OpenAlex",
             "er2": [
                 {
-                    "DBLP": "https://dblp.org/pid/170/4064",
+                    "DBLP": "https://dblp.org/pid/92/382-5",
                     "OpenAlex": [
-                        "https://orcid.org/0000-0003-0931-0913"
+                        "https://orcid.org/0000-0001-6942-0589"
                     ]
                 },
                 {
@@ -349,15 +349,15 @@
     },
     {
         "context": {
-            "natural_language_question": "Which papers did St\\u00E9phane R. publish in the last four years?",
-            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/r/StephaneRedon> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-4) }",
+            "natural_language_question": "List the papers published by A. Yautsiukhin in the last 6 years.",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/07/4404> . ?answer <https://dblp.org/rdf/schema#yearOfPublication> ?y FILTER(?y > YEAR(NOW())-6) }",
             "kg1_name": "DBLP",
             "kg2_name": "OpenAlex",
             "er2": [
                 {
-                    "DBLP": "https://dblp.org/pid/r/StephaneRedon",
+                    "DBLP": "https://dblp.org/pid/07/4404",
                     "OpenAlex": [
-                        "https://orcid.org/0000-0002-2618-8975"
+                        "https://orcid.org/0000-0002-8493-1915"
                     ]
                 },
                 {
@@ -1701,15 +1701,15 @@
     },
     {
         "context": {
-            "natural_language_question": "What are the titles of the papers that Sheu, T. W. H. published in the last two years and in which venues?",
-            "sparql_query_kg1": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/14/9316> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-2) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }",
+            "natural_language_question": "What are the titles of the papers that Andrew P. Black published in the last six years and in which venues?",
+            "sparql_query_kg1": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/APBlack> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . FILTER(?y > YEAR(NOW())-6) . ?x <https://dblp.org/rdf/schema#publishedIn> ?firstanswer . ?x <https://dblp.org/rdf/schema#title> ?secondanswer }",
             "kg1_name": "DBLP",
             "kg2_name": "OpenAlex",
             "er2": [
                 {
-                    "DBLP": "https://dblp.org/pid/14/9316",
+                    "DBLP": "https://dblp.org/pid/b/APBlack",
                     "OpenAlex": [
-                        "https://orcid.org/0000-0001-8533-3282"
+                        "https://orcid.org/0000-0003-0014-6483"
                     ]
                 },
                 {
@@ -2044,21 +2044,21 @@
     },
     {
         "context": {
-            "natural_language_question": "What are the papers that Andr\\u00E9 Kaup and C. Lin published?",
-            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/00/6329> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/04/7485> } }",
+            "natural_language_question": "What are the papers that Antonio P. and Tomarchio, Orazio published?",
+            "sparql_query_kg1": "SELECT DISTINCT ?answer WHERE { { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/15/7009> } UNION { ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/43/5379> } }",
             "kg1_name": "DBLP",
             "kg2_name": "OpenAlex",
             "er2": [
                 {
-                    "DBLP": "https://dblp.org/pid/00/6329",
+                    "DBLP": "https://dblp.org/pid/15/7009",
                     "OpenAlex": [
-                        "https://orcid.org/0000-0002-0929-5074"
+                        "https://orcid.org/0000-0003-0385-2711"
                     ]
                 },
                 {
-                    "DBLP": "https://dblp.org/pid/04/7485",
+                    "DBLP": "https://dblp.org/pid/43/5379",
                     "OpenAlex": [
-                        "https://orcid.org/0000-0003-2847-0349"
+                        "https://orcid.org/0000-0003-4653-0480"
                     ]
                 },
                 {
