@@ -1,0 +1,402 @@
+[
+  {
+    "natural_language_question": "Which papers did the author Gennady L. Andrienko write?",
+    "sparql_query_kg2": "SELECT DISTINCT ?paperTitle WHERE { ?paper <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-8574-6295> . ?paper <http://schema.org/title> ?paperTitle . }"
+  },
+  {
+    "natural_language_question": "Which publications did Maia Rohm author?",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/> SELECT DISTINCT ?answer WHERE { ?answer orcid:orcidId \"https://orcid.org/0000-0002-5108-6874\"; a ?type. ?publication ?relation ?answer. FILTER(?relation IN (https://semopenalex.org/ontology/hasAuthorship, https://semopenalex.org/ontology/hasAuthor)) }"
+  },
+  {
+    "natural_language_question": "What are the papers written by the person A. V. Thakur?",
+    "sparql_query_kg2": "SELECT ?answer WHERE { ?answer ?relation ?author . ?author <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0003-3166-1517\" . ?author <https://semopenalex.org/ontology/hasAuthorship> ?answer . FILTER(?relation = <https://semopenalex.org/ontology/hasAuthorship> || ?relation = <https://semopenalex.org/ontology/hasAuthor>) }"
+  },
+  {
+    "natural_language_question": "Which publications did Mutlu, B. author?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/000-0003-1960-2143> . }"
+  },
+  {
+    "natural_language_question": "Which publications did Nicholas D. Lane author?",
+    "sparql_query_kg2": "SELECT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-2728-8273> . ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-2728-8273> . ?answer <https://dbpedia.org/ontology/orcidId> <https://orcid.org/0000-0002-2728-8273> . FILTER ( ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-2728-8273> ) }"
+  },
+  {
+    "natural_language_question": "Which publications did W. Wu author?",
+    "sparql_query_kg2": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX soa: <https://semopenalex.org/ontology/> SELECT DISTINCT ?publication WHERE { ?author dbo:orcidId \"https://orcid.org/0000-0001-6942-0589\" . ?publication soa:hasAuthor ?author . }"
+  },
+  {
+    "natural_language_question": "Which publications did W. Wu author?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://dbpedia.org/ontology/orcidId> . }"
+  },
+  {
+    "natural_language_question": "Which papers did Richard Bowden publish in the last eight years?",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/> PREFIX fabio: <http://purl.org/spar/fabio/> SELECT DISTINCT ?answer WHERE { ?answer fabio:hasPublicationYear ?y . ?answer orcid:orcidId \"https://orcid.org/0000-0003-3285-8020\" . FILTER(?y > (YEAR(NOW()) - 8)) }"
+  },
+  {
+    "natural_language_question": "List the papers published by Neil McGlohon in the last 5 years.",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasPublication> ?pub . ?pub <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-8304-4911> . ?pub <http://purl.org/spar/fabio/hasPublicationYear> ?y FILTER(?y > YEAR(NOW())-5) UNION ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-8304-4911> . ?answer <http://purl.org/spar/fabio/hasPublicationYear> ?y FILTER(?y > YEAR(NOW())-5) }"
+  },
+  {
+    "natural_language_question": "Which papers did Olga Veksler publish in the last four years?",
+    "sparql_query_kg2": "PREFIX fabio: <http://purl.org/spar/fabio/> PREFIX dbpedia: <http://dbpedia.org/ontology/> SELECT DISTINCT ?answer WHERE { ?answer dbpedia:orcidId <https://orcid.org/0000-0002-9664-6601> . ?answer fabio:hasPublicationYear ?y . FILTER(?y > (YEAR(NOW())-4)) }"
+  },
+  {
+    "natural_language_question": "Which papers did E. Francine Barbosa publish in the last 2 years?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?answer ?hasAuthorship <https://orcid.org/0000-0003-3275-2293> . ?answer ?hasPublicationYear ?y FILTER(?y > YEAR(NOW())-2) }"
+  },
+  {
+    "natural_language_question": "List the papers published by Sylvain Schmitz in the last 8 years.",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthor> \"https://dbpedia.org/ontology/orcidId\" . ?answer <http://purl.org/spar/fabio/hasPublicationYear> ?y . FILTER(?y > YEAR(NOW())-8) }"
+  },
+  {
+    "natural_language_question": "Which papers did Barakat, Chadi publish in the last 2 years?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0003-2044-1279> . ?answer <http://purl.org/spar/fabio/hasPublicationYear> ?y . FILTER(STRDT(?y, xsd:gYear) > (YEAR(NOW()) - 2)) }"
+  },
+  {
+    "natural_language_question": "List the papers published by A. Yautsiukhin in the last 6 years.",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-8493-1915> . ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://dblp.org/pid/07/4404> . ?answer <http://purl.org/spar/fabio/hasPublicationYear> ?y . FILTER(?y > (YEAR(NOW())-6)) }"
+  },
+  {
+    "natural_language_question": "In which conferences or journals has Andrew Luxton-Reilly published papers?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?author a <https://schema.org/Person> ; <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0001-8269-2909\" . ?publication <https://semopenalex.org/ontology/hasAuthor> ?author . ?publication <https://semopenalex.org/ontology/hasSource> ?answer . }"
+  },
+  {
+    "natural_language_question": "In which conferences or journals has Shuqiang Jiang published papers?",
+    "sparql_query_kg2": "PREFIX orcid-<http://schema.org/orcid> SELECT ?answer WHERE { ?x <https://semopenalex.org/ontology/hasSource> ?answer . ?x <https://semopenalex.org/ontology/hasAuthor> <http://schema.org/orcid> \"0000-0002-1596-4326\" . }"
+  },
+  {
+    "natural_language_question": "Mention the venues in which Paulo F. Pires published.",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?x <https://semopenalex.org/ontology/hasSource> ?answer . <https://orcid.org/0000-0001-5064-4793> <https://semopenalex.org/ontology/hasAuthor> ?x }"
+  },
+  {
+    "natural_language_question": "Mention the venues in which Alabbas, M. published.",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-8548-5075> . ?x <https://semopenalex.org/ontology/hasSource> ?answer . ?x <https://semopenalex.org/ontology/hasLocation> ?answer . }"
+  },
+  {
+    "natural_language_question": "Mention the venues in which J. Xu published.",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/orcidId> PREFIX hasSource: <https://semopenalex.org/ontology/hasSource> PREFIX author: <https://orcid.org/0000-0001-8227-8636> SELECT ?answer WHERE { ?x hasAuthor author . ?x hasSource ?answer . }"
+  },
+  {
+    "natural_language_question": "In which conferences or journals has Elly A. Konijn published papers?",
+    "sparql_query_kg2": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX soa: <https://semopenalex.org/ontology/> SELECT DISTINCT ?answer WHERE { ?x dbo:orcidId \"https://orcid.org/0000-0002-6134-8700\" . ?x soa:hasAuthor ?author . ?paper soa:hasAuthor ?author . ?paper soa:hasSource ?answer . }"
+  },
+  {
+    "natural_language_question": "What are the venues in which M. R. M. Jenkin published?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?author <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-2969-0012> . ?author <https://semopenalex.org/ontology/hasAuthorship> ?pub . ?pub <https://semopenalex.org/ontology/hasSource> ?answer . }"
+  },
+  {
+    "natural_language_question": "What are the papers written by Dmitry Efrosinin and Weisi Guo together?",
+    "sparql_query_kg2": "PREFIX sema: <https://semopenalex.org/ontology/> SELECT ?answer WHERE { ?answer sema:hasAuthor <https://orcid.org/0000-0002-0902-6640> . ?answer sema:hasAuthor <https://orcid.org/0000-0003-3524-3953> . }"
+  },
+  {
+    "natural_language_question": "What are the papers written by Mark van den Brand and Ramon R. H. Schiffelers together?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0003-3529-6182> . ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-3297-2969> . OPTIONAL { ?answer <https://semopenalex.org/ontology/hasAuthor> ?coauthor } . FILTER ( ?coauthor = <https://orcid.org/0000-0002-3297-2969> && ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0003-3529-6182> ) . }"
+  },
+  {
+    "natural_language_question": "What are the papers written by Wu, C. and C. Jason Xue together?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-7829-1413> . ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-6431-9868> . } UNION { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-6431-9868> . ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-7829-1413> . } }"
+  },
+  {
+    "natural_language_question": "Which papers did Carlos Cerrada and Pilar Merch\\u00E1n write together?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-8591-6581> . ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0003-4428-4829> . }"
+  },
+  {
+    "natural_language_question": "What are the papers written by Cutello, V. and Giuseppe Nicosia together?",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/orcidId> PREFIX hasAuthorship: <https://semopenalex.org/ontology/hasAuthorship> PREFIX hasAuthor: <https://semopenalex.org/ontology/hasAuthor> SELECT DISTINCT ?answer WHERE { { ?answer hasAuthorship <https://orcid.org/0000-0002-7521-3516> . ?answer hasAuthor <https://orcid.org/0000-0002-0650-3157> . } UNION { ?answer hasAuthorship <https://orcid.org/0000-0002-0650-3157> . ?answer hasAuthor <https://orcid.org/0000-0002-7521-3516> . } }"
+  },
+  {
+    "natural_language_question": "Find the papers written by Aykut Beke and Kumbasar, T. together.",
+    "sparql_query_kg2": "PREFIX <https://semopenalex.org/ontology/> <http://example.org/> SELECT DISTINCT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0003-4620-8061> . ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-9366-0240> . }"
+  },
+  {
+    "natural_language_question": "Which papers did Huseyin Topaloglu and Sumit Kunnumkal write together?",
+    "sparql_query_kg2": "SELECT ?answer WHERE { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-3049-6719> . ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-6832-0508> . }"
+  },
+  {
+    "natural_language_question": "Who are the co-authors of Antonio Ruiz-Mart\\u00EDnez?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { { ?x <https://semopenalex.org/ontology/hasAuthorship> ?answer . ?answer <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-8433-159X\" . ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-8433-159X> . FILTER(?answer != <https://orcid.org/0000-0002-8433-159X>) } UNION { ?x <https://semopenalex.org/ontology/hasAuthor> ?answer . ?answer <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-8433-159X\" . ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-8433-159X> . FILTER(?answer != <https://orcid.org/0000-0002-8433-159X>) } }"
+  },
+  {
+    "natural_language_question": "Who are the co-authors of Sami Muhaidat?",
+    "sparql_query_kg2": "PREFIX dblp: <https://dblp.org/rdf/schema#> PREFIX openalex: <https://semopenalex.org/ontology/> SELECT DISTINCT ?answer WHERE { ?x openalex:hasAuthorship ?answer . ?x dblp:authoredBy <https://dblp.org/pid/14/7881> . FILTER(?answer != \"https://orcid.org/0000-0003-4649-9399\") }"
+  },
+  {
+    "natural_language_question": "Mention the co-authors of Aljoscha Smolic.",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-7033-3335> . ?x <https://semopenalex.org/ontology/hasAuthorship> ?answer FILTER(?answer != <https://orcid.org/0000-0001-7033-3335>) }"
+  },
+  {
+    "natural_language_question": "Mention the co-authors of Vladimir B..",
+    "sparql_query_kg2": "PREFIX semo: <https://semopenalex.org/ontology/> PREFIX dbo: <https://dbpedia.org/ontology/> SELECT DISTINCT ?answer WHERE { ?x semo:hasAuthorship ?answer . ?x dbo:orcidId ?author . FILTER(?answer != ?author) }"
+  },
+  {
+    "natural_language_question": "With which other authors has the author A. E. Zhdanov written papers?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?paper <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0003-4725-3681> . ?paper <https://semopenalex.org/ontology/hasAuthor> ?answer . FILTER(?answer != <https://orcid.org/0000-0003-4725-3681> && ?paper != <https://orcid.org/0000-0003-4725-3681>) }"
+  },
+  {
+    "natural_language_question": "With which other authors has the author S. A. Meijer written papers?",
+    "sparql_query_kg2": "SELECT ?answer WHERE { ?x ?y <https://orcid.org/0000-0003-1126-3781> . ?x ?relation <https://dblp.org/pid/31/6596> . BIND(?relation AS ?answer) FILTER(?relation != <https://semopenalex.org/ontology/hasAuthorship> && ?relation != <https://semopenalex.org/ontology/hasAuthor>) }"
+  },
+  {
+    "natural_language_question": "Who are the co-authors of Yingfei Xiong?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-8991-747X> . ?x <https://semopenalex.org/ontology/hasAuthor> ?answer FILTER(?answer != <https://orcid.org/0000-0001-8991-747X>) }"
+  },
+  {
+    "natural_language_question": "Which publications did Ant\\u00F4nio Padilha Lanari B\\u00F3 author and in which year?",
+    "sparql_query_kg2": "SELECT DISTINCT ?secondanswer WHERE { ?firstanswer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-8229-0512> . ?firstanswer <http://purl.org/spar/fabio/hasPublicationYear> ?secondanswer }"
+  },
+  {
+    "natural_language_question": "Mention the papers published by Christos Koukouvinos and in which year.",
+    "sparql_query_kg2": "PREFIX <https://orcid.org/> PREFIX fabio: <http://purl.org/spar/fabio/> PREFIX sem: <https://semopenalex.org/ontology/> SELECT ?publication ?year WHERE { ?publication sem:hasAuthor <https://orcid.org/0000-0003-1907-2031> . ?publication fabio:hasPublicationYear ?year . }"
+  },
+  {
+    "natural_language_question": "Which publications did Srinivas Katkoori author and in which year?",
+    "sparql_query_kg2": "PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX fabio: <http://purl.org/spar/fabio/> PREFIX semopenalex: <https://semopenalex.org/ontology/> SELECT ?firstanswer ?secondanswer WHERE { ?firstanswer semopenalex:hasAuthorship ?author . ?firstanswer fabio:hasPublicationYear ?secondanswer . ?author foaf:primaryTopic <https://orcid.org/0000-0002-7589-5836> . }"
+  },
+  {
+    "natural_language_question": "Mention the papers published by Robinson, D. T. and in which year.",
+    "sparql_query_kg2": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX fabio: <http://purl.org/spar/fabio/> SELECT DISTINCT ?paper ?year WHERE { ?paper fabio:hasAuthorship <https://orcid.org/0000-0002-4293-1095> . ?paper fabio:hasPublicationYear ?year . }"
+  },
+  {
+    "natural_language_question": "Which papers did author J. Rouas publish and in which year?",
+    "sparql_query_kg2": "PREFIX orcid: <https://orcid.org/> PREFIX fabio: <http://purl.org/spar/fabio/> PREFIX semo: <https://semopenalex.org/ontology/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?paper ?year WHERE { ?paper semo:hasAuthor ?author . ?author dbo:orcidId <https://orcid.org/0000-0003-1933-0504> . ?paper fabio:hasPublicationYear ?year . ?paper semo:hasAuthor ?author . FILTER (?author = <https://orcid.org/0000-0003-1933-0504>) }"
+  },
+  {
+    "natural_language_question": "Which papers did author Konstantinos Sagonas publish and in which year?",
+    "sparql_query_kg2": "SELECT DISTINCT ?paper ?year WHERE { ?paper <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-9657-0179> . ?paper <http://purl.org/spar/fabio/hasPublicationYear> ?year . FILTER lang(?paper) = 'en' }"
+  },
+  {
+    "natural_language_question": "Mention the papers published by Christian A. Mueller and in which year.",
+    "sparql_query_kg2": "SELECT ?paper ?publicationYear WHERE { ?paper <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0003-1895-987X> . ?paper <http://purl.org/spar/fabio/hasPublicationYear> ?publicationYear . FILTER (regex(str(?paper), \"Christian A. Mueller\", \"i\")) }"
+  },
+  {
+    "natural_language_question": "What are the titles of the papers that F. Colone published and in which venues?",
+    "sparql_query_kg2": "SELECT DISTINCT ?publication ?title WHERE { ?publication <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-6694-7534> . ?publication <https://semopenalex.org/ontology/hasLocation> ?publicationVenue . ?publication <http://purl.org/dc/terms/title> ?title . }"
+  },
+  {
+    "natural_language_question": "List the titles of the papers that Besser, Karl-Ludwig published and in which venues.",
+    "sparql_query_kg2": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-1597-8963> . ?x <https://semopenalex.org/ontology/hasLocation> ?firstanswer . ?x <https://semopenalex.org/ontology/hasSource> ?firstanswer . ?x <http://purl.org/dc/terms/title> ?secondanswer . }"
+  },
+  {
+    "natural_language_question": "In which venues did Wan, X. publish papers and what are the titles of these papers?",
+    "sparql_query_kg2": "SELECT DISTINCT ?location ?title WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-6887-1994> . ?x <https://semopenalex.org/ontology/isPublication> ?isPublication . ?x <https://semopenalex.org/ontology/hasSource> ?location . ?x <http://purl.org/dc/terms/title> ?title . OPTIONAL { ?x <https://semopenalex.org/ontology/hasLocation> ?location } . }"
+  },
+  {
+    "natural_language_question": "In which venues did Jeffrey S. Rosenschein publish papers and what are the titles of these papers?",
+    "sparql_query_kg2": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-4042-9739> . ?x <https://semopenalex.org/ontology/hasLocation> ?firstanswer . ?x <http://purl.org/dc/terms/title> ?secondanswer . }"
+  },
+  {
+    "natural_language_question": "List the titles of the papers that Hosam M. Mahmoud published and in which venues.",
+    "sparql_query_kg2": "PREFIX dblp: <https://dblp.org/rdf/schema#> PREFIX oa: <https://semopenalex.org/ontology/> PREFIX orc: <https://dbpedia.org/ontology/> SELECT ?firstanswer ?secondanswer WHERE { <https://orcid.org/0000-0003-0962-9406> oa:hasAuthorship ?x . ?x oa:hasLocation ?firstanswer . ?x oa:title ?secondanswer . }"
+  },
+  {
+    "natural_language_question": "List the venues in which Mohammad Reza Aref published papers and the titles of these papers.",
+    "sparql_query_kg2": "SELECT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-4321-0345>. ?x <https://semopenalex.org/ontology/hasLocation> ?firstanswer. ?x <http://purl.org/dc/terms/title> ?secondanswer. }"
+  },
+  {
+    "natural_language_question": "In which venues did Panos Vassiliadis publish papers and what are the titles of these papers?",
+    "sparql_query_kg2": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0003-0085-6776> . ?x <https://semopenalex.org/ontology/hasLocation> ?firstanswer . ?x <http://purl.org/dc/terms/title> ?secondanswer . }"
+  },
+  {
+    "natural_language_question": "List the titles of the papers that Tian He published in the last five years and in which venues.",
+    "sparql_query_kg2": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-6062-2619> . ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y . FILTER(?y > YEAR(NOW())-5) . ?x <https://semopenalex.org/ontology/hasLocation> ?firstanswer . ?x <http://purl.org/dc/terms/title> ?secondanswer . }"
+  },
+  {
+    "natural_language_question": "List the titles of the papers that Gerardo Di Martino published in the last 9 years and in which venues.",
+    "sparql_query_kg2": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0003-4200-2584>. ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y. FILTER (?y > YEAR(NOW())-9). ?x <http://purl.org/dc/terms/title> ?firstanswer. UNION ?x <https://semopenalex.org/ontology/hasSource> ?secondanswer. UNION ?x <https://semopenalex.org/ontology/hasLocation> ?secondanswer. }"
+  },
+  {
+    "natural_language_question": "In which venues did Sterling, L. publish papers in the last 6 years and what are the titles of these papers?",
+    "sparql_query_kg2": "SELECT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-4122-2465> . ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y . FILTER(?y > YEAR(NOW())-6) . ?x <https://semopenalex.org/ontology/hasLocation> ?firstanswer . ?x <http://purl.org/dc/terms/title> ?secondanswer . }"
+  },
+  {
+    "natural_language_question": "In which venues did S. K. Houghten publish papers in the last 3 years and what are the titles of these papers?",
+    "sparql_query_kg2": "SELECT DISTINCT ?source ?title WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-5164-7910> . ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y . FILTER(?y > YEAR(NOW())-3) . ?x <https://semopenalex.org/ontology/hasSource> ?source . ?x <http://purl.org/dc/terms/title> ?title . }"
+  },
+  {
+    "natural_language_question": "In which venues did Lasota, Slawomir publish papers in the last 7 years and what are the titles of these papers?",
+    "sparql_query_kg2": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-8674-4470> . ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y . FILTER(?y > YEAR(NOW())-7) . { ?x <https://semopenalex.org/ontology/hasLocation> ?firstanswer . } UNION { ?x <https://semopenalex.org/ontology/hasSource> ?firstanswer . } ?x <http://purl.org/dc/terms/title> ?secondanswer . }"
+  },
+  {
+    "natural_language_question": "What are the titles of the papers that K. Muchtar published in the last six years and in which venues?",
+    "sparql_query_kg2": "SELECT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-5740-1938> . ?x <https://semopenalex.org/ontology/hasPublicationYear> ?y . FILTER(?y > YEAR(NOW())-6) . ?x <https://semopenalex.org/ontology/hasSource> ?firstanswer . ?x <http://purl.org/dc/terms/title> ?secondanswer . }"
+  },
+  {
+    "natural_language_question": "What are the titles of the papers that Andrew P. Black published in the last six years and in which venues?",
+    "sparql_query_kg2": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> \"https://orcid.org/0000-0003-0014-6483\" . ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y . FILTER(?y > YEAR(NOW())-6) . ?x <https://semopenalex.org/ontology/hasLocation> ?firstanswer . ?x <http://purl.org/dc/terms/title> ?secondanswer }"
+  },
+  {
+    "natural_language_question": "Didn't Quaresma, P. and Vanda S. not co-author a paper?",
+    "sparql_query_kg2": "ASK { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-7728-4935> . ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-3953-6123> }"
+  },
+  {
+    "natural_language_question": "Didn't William L. Kocay and Emiliano Dall'Anese not co-author a paper?",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/> PREFIX semoa: <https://semopenalex.org/ontology/> ASK { ?work a semoa:Work . ?work semoa:hasAuthor orcid:orcidId \"https://orcid.org/0000-0002-6689-4911\" . OPTIONAL { ?work semoa:hasAuthor orcid:orcidId \"https://orcid.org/0000-0002-6486-7477\" } . FILTER (BOUND(?work)) }"
+  },
+  {
+    "natural_language_question": "Didn't Ioanna Chouvarda and Carvalho, Paulo not co-author a paper?",
+    "sparql_query_kg2": "PREFIX orcid: <https://orcid.org/> PREFIX oa: <https://semopenalex.org/ontology/> SELECT ?paper WHERE { ?paper oa:hasAuthorship ?auth . ?auth oa:hasAuthor orcid:0000-0001-8915-6658 . ?auth oa:hasAuthor orcid:0000-0002-9847-0590 . }"
+  },
+  {
+    "natural_language_question": "Didn't J. Li and Lei Yu not co-author a paper?",
+    "sparql_query_kg2": "ASK { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-5836-1931> . ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-5968-0344> }"
+  },
+  {
+    "natural_language_question": "Didn't Alex Pappachen James and Mostafa Rahimi Azghadi not co-author a paper?",
+    "sparql_query_kg2": "SELECT ?author WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> ?author . ?x <https://semopenalex.org/ontology/hasAuthor> ?author . ?author <https://dbpedia.org/ontology/orcidId> <https://orcid.org/0000-0001-5655-1213> . ?author <https://dbpedia.org/ontology/orcidId> <https://orcid.org/0000-0001-7975-3985> . }"
+  },
+  {
+    "natural_language_question": "Didn't Sotiris Batsakis and Ilias Tachmazidis not co-author a paper?",
+    "sparql_query_kg2": "ASK { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-6023-2311> . ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-9052-7329> . }"
+  },
+  {
+    "natural_language_question": "Was a paper not not co-authored by Luigi Chisci and N. Forti?",
+    "sparql_query_kg2": "ASK { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-5049-3577> . FILTER NOT EXISTS { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-5510-1616> . } UNION ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-5510-1616> . FILTER NOT EXISTS { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-5049-3577> . } }"
+  },
+  {
+    "natural_language_question": "What are the papers that T. Blu and Unser, M. published?",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/> PREFIX oa: <https://semopenalex.org/ontology/> SELECT ?answer WHERE { ?dblp <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/b/ThierryBlu>. ?answer oa:hasAuthorship ?dblp. UNION ?dblp <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/u/MichaelUnser>. ?answer oa:hasAuthorship ?dblp. }"
+  },
+  {
+    "natural_language_question": "List all the papers that Tilman Dingler and Kai Kunze published.",
+    "sparql_query_kg2": "SELECT DISTINCT ?paper WHERE { ?paper <https://semopenalex.org/ontology/hasAuthorship> ?authorship . ?authorship <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-6180-7033> . UNION ?paper <https://semopenalex.org/ontology/hasAuthorship> ?authorship . ?authorship <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0003-2294-3774> . }"
+  },
+  {
+    "natural_language_question": "List all the papers that K. Chen and Adrian Dumitrescu published.",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { ?paper <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-5470-6621>. ?paper <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-1118-0321>. ?answer <https://semopenalex.org/ontology/isExampleOf> ?paper. }"
+  },
+  {
+    "natural_language_question": "What are the papers that Antonio P. and Tomarchio, Orazio published?",
+    "sparql_query_kg2": "PREFIX oa: <https://semopenalex.org/ontology/> PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> SELECT ?answer WHERE { ?answer oa:hasAuthorship ?author1 . ?author1 dbpedia-owl:orcidId <https://orcid.org/0000-0003-0385-2711> . ?answer oa:hasAuthor ?author2 . ?author2 dbpedia-owl:orcidId <https://orcid.org/0000-0003-4653-0480> . }"
+  },
+  {
+    "natural_language_question": "What are the papers that Hans-Arno J. and Kaiwen Zhang published?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0003-0813-0101> . } UNION { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-5599-0190> . } }"
+  },
+  {
+    "natural_language_question": "List all the papers that Revithis, S. and M. Rupp published.",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-9995-6018> . } UNION { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-9995-6018> . } UNION { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-9003-7779> . } UNION { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-9003-7779> . } }"
+  },
+  {
+    "natural_language_question": "What are the papers that Andrzej Przybyl and Lapa, Krystian published?",
+    "sparql_query_kg2": "SELECT DISTINCT ?answer WHERE { { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-8052-4415> } UNION { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-8052-4415> } UNION { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-3926-5685> } UNION { ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-3926-5685> } }"
+  },
+  {
+    "natural_language_question": "Report the average number of publications by P. Melin per year.",
+    "sparql_query_kg2": "PREFIX fabio: <http://purl.org/spar/fabio/> PREFIX semopenalex: <https://semopenalex.org/ontology/> SELECT (AVG(?count) AS ?answer) WHERE { ?author semopenalex:authorOrcid <https://orcid.org/0000-0001-5798-1426> . ?x semopenalex:hasAuthor ?author . ?x semopenalex:hasAuthorship ?a . ?a semopenalex:hasAuthor ?author . ?x semopenalex:publicationYear ?y . ?x semopenalex:hasPublicationYear ?y . GROUP BY ?y }"
+  },
+  {
+    "natural_language_question": "Report the average number of publications by Bottino, R. Maria per year.",
+    "sparql_query_kg2": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-6709-0053> . ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y } GROUP BY ?y }"
+  },
+  {
+    "natural_language_question": "Report the average number of publications by Kian Hsiang Low per year.",
+    "sparql_query_kg2": "PREFIX fabio: <http://purl.org/spar/fabio/> PREFIX semopenalex: <https://semopenalex.org/ontology/> SELECT (AVG(?count) AS ?answer) { ?x semopenalex:hasAuthor <https://orcid.org/0000-0003-2808-451X> . ?x semopenalex:hasPublicationYear ?year . ?x semopenalex:hasAuthorship ?y . FILTER (?y = ?x) GROUP BY ?year }"
+  },
+  {
+    "natural_language_question": "Report the average number of publications by S. Yun per year.",
+    "sparql_query_kg2": "PREFIX fabio: <http://purl.org/spar/fabio/> PREFIX semopenalex: <https://semopenalex.org/ontology/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX orcid: <https://orcid.org/> PREFIX dbpedia: <http://dbpedia.org/> SELECT (AVG(?count) AS ?answer) WHERE { ?x <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/23/8862> . ?x <https://dblp.org/rdf/schema#yearOfPublication> ?y . SERVICE <http://dbpedia.org/sparql> { ?author dbo:orcid ?orcid . FILTER(?orcid = orcid:\"0000-0001-6675-5113\") } SERVICE semopenalex { ?x semopenalex:hasAuthorship ?author . ?author semopenalex:hasPublicationYear ?y . BIND(COUNT(?y) AS ?count) } } GROUP BY ?y"
+  },
+  {
+    "natural_language_question": "What is the average number of research papers published by the author Ramayah, T. per year?",
+    "sparql_query_kg2": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-7580-7058> . ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y } GROUP BY ?y }"
+  },
+  {
+    "natural_language_question": "What is the average number of papers published by Utpal Garain per year?",
+    "sparql_query_kg2": "SELECT (AVG(?count) AS ?answer) WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-7207-5018> . ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y . BIND(COUNT(?y) AS ?count) } GROUP BY ?y"
+  },
+  {
+    "natural_language_question": "Report the average number of publications by Alexandra Branzan Albu per year.",
+    "sparql_query_kg2": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0001-8991-0999> . ?x <http://purl.org/spar/fabio/hasPublicationYear> ?y . FILTER (?y >= 2000 && ?y <= 2022) } GROUP BY ?y }"
+  },
+  {
+    "natural_language_question": "Count the number of co-authors that Trung Nguyen-Thoi has.",
+    "sparql_query_kg2": "PREFIX semopenalex: <https://semopenalex.org/ontology/> SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x semopenalex:hasAuthorship ?answer . ?x semopenalex:hasAuthor <https://orcid.org/0000-0001-7985-6706> . FILTER(?answer != <https://orcid.org/0000-0001-7985-6706>) }"
+  },
+  {
+    "natural_language_question": "How many co-authors does B. Li have?",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/> PREFIX semopenalex: <https://semopenalex.org/ontology/> SELECT (COUNT(DISTINCT ?coAuthor) AS ?count) WHERE { ?paper semopenalex:hasAuthor ?coAuthor . ?paper semopenalex:hasAuthor orcid:https://orcid.org/0000-0001-6114-1411 . FILTER(?coAuthor != orcid:https://orcid.org/0000-0001-6114-1411) }"
+  },
+  {
+    "natural_language_question": "Count the number of co-authors that Yier Jin has.",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-8791-0597> . ?x <https://semopenalex.org/ontology/hasAuthorship> ?answer . FILTER(?answer != <https://orcid.org/0000-0002-8791-0597>) }"
+  },
+  {
+    "natural_language_question": "Count the number of co-authors that Patel, Dhaval has.",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> ?answer FILTER(?answer != <https://orcid.org/0000-0001-6210-0902>) }"
+  },
+  {
+    "natural_language_question": "Count the number of co-authors that A. J. Bowers has.",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> ?answer . ?answer <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-5140-6428\" . FILTER(?answer != ?x) }"
+  },
+  {
+    "natural_language_question": "Count the number of co-authors that Stefano B. has.",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/> PREFIX alex: <https://semopenalex.org/ontology/> SELECT (COUNT(DISTINCT ?author) AS ?count) WHERE { ?work alex:hasAuthorship ?authorship . ?work alex:hasAuthor ?author . ?author orcid:orcidId \"https://orcid.org/0000-0003-0492-0886\" . ?authorship alex:hasAuthor ?authorshipAuthor . FILTER(?author != ?authorshipAuthor) FILTER(?author != \"https://orcid.org/0000-0003-0492-0886\") }"
+  },
+  {
+    "natural_language_question": "Count the number of co-authors that Ignacio S. has.",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?author) AS ?count) WHERE { ?paper <https://semopenalex.org/ontology/hasAuthor> ?author . ?author <https://dbpedia.org/ontology/orcidId> <https://orcid.org/0000-0002-7421-3733> . <https://dblp.org/pid/70/310> <https://semopenalex.org/ontology/hasAuthorship> ?paper . FILTER(?author != <https://dblp.org/pid/70/310>) . }"
+  },
+  {
+    "natural_language_question": "How many research papers has Gregory M. Provan published?",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?paper) AS ?count) WHERE { ?paper <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0003-3678-046X> . }"
+  },
+  {
+    "natural_language_question": "Mention the number of papers that Zhang, Jianzhong has published.",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-9775-2783> . }"
+  },
+  {
+    "natural_language_question": "How many research papers has Zhang, Daqing published?",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://orcid.org/0000-0002-6608-1267> <https://semopenalex.org/ontology/hasAuthorship>. }"
+  },
+  {
+    "natural_language_question": "How many papers has Cerquitelli, T. published?",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?answer) AS ?count) WHERE { ?answer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-9039-6226> . ?answer <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-9039-6226> . ?answer <https://semopenalex.org/ontology/orcidId> ?answer . }"
+  },
+  {
+    "natural_language_question": "How many research papers has Nicolas Usunier published?",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/> PREFIX semopenalex: <https://semopenalex.org/ontology/> SELECT (COUNT(DISTINCT ?paper) AS ?count) WHERE { VALUES ?author { <https://orcid.org/0000-0002-9324-1457> } ?paper semopenalex:hasAuthor ?author . }"
+  },
+  {
+    "natural_language_question": "How many papers has Fouque, P. published?",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?paper) AS ?count) WHERE { <https://orcid.org/0000-0003-4997-2276> <https://semopenalex.org/ontology/hasAuthor> ?paper . ?paper <https://semopenalex.org/ontology/isAuthorshipOf> ?answer . ?answer <https://dblp.org/rdf/schema#authoredBy> <https://dblp.org/pid/76/6163> . FILTER (?paper = <https://orcid.org/0000-0003-4997-2276>) }"
+  },
+  {
+    "natural_language_question": "Mention the number of papers that C. Edward Chow has published.",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?paper) AS ?count) WHERE { ?paper <https://semopenalex.org/ontology/hasAuthor> <https://orcid.org/0000-0002-6870-2952> . }"
+  },
+  {
+    "natural_language_question": "What is the average number of co-authors for papers published by Alberto Prieto?",
+    "sparql_query_kg2": "PREFIX o: <https://semopenalex.org/ontology/> SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x o:hasAuthorship <https://orcid.org/0000-0002-0814-6544> . ?x o:hasCreator ?y } GROUP BY ?y }"
+  },
+  {
+    "natural_language_question": "What is the average number of co-authors for papers published by E. G. Omodeo?",
+    "sparql_query_kg2": "PREFIX orcid: <https://orcid.org/> PREFIX oa: <https://semopenalex.org/ontology/> SELECT (AVG(?count) AS ?answer) WHERE { ?x oa:hasAuthorship ?y . ?y orcid:orcidId \"https://orcid.org/0000-0003-3917-1942\" . OPTIONAL { ?y oa:hasAuthorship ?z } . BIND(IF(?z, COUNT(DISTINCT ?z), 0) AS ?count) }"
+  },
+  {
+    "natural_language_question": "What is the average number of co-authors for research papers published by Abderrahmane Leshob?",
+    "sparql_query_kg2": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> ?y . ?y <https://dbpedia.org/ontology/orcidId> \"https://orcid.org/0000-0002-4066-3111\" . ?x <https://semopenalex.org/ontology/numAuthors> ?count . } GROUP BY ?count }"
+  },
+  {
+    "natural_language_question": "What is the average number of co-authors for papers published by Michael Vynnycky?",
+    "sparql_query_kg2": "SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(?y) AS ?count) WHERE { ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0002-8318-1251> . ?x <https://semopenalex.org/ontology/numberOfCreators> ?y . } GROUP BY ?y }"
+  },
+  {
+    "natural_language_question": "What is the average number of co-authors for research papers published by Ivica L.?",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/> PREFIX oa: <https://semopenalex.org/ontology/> SELECT (AVG(?count) AS ?answer) { SELECT (COUNT(DISTINCT ?y) AS ?count) WHERE { ?x oa:hasAuthorship ?y ; orcid:orcidId \"https://orcid.org/0000-0003-3560-4288\" . ?x oa:hasAuthor ?z . } GROUP BY ?z }"
+  },
+  {
+    "natural_language_question": "What is the average number of co-authors for papers published by P. R. S. Mendon\\u00E7a?",
+    "sparql_query_kg2": "PREFIX semo: <https://semopenalex.org/ontology/> SELECT (AVG(?count) AS ?answer) WHERE { <https://orcid.org/000-0003-4025-4083> semo:hasAuthorship ?paper . ?paper semo:hasAuthor ?author . ?paper semo:numberOfCreators ?count . FILTER (?count > 1) }"
+  },
+  {
+    "natural_language_question": "What is the average number of co-authors for research papers published by Gustaf S\\u00F6derlind?",
+    "sparql_query_kg2": "SELECT (AVG(?count) AS ?answer) WHERE { ?x <https://semopenalex.org/ontology/hasAuthor> ?author . ?x <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0003-3559-960X> ; <https://semopenalex.org/ontology/hasAuthorship> ?y . FILTER(?author = <https://dbpedia.org/ontology/orcidId> || ?author = <https://orcid.org/0000-0003-3559-960X> ) . BIND((COUNT(DISTINCT ?y) as ?count)) }"
+  },
+  {
+    "natural_language_question": "List the titles of the papers that Nikolay M. Safyannikov published and in which venues.",
+    "sparql_query_kg2": "PREFIX orcid: <https://dbpedia.org/ontology/> PREFIX hasAuthorship: <https://semopenalex.org/ontology/hasAuthorship> PREFIX hasSource: <https://semopenalex.org/ontology/hasSource> PREFIX dc: <http://purl.org/dc/terms/> SELECT ?title ?venue WHERE { ?x orcid:orcidId \"https://orcid.org/0000-0002-5424-0881\" . ?x hasAuthorship ?y . ?y hasSource ?venue . ?y dc:title ?title . }"
+  },
+  {
+    "natural_language_question": "Which papers did author Gerard J. M. Janssen publish and in which year?",
+    "sparql_query_kg2": "SELECT DISTINCT ?firstanswer ?secondanswer WHERE { ?firstanswer <https://semopenalex.org/ontology/hasAuthorship> <https://orcid.org/0000-0001-5423-4468> . ?firstanswer <http://purl.org/spar/fabio/hasPublicationYear> ?secondanswer . }"
+  }
+]
