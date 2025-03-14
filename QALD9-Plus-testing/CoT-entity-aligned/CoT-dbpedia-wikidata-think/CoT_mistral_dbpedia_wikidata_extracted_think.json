@@ -1,0 +1,402 @@
+[
+  {
+    "natural_language_question": "Who is the founder of Penguin Books?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { { wd:Q1336200 wdt:P112 ?uri } UNION { wd:Q3374730 wdt:P112 ?uri } }"
+  },
+  {
+    "natural_language_question": "Which films did Stanley Kubrick direct?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?film WHERE { ?film wdt:P57 wd:Q2001 . }"
+  },
+  {
+    "natural_language_question": "List all the musicals with music by Elton John.",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q2743 ; wdt:P86 wd:Q2808 . }"
+  },
+  {
+    "natural_language_question": "Who developed Skype?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q40984 wdt:P178 ?uri. }"
+  },
+  {
+    "natural_language_question": "Show a list of soccer clubs that play in the Bundesliga.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q476028 ; wdt:P118 wd:Q82595 . }"
+  },
+  {
+    "natural_language_question": "Give me all actors starring in movies directed by William Shatner.",
+    "sparql_query_kg2": "SELECT DISTINCT ?actor WHERE { ?movie wdt:P57 wd:Q16297 ; wdt:P161 ?actor . }"
+  },
+  {
+    "natural_language_question": "What is the highest mountain?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q8502 ; wdt:P2044 ?elevation . } ORDER BY DESC(?elevation) LIMIT 1"
+  },
+  {
+    "natural_language_question": "How many films did Leonardo DiCaprio star in?",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?film) AS ?c) WHERE { ?film wdt:P31 wd:Q11424 ; wdt:P161 wd:Q38111 . }"
+  },
+  {
+    "natural_language_question": "When was Olof Palme shot?",
+    "sparql_query_kg2": "SELECT DISTINCT ?date WHERE { wd:Q53713 wdt:P570 ?date. }"
+  },
+  {
+    "natural_language_question": "Which movies star both Liz Taylor and Richard Burton?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P161 wd:Q34851 ; wdt:P161 wd:Q151973 . }"
+  },
+  {
+    "natural_language_question": "Who developed Minecraft?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { wd:Q49740 wdt:P178 ?uri . }"
+  },
+  {
+    "natural_language_question": "How much did the Lego Movie cost?",
+    "sparql_query_kg2": "SELECT DISTINCT ?n WHERE { wd:Q2608065 wdt:P2769 ?n }"
+  },
+  {
+    "natural_language_question": "For which label did Elvis record his first album?",
+    "sparql_query_kg2": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { ?x wdt:P31 wd:Q482994 ; wdt:P175 wd:Q303 ; wdt:P577 ?y ; wdt:P264 ?uri . } ORDER BY ASC(?y) LIMIT 1"
+  },
+  {
+    "natural_language_question": "Give me the runtime of Toy Story.",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?runtime WHERE { wd:Q171048 wdt:P2047 ?runtime . }"
+  },
+  {
+    "natural_language_question": "Give me a list of all trumpet players that were bandleaders.",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P106 ?occupation ; wdt:P1303 ?instrument . VALUES ?occupation { wd:Q5280538 wd:Q806349 } VALUES ?instrument { wd:Q119621 wd:Q8338 } }"
+  },
+  {
+    "natural_language_question": "In which films directed by Garry Marshall was Julia Roberts starring?",
+    "sparql_query_kg2": "SELECT DISTINCT ?film WHERE { ?film wdt:P31 wd:Q11424 ; wdt:P161 wd:Q40523 ; wdt:P57 wd:Q315087 }"
+  },
+  {
+    "natural_language_question": "In which year was Rachel Stevens born?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?birthYear WHERE { wd:Q241665 wdt:P569 ?birthYear }"
+  },
+  {
+    "natural_language_question": "What is the most frequent cause of death?",
+    "sparql_query_kg2": "SELECT DISTINCT ?x WHERE { ?uri wdt:P509 ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1"
+  },
+  {
+    "natural_language_question": "How high is the Yokohama Marine Tower?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?num WHERE { wd:Q1207989 wdt:P2048 ?num . }"
+  },
+  {
+    "natural_language_question": "What is the highest mountain in Italy?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?mountain WHERE { ?mountain wdt:P31 wd:Q8502 ; wdt:P131 wd:Q38 ; wdt:P2044 ?elevation . } ORDER BY DESC(?elevation) LIMIT 1"
+  },
+  {
+    "natural_language_question": "Who was the doctoral supervisor of Albert Einstein?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q937 wdt:P184 ?uri }"
+  },
+  {
+    "natural_language_question": "What is Donald Trump's main business?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?owner WHERE { ?owner wdt:P127 wd:Q22686 . }"
+  },
+  {
+    "natural_language_question": "Who has Tom Cruise been married to?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P26 wd:Q37079 . }"
+  },
+  {
+    "natural_language_question": "How many people live in Eurasia?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?population WHERE { wd:Q5401 wdt:P1082 ?population . }"
+  },
+  {
+    "natural_language_question": "Who is the author of the interpretation of dreams?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?Author WHERE { wd:Q726382 wdt:P50 ?Author . }"
+  },
+  {
+    "natural_language_question": "When was John Adams born?",
+    "sparql_query_kg2": "SELECT DISTINCT ?date WHERE { wd:Q11806 wdt:P569 ?date }"
+  },
+  {
+    "natural_language_question": "how much is the total population of european union?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?europop WHERE { wd:Q458 wdt:P1082 ?europop . }"
+  },
+  {
+    "natural_language_question": "Give me the currency of China.",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { VALUES ?china { wd:Q148 } ?china wdt:P38 ?uri. }"
+  },
+  {
+    "natural_language_question": "When was the death of Shakespeare?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?deathDate WHERE { wd:Q692 wdt:P570 ?deathDate } LIMIT 1"
+  },
+  {
+    "natural_language_question": "Which rockets were launched from Baikonur?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q41291 ; wdt:P448 wd:Q177477 . }"
+  },
+  {
+    "natural_language_question": "Give me all islands that belong to Japan.",
+    "sparql_query_kg2": "SELECT DISTINCT ?item WHERE { ?item wdt:P31 wd:Q23442; wdt:P17 wd:Q17. }"
+  },
+  {
+    "natural_language_question": "Who developed the video game World of Warcraft?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q131007 wdt:P178 ?uri }"
+  },
+  {
+    "natural_language_question": "Give me all companies in the advertising industry.",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q4830453. { ?uri wdt:P452 wd:Q854995. } UNION { ?uri wdt:P452 ?industry. FILTER regex(?industry, \"advertising\", \"i\"). } }"
+  },
+  {
+    "natural_language_question": "Which university did Angela Merkel attend?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?university WHERE { wd:Q567 wdt:P69 ?university }"
+  },
+  {
+    "natural_language_question": "Give me all the TV shows with Neil Patrick Harris.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q15416 ; wdt:P161 wd:Q485310 . }"
+  },
+  {
+    "natural_language_question": "Give me all movies with Tom Cruise.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q37079 . }"
+  },
+  {
+    "natural_language_question": "What country is Mount Everest in?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q513 wdt:P131 ?uri . ?uri wdt:P31 wd:Q6256 . }"
+  },
+  {
+    "natural_language_question": "Where was JFK assassinated?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { wd:Q9696 wdt:P20 ?uri. }"
+  },
+  {
+    "natural_language_question": "Which river does the Brooklyn Bridge cross?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q125006 wdt:P177 ?uri }"
+  },
+  {
+    "natural_language_question": "Give all swimmers that were born in Moscow.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q10843402 ; wdt:P19 wd:Q649 . }"
+  },
+  {
+    "natural_language_question": "What was the last movie with Alec Guinness?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX pq: <http://www.wikidata.org/prop/qualifier/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX bd: <http://www.bigdata.com/rdf#> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q103894 ; wdt:P577 ?date . } ORDER BY DESC(?date) LIMIT 1"
+  },
+  {
+    "natural_language_question": "What is the second highest mountain on Earth?",
+    "sparql_query_kg2": "SELECT DISTINCT ?mountain WHERE { ?mountain wdt:P31 wd:Q8502 ; wdt:P2044 ?elevation . } ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1"
+  },
+  {
+    "natural_language_question": "What is the population of Cairo?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?pop WHERE { wd:Q85 wdt:P1082 ?pop . }"
+  },
+  {
+    "natural_language_question": "Which people were born in Heraklion?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q5 ; wdt:P19 wd:Q160544. }"
+  },
+  {
+    "natural_language_question": "How many children did Benjamin Franklin have?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT (COUNT(DISTINCT ?child) AS ?c) WHERE { wd:Q34969 wdt:P40 ?child. }"
+  },
+  {
+    "natural_language_question": "how much is the elevation of D\u00fcsseldorf Airport ?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?ele WHERE { wd:Q58226 wdt:P2044 ?ele } LIMIT 1"
+  },
+  {
+    "natural_language_question": "In which country is Mecca located?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q5806 wdt:P17 ?uri }"
+  },
+  {
+    "natural_language_question": "How tall is Claudia Schiffer?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?height WHERE { wd:Q76717 wdt:P2048 ?height }"
+  },
+  {
+    "natural_language_question": "Which holidays are celebrated around the world?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q1445650 . }"
+  },
+  {
+    "natural_language_question": "What kind of music did Lou Reed play?",
+    "sparql_query_kg2": "SELECT DISTINCT ?genre WHERE { wd:Q189080 wdt:P136 ?genre. }"
+  },
+  {
+    "natural_language_question": "Give me the birth place of Frank Sinatra.",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?place WHERE { wd:Q40912 wdt:P19 ?place. }"
+  },
+  {
+    "natural_language_question": "Which city has the least inhabitants?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?city WHERE { ?city wdt:P31 wd:Q515 ; wdt:P1082 ?population . } ORDER BY ASC(?population) LIMIT 1"
+  },
+  {
+    "natural_language_question": "Which television shows were created by Walt Disney?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q15416 ; wdt:P170 wd:Q8704 . }"
+  },
+  {
+    "natural_language_question": "Give me all Swedish holidays.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q1445650 ; wdt:P17 wd:Q34 . }"
+  },
+  {
+    "natural_language_question": "What is the net income of Apple?",
+    "sparql_query_kg2": "SELECT DISTINCT ?ni WHERE { wd:Q312 wdt:P2295 ?ni }"
+  },
+  {
+    "natural_language_question": "Where did Abraham Lincoln die?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q91 wdt:P20 ?uri. }"
+  },
+  {
+    "natural_language_question": "Give me the capitals of all countries that the Himalayas run through.",
+    "sparql_query_kg2": "SELECT DISTINCT ?capital WHERE { VALUES ?himalayas { wd:Q105981852 wd:Q26235529 wd:Q5451 } ?himalayas wdt:P17 ?country . ?country wdt:P36 ?capital . }"
+  },
+  {
+    "natural_language_question": "In which country is the Limerick Lake?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q6386177 wdt:P17 ?uri }"
+  },
+  {
+    "natural_language_question": "How tall is Michael Jordan?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?num WHERE { wd:Q41421 wdt:P2048 ?num . }"
+  },
+  {
+    "natural_language_question": "Which films starring Clint Eastwood did he direct himself?",
+    "sparql_query_kg2": "SELECT DISTINCT ?film WHERE { ?film wdt:P57 wd:Q43203 ; wdt:P161 wd:Q43203 . }"
+  },
+  {
+    "natural_language_question": "In which countries can you pay using the West African CFA franc?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P38 wd:Q861690. }"
+  },
+  {
+    "natural_language_question": "how much is the population Iraq?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?pIraq WHERE { wd:Q796 wdt:P1082 ?pIraq }"
+  },
+  {
+    "natural_language_question": "Which holidays are celebrated around the world?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q1445650. }"
+  },
+  {
+    "natural_language_question": "Which Greek parties are pro-European?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q7278 ; wdt:P17 wd:Q41 ; wdt:P1142 wd:Q3781399. }"
+  },
+  {
+    "natural_language_question": "Give me the birthdays of all actors of the television show Charmed.",
+    "sparql_query_kg2": "SELECT DISTINCT ?date WHERE { wd:Q162371 p:P161 ?statement . ?statement ps:P161 ?actor . ?actor wdt:P569 ?date . }"
+  },
+  {
+    "natural_language_question": "To which artistic movement did the painter of The Three Dancers belong?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q3235867 wdt:P50 ?person . ?person wdt:P135 ?uri . }"
+  },
+  {
+    "natural_language_question": "Which actors were born in Germany?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q33999. { ?uri wdt:P19 wd:Q183. } UNION { ?uri wdt:P19 ?place. ?place wdt:P17 wd:Q183. } }"
+  },
+  {
+    "natural_language_question": "Who designed the Brooklyn Bridge?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?architect WHERE { wd:Q125006 wdt:P84 ?architect. }"
+  },
+  {
+    "natural_language_question": "Who wrote the Game of Thrones theme?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q23572 wdt:P86 ?uri }"
+  },
+  {
+    "natural_language_question": "Give me all movies directed by Francis Ford Coppola.",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P57 wd:Q56094 . }"
+  },
+  {
+    "natural_language_question": "What is the birth name of Adele?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?bn WHERE { wd:Q23215 wdt:P1477 ?bn }"
+  },
+  {
+    "natural_language_question": "What was the first Queen album?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?album WHERE { ?album wdt:P31 wd:Q482994; wdt:P175 wd:Q15862; wdt:P577 ?d }"
+  },
+  {
+    "natural_language_question": "What is the currency of the Czech Republic?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?currency WHERE { wd:Q213 wdt:P38 ?currency }"
+  },
+  {
+    "natural_language_question": "Give me all people that were born in Vienna and died in Berlin.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P19 wd:Q1741 ; wdt:P20 wd:Q64 . }"
+  },
+  {
+    "natural_language_question": "Which bridges cross the Seine?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q12280 ; wdt:P177 wd:Q1471 . }"
+  },
+  {
+    "natural_language_question": "Which musician wrote the most books?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q639669 . ?x wdt:P50 ?uri . ?x wdt:P31 wd:Q571 . } ORDER BY DESC(COUNT(?x)) LIMIT 1"
+  },
+  {
+    "natural_language_question": "Which television shows were created by John Cleese?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q15416 ; wdt:P170 wd:Q25014 . }"
+  },
+  {
+    "natural_language_question": "Give me all writers that won the Nobel Prize in literature.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q36180 ; wdt:P166 wd:Q37922 . }"
+  },
+  {
+    "natural_language_question": "Who discovered Ceres?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q596 wdt:P61 ?uri }"
+  },
+  {
+    "natural_language_question": "Give me a list of all bandleaders that play trumpet.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q5280538 ; wdt:P1303 wd:Q119621 . }"
+  },
+  {
+    "natural_language_question": "Show me all basketball players that are higher than 2 meters.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q3665646 ; wdt:P2048 ?n . FILTER ( ?n > 2.0 ) }"
+  },
+  {
+    "natural_language_question": "In which films did Julia Roberts as well as Richard Gere play?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?film WHERE { ?film wdt:P31 wd:Q11424 ; wdt:P161 wd:Q40523 ; wdt:P161 wd:Q48410 . }"
+  },
+  {
+    "natural_language_question": "What is the capital of Canada?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q16 wdt:P36 ?uri }"
+  },
+  {
+    "natural_language_question": "Which soccer players were born on Malta?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q937857 ; wdt:P19 wd:Q233 . }"
+  },
+  {
+    "natural_language_question": "What is the capital of Cameroon?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q1009 wdt:P36 ?uri }"
+  },
+  {
+    "natural_language_question": "How many programming languages are there?",
+    "sparql_query_kg2": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q9143 . }"
+  },
+  {
+    "natural_language_question": "Give me all cosmonauts.",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11631 . { ?uri wdt:P27 wd:Q159 } UNION { ?uri wdt:P27 wd:Q2184 } UNION { ?uri wdt:P27 wd:Q15180 } }"
+  },
+  {
+    "natural_language_question": "Who created Family Guy?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q5930 wdt:P170 ?uri }"
+  },
+  {
+    "natural_language_question": "How much is the population of mexico city ?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?Mexico_City WHERE { wd:Q1489 wdt:P1082 ?Mexico_City }"
+  },
+  {
+    "natural_language_question": "Who created Batman?",
+    "sparql_query_kg2": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Q2695156 wdt:P170 ?uri }"
+  },
+  {
+    "natural_language_question": "How many people live in the capital of Australia?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX pq: <http://www.wikidata.org/prop/qualifier/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX bd: <http://www.bigdata.com/rdf#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?num WHERE { wd:Q408 wdt:P36 ?capital . ?capital wdt:P1082 ?num . }"
+  },
+  {
+    "natural_language_question": "how big is the total area of North Rhine- Westphalia?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?tarea WHERE { wd:Q1198 wdt:P2046 ?tarea. }"
+  },
+  {
+    "natural_language_question": "How many employees does IBM have?",
+    "sparql_query_kg2": "SELECT DISTINCT ?number WHERE { VALUES ?company { wd:Q70096636 wd:Q37156 } ?company wdt:P1128 ?number }"
+  },
+  {
+    "natural_language_question": "How much did Pulp Fiction cost?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?n WHERE { wd:Q104123 wdt:P2769 ?n }"
+  },
+  {
+    "natural_language_question": "What movies does Jesse Eisenberg play in?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q219512 . }"
+  },
+  {
+    "natural_language_question": "Give me all Danish movies.",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P17 wd:Q35 . }"
+  },
+  {
+    "natural_language_question": "To which countries does the Himalayan mountain system extend?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { { ?himalayas wdt:P17 ?uri . } UNION { ?himalayas wdt:P361 ?uri . } VALUES (?himalayas) { (wd:Q105981852) (wd:Q26235529) (wd:Q5451) } }"
+  },
+  {
+    "natural_language_question": "What is the largest country in the world?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q6256 ; wdt:P2046 ?n . } ORDER BY DESC(?n) LIMIT 1"
+  },
+  {
+    "natural_language_question": "What is the alma mater of the chancellor of Germany Angela Merkel?",
+    "sparql_query_kg2": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?AlmaMater WHERE { wd:Q567 wdt:P69 ?AlmaMater . }"
+  },
+  {
+    "natural_language_question": "Who created Goofy?",
+    "sparql_query_kg2": "SELECT DISTINCT ?uri WHERE { wd:Q111135 wdt:P170 ?uri. }"
+  }
+]
