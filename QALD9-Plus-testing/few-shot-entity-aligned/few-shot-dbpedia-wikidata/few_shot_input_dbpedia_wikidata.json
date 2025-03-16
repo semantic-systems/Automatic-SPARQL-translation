@@ -1264,15 +1264,21 @@
     },
     {
         "context": {
-            "natural_language_question": "Which holidays are celebrated around the world?",
-            "sparql_query_kg1": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Holiday }",
+            "natural_language_question": "Who wrote the book The Pillars of the Earth?",
+            "sparql_query_kg1": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }",
             "kg1_name": "DBpedia",
             "kg2_name": "Wikidata",
             "er2": [
                 {
-                    "dbpedia_id": "http://dbpedia.org/ontology/Holiday",
+                    "dbpedia_id": "http://dbpedia.org/resource/The_Pillars_of_the_Earth",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q1445650"
+                        "http://www.wikidata.org/entity/Q1163227"
+                    ]
+                },
+                {
+                    "dbpedia_id": "http://dbpedia.org/ontology/author",
+                    "wikidata_ids": [
+                        "http://www.wikidata.org/entity/P50"
                     ]
                 }
             ],
