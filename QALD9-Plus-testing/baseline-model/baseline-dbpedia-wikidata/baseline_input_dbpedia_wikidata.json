@@ -433,8 +433,8 @@
     },
     {
         "context": {
-            "natural_language_question": "Which holidays are celebrated around the world?",
-            "sparql_query_kg1": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Holiday }",
+            "natural_language_question": "Who wrote the book The Pillars of the Earth?",
+            "sparql_query_kg1": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }",
             "kg1_name": "DBpedia",
             "kg2_name": "Wikidata",
             "instruction": "Given the information above, produce a SPARQL query for KG2. In your answer please highlight the final, complete SPARQL query within the tags '<sparql>' and '</sparql>'."
