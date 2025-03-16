@@ -463,9 +463,9 @@
     },
     {
         "natural_language_question": "Give me the capitals of all countries that the Himalayas run through.",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\n` tags: <sparql> SELECT ?country ?capital WHERE { ?himalayas wdt:P131* ?country . ?country wdt:P36 ?capital . FILTER(?himalayas = wd:Q5451) }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT ?country ?capital WHERE { ?himalayas wdt:P131* ?country . ?country wdt:P36 ?capital . FILTER(?himalayas = wd:Q5451) }",
         "answers": [
-            "Query failed"
+            "No answer"
         ]
     },
     {

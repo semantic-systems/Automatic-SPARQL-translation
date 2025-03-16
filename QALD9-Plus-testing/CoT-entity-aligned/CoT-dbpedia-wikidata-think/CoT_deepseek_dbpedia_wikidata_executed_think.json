@@ -178,6 +178,13 @@
         ]
     },
     {
+        "natural_language_question": "How much did the Lego Movie cost?",
+        "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?n WHERE { wd:Q2608065 wdt:P2769 ?n }",
+        "answers": [
+            "Query failed"
+        ]
+    },
+    {
         "natural_language_question": "For which label did Elvis record his first album?",
         "sparql_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?recordLabel WHERE { ?item wdt:P31 wd:Q482994 ; wdt:P175 wd:Q303 ; wdt:P577 ?releaseDate ; wdt:P264 ?recordLabel . } ORDER BY ASC(?releaseDate) LIMIT 1",
         "answers": [
@@ -264,7 +271,7 @@
     },
     {
         "natural_language_question": "Who has Tom Cruise been married to?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\ntags as per the user's instruction. </think> To translate the DBpedia SPARQL query to Wikidata, we map the entities and relationships using the provided ER2 mappings. **Step-by-Step Explanation:** 1. **Identify the entities and relationships**: - The relationship in the query is `spouse` (from DBpedia ontology). - The entity is `Tom_Cruise` (from DBpedia resource). 2. **Map these using ER2**: - `spouse` maps to `P26` in Wikidata. - `Tom_Cruise` maps to `Q37079` in Wikidata. 3. **Construct the Wikidata SPARQL query**: - Use the Wikidata entity `wd:Q37079` for Tom Cruise. - Use `wdt:P26` for the spouse relationship. 4. **Form the query**: - The query retrieves all items connected via `P26` (spouse) from Tom Cruise. **SPARQL Query for Wikidata:** ```sparql SELECT DISTINCT ?item WHERE { wd:Q37079 wdt:P26 ?item } ``` This query fetches all entities (?item) that are spouses of Tom Cruise (wd:Q37079) in Wikidata. <sparql> SELECT DISTINCT ?item WHERE { wd:Q37079 wdt:P26 ?item }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT DISTINCT ?item WHERE { wd:Q37079 wdt:P26 ?item } ``` This query fetches all entities (?item) that are spouses of Tom Cruise (wd:Q37079) in Wikidata. <sparql> SELECT DISTINCT ?item WHERE { wd:Q37079 wdt:P26 ?item }",
         "answers": [
             "Query failed"
         ]
@@ -2139,6 +2146,13 @@
         ]
     },
     {
+        "natural_language_question": "How tall is Claudia Schiffer?",
+        "sparql_query": "PREFIX wdid: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?height WHERE { wdid:Q76717 wdt:P2048 ?height }",
+        "answers": [
+            "180"
+        ]
+    },
+    {
         "natural_language_question": "Who wrote the book The Pillars of the Earth?",
         "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT ?uri WHERE { wd:Q1163227 wdt:P50 ?uri }",
         "answers": [
@@ -2218,9 +2232,9 @@
     },
     {
         "natural_language_question": "In which country is the Limerick Lake?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\ntags as the user requested. </think> The process involved mapping DBpedia entities and relations to Wikidata using the provided ER2 mappings. The DBpedia resource \"Limerick_Lake\" maps to \"Q6386177\" and \"dbo:country\" maps to \"P17\". Using these, the SPARQL query for Wikidata is constructed. <sparql> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q6386177 wdt:P17 ?uri }",
+        "sparql_query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { wd:Q6386177 wdt:P17 ?uri }",
         "answers": [
-            "Query failed"
+            "http://www.wikidata.org/entity/Q16"
         ]
     },
     {
@@ -4971,7 +4985,7 @@
     },
     {
         "natural_language_question": "What is the alma mater of the chancellor of Germany Angela Merkel?",
-        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\ntags as the user requested. </think> To construct the equivalent SPARQL query for Wikidata, follow these steps: 1. **Identify key entities and relations**: - **Entity**: Angela Merkel - **Relation**: almaMater 2. **Map DBpedia to Wikidata using ER2 mappings**: - dbr:Angela_Merkel \u2192 wd:Q567 - dbo:almaMater \u2192 wd:P69 3. **Construct the SPARQL query using Wikidata syntax**: ```sparql PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?Almamater WHERE { wd:Q567 wdt:P69 ?Almamater } ``` The query retrieves the alma mater of Angela Merkel using the Wikidata property `P69` (educational institution). **Final SPARQL query for Wikidata**: ```sparql SELECT ?Almamater WHERE { wd:Q567 wdt:P69 ?Almamater } ``` <sparql> SELECT ?Almamater WHERE { wd:Q567 wdt:P69 ?Almamater }",
+        "sparql_query": "\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT ?Almamater WHERE { wd:Q567 wdt:P69 ?Almamater } ``` <sparql> SELECT ?Almamater WHERE { wd:Q567 wdt:P69 ?Almamater }",
         "answers": [
             "Query failed"
         ]

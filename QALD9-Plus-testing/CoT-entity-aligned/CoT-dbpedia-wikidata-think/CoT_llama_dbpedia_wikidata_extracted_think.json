@@ -225,7 +225,7 @@
     },
     {
         "natural_language_question": "Give me the capitals of all countries that the Himalayas run through.",
-        "sparql_query": "` tags: <sparql> SELECT ?country ?capital WHERE { ?himalayas wdt:P131* ?country . ?country wdt:P36 ?capital . FILTER(?himalayas = wd:Q5451) }"
+        "sparql_query": "SELECT ?country ?capital WHERE { ?himalayas wdt:P131* ?country . ?country wdt:P36 ?capital . FILTER(?himalayas = wd:Q5451) }"
     },
     {
         "natural_language_question": "In which country is the Limerick Lake?",
