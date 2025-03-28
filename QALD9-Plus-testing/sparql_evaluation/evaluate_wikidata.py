@@ -6,6 +6,19 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 # Define endpoint for Wikidata
 WIKIDATA_ENDPOINT = "http://localhost:7001"
 
+# Prefix logic to always add needed prefixes if used
+
+def ensure_prefixes(query):
+    prefixes = (
+        "PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n"
+        "PREFIX wd: <http://www.wikidata.org/entity/>\n"
+        "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
+        "PREFIX p: <http://www.wikidata.org/prop/>\n"
+        "PREFIX ps: <http://www.wikidata.org/prop/statement/>\n"
+        "PREFIX pq: <http://www.wikidata.org/prop/qualifier/>\n\n"
+    )
+    return prefixes + query.lstrip()
+
 # Define standard SPARQL prefixes for removal
 STANDARD_PREFIXES = [
     """\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -24,29 +37,26 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>"""
 ]
 
 def remove_standard_prefixes(query):
-    """Removes predefined standard prefixes after executing a query."""
     for prefix in STANDARD_PREFIXES:
         query = query.replace(prefix, "").strip()
     return query
 
 def query_sparql(endpoint, query):
-    """Execute a SPARQL query and return results."""
     sparql = SPARQLWrapper(endpoint)
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     sparql.setMethod('GET')
     sparql.setTimeout(60)
-    
+
     try:
         return sparql.query().convert()
     except Exception as e:
         return {"error": str(e)}
 
 def extract_answer(results):
-    """Extract answers from SPARQL query results."""
     if "error" in results:
         return ["Query failed"], results["error"]
-    
+
     if 'boolean' in results:
         return (["True"] if results['boolean'] else ["False"]), None
 
@@ -55,21 +65,17 @@ def extract_answer(results):
     for binding in bindings:
         for var_name in binding:
             answers.append(binding[var_name]['value'])
-    
+
     return (answers if answers else ["No answer"]), None
 
 def detect_dataset_mismatch(query):
-    """Detects dataset mismatches (e.g., DBpedia patterns in a Wikidata query)."""
     dbpedia_elements = ["dbo:", "dbp:", "dbr:", "dbc:", "dct:", "rdf:"]
     wikidata_elements = ["wd:", "wdt:", "p:", "ps:", "pq:"]
-
     contains_dbpedia = any(ele in query for ele in dbpedia_elements)
     contains_wikidata = any(ele in query for ele in wikidata_elements)
-
     return contains_dbpedia and not contains_wikidata
 
 def classify_error(row):
-    """Classifies errors while skipping correctly answered questions."""
     query_failed = "Query failed" in row["Query_Answers_Generated"]
     no_answer = "No answer" in row["Query_Answers_Generated"]
     error_message = row["Error_Message"]
@@ -90,21 +96,18 @@ def classify_error(row):
     gold_entities = set(re.findall(r'wd:Q\d+', gold_query))
     generated_entities = set(re.findall(r'wd:Q\d+', generated_query))
 
-    # Property treated as Entity
     if "wd:" in generated_query and "wdt:" not in generated_query:
         if ("wdt:" in gold_query and "wd:" in gold_query) or (
             "http://www.wikidata.org/prop/direct/" in gold_query and "http://www.wikidata.org/entity/" in gold_query
         ):
             return "Property treated as Entity"
 
-    # Entity treated as Property
     if "wdt:" in generated_query and "wd:" not in generated_query:
         if ("wdt:" in gold_query and "wd:" in gold_query) or (
             "http://www.wikidata.org/prop/direct/" in gold_query and "http://www.wikidata.org/entity/" in gold_query
         ):
             return "Entity treated as Property"
 
-    # Missing P31 detection
     if "wdt:P31" in gold_query and "wdt:P31" not in generated_query:
         return "Missing P31"
 
@@ -116,25 +119,21 @@ def classify_error(row):
 
     if no_answer and gold_entities and generated_entities and gold_entities != generated_entities:
         return "Wrong Entity"
-    
+
     if gold_entities - generated_entities:
         return "Wrong Entity"
-    
+
     if no_answer and "None" in error_message:
         return "Structural Error"
 
     return "Other"
 
 def evaluate_wikidata_queries(
-    input_file, 
-    output_excel, 
-    query_key="sparql_query", 
+    input_file,
+    output_excel,
+    query_key="sparql_query",
     solution_file="../../../data/100_complete_entries_solution.json"
 ):
-    """
-    Executes SPARQL queries for Wikidata, compares with gold labels, classifies errors,
-    and saves results. Now also includes the gold label answer in the DataFrame.
-    """
     endpoint = WIKIDATA_ENDPOINT
     result_key = "wikidata_results"
 
@@ -144,7 +143,6 @@ def evaluate_wikidata_queries(
     with open(solution_file, "r") as f:
         solution_data = json.load(f)
 
-    # Map each question to its gold label answers and query
     solution_mapping = {
         entry['question']: {
             "answers": entry.get(result_key, []),
@@ -157,19 +155,18 @@ def evaluate_wikidata_queries(
 
     for entry in data:
         question = entry.get("natural_language_question", "")
-        sparql_query = entry.get(query_key, "")
+        raw_query = entry.get(query_key, "")
 
-        if not sparql_query:
+        if not raw_query:
             continue
 
+        sparql_query = ensure_prefixes(raw_query)
         results = query_sparql(endpoint, sparql_query)
         extracted_answers, error_message = extract_answer(results)
 
-        # Get the gold label answers and query
         gold_answers = solution_mapping.get(question, {}).get("answers", [])
         gold_query = solution_mapping.get(question, {}).get("query", "")
 
-        # Compare extracted answers vs. gold label answers for correctness
         is_correct = (set(gold_answers) == set(extracted_answers))
 
         comparison_results.append({
