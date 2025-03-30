@@ -6,24 +6,24 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 # DBpedia endpoint
 DBPEDIA_ENDPOINT = "http://localhost:7012"
 
-# DBpedia-specific prefixes
-DBPEDIA_PREFIXES = [
-    """\nPREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX res: <http://dbpedia.org/resource/>
-PREFIX yago: <http://dbpedia.org/class/yago/>
-PREFIX onto: <http://dbpedia.org/ontology/>
-PREFIX dbp: <http://dbpedia.org/property/>
-PREFIX dbr: <http://dbpedia.org/resource/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX dbc: <http://dbpedia.org/resource/Category:>
-PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"""
-]
+# Function to ensure essential prefixes are included
+def ensure_prefixes(query):
+    required_prefixes = [
+        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+        "PREFIX dbo: <http://dbpedia.org/ontology/>",
+        "PREFIX dbr: <http://dbpedia.org/resource/>",
+        "PREFIX dbp: <http://dbpedia.org/property/>",
+        "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
+        "PREFIX yago: <http://dbpedia.org/class/yago/>",
+        "PREFIX dbc: <http://dbpedia.org/resource/Category:>",
+        "PREFIX dct: <http://purl.org/dc/terms/>"
+    ]
 
-def remove_dbpedia_prefixes(query):
-    """Remove DBpedia standard prefixes from the query."""
-    for prefix in DBPEDIA_PREFIXES:
-        query = query.replace(prefix, "").strip()
+    missing_prefixes = [p for p in required_prefixes if p not in query]
+    
+    if missing_prefixes:
+        query = "\n".join(missing_prefixes) + "\n" + query
+    
     return query
 
 def query_sparql(endpoint, query):
@@ -129,6 +129,9 @@ def evaluate_dbpedia_queries(input_file, output_excel, query_key="sparql_query",
 
         if not sparql_query:
             continue
+
+        # Ensure prefixes are added before execution
+        sparql_query = ensure_prefixes(sparql_query)
 
         results = query_sparql(endpoint, sparql_query)
         extracted_answers, error_message = extract_answer(results)
