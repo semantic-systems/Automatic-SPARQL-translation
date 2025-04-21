@@ -1154,15 +1154,21 @@
         }
     },
     {
-        "question_id": "305",
-        "question": "Which holidays are celebrated around the world?",
-        "wikidata_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/>  SELECT ?uri WHERE { ?uri wdt:P31/wdt:P279* wd:Q1445650 . }",
+        "question_id": "335",
+        "question": "Who wrote the book The Pillars of the Earth?",
+        "wikidata_query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Q1163227 wdt:P50 ?uri . }",
         "mapped_entities_relations": {
             "entities_relations": [
                 {
-                    "dbpedia_id": "http://dbpedia.org/ontology/Holiday",
+                    "dbpedia_id": "http://dbpedia.org/resource/The_Pillars_of_the_Earth",
                     "wikidata_ids": [
-                        "http://www.wikidata.org/entity/Q1445650"
+                        "http://www.wikidata.org/entity/Q1163227"
+                    ]
+                },
+		{
+                    "dbpedia_id": "http://dbpedia.org/ontology/author",
+                    "wikidata_ids": [
+                        "http://www.wikidata.org/entity/P50"
                     ]
                 }
             ]
