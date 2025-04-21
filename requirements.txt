@@ -4,3 +4,6 @@ seaborn
 numpy
 SPARQLWrapper
 openai
+sentence-transformers
+scikit-learn
+torch
