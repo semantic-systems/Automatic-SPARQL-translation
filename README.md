@@ -35,3 +35,28 @@ cd SPARQL-LLM-Translation
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
+
+3. Install requirements
+```bash
+pip install -r requirements.txt
+```
+
+### Evaluation Strategy
+The evaluation includes:
+- Accuracy (based on gold-label answers from QALD-9 and DBLP-OpenAlex)
+- Structured error classification across 8 error types
+- Model comparisons across KG pairs and prompting strategies
+- Generalization analysis between open-domain and scholarly KGs
+
+### Knowledge Graphs Used
+- Wikidata
+- DBpedia
+- DBLP – https://sparql.dblp.org
+- OpenAlex – https://semopenalex.org/sparql
+
+### Ethical Considerations
+This project acknowledges and reflects on:
+- Social and structural biases in KGs (e.g., gender representation, geographic imbalance)
+- The risk of reproducing bias through LLM-driven translation
+- Environmental impact of large-scale LLM usage
+- Sources and discussions can be found in the Ethical Considerations section of the thesis.
