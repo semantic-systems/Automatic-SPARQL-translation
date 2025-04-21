@@ -71,6 +71,9 @@ matplotlib
 seaborn
 SPARQLWrapper
 openai
+sentence-transformers
+scikit-learn
+
 
 Install all dependencies via:
 ```bash
