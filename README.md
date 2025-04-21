@@ -16,10 +16,6 @@ Key components:
 - Generalizability testing across domain-specific KGs
 
 ---
-requirements.txt README.md
-
-
----
 
 ## Setup
 
@@ -60,3 +56,26 @@ This project acknowledges and reflects on:
 - The risk of reproducing bias through LLM-driven translation
 - Environmental impact of large-scale LLM usage
 - Sources and discussions can be found in the Ethical Considerations section of the thesis.
+
+### Requirements
+
+Main libraries used:
+requests
+json
+re
+os
+glob
+sys
+pandas
+matplotlib
+seaborn
+SPARQLWrapper
+openai
+
+Install all dependencies via:
+```bash
+pip install -r requirements.txt
+```
+
+### Acknowledgements
+Thanks to the GWDG for providing API access to modern LLMs and infrastructure.
