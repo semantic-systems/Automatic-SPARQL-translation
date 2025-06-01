@@ -79,6 +79,3 @@ Install all dependencies via:
 ```bash
 pip install -r requirements.txt
 ```
-
-### Acknowledgements
-Thanks to the GWDG for providing API access to modern LLMs and infrastructure.
