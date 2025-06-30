@@ -1,4 +1,5 @@
-# SPARQL Query Translation with LLMs  
+# SPARQL Query Translation with LLMs 
+by Malte Bartels (Master's Thesis)  
 
 ---
 
