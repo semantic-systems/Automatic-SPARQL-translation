@@ -1,3 +1,4 @@
+
 # SPARQL Query Translation with LLMs 
 by Malte Bartels (Master's Thesis)  
 
@@ -46,10 +47,12 @@ The evaluation includes:
 - Generalization analysis between open-domain and scholarly KGs
 
 ### Knowledge Graphs Used
-- Wikidata
-- DBpedia
-- DBLP – https://sparql.dblp.org
-- OpenAlex – https://semopenalex.org/sparql
+
+Our Wikidata and DBpedia endpoints were hosted using Qlever Graph database. You may install Qlever using "pip install qlever". You can find the Qleverfiles in qlever-dbpedia/ and qlever-wikidata/ folders in this repository. 
+- Wikidata - dumps as of November 2024. 
+- DBpedia - download RDF dump from https://ltdata1.informatik.uni-hamburg.de/automating-sparql-translations/dbpedia.tgz, unzip to folder rdf-input/ in qlever-dbpedia/ and use the existing Qleverfile to start Qlever DB.
+- DBLP – https://sparql.dblp.org 
+- OpenAlex – https://semopenalex.org/sparql 
 
 ### Ethical Considerations
 This project acknowledges and reflects on:
