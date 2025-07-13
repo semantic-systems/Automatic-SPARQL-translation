@@ -5,7 +5,7 @@ If you use the code or datasets from this repository in your research, please ci
 Bartels, M. C., Banerjee, D., & Usbeck, R. (2025, September). Automating SPARQL Query Translations between DBpedia and Wikidata. To be published in the Proceedings of the SEMANTiCS 2025 Conference.
 
 BibTeX
-For easy integration into your reference manager, you can use the following BibTeX entry:
+For easy integration into your reference manager, you can use the following BibTeX entry: \n
 @inproceedings{Bartels2025Automating,
   author    = {Bartels, Malte Christian and Banerjee, Debayan and Usbeck, Ricardo},
   title     = {{Automating SPARQL Query Translations between DBpedia and Wikidata}},
