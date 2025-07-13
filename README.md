@@ -15,8 +15,6 @@ For easy integration into your reference manager, you can use the following BibT
   note      = {To be published}
 }
 
-
-
 ---
 
 ## Project Overview
