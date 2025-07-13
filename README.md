@@ -6,7 +6,7 @@ Bartels, M. C., Banerjee, D., & Usbeck, R. (2025, September). Automating SPARQL 
 
 BibTeX
 For easy integration into your reference manager, you can use the following BibTeX entry:
-
+```
 @inproceedings{Bartels2025Automating,
   author    = {Bartels, Malte Christian and Banerjee, Debayan and Usbeck, Ricardo},
   title     = {{Automating SPARQL Query Translations between DBpedia and Wikidata}},
@@ -15,7 +15,7 @@ For easy integration into your reference manager, you can use the following BibT
   month     = {september},
   note      = {To be published}
 }
-
+```
 ---
 
 ## Project Overview
@@ -106,6 +106,7 @@ pip install -r requirements.txt
 
 ## Project Structure
 
+```
 Automatic-SPARQL-translation/
 │
 ├── data/                             # Final benchmark datasets.
@@ -120,7 +121,7 @@ Automatic-SPARQL-translation/
 ├── LICENSE
 ├── README.md
 └── requirements.txt
-
+```
 ---
 
 ## Folder Breakdown & Purpose
