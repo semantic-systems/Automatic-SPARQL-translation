@@ -88,20 +88,6 @@ Install all dependencies via:
 pip install -r requirements.txt
 ```
 
-
-## Project Structure
-Of course. Here is the complete content formatted as a raw markdown block. You can click the "Copy" button in the top-right corner of the block and paste it directly into your README.md file.
-
-Markdown
-
-# Automatic SPARQL Translation
-
-This project focuses on the automatic translation of SPARQL queries between different knowledge graphs (KGs). It includes the entire workflow for creating benchmark datasets, performing entity alignment, testing various translation models and prompting strategies, and analyzing the final results.
-
-The primary translation tasks covered are:
-* **DBpedia <-> Wikidata** (bidirectional)
-* **DBLP -> OpenAlex** (unidirectional)
-
 ---
 
 ## Project Structure
